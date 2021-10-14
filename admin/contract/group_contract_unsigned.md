@@ -6,7 +6,7 @@ Date: 10/13/2021
 **Team Name:** Exploding Cats\
 **Number:** Group 33\
 **Instructor:** Thomas Powell\
-**Advisor:** Sourabh Murali\
+**Advisor:** Sourabh Murali
 
 ### Team Contact Information
 |Name                   |Email              |Github             |
