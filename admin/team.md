@@ -6,10 +6,12 @@ The idea behind the name Exploding Cats came when we played [Gartic Phone](https
 Although our members are mostly unassuming and fairly quiet, we found that plenty of our drawings were violent and unexpected. 
 When coming up with a team name, we tried conjuring up images of this unusual blend of quiet and violent, and hence, Exploding Cats was born!
 ### Team Logo
+![team logo](./branding/logo_transparent.png)
 ### Team Mascot
 As featured in our logo, our team mascot is a white cat named Explodey. Though normally timid and friendly, at any moment, Explodey can erupt into action,
 pouncing on unsuspecting victims and leaving havoc wherever he goes.
 ### Team Colors
+Our team colors are [titan white](https://veli.ee/colorpedia/?c=f7f7ff), [pink](http://veli.ee/colorpedia/?c=ffb4c2), [waikawa gray](http://veli.ee/colorpedia/?c=5A6493), [marigold yellow](https://veli.ee/colorpedia/?c=f7dd72), and [burnt sienna](https://veli.ee/colorpedia/?c=ee6352). The white, pink, and gray colors represent Explodey's calm and warm outward appearance. The yellow and sienna represent Explodey's fiery outbursts, like an active volcano ready to go off at any moment. 
 ## Values
 As listed on our [group contract](./misc/rules.md), our team believes and exhibits the following values:
 - Humility, Respect, and Trust
@@ -19,7 +21,7 @@ As listed on our [group contract](./misc/rules.md), our team believes and exhibi
 - General courtesy
 - Academic integrity
 
-Furthermore, we believe strongly in team communication, regular team meetings, firm yet gentle conflict resolution, and professional coding practices.
+Furthermore, we strongly believe in team communication, regular team meetings, firm yet gentle conflict resolution, and professional coding practices.
 ## Team Roster
 |Name                   |Github               |Year             | Major | Fun Fact |
 |-----------------------|-------------------|-------------------|-------------------|-------------------|
