@@ -31,7 +31,7 @@ Furthermore, we strongly believe in team communication, regular team meetings, f
 |Minghui Li             |[carolli014](https://carolli014.github.io/Lab1-GitHub-Pages/)     |4th year     | Math-CS | Has gotten laser eye surgery |
 |Yuang Lin              |[yuang-lin](https://yuang-lin.github.io/User-Page/#yuang's-user-page)    |3rd year      | CSE | Has a collection of about 300 car models and plane models|
 |Everett Lin            |[everett-lin](https://everett-lin.github.io/cse-110-lab-week-1/)     |4th year    | CSE | Used to make pixel art sprites for game developers |
-|George Gavrilov        |[GeorgeGavrilov](https://georgegavrilov.github.io/CSE110-LAB1/) |?     | CSE | A lot of people think he is German because of his accent, but he is not|
+|George Gavrilov        |[GeorgeGavrilov](https://georgegavrilov.github.io/CSE110-LAB1/) |4th year     | CSE | A lot of people think he is German because of his accent, but he is not|
 |Edward Chang           |[Ed5443](https://ed5443.github.io/CSE110-Lab1/)   |2nd year transfer        | CSE | Has played the piano for 10 years |
 |Cole Rindal            |[Cole-Rindal](https://cole-rindal.github.io/Lab-Week-1/)   |4th  | CE | Has over 30 house plants|
-|Tanyunfeng Chen        |[CookingC](https://cookingc.github.io/CSE110-2021/)    |?           | Math-CS| Can drink 2 pounds of vodka |
+|Tanyunfeng Chen        |[CookingC](https://cookingc.github.io/CSE110-2021/)    |4th year      | Math-CS| Can drink 2 pounds of vodka |
