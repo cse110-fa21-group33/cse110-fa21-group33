@@ -98,7 +98,7 @@ Tasks
     - Use Scoville unit for exp points
     - Reference table - show Scoville units for common spicy ingredients (editing page)
         
-        ![chart](/media/110221-chart.png)
+        ![chart](/admin/meetings/media/110221-chart.png)
         
     
     Achievements
