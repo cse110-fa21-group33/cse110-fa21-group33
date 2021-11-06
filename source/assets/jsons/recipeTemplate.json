@@ -1,0 +1,49 @@
+{
+  "title": "Recipe Title",
+  "description": "This recipe changed my life...",
+  "image": "https://www.wideopeneats.com/wp-content/uploads/2020/04/ezgif.com-resize4-960x540.jpg",
+  "video": "https://www.youtube.com/watch?v=1uNpjqH-mQQ",
+  "servingSize": 1,
+  "scoville": 1000000,
+  "spiceRating": 5,
+  "calories": 200,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 10
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 0 
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 10      
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "Chili Peppers",
+      "quantity": 2,
+      "units": "N/A"
+    },
+    {
+      "name": "Ghost Pepper",
+      "quantity": 1,
+      "units": "N/A"
+    },
+    {
+      "name": "Milk",
+      "quantity": 1,
+      "units": "cup"
+    }
+  ],
+  "directions": [
+    "Chop up Ghost peppers",
+    "Take a bite of the Chili pepper and the Ghost peppers",
+    "Cry and drink milk"
+  ]
+}
