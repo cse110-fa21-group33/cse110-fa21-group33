@@ -18,11 +18,17 @@ In order to solve this problem, we'll have our basic CRUD app functionality in 2
 
 We aim to create the perfect recipe app for both spicy food lovers and noobs. Allowing for spicy food enthusiasts to find recipes and create recipes to build their resistance to spicy food. We will allow users to search for recipes based off of the level of spice allowing lovers of any level of spicy food to satiate their sadistic cravings. Users will be able to track their spicy food tolerance progression through our app's built in challenge and achievement system. 
 
-![Screen Shot 2021-10-28 at 9.19.11 PM.png](Screen_Shot_2021-10-28_at_9.19.11_PM.png)
+![Screen Shot 2021-10-28 at 9.19.11 PM.png](./Screen_Shot_2021-10-28_at_9.19.11_PM.png)
+![main-page](./../brainstorm/wireframe-main-page.jpg)
+![recipe-page](./../brainstorm/wireframe-recipe-page.jpg)
+![achievements-page](./../brainstorm/wireframe-achievements.jpg)
 
 ## Rabbit-Holes
 
 - Storage (local vs external) → hard choice choosing between which one to use. Using external storage (cloud) might be pretty difficult for getting used to and just learn overall. Using local storage is preferable, however, not sure how we would modify local files depending on user input and how we will be saving those changes on our website.
+
+![Screen Shot 2021-10-28 at 9.19.11 PM.png](./database.drawio.png)
+
 - Searching → finding out what would be the best way to find the proper recipe. Do we just make each recipe as its own JSON file and look up recipes by their JSON file name or... ? How exactly does searching work: modifying the current page and display the recipes which name's matches the input or you have to look up a specific recipe itself? There are many possibilities on how and can be done, both from the technical/implementing standpoint and UI, which might lead to some confusion on how it should be done.
 - Challenge validation → again, not sure how we will track users progress on the page to make sure that the challenge is completed. Same thing when it comes to tracking the overall user's progress with challenges, we need a data base, which is something we are trying to avoid for now.
 
