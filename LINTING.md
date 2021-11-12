@@ -3,7 +3,7 @@
 ## Step 1: Installation & Set Up
 1. Install [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint#:~:text=If%20you%20haven't%20installed,eslintrc%20configuration%20file) in the VSCode Extensions Manager
 2. (**Note: If .eslintrc.js already exists in your base project directory, please skip to Step 2: Set Up VSCode Settings for Fix on Save**) 
-3. Open then terminal (View > Terminal) and install ESLint
+3. Open the terminal (View > Terminal) and install ESLint
     * In base project directory run: ``npm install eslint`` (Node.js must be installed)
 4. Setup up eslint for Javascript linting using the Airbnb guidelines
     * In project directory run: ``npx eslint --init``
