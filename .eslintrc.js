@@ -11,5 +11,15 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'linebreak-style': 0,
+    'require-jsdoc': ['error', {
+      require: {
+        FunctionDeclaration: true,
+        MethodDefinition: false,
+        ClassDeclaration: false,
+        ArrowFunctionExpression: false,
+        FunctionExpression: false,
+      },
+    }],
   },
 };
