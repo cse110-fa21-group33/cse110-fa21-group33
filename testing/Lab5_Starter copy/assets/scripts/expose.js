@@ -3,6 +3,7 @@
 window.addEventListener('DOMContentLoaded', init);
 const jsConfetti = new JSConfetti();
 
+
 function init() {
   let horn = document.querySelector("[name='horn']");
   let image = document.querySelector("[alt='No image selected']");

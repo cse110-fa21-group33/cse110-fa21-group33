@@ -22,7 +22,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-          
+      
       - name: JSDoc Action
         uses: cse110-fa21-group33/jsdoc-action@v1.2.0
         with:
