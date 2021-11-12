@@ -11,7 +11,6 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-<<<<<<< HEAD
     'linebreak-style': 0,
     'require-jsdoc': ['error', {
       require: {
@@ -22,8 +21,5 @@ module.exports = {
         FunctionExpression: false,
       },
     }],
-=======
-    linebreak-style: 0,
->>>>>>> 0edacc83d656cc7e1e984d58cea960d325d1e98e
   },
 };
