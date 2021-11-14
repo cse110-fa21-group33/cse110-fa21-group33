@@ -1,0 +1,89 @@
+{
+    "title": "Ghost Pepper Wings",
+    "description": "These keto spicy chicken wings made with ghost pepper are so deliciously fiery and spicy, you will definitely feel the burn!",
+    "image": "https://lowcarbafrica.com/wp-content/uploads/2020/02/Keto-Hot-Wings-with-Ghost-Pepper-homepage-200x200.jpg",
+    "video": "",
+    "servingSize": 12,
+    "scoville": 1000000,
+    "spiceRating": 5,
+    "calories": 143,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 5
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 20 
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 25      
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "Chicken Wings",
+        "quantity": 12,
+        "units": "N/A"
+      },
+      {
+        "name": "Ghost Pepper",
+        "quantity": 0.25,
+        "units": "teaspoon"
+      },
+      {
+        "name": "Butter, melted",
+        "quantity": 0.25,
+        "units": "cup"
+      },
+      {
+        "name": "Smoked Paprika",
+        "quantity": 1,
+        "units": "teaspoon"
+      },
+      {
+        "name": "Thyme",
+        "quantity": 0.5,
+        "units": "teaspoon"
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.5,
+        "units": "teaspoon"
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": 1,
+        "units": "teaspoon"
+      },
+      {
+        "name": "Coconut Aminos",
+        "quantity": 1,
+        "units": "tablespoon"
+      },
+      {
+        "name": "Lemon Pepper",
+        "quantity": 0.5,
+        "units": "teaspoon"
+      },
+      {
+        "name": "Oil",
+        "quantity": 4,
+        "units": "cups"
+      }
+    ],
+    "directions": [
+      "Split the chicken wings at the joint, wash and pat dry.",
+      "Rub a little salt on the chicken wings and fry till crisp.",
+      "When the chicken is almost ready, start preparing the sauce.",
+      "In a separate pan, melt the butter on low heat and add the coconut aminos.",
+      "Add in the ghost pepper, smoked paprika, thyme, salt, black pepper, and lemon pepper.",
+      "Stir till all the spices are blended in.",
+      "Put the fried chicken wings in a bowl and stir in the sauce."
+    ]
+  }
+  

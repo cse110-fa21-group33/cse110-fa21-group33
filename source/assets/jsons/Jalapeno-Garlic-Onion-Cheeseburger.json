@@ -1,0 +1,65 @@
+{
+    "title": "Jalapeno-Garlic-Onion Cheeseburgers",
+    "description": "The three best foods in the world combined in a juicy grilled cheeseburger! These go great with Cowboy Mashed Potatoes!",
+    "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F803919.jpg",
+    "video": "",
+    "servingSize": 4,
+    "scoville": 5000,
+    "spiceRating": 2,
+    "calories": 474.1,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 15
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 10 
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 25      
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "Jalapeno Chili Peppers",
+        "quantity": 1,
+        "units": "N/A"
+      },
+      {
+        "name": "Garlic",
+        "quantity": 2,
+        "units": "cloves"
+      },
+      {
+        "name": "Small Onion",
+        "quantity": 1,
+        "units": "N/A"
+      },
+      {
+        "name": "Lean Ground Beef",
+        "quantity": 1,
+        "units": "pound"
+      },
+      {
+        "name": "Pepperjack Cheese",
+        "quantity": 4,
+        "units": "slices"
+      },
+      {
+        "name": "Hamburger Buns",
+        "quantity": 4,
+        "units": "N/A"
+      }
+    ],
+    "directions": [
+      "Preheat grill for high heat.",
+      "Mix jalapeno pepper, garlic, onion, and ground beef in a medium bowl. Form into four patties.",
+      "Brush grill grate with oil. Grill hamburger patties 5 minutes per side, or until well done. Top with pepperjack cheese, and serve on buns."
+    ]
+  }
+  
