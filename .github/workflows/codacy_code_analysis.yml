@@ -6,14 +6,13 @@ on:
   pull_request:
     branches: [ "edward", "everett", "george", "kevin", "lorenzo", "lynn" ]
 
-defaults:
-  run: 
-     working-directory: source 
-
 jobs:
   codacy-security-scan:
     name: Codacy Security Scan
     runs-on: ubuntu-latest
+    defaults:
+      run: 
+        working-directory: source 
     steps:
       - name: Checkout code
         uses: actions/checkout@main
