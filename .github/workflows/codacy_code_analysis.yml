@@ -3,8 +3,8 @@ name: Codacy Security Scan
 on:
   push:
     branches: [ "edward", "everett", "george", "kevin", "lorenzo", "lynn" ]
-  pull_request:
-    branches: [ "edward", "everett", "george", "kevin", "lorenzo", "lynn" ]
+  #pull_request:
+    #branches: [ "edward", "everett", "george", "kevin", "lorenzo", "lynn" ]
 
 jobs:
   codacy-security-scan:
