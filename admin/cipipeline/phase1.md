@@ -40,3 +40,5 @@ For each topic, write the following:
 - Triggers on push to main.
 - Checks for uploads in 'source' directory and generates documentation based on comments in JS files.
 - Documentation is on a separate branch 'jsdoc', using github pages to display it, which can be found [here](https://cse110-fa21-group33.github.io/cse110-fa21-group33/).
+
+![pipeline](phase1.jpg)
