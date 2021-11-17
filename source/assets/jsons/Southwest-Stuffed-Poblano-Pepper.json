@@ -1,0 +1,90 @@
+{
+    "title": "Recipe Title",
+    "description": "Southwest Stuffed Poblano Peppers",
+    "image": "https://www.lecremedelacrumb.com/southwest-stuffed-poblano-peppers/#primaryimage",
+    "video": "",
+    "servingSize": 8,
+    "scoville": 3000,
+    "spiceRating": 1,
+    "calories": 153,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 10
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 30 
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 40      
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "Poblano Peppers, halved and seeds/membranes removed",
+        "quantity": 4,
+        "units": "N/A"
+      },
+      {
+        "name": "Lean Ground Beef",
+        "quantity": 1,
+        "units": "pound"
+      },
+      {
+        "name": "Ground Cumin",
+        "quantity": 1,
+        "units": "teaspoon"
+      },
+      {
+        "name": "Chili Powder",
+        "quantity": 1,
+        "units": "teaspoon"
+      },
+      {
+        "name": "Garlic Powder",
+        "quantity": 1,
+        "units": "teaspoon"
+      },
+      {
+        "name": "Cooked Long Grain White Rice",
+        "quantity": 1,
+        "units": "cup"
+      },
+      {
+        "name": "Canned Black Beans, drained",
+        "quantity": 0.5,
+        "units": "cup"
+      },
+      {
+        "name": "Frozen or Canned Corn, drained",
+        "quantity": 0.5,
+        "units": "cup"
+      },
+      {
+        "name": "Fire Roasted Dice Tomatoes, drained",
+        "quantity": 15,
+        "units": "ounces"
+      },
+      {
+        "name": "Diced Green Chiles",
+        "quantity": 4,
+        "units": "ounces"
+      },
+      {
+        "name": "Grated Mozzarella or Mexican-Blend Cheese",
+        "quantity": 1,
+        "units": "cup"
+      }
+    ],
+    "directions": [
+      "Preheat oven to 350 degrees and lightly grease a large baking sheet. Arrange halved poblano peppers in a single layer on the baking sheet so that they aren't overlapping. Bake for 10-15 minutes while you move on to the next step.",
+      "Add ground beef (or preferred meat choice, see Note 2) and rice to a large skillet, and season with the cumin, chili powder, and garlic powder. Saute over medium heat for 5-8 minutes until meat is browned and cooked through.",
+      "Stir in the black beans, corn, diced tomatoes, and green chiles. Cook another 1-2 minutes. Spoon mixture into the peppers, sprinkle with cheese, and return to oven for another 10 minutes or so until peppers are tender and cheese is melted. Allow to cool slightly before serving."
+    ]
+  }
+  

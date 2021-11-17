@@ -1,0 +1,34 @@
+Units Standards
+
+Non Specific:
+Pinch
+Splash
+Drop
+Quantity (2 apples)
+
+Volume:
+c = cups
+pt = pints
+qt = quarts
+gal = gallons
+tsp = teaspoon
+tbsp = tablespoon
+fl oz = fluid ounce
+mL = milliliter
+L = liter
+
+Weight:
+g = grams
+kg = kilograms
+oz = ounces
+lbs = pounds
+
+Length:
+mm = millimeter
+cm = centimeter
+m = meter
+in = inch
+
+Temperature:
+°F = degrees Fahrenheit
+°C = degrees Celsius
