@@ -156,7 +156,7 @@ a:link {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 15rem));
   justify-content: space-evenly;
-  grid-gap: 2rem;
+  gap: 2rem;
   background-color: #ee6858;
 }
 
