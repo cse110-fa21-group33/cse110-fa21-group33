@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <title>Lab 5 - Party Horn</title>
+
+  <!-- JS Confetti -->
+  <script src="./assets/scripts/js-confetti.browser.js"></script>
+
+  <!-- Main Stylesheet & Scripts -->
+  <link rel="stylesheet" href="assets/styles/global.css" />
+  <script src="./assets/scripts/expose.js" type="module"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="explore.html" title="Go to explore page">Pt 2. Explore</a>
+    </nav>
+  </header>
+  <main>
+    <section id="expose">
+      <header>
+        <h2>Expose - Party Horn</h2>
+      </header>
+      <img src="assets/images/no-image.png" alt="No image selected" />
+      <select name="horn" id="horn-select">
+        <option value="select" disabled selected>Select Horn:</option>
+        <option value="air-horn">Air Horn</option>
+        <option value="car-horn">Car Horn</option>
+        <option value="party-horn">Party Horn</option>
+      </select>
+      <div id="volume-controls">
+        <input type="range" name="volume" id="volume" value="50" min="0" max="100" step="1" />
+        <img src="assets/icons/volume-level-2.svg" alt="Volume level 2" />
+      </div>
+      <button>Play Sound</button>
+      <audio class="hidden" src=""></audio>
+    </section>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--This is just the normal head of HTML file-->
+<head>
+  <title>Main Page</title>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <link rel="icon" type="image/png" href="favicon_io/favicon-16x16.png">
+    
+  <!--Importing fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <link rel="stylesheet" href="assets/styles/variables.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+
+<!--In the body part, we will have 5 divisions that separate our main page into 5 parts-->
+<body>
+  <header class="nav--header">
+    <div class="logo--wrapper">
+      <img src='assets/images/v2.png' alt='groupicon'>
+    </div>
+    <!--This division is for the search bar-->
+    <div class="Searchbar">
+     <input type="text" placeholder="Search..">
+    </div>
+    <!--This is the upperright user part-->
+    <div class="user-icon--wrapper">
+      <img src='assets/images/v2.png' alt='usericon'>
+    </div>
+  </header>
+  <main>
+    <div>
+      <section class="section--main-page shown">
+      <!--This division is for the challenge part which is on the left side of the page-->
+        <div id="challenge-cards--wrapper" class="main--div hidden">
+          <img src='assets/images/v2.png' width ='70' height='70' align ='right'>
+          <h2>Haunted Bowels</h2>
+          <label for="file">progress:</label>
+          <progress id="file" value="32" max="100"> 32% </progress>
+          <img src='assets/images/v2.png' width ='70' height='70' align ='right'>
+        </div>
+        <div id="spice-slider--wrapper">
+          <input type ="range" min="1" max="100" value="50" class="slider" id="myRange">
+        </div>
+        <div id="div--recommended-recipes" class="main--div">
+          <h1>Recommended Recipes For You</h1>
+          <div id="recipe-cards--wrapper">
+            <div id=recommend>
+              <img src='assets/images/v2.png' width ='130' height='130'>
+              <p>Kung Pao Chicken</p>
+            </div>
+          </div>    
+        </div>
+        <!--This division is for the Favorite Recipes on the right side-->
+        <div id="fav-cards--wrapper" class="main--div hidden">
+          <h1>Favorite Recipes</h1>
+          <div class=favorite>
+            <img src='assets/images/v2.png' width ='150' height='150'>
+            <p>Kung Pao Chicken</p>
+          </div>
+        </div>
+      </section>      -
+      <section class="section--recipe-expand">
+      </section>
+    </div>    
+  </main>
+</body>
+    
