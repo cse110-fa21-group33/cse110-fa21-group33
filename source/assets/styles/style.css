@@ -152,7 +152,7 @@ a:link {
 }
 
 .recipe-card:hover {
-  box-shadow: 0px 0px 20px black;
+  box-shadow: 0 0 20px black;
 }
 
 .card-body {
@@ -191,7 +191,7 @@ a:link {
 }
 
 .card-rating {
-  padding: 0rem 1rem 0.5rem;
+  padding: 0 1rem 0.5rem;
   font-size: 14px;
   align-items: center;
   display: flex;
@@ -202,5 +202,5 @@ span, time {
   justify-content: space-between;
   color: #70757A;
   font-size: 12px;
-  padding: 0 0.6rem 0rem 1rem;
+  padding: 0 0.6rem 0 1rem;
 }
