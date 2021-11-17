@@ -19,6 +19,9 @@
     "globals": {
       "window": {}
     }
+  },
+  "dependencies": {
+    "dexie": "^3.0.3",
+    "dexie-export-import": "^1.0.3"
   }
-
 }
