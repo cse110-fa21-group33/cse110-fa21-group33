@@ -144,4 +144,63 @@ section:not(section.shown) {
 
 #fav-cards--wrapper {
   grid-area: sidebarr;
+
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.recipe-card:hover {
+  box-shadow: 0px 0px 20px black;
+}
+
+.card-body {
+  font-family: 'Merriweather', sans-serif;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 15rem));
+  justify-content: space-evenly;
+  grid-gap:2rem;
+  background-color: #EE6858;
+}
+
+.recipe-card {
+  overflow: hidden;
+  border-radius: 25px;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  padding: 0 0 1rem;
+  margin: 0px;
+  background-color: #FFFFFF;
+}
+
+.card-img {
+  height: 11rem;
+  width: 100%;
+  object-fit:cover;
+}
+
+.card-title {
+  padding: 0.5rem 1rem 0.25rem;
+  overflow: hidden;
+  font-size: 26px;
+  height: 49px;
+  line-height: 26px;
+}
+
+.card-rating {
+  padding: 0rem 1rem 0.5rem;
+  font-size: 14px;
+  align-items: center;
+  display: flex;
+}
+
+span, time {
+  display: flex;
+  justify-content: space-between;
+  color: #70757A;
+  font-size: 12px;
+  padding: 0 0.6rem 0rem 1rem;
 }
