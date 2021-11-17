@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    </head>
+    <body>
+        <header class="navigation-bar">
+            <link rel="stylesheet" href="recipe-styesheet.css">
+        </header>
+        <div class="main-container">
+            <h1 id="recipe-title">Edit Recipe</h1>
+            <label for="name"><h2>Recipe Name <input type="text" id="name" name="name" required minlength="2" maxlength="40" size="30"></h2></label>
+            <label for="avatar">Upload picture/video:
+                <input type="url" name="url" id="url"
+                    placeholder="https://example.com"pattern="https://.*" size="30">
+                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+            </label>
+            <h2>Ingredients : </h2>
+            <textarea cols='60' rows='2' placeholder="1."></textarea>
+            <input class="AddMoreIGT" type="button" value="Add more">
+            <h2>Cooking Time : </h2>
+            <input class="numberInput" type="number" id="tentacles" name="Hours" min="0" max="20" size = "20" placeholder="Hours" required>
+            <input class="numberInput" type="number" id="tentacles" name="Minuites" min="0" max="59" placeholder="Minutes" required></h3>
+            <h2>Serving Size : </h2>
+            <input class="numberInput" type="number" id="tentacles" name="Minuites" min="0" max="59" size = "50" required></h3>
+            <h2>Description : </h2>
+            <textarea cols='60' rows='2' placeholder="Step 1"></textarea>
+            <div>
+                <input class="AddMoreIGT" type="button" value="Add more">
+            </div>
+            <h2>
+                <input class="Submit" type="button" value="Submit">
+                <input class="SavaAll" type="button" value="Sava All">
+                <input class="Cancel" type="button" value="Cancel">
+            </h2>
+        </div>
+    </body>
+</html>
