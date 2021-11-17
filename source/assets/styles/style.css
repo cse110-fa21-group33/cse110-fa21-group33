@@ -144,7 +144,6 @@ section:not(section.shown) {
 
 #fav-cards--wrapper {
   grid-area: sidebarr;
-
 }
 
 a:link {
@@ -161,15 +160,15 @@ a:link {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 15rem));
   justify-content: space-evenly;
-  grid-gap:2rem;
+  grid-gap: 2rem;
   background-color: #EE6858;
 }
 
 .recipe-card {
   overflow: hidden;
   border-radius: 25px;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 0 0 1rem;
   margin: 0px;
@@ -179,7 +178,7 @@ a:link {
 .card-img {
   height: 11rem;
   width: 100%;
-  object-fit:cover;
+  object-fit: cover;
 }
 
 .card-title {
