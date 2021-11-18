@@ -26,7 +26,7 @@ db.version(1).stores({ recipes: 'recipe_name,spice_level' });
 /**
  * Converts a string reprentation of a blob to a blob.
  * Lifted from https://gist.github.com/davoclavo/4424731
- * @param {string} dataURI A string represntation of a blob
+ * @param {string} dataURI A string representation of a blob
  * @returns {Blob} The converted blob
  */
 function dataURItoBlob(dataURI) {
@@ -223,8 +223,107 @@ async function deleteRecipe(recipeJSON) {
   });
 }
 
+/**
+ * Gets a list of recipes that have a given spice level.
+ * @param {Number} spiceLevel The spice level query between 1 and 5 inclusive.
+ * @returns {Promise} Resolves with an array of recipe JSONs that match the query spice level,
+ *                    rejects if spice level out of range.
+ */
+async function getBySpice(spiceLevel) {
+  return new Promise((resolve, reject) => {
+    if (typeof spiceLevel !== 'number') {
+      reject(new Error('Query was not a number!'));
+    } else if (spiceLevel < 1 || spiceLevel > 5) {
+      reject(new Error('Spice level out of range!'));
+    } else {
+      const jsonArray = [];
+      db.recipes.where('spice_level').equals(spiceLevel).each((recipe) => {
+        jsonArray.push(recipe.recipe_data);
+      })
+        .then(() => {
+          resolve(jsonArray);
+        });
+    }
+  });
+}
+
+/**
+ * Gets the number of recipes that match a list of given names.
+ * @param {Array} recipeNames A list of recipe name queries.
+ * @returns {Promise} Resolves with the number of recipes matching the given names,
+ *                    rejects if it fails.
+ */
+async function countRecipes(recipeNames) {
+  return new Promise((resolve) => {
+    let numRecipes = 0;
+    let namesProcessed = 0;
+    if (recipeNames.length === 0) {
+      resolve(0);
+      return;
+    }
+    recipeNames.forEach((recipeName) => {
+      db.recipes.where('recipe_name').equals(recipeName).count()
+        .then((count) => {
+          numRecipes += count;
+          namesProcessed += 1;
+          if (namesProcessed === recipeNames.length) {
+            resolve(numRecipes);
+          }
+        });
+    });
+  });
+}
+
+/**
+ * Gets a list of recipes whose title contains a given name.
+ * This method is slow! Avoid calling it unless necessary.
+ * @param {String} queryName The recipe name query.
+ * @returns {Promise} Resolves with an array of recipe JSONs whose name contains the query,
+ *                    rejects if it fails.
+ */
+async function getByName(query) {
+  return new Promise((resolve, reject) => {
+    if (typeof query !== 'string') {
+      reject(new Error('Query was not a string!'));
+    } else {
+      let recipesPushed = 0;
+      const recipeNames = [];
+      let filteredNames;
+      const queryLower = query.toLowerCase();
+      db.recipes.orderBy('recipe_name').eachUniqueKey((name) => {
+        recipeNames.push(name);
+      })
+        .then(() => {
+          filteredNames = recipeNames.filter((name) => name.toLowerCase().includes(queryLower));
+          return countRecipes(filteredNames);
+        })
+        .then((numRecipes) => {
+          const jsonArray = [];
+          if (numRecipes === 0) {
+            resolve(jsonArray);
+            return;
+          }
+          filteredNames.forEach(async (name) => {
+            const collection = db.recipes.where('recipe_name').equals(name);
+            collection.each((recipe) => {
+              jsonArray.push(recipe.recipe_data);
+              recipesPushed += 1;
+            })
+              .then(() => {
+                if (recipesPushed === numRecipes) {
+                  resolve(jsonArray);
+                }
+              });
+          });
+        });
+    }
+  });
+}
+
 database.loadDB = loadDB;
 database.saveDB = saveDB;
 database.addRecipe = addRecipe;
 database.updateRecipe = updateRecipe;
 database.deleteRecipe = deleteRecipe;
+database.getBySpice = getBySpice;
+database.getByName = getByName;
