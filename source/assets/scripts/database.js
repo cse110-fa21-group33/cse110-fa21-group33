@@ -24,7 +24,7 @@ let db = new Dexie('MyDB');
 db.version(1).stores({ recipes: 'recipe_name,spice_level' });
 
 /**
- * Converts a string reprentation of a blob to a blob.
+ * Converts a string representation of a blob to a blob.
  * Lifted from https://gist.github.com/davoclavo/4424731
  * @param {string} dataURI A string representation of a blob
  * @returns {Blob} The converted blob
