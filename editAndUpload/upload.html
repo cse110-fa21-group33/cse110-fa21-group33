@@ -15,9 +15,14 @@
             
             <h2>Upload Photo</h2>
             <p>Please upload a picture of your completed dish!</p>
+            <!--
             <input type="url" id="imageURL"
                 placeholder="e.x. imgur.com/your-dish" pattern="https://.*" size="30">
             <input type="file" id="imageFile" accept="image/png, image/jpeg">
+            -->
+            <img src="placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
+            <input type="file" id="imgUpload" accept="image/*">
+            <p id="url"></p>
 
             <h2>Scoville Heat Units</h2>
             <input type="number" id="scoville" min="0" max="3000000" value="0"/>
