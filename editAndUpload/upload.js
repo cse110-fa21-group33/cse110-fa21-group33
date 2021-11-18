@@ -19,7 +19,7 @@ async function init() {
 
     AddDescriptions();
     RemoveDescriptions();
-
+    GetImgurImage();
     //const form = document.querySelector('form');
     //form.addEventListener('submit', handleSubmit);
 }
@@ -83,4 +83,26 @@ function RemoveDescriptions(){
             div.removeChild(textArea);
         }
     });
+}
+
+function GetImgurImage(){
+
+    const imgUpload = document.getElementById("imgUpload")
+    const imgPreview = document.getElementById("imgPreview")
+    const url = document.getElementById("url")
+    imgUpload.addEventListener("change", ev => {
+        const formdata = new FormData()
+        formdata.append("image", ev.target.files[0])
+        fetch("https://api.imgur.com/3/image/", {
+            method: "post",
+            headers: {
+                Authorization: "Client-ID 0f695d3611373b4"
+            },
+            body: formdata
+        }).then(data => data.json()).then(data => {
+            imgPreview.src = data.data.link
+            url.innerText = data.data.link
+        })
+    })
+
 }
