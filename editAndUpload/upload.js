@@ -12,13 +12,14 @@ document.getElementById("ingredientDescription");
 document.getElementById("ingredientQuantity");
 document.getElementById("ingredientUnits");
 
-document.getElementById("ingredientAddMoreButton");
-document.getElementById("descriptionAddMoreButton");
-
 async function init() {
 
-    AddDescriptions();
-    RemoveDescriptions();
+    AddDescription();
+    RemoveDescription();
+
+    AddIngredient();
+    RemoveIngredient();
+
     GetImgurImage();
     //const form = document.querySelector('form');
     //form.addEventListener('submit', handleSubmit);
@@ -48,9 +49,9 @@ function RecipeInputsGood(event) {
 
 
 // adds another textarea for recipe description/steps when add step button is pressed
-function AddDescriptions(){
+function AddDescription(){
     
-    const button = document.getElementById("AddStepButton");
+    const button = document.getElementById("addStepButton");
     const div = document.getElementById("description");
 
     button.addEventListener('click', () => {
@@ -69,9 +70,9 @@ function AddDescriptions(){
 }
 
 // removes last textarea for recipe description/steps when remove step button is pressed
-function RemoveDescriptions(){
+function RemoveDescription(){
     
-    const button = document.getElementById("RemoveStepButton");
+    const button = document.getElementById("removeStepButton");
     const div = document.getElementById("description");
 
     button.addEventListener('click', () => {
@@ -85,6 +86,72 @@ function RemoveDescriptions(){
     });
 }
 
+// adds another textarea for recipe description/steps when add step button is pressed
+function AddIngredient(){
+    
+    const button = document.getElementById("addIngredientButton");
+    const div = document.getElementById("ingredients");
+    const selectOptions = ["g", "mL", "lb", "oz"];
+
+    button.addEventListener('click', () => {
+        let stepNum = Number(div.getAttribute('value'));
+        if( stepNum < 8 ){
+            stepNum++;
+            div.setAttribute('value', stepNum);
+            const inputName = document.createElement('input');
+            inputName.setAttribute('type', 'text');
+            inputName.setAttribute('minlength', '2');
+            inputName.setAttribute('maxlength', '40');
+            inputName.setAttribute('minlength', '2');
+            inputName.setAttribute('placeholder', 'Ingredient Description');
+            const inputQuantity = document.createElement('input');
+            inputQuantity.setAttribute('type', 'number');
+            inputQuantity.setAttribute('min', '0');
+            inputQuantity.setAttribute('placeholder', 'Quantity');
+            const select = document.createElement('select');
+            for( var i = 0; i < selectOptions.length; i++ ){
+                var option = document.createElement('option');
+                option.setAttribute('value', selectOptions[i]);
+                //option.setAttribute('innerText', selectOptions[i]);
+                option.innerText = selectOptions[i];
+                select.appendChild(option);
+            }
+            const lineBreak = document.createElement('br');
+            
+            div.appendChild(lineBreak);
+            div.appendChild(inputName);
+            div.appendChild(inputQuantity);
+            div.appendChild(select);
+        }
+    });
+
+}
+
+// removes last textarea for recipe description/steps when remove step button is pressed
+function RemoveIngredient(){
+    
+    const button = document.getElementById("removeIngredientButton");
+    const div = document.getElementById("ingredients");
+
+    button.addEventListener('click', () => {
+        let stepNum = Number(div.getAttribute('value'));
+        if( stepNum > 1 ){
+            stepNum--;
+            div.setAttribute('value', stepNum);
+            const lineBreak = div.getElementsByTagName('br')[ div.getElementsByTagName('br').length - 1 ];
+            const inputName = div.getElementsByTagName('input')[ div.getElementsByTagName('input').length - 2 ];
+            const inputQuantity = div.getElementsByTagName('input')[ div.getElementsByTagName('input').length - 1 ];
+            const select = div.getElementsByTagName('select')[ div.getElementsByTagName('select').length - 1 ];
+
+            div.removeChild(lineBreak);
+            div.removeChild(inputName);
+            div.removeChild(inputQuantity);
+            div.removeChild(select);
+        }
+    });
+}
+
+// uses Imgur API to convert image file into a link
 function GetImgurImage(){
 
     const imgUpload = document.getElementById("imgUpload")
