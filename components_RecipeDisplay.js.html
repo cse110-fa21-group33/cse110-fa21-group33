@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/RecipeDisplay.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/RecipeDisplay.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * recipe-display.js
+ *
+ * @author Lynn Dang
+ */
+class RecipeDisplay extends HTMLElement {
+  /**
+   * Constructor builds the layout for the recipe page
+   */
+  constructor() {
+    super();
+    // Create Shadow DOM
+    this.attachShadow({ mode: 'open' });
+
+    const styles = document.createElement('style');
+    const article = document.createElement('article');
+
+    styles.innerHTML = `
+      .main-container {
+        max-width: 700px;
+        margin: auto;
+      }
+      
+      /* generic button */
+      .button-wrapper > button{
+        padding: 5px;
+        font-size: 18px;
+      }
+      
+      #recipe-title{
+        font-size: 50px;
+      }
+      
+      .recipe-about {
+        display: grid;
+        justify-content: up;
+        grid-template-columns: 1fr 0.5fr;
+        padding-bottom: 30px;
+      }
+      
+      .recipe-about .recipe-description {
+        grid-row: 1 / 3
+      }
+      
+      .recipe-spice-info {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      
+      .recipe-spice-info > img {
+        display: inline-block;
+        object-fit: scale-down;
+        width: 78px;
+        padding: 0 5px;
+        border-right: 4px
+      }
+      
+      .recipe-about .button-wrapper {
+        grid-column: 2 / 3;
+        justify-self: end;
+      }
+      
+      #recipe-information {
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 20px;
+      }
+      
+      #recipe-information > span {
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr;
+      }
+      
+      .recipe-info-number {
+        grid-column-start: 4;
+      }
+      
+      .recipe-subtitle {
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+      
+      .recipe-list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+      }
+    `;
+
+    article.innerHTML = `
+      &lt;div class="main-container">
+        &lt;main>
+          &lt;article class="recipe-section">
+            &lt;div class="recipe-header">
+              &lt;h1>&lt;/h1>
+              &lt;div class="recipe-about">
+                &lt;p class="recipe-description">&lt;/p>
+                  &lt;div class="recipe-spice-info">
+                    &lt;img src="">
+                    &lt;p id="recipe-spice-level">&lt;/p>    
+                  &lt;/div>
+                  &lt;div class="button-wrapper">
+                    &lt;button class="recipe-button">Print&lt;/button>
+                  &lt;/div>  
+              &lt;/div>      
+            &lt;/div>
+            &lt;div id="recipe-media">
+              &lt;img src="">
+            &lt;/div>
+            &lt;div id="recipe-information">
+              &lt;span id="recipe-prep-time">
+                &lt;p class="recipe-info-name">Prep Time:&lt;/p>
+                &lt;p class="recipe-info-number">&lt;/p>
+              &lt;/span>
+              &lt;span id="recipe-cook-time">
+                &lt;p class="recipe-info-name">Cook Time:&lt;/p>
+                &lt;p class="info-number">&lt;/p>
+              &lt;/span>
+              &lt;span id="recipe-serving-size">
+                &lt;p class="recipe-info-name">Serving Size:&lt;/p>
+                &lt;p class="recipe-info-number">&lt;/p>
+              &lt;/span>
+            &lt;/div>
+            &lt;div id="recipe-ingredients">
+              &lt;h3 class="recipe-subtitle">Ingredients&lt;/h3>
+              &lt;div class="recipe-list">
+              &lt;/div>
+            &lt;/div>
+            &lt;hr>
+            &lt;div id="recipe-directions">
+              &lt;h3 class="recipe-subtitle">Directions&lt;/h3>
+              &lt;div class="recipe-list">
+              &lt;/div>
+            &lt;/div>
+            &lt;hr>
+            &lt;div class="button-wrapper">
+              &lt;button class="recipe-button">I Made This!&lt;/button>
+            &lt;/div>
+          &lt;/article>
+        &lt;/main>
+      &lt;/div>
+      `;
+
+    this.shadowRoot.append(styles, article);
+  }
+
+  /**
+   * Sets the recipe that will be used insidet the &lt;recipe-display> element.
+   * Overwrites the previous recipe displayed.
+   */
+  set data(data) {
+    this.json = data;
+    // Reset HTML
+    this.shadowRoot.querySelector('article').innerHTML = `
+        &lt;div class="main-container">
+          &lt;main>
+            &lt;article class="recipe-section">
+              &lt;div class="recipe-header">
+                &lt;h1>&lt;/h1>
+                &lt;div class="recipe-about">
+                  &lt;p class="recipe-description">&lt;/p>
+                    &lt;div class="recipe-spice-info">
+                      &lt;img src="">
+                      &lt;p id="recipe-spice-level">&lt;/p>    
+                    &lt;/div>
+                    &lt;div class="button-wrapper">
+                      &lt;button class="recipe-button">Print&lt;/button>
+                    &lt;/div>  
+                &lt;/div>      
+              &lt;/div>
+              &lt;div id="recipe-media">
+                &lt;img src="">
+              &lt;/div>
+              &lt;div id="recipe-information">
+                &lt;span id="recipe-prep-time">
+                  &lt;p class="recipe-info-name">Prep Time:&lt;/p>
+                  &lt;p class="recipe-info-number">&lt;/p>
+                &lt;/span>
+                &lt;span id="recipe-cook-time">
+                  &lt;p class="recipe-info-name">Cook Time:&lt;/p>
+                  &lt;p class="recipe-info-number">&lt;/p>
+                &lt;/span>
+                &lt;span id="recipe-serving-size">
+                  &lt;p class="recipe-info-name">Serving Size:&lt;/p>
+                  &lt;p class="recipe-info-number">&lt;/p>
+                &lt;/span>
+              &lt;/div>
+              &lt;div id="recipe-ingredients">
+                &lt;h3 class="recipe-subtitle">Ingredients&lt;/h3>
+                &lt;div class="recipe-list">
+                &lt;/div>
+              &lt;/div>
+              &lt;hr>
+              &lt;div id="recipe-directions">
+                &lt;h3 class="recipe-subtitle">Directions&lt;/h3>
+                &lt;div class="recipe-list">
+                &lt;/div>
+              &lt;/div>
+              &lt;hr>
+              &lt;div class="button-wrapper">
+                &lt;button class="recipe-button">I Made This!&lt;/button>
+              &lt;/div>
+            &lt;/article>
+          &lt;/main>
+        &lt;/div>
+    `;
+
+    const { title } = data;
+    this.shadowRoot.querySelector('h1').innerHTML = title;
+
+    const { description } = data;
+    this.shadowRoot.querySelector('.recipe-description').innerHTML = description;
+
+    const imgSrc = data.image;
+    const img = this.shadowRoot.querySelector('#recipe-media > img');
+    img.setAttribute('src', imgSrc);
+    img.setAttribute('alt', title);
+
+    const scovilleUnit = data.scoville;
+    this.shadowRoot.querySelector('#recipe-spice-level').innerHTML = scovilleUnit;
+
+    const prepTime = calculateTime(data.time[0]);
+    this.shadowRoot.querySelector('#recipe-prep-time > .recipe-info-number').innerHTML = prepTime;
+
+    const cookTime = calculateTime(data.time[1]);
+    this.shadowRoot.querySelector('#recipe-cook-time > .recipe-info-number').innerHTML = cookTime;
+
+    const { servingSize } = data;
+    this.shadowRoot.querySelector('#recipe-serving-size > .recipe-info-number').innerHTML = servingSize;
+
+    const ingredientsList = data.ingredientList;
+    console.log(ingredientsList);
+    ingredientsList.forEach((ingredient) => {
+      const ingredientString = getIngredient(ingredient);
+      const ingredientContainer = createCheckbox(ingredientString);
+      this.shadowRoot.querySelector('#recipe-ingredients > .recipe-list').appendChild(ingredientContainer);
+    });
+
+    const { directions } = data;
+    directions.forEach((direction) => {
+      const directionContainer = createCheckbox(direction);
+      this.shadowRoot.querySelector('#recipe-directions > .recipe-list').appendChild(directionContainer);
+    });
+  }
+}
+
+/**
+ * Calculates the time string to display
+ * @param {*} time
+ * @returns string to display time
+ */
+function calculateTime(time) {
+  let timeString = '';
+
+  if (time.hours > 0) {
+    timeString += `${time.hours} hours`;
+    if (time.minutes > 0) {
+      timeString += `, ${time.minutes} minutes`;
+    }
+  } else {
+    timeString += `${time.minutes} minutes`;
+  }
+  return timeString;
+}
+
+/**
+ * Parses the ingredient JSON to make it into a readable string to
+ * display the ingredient
+ * @param {*} ingredient
+ * @returns string to display ingredient
+ */
+function getIngredient(ingredient) {
+  const { name } = ingredient;
+  const { quantity } = ingredient;
+  const { units } = ingredient;
+
+  let ingredientString = '';
+
+  if (quantity !== 0) {
+    ingredientString += `${quantity} `;
+  }
+  if (units !== 'N/A') {
+    ingredientString += `${units} `;
+  }
+  ingredientString += name;
+  return ingredientString;
+}
+
+/**
+ * Creates a checkbox given the string
+ * @param {*} checkboxString
+ * @returns the checkbox container
+ */
+function createCheckbox(checkboxString) {
+  const container = document.createElement('label');
+  const checkbox = document.createElement('input');
+  checkbox.setAttribute('type', 'checkbox');
+
+  container.appendChild(checkbox);
+  container.appendChild(document.createTextNode(checkboxString));
+
+  return container;
+}
+
+customElements.define('recipe-display', RecipeDisplay);
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RecipeCard.html">RecipeCard</a></li><li><a href="RecipeDisplay.html">RecipeDisplay</a></li><li><a href="Router_Router.html">Router</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addRecipe">addRecipe</a></li><li><a href="global.html#bindEscKey">bindEscKey</a></li><li><a href="global.html#bindPopstate">bindPopstate</a></li><li><a href="global.html#bindRecipeCard">bindRecipeCard</a></li><li><a href="global.html#calculateTime">calculateTime</a></li><li><a href="global.html#countRecipes">countRecipes</a></li><li><a href="global.html#createCheckbox">createCheckbox</a></li><li><a href="global.html#createRecipeCards">createRecipeCards</a></li><li><a href="global.html#dataURItoBlob">dataURItoBlob</a></li><li><a href="global.html#deleteRecipe">deleteRecipe</a></li><li><a href="global.html#fetchRecipes">fetchRecipes</a></li><li><a href="global.html#getByName">getByName</a></li><li><a href="global.html#getBySpice">getBySpice</a></li><li><a href="global.html#getIngredient">getIngredient</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadDB">loadDB</a></li><li><a href="global.html#saveDB">saveDB</a></li><li><a href="global.html#updateRecipe">updateRecipe</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Nov 18 2021 21:04:05 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
