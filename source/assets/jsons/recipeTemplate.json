@@ -28,22 +28,25 @@
     {
       "name": "Chili Peppers",
       "quantity": 2,
-      "units": "N/A"
+      "units": "N/A",
+      "done": true
     },
     {
       "name": "Ghost Pepper",
       "quantity": 1,
-      "units": "N/A"
+      "units": "N/A",
+      "done": false
     },
     {
       "name": "Milk",
       "quantity": 1,
-      "units": "cup"
+      "units": "cup",
+      "done": false
     }
   ],
   "directions": [
-    "Chop up Ghost peppers",
-    "Take a bite of the Chili pepper and the Ghost peppers",
-    "Cry and drink milk"
+    "1Chop up Ghost peppers",
+    "0Take a bite of the Chili pepper and the Ghost peppers",
+    "0Cry and drink milk"
   ]
 }
