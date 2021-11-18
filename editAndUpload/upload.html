@@ -21,6 +21,7 @@
             <input type="file" id="imageFile" accept="image/png, image/jpeg">
             -->
             <img src="placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
+            <br>
             <input type="file" id="imgUpload" accept="image/*">
             <p id="url"></p>
 
@@ -41,22 +42,23 @@
             <div id="ingredients" value="1">
             <h2>Ingredients</h2>
                 <input type="text" id="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
-                <input type="number" id="ingredientQuantity" min="0" placeholder="count" required>
+                <input type="number" id="ingredientQuantity" min="0" placeholder="Quantity" required>
                 <select id="ingredientUnits">
-                    <option value="g">Grams</option>
-                    <option value="mL">MilliLiters</option>
-                    <option value="lbs">Pounds</option>
-                    <option value="oz">Ounces</option>
+                    <option>g</option>
+                    <option>mL</option>
+                    <option>lb</option>
+                    <option>oz</option>
                 </select>
-                <input type="button" id="ingredientAddMoreButton" value="Add more">
             </div>
+            <input type="button" id="addIngredientButton" value="Add Ingredient">
+            <input type="button" id="removeIngredientButton" value="Remove Ingredient">
 
             <div id="description" value="1">
                 <h2>Description</h2>
                 <textarea cols='60' rows='2' placeholder="Step 1"></textarea>
             </div>
-            <input id="AddStepButton" type="button" value="Add Step">
-            <input id="RemoveStepButton" type="button" value="Remove Step">
+            <input id="addStepButton" type="button" value="Add Step">
+            <input id="removeStepButton" type="button" value="Remove Step">
 
             <div id="formButtons">
                 <input id="submitButton" class="Submit" type="button" value="Submit">
