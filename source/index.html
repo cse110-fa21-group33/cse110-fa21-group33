@@ -3,21 +3,26 @@
 
 <!--This is just the normal head of HTML file-->
 <head>
-  <title>Main Page</title>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Main Page</title>
   <link rel="icon" type="image/png" href="favicon_io/favicon-16x16.png">
-  <script src='assets/scripts/main.js' type='module'></script>
+
   <!--Importing fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
 
+  <!-- Web Components -->
+  <script src="assets/components/recipeCard.js" type="module"></script>
+  <script src="assets/components/RecipeDisplay.js" type="module"></script>
+
+  <!-- Router -->
+  <script src="assets/scripts/Router.js" type="module"></script>
+
+  <!-- Main Stylesheets & Scripts -->
   <link rel="stylesheet" href="assets/styles/style.css">
   <link rel="stylesheet" href="assets/styles/variables.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <script src='assets/scripts/main.js' type='module'></script>
 </head>
 
 
@@ -63,7 +68,8 @@
           </div>
         </div>
       </section>      -
-      <section class="section--recipe-expand">
+      <section class="section--recipe-display">
+        <recipe-display></recipe-display>
       </section>
     </div>    
   </main>
