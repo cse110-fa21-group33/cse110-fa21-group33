@@ -1,0 +1,131 @@
+{
+    "title": "Jjamppong (Spicy Seafood Noodle Soup)",
+    "description": "Jjamppong is a popular Korean-Chinese noodle soup, loaded with pork, seafood, and vegetables. The combination of all the natural ingredients creates a hearty bowl of soup that is packed with robust flavors. The spiciness will surely clear your sinuses!.",
+    "image": "https://www.koreanbapsang.com/wp-content/uploads/2011/04/DSC_0066-e1539057703301.jpg",
+    "video": "",
+    "servingSize": 2,
+    "scoville": 1000000,
+    "spiceRating": 5,
+    "calories": 200,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 20
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 10
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 30      
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "onion thinly sliced",
+        "quantity": 0.25,
+        "units": "N/A"
+      },
+      {
+        "name": " small carrot about 2 ounces, thinly sliced into 2-inch lengths",
+        "quantity": 0.5,
+        "units": "N/A"
+      },
+      {
+        "name": "zucchini about 3 ounces, thinly sliced into 2-inch lengths",
+        "quantity": 0.5,
+        "units": "N/A"
+      },
+      {
+        "name": "green cabbage cut into 2-inch lengths (or napa cabbage or bok choy)",
+        "quantity": 3,
+        "units": "oz"
+      },
+      {
+        "name": "fresh shiitake mushrooms",
+        "quantity": 2,
+        "units": "N/A"
+      },
+      {
+        "name": "scallions cut into 2 inch lengths",
+        "quantity": 2,
+        "units": "N/A"
+      },
+      {
+        "name": "ounces fatty pork thinly sliced",
+        "quantity": 3,
+        "units": "oz"
+      },
+      {
+        "name": "littleneck clams",
+        "quantity": 4,
+        "units": "N/A"
+      },
+      {
+        "name": "mussels",
+        "quantity": 4,
+        "units": "N/A"
+      },
+      {
+        "name": "shrimps",
+        "quantity": 4,
+        "units": "N/A"
+      },
+      {
+        "name": "squid cut into bite sizes (Do not cut squids too small as they shrink a lot when cooked.)",
+        "quantity": 3,
+        "units": "oz"
+      },
+      {
+        "name": "julienned or minced ginger",
+        "quantity": 1,
+        "units": "tsp"
+      },
+      {
+        "name": "minced garlic",
+        "quantity": 1,
+        "units": "tbs"
+      },
+      {
+        "name": "gochugaru (Korean chili pepper flakes) Adjust to taste (1 T for milder soup)",
+        "quantity": 2,
+        "units": "tbs"
+      },
+      {
+        "name": "oil vegetable or canola",
+        "quantity": 1,
+        "units": "tbs"
+      },
+      {
+        "name": "soy sauce",
+        "quantity": 1,
+        "units": "tbs"
+      },
+      {
+        "name": "chicken stock or anchovy broth or water",
+        "quantity": 5,
+        "units": "cup"
+      },
+      {
+        "name": "fresh jajangmyeon/udon noodles",
+        "quantity": 12,
+        "units": "oz"
+      }
+    ],
+    "directions": [
+      "Have a pot of water ready to cook the noodles. (Turn the heat on when you start cooking the soup ingredients. This way you can time it so that the noodles are cooked at the same time the soup is ready.) While making the soup, cook the noodles according to the package instructions and drain.",
+      "Prepare the vegetables.",
+      "Prepare the pork and seafood.",
+      "Heat a wok or a large pot over high heat. Add the oil, ginger, scallion, gochugaru and soy sauce and stir-fry for a minute.",
+      "Add the pork and stir-fry until the pork is almost cooked, about 2 minutes.",
+      "Stir in the onion, carrot, cabbage, zucchini and optional mushrooms. Lightly salt, and cook until the vegetables are slightly softened, about 2 minutes, stirring occasionally.",
+      "Pour in the chicken stock (or anchovy broth/watAdd the seafood starting with the clams, which require more time to cook, followed by the mussels, shrimps and squid. Bring everything to a boil again and cook until the shells have opened. Salt and pepper to taste.er) and boil until the vegetables are completely cooked.",
+      "Cook the noodles, rinse in cold water, and drain.",
+      "Place a serving of the noodles in a large soup bowl and ladle the soup on top. Serve immediately while piping hot."
+    ]
+  }
+  
