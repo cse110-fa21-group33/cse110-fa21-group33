@@ -1,0 +1,163 @@
+/** Main css */
+* {
+  font-family: 'Merriweather', serif;
+}
+
+h1 {
+  font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+section:not(section.shown) {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.iconimage {
+    float:left;
+}
+
+.Searchbar {
+    position: absolute;
+    top: 10px;
+    margin-left:200px;
+    margin-top: 10px;
+    
+}
+.Searchbar input {
+    height: 50px;
+    width: 400px;
+}
+
+/* TODO DELETE */
+.recommend {
+    float:left; 
+    margin-left:20px; 
+    margin-bottom:20px;
+}
+
+/* TODO DELETE */
+.favorite {
+    margin-left: 100px;
+    margin-bottom: 30px;
+}
+  
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+ 
+  width: 50%; /* Full-width */
+  height: 10px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.9; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity 5s;
+}
+  
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+  
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: red; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+  
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04aa6d; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.nav--header {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  margin-bottom: 10px;
+  /*background-color: var(--ec-white);*/
+  background: #04aa6d; /* Green background */
+}
+
+.logo--wrapper > img {
+  float: left;
+  width: 5%;
+}
+
+.user-icon--wrapper {
+  float: right;
+  width: 6%;
+  height: 100%; 
+}
+
+.user-icon--wrapper > img {
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  margin-top: 10px; 
+  border-radius: 50%;
+}
+
+/** Main Page section partitioning **/
+.section--main-page {
+  display:grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 30px auto;
+  grid-template-areas: 
+    "sidebarl slider sidebarr"
+    "sidebarl main sidebarr";
+  column-gap: 30px;
+  row-gap: 10px;
+  height: 90vh;
+}
+
+.section--main-page > .main--div{
+  background: var(--ec-orange); /* Green background */
+}
+
+#challenge-cards--wrapper {
+  grid-area: sidebarl;
+}
+
+#spice-slider--wrapper {
+  grid-area: slider;
+}
+
+#div--recommended-recipes {
+  grid-area: main;
+  padding: 10px 30px 30px;
+}
+
+#fav-cards--wrapper {
+  grid-area: sidebarr;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.card-body {
+  font-family: 'Merriweather', sans-serif;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 15rem));
+  justify-content: space-evenly;
+  gap: 2rem;
+  background-color: #ee6858;
+}
+
+

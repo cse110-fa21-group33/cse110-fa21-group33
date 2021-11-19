@@ -1,0 +1,54 @@
+{
+    "title": "Recipe Title",
+    "id": "ID",
+    "description": "Short description of the recipe.",
+    "image": "imgur.com/recipe-link",
+    "servingSize": 1,
+    "scoville": 9999,
+    "spiceRating": 3,
+    "calories": 100,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 0
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 0 
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 0      
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "Ingredient 1",
+        "quantity": 1,
+        "units": "N/A"
+      },
+      {
+        "name": "Ingredient 2",
+        "quantity": 1,
+        "units": "N/A"
+      },
+      {
+        "name": "Ingredient 3",
+        "quantity": 1,
+        "units": "N/A"
+      }
+    ],
+    "directions": [
+        "Step 1",
+        "Step 2",
+        "Step 3"
+    ],
+    "challenges": [
+        "total-challenges",
+        "spicy-level-3"
+    ],
+    "completed": false
+  }

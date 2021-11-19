@@ -12,6 +12,7 @@ module.exports = {
   },
   rules: {
     'linebreak-style': 0,
+    'no-use-before-define': 0,
     'require-jsdoc': ['error', {
       require: {
         FunctionDeclaration: true,
