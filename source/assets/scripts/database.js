@@ -1,4 +1,5 @@
 // database.js
+import ShortUniqueId from 'https://esm.sh/short-unique-id';
 import Dexie from '../../../node_modules/dexie/dist/dexie.mjs';
 import { importDB, exportDB } from '../../../node_modules/dexie-export-import/dist/dexie-export-import.mjs';
 
@@ -19,9 +20,10 @@ const recipesFromFile = [
 ];
 
 let loaded = false;
+const uid = new ShortUniqueId();
 
 let db = new Dexie('MyDB');
-db.version(1).stores({ recipes: 'recipe_name,spice_level' });
+db.version(1).stores({ recipes: 'recipe_id,recipe_name,spice_level' });
 
 /**
  * Converts a string representation of a blob to a blob.
@@ -99,6 +101,7 @@ async function loadDB() {
             .then((data) => {
               numImported += 1;
               db.recipes.put({
+                recipe_id: data.id,
                 recipe_name: data.title,
                 spice_level: data.spiceRating,
                 recipe_data: data,
@@ -138,26 +141,20 @@ async function addRecipe(recipeJSON) {
     if (!loaded) {
       reject(new Error('Database not loaded yet! Call loadDB().'));
     } else {
-      const name = recipeJSON.title;
-      db.recipes.get(name)
-        .then((recipe) => {
-          // If a recipe of the same name already exists, reject
-          if (recipe !== undefined) {
-            reject(new Error('A recipe of the same name already exists!'));
-          } else {
-            db.recipes.put({
-              recipe_name: recipeJSON.title,
-              spice_level: recipeJSON.spiceRating,
-              recipe_data: recipeJSON,
-            })
-              .then(() => {
-                // After adding recipe to database, save database
-                saveDB()
-                  .then(() => {
-                    resolve(true);
-                  });
-              });
-          }
+      const id = uid();
+      recipeJSON.id = id;
+      db.recipes.put({
+        recipe_id: id,
+        recipe_name: recipeJSON.title,
+        spice_level: recipeJSON.spiceRating,
+        recipe_data: recipeJSON,
+      })
+        .then(() => {
+        // After adding recipe to database, save database
+          saveDB()
+            .then(() => {
+              resolve(true);
+            });
         });
     }
   });
@@ -179,6 +176,7 @@ async function updateRecipe(recipeJSON) {
       reject(new Error('Database not loaded yet! Call loadDB().'));
     } else {
       db.recipes.put({
+        recipe_id: recipeJSON.id,
         recipe_name: recipeJSON.title,
         spice_level: recipeJSON.spiceRating,
         recipe_data: recipeJSON,
@@ -205,12 +203,13 @@ async function deleteRecipe(recipeJSON) {
     if (!loaded) {
       reject(new Error('Database not loaded yet! Call loadDB().'));
     } else {
-      const name = recipeJSON.title;
-      db.recipes.get(name).then((recipe) => {
+      // eslint-disable-next-line prefer-destructuring
+      const id = recipeJSON.id;
+      db.recipes.get(id).then((recipe) => {
         if (recipe === undefined) {
           reject(new Error('Recipe does not exist in database!'));
         }
-        db.recipes.delete(name)
+        db.recipes.delete(id)
           .then(() => {
           // After deleting recipe, save database
             saveDB()
