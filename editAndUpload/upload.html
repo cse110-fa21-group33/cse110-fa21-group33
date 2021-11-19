@@ -13,6 +13,9 @@
             <h2>Recipe Name</h2>
             <input type="text" id="recipeName" required minlength="2" maxlength="40" size="30">
             
+            <h2>Description</h2>
+            <textarea id="description" rows="7" cols="50"></textarea>
+
             <h2>Upload Photo</h2>
             <p>Please upload a picture of your completed dish!</p>
             <!--
@@ -25,8 +28,11 @@
             <input type="file" id="imgUpload" accept="image/*">
             <p id="url"></p>
 
+            <h2>Serving Size</h2>
+            <input type="number" id="servingSize" min="0" max="59" size = "50" value="0" required>
+
             <h2>Scoville Heat Units</h2>
-            <input type="number" id="scoville" min="0" max="3000000" value="0"/>
+            <input type="number" id="scoville" min="0" max="3000000" value="0" required>
 
             <h2>Prep Time</h2>
             <input type="number" id="prepHrs" min="0" max="20"  placeholder="Hours" required>
@@ -36,18 +42,21 @@
             <input type="number" id="cookHrs" min="0" max="20"  placeholder="Hours" required>
             <input type="number" id="cookMins" min="0" max="59" placeholder="Minutes" required>
 
-            <h2>Serving Size</h2>
-            <input type="number" id="servingSize" min="0" max="59" size = "50" required>
-
             <div id="ingredients" value="1">
             <h2>Ingredients</h2>
                 <input type="text" id="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
                 <input type="number" id="ingredientQuantity" min="0" placeholder="Quantity" required>
                 <select id="ingredientUnits">
-                    <option>g</option>
-                    <option>mL</option>
-                    <option>lb</option>
+                    <option>N/A</option>
+                    <option>tsp</option>
+                    <option>tbsp</option>
                     <option>oz</option>
+                    <option>c</option>
+                    <option>pt</option>
+                    <option>qt</option>
+                    <option>gal</option>
+                    <option>ml</option>
+                    <option>l</option>
                 </select>
             </div>
             <input type="button" id="addIngredientButton" value="Add Ingredient">
