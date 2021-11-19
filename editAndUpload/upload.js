@@ -8,6 +8,7 @@ function SubmitRecipe(event) {
 
     button.addEventListener('click', () => {
         let recipeName = document.getElementById('recipeName').value;
+        let description = document.getElementById('description').value;
         let url = document.getElementById('url').innerText;
         let scoville = Number(document.getElementById('scoville').value);
         let prepMins = Number(document.getElementById('prepMins').value);
@@ -24,9 +25,12 @@ function SubmitRecipe(event) {
         //document.getElementById('ingredientQuantity');
         //document.getElementById('ingredientUnits'); 
 
+        const div = document.getElementById('ingredients');
+
         // TODO: update json file to match html page
         var jsonText = {
             "title": recipeName,
+            "description": description,
             "image": url,
             "servingSize": servingSize,
             "scoville": scoville,
