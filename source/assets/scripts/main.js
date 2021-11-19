@@ -2,16 +2,7 @@
 // Taken from Lab 7
 
 import { Router } from './Router.js';
-
-const recipes = [
-  'assets/jsons/Ghost-Pepper-Wings.json',
-  'assets/jsons/Jalapeno-Garlic-Onion-CheeseBurger.json',
-  'assets/jsons/Sichuan-Style-Bird-Eye-Chili-Sauce.json',
-  'assets/jsons/Southwest-Stuffed-Poblano-Pepper.json',
-  'assets/jsons/Spicy-Shrimp-Pad-Thai.json',
-];
-
-const recipeData = {};
+import { database } from './database.js';
 
 const router = new Router(() => {
   document.querySelector('.section--main-page').classList.add('shown');
@@ -25,14 +16,15 @@ window.addEventListener('DOMContentLoaded', init);
  * Initialize event listeners
  */
 async function init() {
+  let recipeList;
   try {
-    // await loadDB();
+    await database.loadDB();
 
-    // TODO CHANGE FETCH RECIPES TO THE SLIDER 3 RECIPES
-    await fetchRecipes();
+    recipeList = await database.getBySpice(3);
   } catch (err) {
     console.log(`Error fetching recipes: ${err}`);
   }
+<<<<<<< HEAD
   addCreateRecipe();
   createRecipeCards();
   bindEscKey();
@@ -63,37 +55,48 @@ async function fetchRecipes() {
         });
     });
   });
+=======
+
+  createRecipeCards(recipeList);
+  bindEscKey();
+  bindPopstate();
+  bindSlider();
+>>>>>>> 1601d73 (Added functionality to the slider)
 }
 
 /**
  * Populates with recommended page with recipe cards
  */
-function createRecipeCards() {
-  for (let i = 0; i < recipes.length; i += 1) {
+function createRecipeCards(recipes) {
+  recipes.forEach((recipe) => {
     // Makes a new recipe card
     const recipeCard = document.createElement('recipe-card');
     // Inputs the data for the card. This is just the first recipe in the recipes array,
     // being used as the key for the recipeData object
-    recipeCard.data = recipeData[recipes[i]];
+    recipeCard.data = recipe;
 
     // This gets the page name of each of the arrays - which is basically
     // just the filename minus the .json. Since this is the first element
     // in our recipes array, the ghostCookies URL, we will receive the .json
     // for that ghostCookies URL since it's a key in the recipeData object, and
     // then we'll grab the 'page-name' from it - in this case it will be 'ghostCookies'
-    let page = recipeData[recipes[i]].title;
+    let page = recipe.title;
     while (page.includes(' ')) {
       page = page.replace(' ', '-');
     }
     router.addPage(page, () => {
       document.querySelector('.section--main-page').classList.remove('shown');
       document.querySelector('.section--recipe-display').classList.add('shown');
+<<<<<<< HEAD
       document.querySelector('.section--recipe-upload').classList.remove('shown');
       document.querySelector('recipe-display').data = recipeData[recipes[i]];
+=======
+      document.querySelector('recipe-display').data = recipe;
+>>>>>>> 1601d73 (Added functionality to the slider)
     });
     bindRecipeCard(recipeCard, page);
     document.querySelector('.card-body').appendChild(recipeCard);
-  }
+  });
 }
 
 /**
@@ -113,6 +116,7 @@ function bindRecipeCard(recipeCard, pageName) {
 /**
  * Binds the 'keydown' event listener to the Escape key (esc) such that when
  * it is clicked, the home page is returned to
+ * TEMPORARY, TODO CHANGE THIS TO WHEN YOU CLICK THE LOGO IT LEADS TO HOME
  */
 function bindEscKey() {
   document.addEventListener('keydown', (event) => {
@@ -139,6 +143,7 @@ function bindPopstate() {
   });
 }
 
+<<<<<<< HEAD
 function bindCreateRecipe() {
   const button = document.getElementById('create-button');
   button.addEventListener('click', (event) => {
@@ -154,3 +159,34 @@ function addCreateRecipe() {
     document.querySelector('recipe-upload').data = null;
   });
 }
+=======
+/**
+ * Binds the slider so that the recommended recipes will display cards
+ * according to the spice level. This will also include any additional
+ * UI changes to indicate the spice level.
+ */
+async function bindSlider() {
+  const spiceSlider = document
+    .querySelector('#spice-slider--wrapper')
+    .querySelector('.slider');
+  spiceSlider.addEventListener('change', async (event) => {
+    const cardBody = document.querySelector('.card-body');
+    const cards = cardBody.getElementsByTagName('recipe-card');
+    while (cards.length > 0) {
+      cards[0].remove();
+    }
+
+    let recipeList;
+    try {
+      const spiceLevel = parseInt(event.target.value, 10);
+      recipeList = await database.getBySpice(spiceLevel);
+
+      if (recipeList.length > 0) {
+        createRecipeCards(recipeList);
+      }
+    } catch (err) {
+      console.log(`Error fetching recipes: ${err}`);
+    }
+  });
+}
+>>>>>>> 1601d73 (Added functionality to the slider)
