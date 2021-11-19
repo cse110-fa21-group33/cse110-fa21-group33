@@ -1,0 +1,73 @@
+h1 {
+    font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.text_center {
+    text-align: center;
+}
+
+#div--challenge-recipes {
+    grid-area: main;
+    padding: 10px 30px 30px;
+}
+
+.section--challenge-page {
+    display:grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 10px auto;
+    grid-template-areas: 
+      "sidebarl slider sidebarr"
+      "sidebarl main sidebarr";
+    column-gap: 30px;
+    row-gap: 10px;
+    height: 100vh;
+}
+
+.section--challenge-page > .challenge--div{
+    background: var(--ec-orange); /* Green background */
+}
+
+.card-body {
+    font-family: 'Merriweather', sans-serif;
+    margin: 60px 5px 50px 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 14rem));
+    justify-content: space-evenly;
+    gap: 2rem;
+    background-color: #ee6858;
+}
+
+.progress_bg {
+    color:#000!important;
+    background-color:#f1f1f1!important
+}
+
+.round{
+    border-radius:16px
+}
+
+.progress_color{
+    color:#fff!important;
+    background-color:#9e1616!important
+}
+
+.container{
+    padding:0.01em 16px
+}
+
+.progress_width {
+    margin: 5%;
+}
+
+.progress_inner {
+    height: 33px;
+    line-height: 33px;
+}
+
+.icon {
+    text-align: center;
+}
+
+section:not(section.shown) {
+    display: none;
+}

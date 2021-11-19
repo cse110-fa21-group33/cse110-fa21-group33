@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--This is just the normal head of HTML file-->
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Challenge Page</title>
+  <link rel="icon" type="image/png" href="favicon_io/favicon-16x16.png">
+
+  <!--Importing fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+
+  <!-- Web Components -->
+  <script src="assets/components/recipeCard.js" type="module"></script>
+  <script src="assets/components/RecipeDisplay.js" type="module"></script>
+
+  <!-- Router -->
+  <script src="assets/scripts/Router.js" type="module"></script>
+
+  <!-- Main Stylesheets & Scripts -->
+  <link rel="stylesheet" href="assets/styles/challenge-style.css">
+  <link rel="stylesheet" href="assets/styles/variables.css">
+  <script src='assets/scripts/challenge.js' type='module'></script>
+</head>
+
+
+<body>
+  <main>
+    <div>
+      <section class="section--challenge-page shown">
+      <!--This division is for the challenge part-->
+        <div id="div--challenge-recipes" class="challenge--div">
+          <h1 class="text_center">Spicy chicken challenge</h1>
+          <div class="icon">
+            <img src='assets/images/v2.png' width ='70' height='70' class='icon'>
+          </div>
+          <h2 class="text_center">Description: try to finish these six spicy chicken recipes below.</h2>
+          <div class='card-body'></div>
+          <h3 class='text_center'>progress now:</h3>
+          <div class="progress_bg round progress_width">
+            <div class="container progress_color round progress_inner" style="width:25%">25%</div>
+          </div>
+      </section> 
+      <section class="section--recipe-display">
+        <recipe-display></recipe-display>
+      </section>
+    </div>    
+  </main>
+</body>
+    
