@@ -1,8 +1,8 @@
 {
     "title": "Spicy Shrimp Pad Thai",
+    "id": "Ey9arg",
     "description": "I used other pad thai recipes from this website and added shrimp and my own little flavor and spice.",
     "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F9126258.jpg",
-    "video": "",
     "servingSize": 4,
     "scoville": 70000,
     "spiceRating": 3,
@@ -142,6 +142,8 @@
       "Combine rice wine vinegar, ketchup, fish sauce, chile sauce, peanut butter, soy sauce, lime juice, sugar, red pepper flakes, and cayenne pepper together in a bowl. Set aside.",
       "Add shrimp to the wok. Cook and stir until pink, about 4 minutes. Add the ketchup mixture and stir. Move all ingredients to one side to clear a small space in the pan. Pour in eggs and cook without stirring until partially set, about 3 minutes.",
       "Stir the drained noodles into the shrimp and egg mixture. Add 1/2 cup peanuts, 1/4 cup bean sprouts, and carrots. Cook and stir until noodles are heated through, about 2 minutes. Garnish with the remaining peanuts, bean sprouts, lime wedges, green onions, and cilantro."
-    ]
+    ],
+    "challenges": [],
+    "completed": false
   }
   
