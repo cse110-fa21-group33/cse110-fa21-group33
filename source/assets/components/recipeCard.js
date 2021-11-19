@@ -1,4 +1,5 @@
 // recipeCard.js
+// Taken from Lab 7
 
 /**
  * Creates recipe card and appends it to the main page.
