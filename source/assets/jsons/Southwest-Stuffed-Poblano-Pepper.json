@@ -1,8 +1,8 @@
 {
     "title": "Southwest Stuffed Poblano Peppers",
+    "id": "fFKQuZ",
     "description": "Easy, baked Southwest Stuffed Poblano Peppers with ground beef and rice are packed with bold, savory flavors and topped with cheese to make the BEST healthy stuffed peppers recipe you’ll ever taste!",
     "image": "https://www.lecremedelacrumb.com/wp-content/uploads/2018/09/stuffed-poblano-peppers-105.jpg",
-    "video": "",
     "servingSize": 8,
     "scoville": 3000,
     "spiceRating": 1,
@@ -85,6 +85,8 @@
       "Preheat oven to 350 degrees and lightly grease a large baking sheet. Arrange halved poblano peppers in a single layer on the baking sheet so that they aren't overlapping. Bake for 10-15 minutes while you move on to the next step.",
       "Add ground beef (or preferred meat choice, see Note 2) and rice to a large skillet, and season with the cumin, chili powder, and garlic powder. Saute over medium heat for 5-8 minutes until meat is browned and cooked through.",
       "Stir in the black beans, corn, diced tomatoes, and green chiles. Cook another 1-2 minutes. Spoon mixture into the peppers, sprinkle with cheese, and return to oven for another 10 minutes or so until peppers are tender and cheese is melted. Allow to cool slightly before serving."
-    ]
+    ],
+    "challenges": [],
+    "completed": false
   }
   
