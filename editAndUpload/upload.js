@@ -25,11 +25,13 @@ function SubmitRecipe(event) {
         //document.getElementById('ingredientQuantity');
         //document.getElementById('ingredientUnits'); 
 
+        // Create ingredients array
         const div = document.getElementById('ingredients');
 
         // TODO: update json file to match html page
         var jsonText = {
             "title": recipeName,
+            "id": "ID",
             "description": description,
             "image": url,
             "servingSize": servingSize,
@@ -99,16 +101,15 @@ function RecipeInputsGood(event) {
 }
 
 
-// adds another textarea for recipe description/steps when add step button is pressed
-function AddDescription(){
-    const STEP_LIMIT = 8;   // TODO: Can be reassigned when page is complete
+// adds another textarea for recipe instruction/steps when add step button is pressed
+function AddInstruction(){
     const button = document.getElementById('addStepButton');
-    const div = document.getElementById('description');
+    const div = document.getElementById('instruction');
 
     button.addEventListener('click', () => {
         let stepNum = Number(div.getAttribute('value'));
-        // 
-        if( stepNum < STEP_LIMIT ){
+        
+        if( stepNum < 8 ){
             stepNum++;
             div.setAttribute('value', stepNum);
             const textArea = document.createElement('textarea');
@@ -118,14 +119,13 @@ function AddDescription(){
             div.appendChild(textArea);
         }
     });
-
 }
 
-// removes last textarea for recipe description/steps when remove step button is pressed
-function RemoveDescription(){
+// removes last textarea for recipe instruction/steps when remove step button is pressed
+function RemoveInstruction(){
     
     const button = document.getElementById('removeStepButton');
-    const div = document.getElementById('description');
+    const div = document.getElementById('instruction');
 
     button.addEventListener('click', () => {
         let stepNum = Number(div.getAttribute('value'));
@@ -138,12 +138,12 @@ function RemoveDescription(){
     });
 }
 
-// adds another textarea for recipe description/steps when add step button is pressed
+// adds another textarea for recipe instruction/steps when add step button is pressed
 function AddIngredient(){
     
     const button = document.getElementById('addIngredientButton');
     const div = document.getElementById('ingredients');
-    const selectOptions = ['g', 'mL', 'lb', 'oz'];
+    const selectOptions = ['N/A', 'tsp', 'oz', 'c', 'pt', 'qt', 'gal', 'ml', 'l'];
 
     button.addEventListener('click', () => {
         let stepNum = Number(div.getAttribute('value'));
@@ -179,7 +179,7 @@ function AddIngredient(){
 
 }
 
-// removes last textarea for recipe description/steps when remove step button is pressed
+// removes last textarea for recipe instruction/steps when remove step button is pressed
 function RemoveIngredient(){
     
     const button = document.getElementById('removeIngredientButton');
@@ -227,8 +227,8 @@ function GetImgurImage(){
 }
 
 async function init() {
-    AddDescription();
-    RemoveDescription();
+    AddInstruction();
+    RemoveInstruction();
 
     AddIngredient();
     RemoveIngredient();
