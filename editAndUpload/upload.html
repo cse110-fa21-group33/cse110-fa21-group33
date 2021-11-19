@@ -8,13 +8,13 @@
             <link rel="stylesheet" href="recipe-styesheet.css">
         </header>
         <div class="main-container">
-            <h1 id="recipe-title">Edit Recipe</h1>
+            <h1 id="recipe-title">Upload Recipe</h1>
 
             <h2>Recipe Name</h2>
             <input type="text" id="recipeName" required minlength="2" maxlength="40" size="30">
             
             <h2>Description</h2>
-            <textarea id="description" rows="7" cols="50"></textarea>
+            <textarea id="recipeDescription" rows="7" cols="50"></textarea>
 
             <h2>Upload Photo</h2>
             <p>Please upload a picture of your completed dish!</p>
@@ -62,8 +62,8 @@
             <input type="button" id="addIngredientButton" value="Add Ingredient">
             <input type="button" id="removeIngredientButton" value="Remove Ingredient">
 
-            <div id="description" value="1">
-                <h2>Description</h2>
+            <div id="instructions" value="1">
+                <h2>Instructions</h2>
                 <textarea cols='60' rows='2' placeholder="Step 1"></textarea>
             </div>
             <input id="addStepButton" type="button" value="Add Step">
