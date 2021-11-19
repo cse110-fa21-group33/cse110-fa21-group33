@@ -48,7 +48,7 @@ Minghui - Worked on the main page along with Yuang. Worked on the CSS for it as 
 Tanyunfeng - Worked with Everett on the ESLint and the recipe page. Need to work on how to pack the data into a JSON to send to the database. Need to incorporate a header and footer. 
 
 - Current edit page (Everett & Tanyunfeng)
-- 
+
 ![Edit Page](./media/111621-sprint-1-review3.png)
 
 Yuang - Worked on the main page, fixing things mostly on HTML and CSS. Had some troubles trying to implement the spice slider. Difficult to implement challenge front end until we've ironed out how we're going to implement challenge back end. 

@@ -25,6 +25,9 @@ window.addEventListener('DOMContentLoaded', init);
  */
 async function init() {
   try {
+    // await loadDB();
+
+    // TODO CHANGE FETCH RECIPES TO THE SLIDER 3 RECIPES
     await fetchRecipes();
   } catch (err) {
     console.log(`Error fetching recipes: ${err}`);

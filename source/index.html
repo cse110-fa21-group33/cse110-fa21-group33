@@ -19,6 +19,9 @@
   <!-- Router -->
   <script src="assets/scripts/Router.js" type="module"></script>
 
+  <!-- Database -->
+  <script src="assets/scripts/database.js" type="module"></script>
+
   <!-- Main Stylesheets & Scripts -->
   <link rel="stylesheet" href="assets/styles/style.css">
   <link rel="stylesheet" href="assets/styles/variables.css">
@@ -56,7 +59,7 @@
           <img src='assets/images/v2.png' width ='70' height='70' align ='right'>
         </div>
         <div id="spice-slider--wrapper">
-          <input type ="range" min="1" max="100" value="50" class="slider" id="myRange">
+          <input type ="range" min="1" max="5" value="3" class="slider" id="myRange">
         </div>
         <div id="div--recommended-recipes" class="main--div">
           <h1>Recommended Recipes For You</h1>
@@ -73,6 +76,9 @@
       </section>      -
       <section class="section--recipe-display">
         <recipe-display></recipe-display>
+      </section>
+      <section class="section--recipe-edit">
+        <recipe-edit></recipe-edit>
       </section>
     </div>    
   </main>
