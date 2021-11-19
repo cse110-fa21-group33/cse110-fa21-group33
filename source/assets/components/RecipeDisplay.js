@@ -2,6 +2,7 @@
  * recipe-display.js
  *
  * @author Lynn Dang
+ * Taken from Lab 7
  */
 class RecipeDisplay extends HTMLElement {
   /**

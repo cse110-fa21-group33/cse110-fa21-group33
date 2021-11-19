@@ -1,8 +1,5 @@
-/**
- * Router.js
- * Taken from Lab 7
- * @author Lynn Dang
- */
+// Router.js
+// Taken from Lab 7
 
 // eslint-disable-next-line import/prefer-default-export
 export class Router {
