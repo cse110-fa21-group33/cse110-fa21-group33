@@ -8,7 +8,7 @@ function SubmitRecipe(event) {
 
     button.addEventListener('click', () => {
         let recipeName = document.getElementById('recipeName').value;
-        let description = document.getElementById('description').value;
+        let description = document.getElementById('recipeDescription').value;
         let url = document.getElementById('url').innerText;
         let scoville = Number(document.getElementById('scoville').value);
         let prepMins = Number(document.getElementById('prepMins').value);
@@ -20,15 +20,6 @@ function SubmitRecipe(event) {
         let jsonName = RecipeNameGenerator(recipeName);
         let totalTimeArr = CalculateTotalTime(prepHrs, prepMins, cookHrs,cookMins);
 
-        // TODO: forloops to create variables and get elements
-        //document.getElementById('ingredientDescription');
-        //document.getElementById('ingredientQuantity');
-        //document.getElementById('ingredientUnits'); 
-
-        // Create ingredients array
-        const div = document.getElementById('ingredients');
-
-        // TODO: update json file to match html page
         var jsonText = {
             "title": recipeName,
             "id": "ID",
@@ -52,10 +43,38 @@ function SubmitRecipe(event) {
                     "hours": totalTimeArr[0],
                     "minutes": totalTimeArr[1]
                 }
-            ]
+            ],
+            "ingredientList": [],
+            "directions": [],
+            "challenges": [],
+            "completed": false
         };
 
-        // Save json file to local storage
+        const divIngredients = document.getElementById('ingredients');
+        let ingredientCount = Number(divIngredients.getAttribute('value')) * 2;
+
+        for(let i = 0; i < ingredientCount; i += 2) {
+            let currIngredientName = divIngredients.getElementsByTagName('input')[i].value;
+            let currIngredientQuantity = divIngredients.getElementsByTagName('input')[i + 1].value;
+            let currIngredientUnits = divIngredients.getElementsByTagName('select')[i / 2].value;
+            
+            let ingredientString = {
+                "name": currIngredientName,
+                "quantity": currIngredientQuantity,
+                "units": currIngredientUnits
+            }
+
+            jsonText.ingredientList[i / 2] = ingredientString ;
+        }
+
+        const divInstructions = document.getElementById('instructions');
+        let instructionCount = Number(divInstructions.getAttribute('value'));
+
+        for(let i = 0; i < instructionCount; i++) {
+            const currInstruction = divInstructions.getElementsByTagName('textarea')[i].value;
+            jsonText.directions[i] = currInstruction;
+        }
+    
         try {
             localStorage.setItem(jsonName, JSON.stringify(jsonText));
         }
@@ -104,7 +123,7 @@ function RecipeInputsGood(event) {
 // adds another textarea for recipe instruction/steps when add step button is pressed
 function AddInstruction(){
     const button = document.getElementById('addStepButton');
-    const div = document.getElementById('instruction');
+    const div = document.getElementById('instructions');
 
     button.addEventListener('click', () => {
         let stepNum = Number(div.getAttribute('value'));
@@ -125,7 +144,7 @@ function AddInstruction(){
 function RemoveInstruction(){
     
     const button = document.getElementById('removeStepButton');
-    const div = document.getElementById('instruction');
+    const div = document.getElementById('instructions');
 
     button.addEventListener('click', () => {
         let stepNum = Number(div.getAttribute('value'));
