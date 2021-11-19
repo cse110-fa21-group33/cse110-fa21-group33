@@ -55,4 +55,4 @@ Yuang - Worked on the main page, fixing things mostly on HTML and CSS. Had some 
 
 (currently main page from Yuang & Minghui)
 
-![Main Page](./media/111621-sprint-1-review4.png)
+![main-page](media/sprint-1/111621-5.png)
