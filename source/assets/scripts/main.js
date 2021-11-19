@@ -45,7 +45,6 @@ async function init() {
  */
 async function fetchRecipes() {
   return new Promise((resolve, reject) => {
-    console.log(recipes);
     recipes.forEach((recipe) => {
       fetch(recipe)
         .then((response) => response.json())
