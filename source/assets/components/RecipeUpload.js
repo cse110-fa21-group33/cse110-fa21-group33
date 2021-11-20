@@ -1,3 +1,5 @@
+import { database } from '../scripts/database.js';
+
 class RecipeUpload extends HTMLElement {
   /**
      * Constructor builds the layout for the recipe page
@@ -281,11 +283,34 @@ class RecipeUpload extends HTMLElement {
       // TODO (Lorenzo)
       // if isCreateRecipe - add the recipe to dexie
       // if !isCreateRecipe - update the recipe on dexie
-      try {
+
+      // determine spice level
+
+      if (scoville < 3000) {
+        jsonText.spiceRating = 1;
+      } else if (scoville < 25000) {
+        jsonText.spiceRating = 2;
+      } else if (scoville < 100000) {
+        jsonText.spiceRating = 3;
+      } else if (scoville < 350000) {
+        jsonText.spiceRating = 4;
+      } else {
+        jsonText.spiceRating = 5;
+      }
+
+      if (this.isCreate) {
+        database.addRecipe(jsonText);
+      } else {
+        jsonText.id = this.json.id;
+        database.updateRecipe(jsonText);
+      }
+
+      /** try {
         localStorage.setItem(jsonName, JSON.stringify(jsonText));
       } catch (e) {
         console.log(`Storage failed: ${e}`);
       }
+      * */
     });
   }
 
