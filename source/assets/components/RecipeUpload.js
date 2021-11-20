@@ -195,6 +195,14 @@ class RecipeUpload extends HTMLElement {
     this.shadowRoot.getElementById('header-upload-photo').innerText = 'Upload New Photo';
     this.shadowRoot.getElementById('p-upload-photo').innerText = 'Upload a new picture if you wish to edit the dish image!';
 
+    const deleteButton = document.createElement('input');
+    deleteButton.setAttribute('id', 'deleteButton');
+    deleteButton.classList.add('Delete');
+    deleteButton.setAttribute('type', 'button');
+    deleteButton.setAttribute('value', 'Delete');
+    this.shadowRoot.getElementById('formButtons').appendChild(deleteButton);
+    this.BindDeleteButton();
+
     this.fill_in_existing_data();
   }
 
@@ -567,6 +575,13 @@ class RecipeUpload extends HTMLElement {
       div.appendChild(inputQuantity);
       div.appendChild(select);
     }
+  }
+
+  BindDeleteButton() {
+    this.shadowRoot.getElementById('deleteButton').addEventListener('click', () => {
+      console.log('Delete button');
+      database.deleteRecipe(this.json);
+    });
   }
 }
 
