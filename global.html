@@ -275,6 +275,7 @@ This function must only be called after calling loadDB().
 <div class="description">
     Binds the 'keydown' event listener to the Escape key (esc) such that when
 it is clicked, the home page is returned to
+TEMPORARY, TODO CHANGE THIS TO WHEN YOU CLICK THE LOGO IT LEADS TO HOME
 </div>
 
 
@@ -318,7 +319,7 @@ it is clicked, the home page is returned to
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_main.js.html">scripts/main.js</a>, <a href="scripts_main.js.html#line112">line 112</a>
+        <a href="scripts_main.js.html">scripts/main.js</a>, <a href="scripts_main.js.html#line82">line 82</a>
     </li></ul></dd>
     
 
@@ -410,7 +411,7 @@ info in your popstate function)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_main.js.html">scripts/main.js</a>, <a href="scripts_main.js.html#line127">line 127</a>
+        <a href="scripts_main.js.html">scripts/main.js</a>, <a href="scripts_main.js.html#line97">line 97</a>
     </li></ul></dd>
     
 
@@ -572,7 +573,97 @@ so that when they are clicked, their card expands into the full recipe view mode
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_main.js.html">scripts/main.js</a>, <a href="scripts_main.js.html#line101">line 101</a>
+        <a href="scripts_main.js.html">scripts/main.js</a>, <a href="scripts_main.js.html#line70">line 70</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="bindSlider"><span class="type-signature">(async) </span>bindSlider<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Binds the slider so that the recommended recipes will display cards
+according to the spice level. This will also include any additional
+UI changes to indicate the spice level.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_main.js.html">scripts/main.js</a>, <a href="scripts_main.js.html#line112">line 112</a>
     </li></ul></dd>
     
 
@@ -709,7 +800,7 @@ so that when they are clicked, their card expands into the full recipe view mode
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_RecipeDisplay.js.html">components/RecipeDisplay.js</a>, <a href="components_RecipeDisplay.js.html#line255">line 255</a>
+        <a href="components_RecipeDisplay.js.html">components/RecipeDisplay.js</a>, <a href="components_RecipeDisplay.js.html#line254">line 254</a>
     </li></ul></dd>
     
 
@@ -1016,7 +1107,7 @@ so that when they are clicked, their card expands into the full recipe view mode
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_RecipeDisplay.js.html">components/RecipeDisplay.js</a>, <a href="components_RecipeDisplay.js.html#line297">line 297</a>
+        <a href="components_RecipeDisplay.js.html">components/RecipeDisplay.js</a>, <a href="components_RecipeDisplay.js.html#line296">line 296</a>
     </li></ul></dd>
     
 
@@ -1114,7 +1205,7 @@ so that when they are clicked, their card expands into the full recipe view mode
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_main.js.html">scripts/main.js</a>, <a href="scripts_main.js.html#line67">line 67</a>
+        <a href="scripts_main.js.html">scripts/main.js</a>, <a href="scripts_main.js.html#line36">line 36</a>
     </li></ul></dd>
     
 
@@ -1459,96 +1550,6 @@ This function must only be called after calling loadDB();
 </dl>
 
     
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="fetchRecipes"><span class="type-signature">(async) </span>fetchRecipes<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Loading JSON into a JS file is oddly not super straightforward (for now), so
-I built a function to load in the JSON files for you. It places all of the recipe data
-inside the object recipeData like so: recipeData{ 'ghostcookies': ..., 'birthdayCake': ..., etc }
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_main.js.html">scripts/main.js</a>, <a href="scripts_main.js.html#line43">line 43</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1983,7 +1984,7 @@ display the ingredient
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_RecipeDisplay.js.html">components/RecipeDisplay.js</a>, <a href="components_RecipeDisplay.js.html#line275">line 275</a>
+        <a href="components_RecipeDisplay.js.html">components/RecipeDisplay.js</a>, <a href="components_RecipeDisplay.js.html#line274">line 274</a>
     </li></ul></dd>
     
 
@@ -2081,7 +2082,7 @@ display the ingredient
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_main.js.html">scripts/main.js</a>, <a href="scripts_main.js.html#line26">line 26</a>
+        <a href="scripts_main.js.html">scripts/main.js</a>, <a href="scripts_main.js.html#line17">line 17</a>
     </li></ul></dd>
     
 
@@ -2509,13 +2510,13 @@ This function must only be called after calling loadDB().
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RecipeCard.html">RecipeCard</a></li><li><a href="RecipeDisplay.html">RecipeDisplay</a></li><li><a href="Router_Router.html">Router</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addRecipe">addRecipe</a></li><li><a href="global.html#bindEscKey">bindEscKey</a></li><li><a href="global.html#bindPopstate">bindPopstate</a></li><li><a href="global.html#bindRecipeCard">bindRecipeCard</a></li><li><a href="global.html#calculateTime">calculateTime</a></li><li><a href="global.html#countRecipes">countRecipes</a></li><li><a href="global.html#createCheckbox">createCheckbox</a></li><li><a href="global.html#createRecipeCards">createRecipeCards</a></li><li><a href="global.html#dataURItoBlob">dataURItoBlob</a></li><li><a href="global.html#deleteRecipe">deleteRecipe</a></li><li><a href="global.html#fetchRecipes">fetchRecipes</a></li><li><a href="global.html#getByName">getByName</a></li><li><a href="global.html#getBySpice">getBySpice</a></li><li><a href="global.html#getIngredient">getIngredient</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadDB">loadDB</a></li><li><a href="global.html#saveDB">saveDB</a></li><li><a href="global.html#updateRecipe">updateRecipe</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RecipeCard.html">RecipeCard</a></li><li><a href="RecipeDisplay.html">RecipeDisplay</a></li><li><a href="Router_Router.html">Router</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addRecipe">addRecipe</a></li><li><a href="global.html#bindEscKey">bindEscKey</a></li><li><a href="global.html#bindPopstate">bindPopstate</a></li><li><a href="global.html#bindRecipeCard">bindRecipeCard</a></li><li><a href="global.html#bindSlider">bindSlider</a></li><li><a href="global.html#calculateTime">calculateTime</a></li><li><a href="global.html#countRecipes">countRecipes</a></li><li><a href="global.html#createCheckbox">createCheckbox</a></li><li><a href="global.html#createRecipeCards">createRecipeCards</a></li><li><a href="global.html#dataURItoBlob">dataURItoBlob</a></li><li><a href="global.html#deleteRecipe">deleteRecipe</a></li><li><a href="global.html#getByName">getByName</a></li><li><a href="global.html#getBySpice">getBySpice</a></li><li><a href="global.html#getIngredient">getIngredient</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadDB">loadDB</a></li><li><a href="global.html#saveDB">saveDB</a></li><li><a href="global.html#updateRecipe">updateRecipe</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Nov 19 2021 23:53:44 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sat Nov 20 2021 01:00:07 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
