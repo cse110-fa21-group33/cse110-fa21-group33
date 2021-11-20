@@ -16,6 +16,7 @@ const recipeData = {};
 const router = new Router(() => {
   document.querySelector('.section--main-page').classList.add('shown');
   document.querySelector('.section--recipe-display').classList.remove('shown');
+  document.querySelector('.section--recipe-upload').classList.remove('shown');
 });
 
 window.addEventListener('DOMContentLoaded', init);
@@ -29,10 +30,11 @@ async function init() {
   } catch (err) {
     console.log(`Error fetching recipes: ${err}`);
   }
-
+  addCreateRecipe();
   createRecipeCards();
   bindEscKey();
   bindPopstate();
+  bindCreateRecipe();
 }
 
 /**
@@ -84,6 +86,7 @@ function createRecipeCards() {
     router.addPage(page, () => {
       document.querySelector('.section--main-page').classList.remove('shown');
       document.querySelector('.section--recipe-display').classList.add('shown');
+      document.querySelector('.section--recipe-upload').classList.remove('shown');
       document.querySelector('recipe-display').data = recipeData[recipes[i]];
     });
     bindRecipeCard(recipeCard, page);
@@ -131,5 +134,21 @@ function bindPopstate() {
     } else {
       router.navigate('home', true);
     }
+  });
+}
+
+function bindCreateRecipe() {
+  const button = document.getElementById('create-button');
+  button.addEventListener('click', (event) => {
+    router.navigate('create', true);
+  });
+}
+
+function addCreateRecipe() {
+  router.addPage('create', () => {
+    document.querySelector('.section--main-page').classList.remove('shown');
+    document.querySelector('.section--recipe-display').classList.remove('shown');
+    document.querySelector('.section--recipe-upload').classList.add('shown');
+    document.querySelector('recipe-upload').data = null;
   });
 }
