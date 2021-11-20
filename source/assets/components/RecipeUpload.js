@@ -166,7 +166,7 @@ class RecipeUpload extends HTMLElement {
 
     this.GetImgurImage();
     this.SubmitRecipe();
-    
+
     if(data == null){
         return;
     }
@@ -303,7 +303,9 @@ RemoveInstruction(){
             stepNum--;
             div.setAttribute('value', stepNum);
             const textArea = div.getElementsByTagName('textarea')[ div.getElementsByTagName('textarea').length - 1 ];
+            const lineBreak = div.getElementsByTagName('br')[ div.getElementsByTagName('br').length - 1 ];
             div.removeChild(textArea);
+            div.removeChild(lineBreak);
         }
     });
 }
@@ -364,6 +366,8 @@ AddInstruction(){
             textArea.setAttribute('cols', '60');
             textArea.setAttribute('rows', '2');
             textArea.setAttribute('placeholder', 'Step ' + stepNum);
+            const lineBreak = document.createElement('br');
+            div.appendChild(lineBreak);
             div.appendChild(textArea);
         }
     });
