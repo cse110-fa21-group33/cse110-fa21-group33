@@ -15,6 +15,7 @@
   <!-- Web Components -->
   <script src="assets/components/RecipeCard.js" type="module"></script>
   <script src="assets/components/RecipeDisplay.js" type="module"></script>
+  <script src='assets/components/RecipeUpload.js' type='module'></script>
 
   <!-- Router -->
   <script src="assets/scripts/Router.js" type="module"></script>
@@ -37,7 +38,7 @@
      <input type="text" placeholder="Search..">
     </div>
     <div class="button--wrapper">
-      <button class="create-button">Create Recipe</button>
+      <button id="create-button">Create Recipe</button>
     </div>
     <!--This is the upperright user part-->
     <div class="user-icon--wrapper">
@@ -70,9 +71,12 @@
             <p>Kung Pao Chicken</p>
           </div>
         </div>
-      </section>      -
+      </section>
       <section class="section--recipe-display">
         <recipe-display></recipe-display>
+      </section>
+      <section class="section--recipe-upload">
+        <recipe-upload></recipe-upload>
       </section>
     </div>    
   </main>

@@ -7,6 +7,7 @@ import { database } from './database.js';
 const router = new Router(() => {
   document.querySelector('.section--main-page').classList.add('shown');
   document.querySelector('.section--recipe-display').classList.remove('shown');
+  document.querySelector('.section--recipe-upload').classList.remove('shown');
 });
 
 window.addEventListener('DOMContentLoaded', init);
@@ -24,9 +25,11 @@ async function init() {
     console.log(`Error fetching recipes: ${err}`);
   }
 
+  addCreateRecipe();
   createRecipeCards(recipeList);
   bindEscKey();
   bindPopstate();
+  bindCreateRecipe();
   bindSlider();
 }
 
@@ -53,6 +56,7 @@ function createRecipeCards(recipes) {
     router.addPage(page, () => {
       document.querySelector('.section--main-page').classList.remove('shown');
       document.querySelector('.section--recipe-display').classList.add('shown');
+      document.querySelector('.section--recipe-upload').classList.remove('shown');
       document.querySelector('recipe-display').data = recipe;
     });
     bindRecipeCard(recipeCard, page);
@@ -104,6 +108,23 @@ function bindPopstate() {
   });
 }
 
+
+function bindCreateRecipe() {
+  const button = document.getElementById('create-button');
+  button.addEventListener('click', (event) => {
+    router.navigate('create', true);
+  });
+}
+
+function addCreateRecipe() {
+  router.addPage('create', () => {
+    document.querySelector('.section--main-page').classList.remove('shown');
+    document.querySelector('.section--recipe-display').classList.remove('shown');
+    document.querySelector('.section--recipe-upload').classList.add('shown');
+    document.querySelector('recipe-upload').data = null;
+  });
+}
+
 /**
  * Binds the slider so that the recommended recipes will display cards
  * according to the spice level. This will also include any additional
@@ -133,3 +154,4 @@ async function bindSlider() {
     }
   });
 }
+
