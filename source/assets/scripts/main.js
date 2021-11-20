@@ -65,7 +65,7 @@ function createRecipeCards(recipes) {
     router.addPage(`${page}-edit`, () => {
       document.querySelector('.section--main-page').classList.remove('shown');
       document.querySelector('.section--recipe-display').classList.remove('shown');
-      document.querySelector('recipe-display').data = recipeData[recipes[i]];
+      document.querySelector('recipe-display').data = recipe;
     });
 
     bindRecipeCard(recipeCard, page);
