@@ -110,7 +110,8 @@ function createRecipeCards(recipes) {
     router.addPage(`${page}-edit`, () => {
       document.querySelector('.section--main-page').classList.remove('shown');
       document.querySelector('.section--recipe-display').classList.remove('shown');
-      document.querySelector('recipe-display').data = recipe;
+      document.querySelector('.section--recipe-upload').classList.add('shown');
+      document.querySelector('recipe-upload').data = recipe;
     });
 
     bindRecipeCard(recipeCard, page);
@@ -178,8 +179,14 @@ function bindPopstate() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ad80c5 (added edit button)
+=======
+/**
+ * Navigate to create page
+ */
+>>>>>>> c8622b4 (Populate the edit page)
 function bindCreateRecipe() {
   const button = document.getElementById('create-button');
   button.addEventListener('click', (event) => {
@@ -187,6 +194,9 @@ function bindCreateRecipe() {
   });
 }
 
+/**
+ * Add create page to navigation
+ */
 function addCreateRecipe() {
   router.addPage('create', () => {
     document.querySelector('.section--main-page').classList.remove('shown');
