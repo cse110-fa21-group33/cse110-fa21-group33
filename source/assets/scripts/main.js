@@ -26,6 +26,7 @@ async function init() {
   }
 <<<<<<< HEAD
   addCreateRecipe();
+<<<<<<< HEAD
   createRecipeCards();
   bindEscKey();
   bindPopstate();
@@ -58,6 +59,9 @@ async function fetchRecipes() {
   });
 =======
 
+=======
+  bindCreateRecipe();
+>>>>>>> c4d149e (Update main.js)
   createRecipeCards(recipeList);
   bindEscKey();
   bindPopstate();
