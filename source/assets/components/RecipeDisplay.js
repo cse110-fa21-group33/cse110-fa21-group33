@@ -232,7 +232,6 @@ class RecipeDisplay extends HTMLElement {
     this.shadowRoot.querySelector('#recipe-serving-size > .recipe-info-number').innerHTML = servingSize;
 
     const ingredientsList = data.ingredientList;
-    console.log(ingredientsList);
     ingredientsList.forEach((ingredient) => {
       const ingredientString = getIngredient(ingredient);
       const ingredientContainer = createCheckbox(ingredientString);
