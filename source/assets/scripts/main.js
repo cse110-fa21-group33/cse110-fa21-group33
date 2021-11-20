@@ -26,6 +26,7 @@ async function init() {
   }
 
   addCreateRecipe();
+  bindCreateRecipe();
   createRecipeCards(recipeList);
   bindEscKey();
   bindPopstate();
