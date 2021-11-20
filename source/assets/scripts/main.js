@@ -29,6 +29,7 @@ async function init() {
   createRecipeCards();
   bindEscKey();
   bindPopstate();
+<<<<<<< HEAD
   bindCreateRecipe();
 }
 
@@ -60,6 +61,8 @@ async function fetchRecipes() {
   createRecipeCards(recipeList);
   bindEscKey();
   bindPopstate();
+=======
+>>>>>>> 4ad80c5 (added edit button)
   bindSlider();
 >>>>>>> 1601d73 (Added functionality to the slider)
 }
@@ -92,8 +95,20 @@ function createRecipeCards(recipes) {
       document.querySelector('recipe-display').data = recipeData[recipes[i]];
 =======
       document.querySelector('recipe-display').data = recipe;
+<<<<<<< HEAD
 >>>>>>> 1601d73 (Added functionality to the slider)
+=======
+      const button = document.querySelector('recipe-display').shadowRoot.querySelectorAll('button')[1];
+      bindEditButton(button, page);
+>>>>>>> 4ad80c5 (added edit button)
     });
+
+    router.addPage(`${page}-edit`, () => {
+      document.querySelector('.section--main-page').classList.remove('shown');
+      document.querySelector('.section--recipe-display').classList.remove('shown');
+      document.querySelector('recipe-display').data = recipeData[recipes[i]];
+    });
+
     bindRecipeCard(recipeCard, page);
     document.querySelector('.card-body').appendChild(recipeCard);
   });
@@ -110,6 +125,20 @@ function bindRecipeCard(recipeCard, pageName) {
   recipeCard.addEventListener('click', (e) => {
     if (e.path[0].nodeName === 'A') return;
     router.navigate(pageName);
+  });
+}
+
+/**
+ * Binds the click event listener to the <recipe-card> elements added to the page
+ * so that when they are clicked, their card expands into the full recipe view mode
+ * @param {Element} recipeCard the <recipe-card> element you wish to bind the event
+ *                             listeners to
+ * @param {String} pageName the name of the page to navigate to on click
+ */
+function bindEditButton(button, pageName) {
+  button.addEventListener('click', (e) => {
+    if (e.path[0].nodeName === 'A') return;
+    router.navigate(`${pageName}-edit`);
   });
 }
 
@@ -144,6 +173,9 @@ function bindPopstate() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4ad80c5 (added edit button)
 function bindCreateRecipe() {
   const button = document.getElementById('create-button');
   button.addEventListener('click', (event) => {
@@ -189,4 +221,7 @@ async function bindSlider() {
     }
   });
 }
+<<<<<<< HEAD
 >>>>>>> 1601d73 (Added functionality to the slider)
+=======
+>>>>>>> 4ad80c5 (added edit button)
