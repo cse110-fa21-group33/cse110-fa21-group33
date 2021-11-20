@@ -49,6 +49,12 @@ class RecipeDisplay extends HTMLElement {
         max-width: 700px;
         margin: auto;
       }
+
+      .recipe-section {
+        background-color: #ee6858;
+        padding: 20px 40px;
+        margin: -20px -40px;
+      }
       
       /* generic button */
       .button-wrapper > button{
@@ -56,8 +62,19 @@ class RecipeDisplay extends HTMLElement {
         font-size: 18px;
       }
       
-      #recipe-title{
+      #recipe-media > img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40rem;
+        height: auto;
+      }
+
+      .recipe-title{
         font-size: 50px;
+        font-family: 'Mochiy Pop P One', sans-serif;
+        padding: 0px;
+        margin: 0px;
       }
       
       .recipe-about {
@@ -116,6 +133,11 @@ class RecipeDisplay extends HTMLElement {
         flex-direction: column;
         row-gap: 10px;
       }
+
+      hr {
+        border-color: black;
+      }
+
     `;
 
     article.innerHTML = `
@@ -125,13 +147,17 @@ class RecipeDisplay extends HTMLElement {
             &lt;div class="recipe-header">
               &lt;h1>&lt;/h1>
               &lt;div class="recipe-about">
-                &lt;p class="recipe-description">&lt;/p>
+                &lt;p class="recipe-description">
+                &lt;/p>
                   &lt;div class="recipe-spice-info">
                     &lt;img src="">
                     &lt;p id="recipe-spice-level">&lt;/p>    
                   &lt;/div>
                   &lt;div class="button-wrapper">
                     &lt;button class="recipe-button">Print&lt;/button>
+                  &lt;/div>  
+                  &lt;div class="button-wrapper">
+                      &lt;button class="edit-button">Edit&lt;/button>
                   &lt;/div>  
               &lt;/div>      
             &lt;/div>
@@ -187,7 +213,7 @@ class RecipeDisplay extends HTMLElement {
           &lt;main>
             &lt;article class="recipe-section">
               &lt;div class="recipe-header">
-                &lt;h1>&lt;/h1>
+                &lt;h1 class="recipe-title">&lt;/h1>
                 &lt;div class="recipe-about">
                   &lt;p class="recipe-description">&lt;/p>
                     &lt;div class="recipe-spice-info">
@@ -195,7 +221,10 @@ class RecipeDisplay extends HTMLElement {
                       &lt;p id="recipe-spice-level">&lt;/p>    
                     &lt;/div>
                     &lt;div class="button-wrapper">
-                      &lt;button class="recipe-button">Print&lt;/button>
+                      &lt;button class="print-button">Print&lt;/button>
+                    &lt;/div>  
+                    &lt;div class="button-wrapper">
+                      &lt;button class="edit-button">Edit&lt;/button>
                     &lt;/div>  
                 &lt;/div>      
               &lt;/div>
@@ -242,13 +271,13 @@ class RecipeDisplay extends HTMLElement {
     const { description } = data;
     this.shadowRoot.querySelector('.recipe-description').innerHTML = description;
 
-    const imgSrc = data.image;
+    const { image } = data;
     const img = this.shadowRoot.querySelector('#recipe-media > img');
-    img.setAttribute('src', imgSrc);
+    img.setAttribute('src', image);
     img.setAttribute('alt', title);
 
-    const scovilleUnit = data.scoville;
-    this.shadowRoot.querySelector('#recipe-spice-level').innerHTML = scovilleUnit;
+    const { scoville } = data;
+    this.shadowRoot.querySelector('#recipe-spice-level').innerHTML = scoville;
 
     const prepTime = calculateTime(data.time[0]);
     this.shadowRoot.querySelector('#recipe-prep-time > .recipe-info-number').innerHTML = prepTime;
@@ -259,8 +288,8 @@ class RecipeDisplay extends HTMLElement {
     const { servingSize } = data;
     this.shadowRoot.querySelector('#recipe-serving-size > .recipe-info-number').innerHTML = servingSize;
 
-    const ingredientsList = data.ingredientList;
-    ingredientsList.forEach((ingredient) => {
+    const { ingredientList } = data;
+    ingredientList.forEach((ingredient) => {
       const ingredientString = getIngredient(ingredient);
       const ingredientContainer = createCheckbox(ingredientString);
       this.shadowRoot.querySelector('#recipe-ingredients > .recipe-list').appendChild(ingredientContainer);
@@ -343,13 +372,13 @@ customElements.define('recipe-display', RecipeDisplay);
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RecipeCard.html">RecipeCard</a></li><li><a href="RecipeDisplay.html">RecipeDisplay</a></li><li><a href="RecipeUpload.html">RecipeUpload</a></li><li><a href="Router_Router.html">Router</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addRecipe">addRecipe</a></li><li><a href="global.html#bindEscKey">bindEscKey</a></li><li><a href="global.html#bindPopstate">bindPopstate</a></li><li><a href="global.html#bindRecipeCard">bindRecipeCard</a></li><li><a href="global.html#bindSlider">bindSlider</a></li><li><a href="global.html#calculateTime">calculateTime</a></li><li><a href="global.html#countRecipes">countRecipes</a></li><li><a href="global.html#createCheckbox">createCheckbox</a></li><li><a href="global.html#createRecipeCards">createRecipeCards</a></li><li><a href="global.html#dataURItoBlob">dataURItoBlob</a></li><li><a href="global.html#deleteRecipe">deleteRecipe</a></li><li><a href="global.html#getByName">getByName</a></li><li><a href="global.html#getBySpice">getBySpice</a></li><li><a href="global.html#getIngredient">getIngredient</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadDB">loadDB</a></li><li><a href="global.html#saveDB">saveDB</a></li><li><a href="global.html#updateRecipe">updateRecipe</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RecipeCard.html">RecipeCard</a></li><li><a href="RecipeDisplay.html">RecipeDisplay</a></li><li><a href="RecipeUpload.html">RecipeUpload</a></li><li><a href="Router_Router.html">Router</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addRecipe">addRecipe</a></li><li><a href="global.html#bindEditButton">bindEditButton</a></li><li><a href="global.html#bindEscKey">bindEscKey</a></li><li><a href="global.html#bindPopstate">bindPopstate</a></li><li><a href="global.html#bindRecipeCard">bindRecipeCard</a></li><li><a href="global.html#bindSlider">bindSlider</a></li><li><a href="global.html#calculateTime">calculateTime</a></li><li><a href="global.html#countRecipes">countRecipes</a></li><li><a href="global.html#createCheckbox">createCheckbox</a></li><li><a href="global.html#createRecipeCards">createRecipeCards</a></li><li><a href="global.html#dataURItoBlob">dataURItoBlob</a></li><li><a href="global.html#deleteRecipe">deleteRecipe</a></li><li><a href="global.html#getByName">getByName</a></li><li><a href="global.html#getBySpice">getBySpice</a></li><li><a href="global.html#getIngredient">getIngredient</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadDB">loadDB</a></li><li><a href="global.html#saveDB">saveDB</a></li><li><a href="global.html#updateRecipe">updateRecipe</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sat Nov 20 2021 03:10:09 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sat Nov 20 2021 03:21:35 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
