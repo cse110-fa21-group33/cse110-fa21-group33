@@ -26,10 +26,10 @@ async function init() {
   }
 
   addCreateRecipe();
+  bindCreateRecipe();
   createRecipeCards(recipeList);
   bindEscKey();
   bindPopstate();
-  bindCreateRecipe();
   bindSlider();
 }
 
@@ -58,7 +58,16 @@ function createRecipeCards(recipes) {
       document.querySelector('.section--recipe-display').classList.add('shown');
       document.querySelector('.section--recipe-upload').classList.remove('shown');
       document.querySelector('recipe-display').data = recipe;
+      const button = document.querySelector('recipe-display').shadowRoot.querySelectorAll('button')[1];
+      bindEditButton(button, page);
     });
+
+    router.addPage(`${page}-edit`, () => {
+      document.querySelector('.section--main-page').classList.remove('shown');
+      document.querySelector('.section--recipe-display').classList.remove('shown');
+      document.querySelector('recipe-display').data = recipe;
+    });
+
     bindRecipeCard(recipeCard, page);
     document.querySelector('.card-body').appendChild(recipeCard);
   });
@@ -75,6 +84,20 @@ function bindRecipeCard(recipeCard, pageName) {
   recipeCard.addEventListener('click', (e) => {
     if (e.path[0].nodeName === 'A') return;
     router.navigate(pageName);
+  });
+}
+
+/**
+ * Binds the click event listener to the <recipe-card> elements added to the page
+ * so that when they are clicked, their card expands into the full recipe view mode
+ * @param {Element} recipeCard the <recipe-card> element you wish to bind the event
+ *                             listeners to
+ * @param {String} pageName the name of the page to navigate to on click
+ */
+function bindEditButton(button, pageName) {
+  button.addEventListener('click', (e) => {
+    if (e.path[0].nodeName === 'A') return;
+    router.navigate(`${pageName}-edit`);
   });
 }
 
@@ -107,7 +130,6 @@ function bindPopstate() {
     }
   });
 }
-
 
 function bindCreateRecipe() {
   const button = document.getElementById('create-button');
@@ -154,4 +176,3 @@ async function bindSlider() {
     }
   });
 }
-

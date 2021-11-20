@@ -71,6 +71,7 @@ class RecipeCard extends HTMLElement {
     image.classList.add('card-img');
     image.setAttribute('src', data.image);
     elem.appendChild(image);
+
     const title = document.createElement('div');
     title.classList.add('card-title');
     title.innerText = data.title;
