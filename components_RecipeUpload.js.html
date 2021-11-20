@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/RecipeUpload.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/RecipeUpload.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>class RecipeUpload extends HTMLElement {
+    /**
+     * Constructor builds the layout for the recipe page
+     */
+    constructor() {
+      super();
+      // Create Shadow DOM
+      this.attachShadow({ mode: 'open' });
+  
+      const styles = document.createElement('style');
+      const article = document.createElement('article');
+  
+      // TODO add CSS to upload page
+      styles.innerHTML = ``;
+  
+      article.innerHTML = `
+        &lt;h1 id="recipe-title">Upload Recipe&lt;/h1>
+
+        &lt;h2>Recipe Name&lt;/h2>
+        &lt;input type="text" id="recipeName" required minlength="2" maxlength="40" size="30">
+        
+        &lt;h2>Description&lt;/h2>
+        &lt;textarea id="recipeDescription" rows="7" cols="50">&lt;/textarea>
+
+        &lt;h2>Upload Photo&lt;/h2>
+        &lt;p>Please upload a picture of your completed dish!&lt;/p>
+
+        &lt;img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
+        &lt;br>
+        &lt;input type="file" id="imgUpload" accept="image/*">
+        &lt;p id="url">&lt;/p>
+
+        &lt;h2>Serving Size&lt;/h2>
+        &lt;input type="number" id="servingSize" min="0" max="59" size = "50" value="0" required>
+
+        &lt;h2>Scoville Heat Units&lt;/h2>
+        &lt;input type="number" id="scoville" min="0" max="3000000" value="0" required>
+
+        &lt;h2>Prep Time&lt;/h2>
+        &lt;input type="number" id="prepHrs" min="0" max="20"  placeholder="Hours" required>
+        &lt;input type="number" id="prepMins" min="0" max="59" placeholder="Minutes" required>
+
+        &lt;h2>Cooking Time&lt;/h2>
+        &lt;input type="number" id="cookHrs" min="0" max="20"  placeholder="Hours" required>
+        &lt;input type="number" id="cookMins" min="0" max="59" placeholder="Minutes" required>
+
+        &lt;div id="ingredients" value="1">
+        &lt;h2>Ingredients&lt;/h2>
+            &lt;input type="text" id="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
+            &lt;input type="number" id="ingredientQuantity" min="0" placeholder="Quantity" required>
+            &lt;select id="ingredientUnits">
+                &lt;option>N/A&lt;/option>
+                &lt;option>tsp&lt;/option>
+                &lt;option>tbsp&lt;/option>
+                &lt;option>oz&lt;/option>
+                &lt;option>c&lt;/option>
+                &lt;option>pt&lt;/option>
+                &lt;option>qt&lt;/option>
+                &lt;option>gal&lt;/option>
+                &lt;option>ml&lt;/option>
+                &lt;option>l&lt;/option>
+            &lt;/select>
+        &lt;/div>
+        &lt;input type="button" id="addIngredientButton" value="Add Ingredient">
+        &lt;input type="button" id="removeIngredientButton" value="Remove Ingredient">
+
+        &lt;div id="instructions" value="1">
+            &lt;h2>Instructions&lt;/h2>
+            &lt;textarea cols='60' rows='2' placeholder="Step 1">&lt;/textarea>
+        &lt;/div>
+        &lt;input id="addStepButton" type="button" value="Add Step">
+        &lt;input id="removeStepButton" type="button" value="Remove Step">
+
+        &lt;div id="formButtons">
+            &lt;input id="submitButton" class="Submit" type="button" value="Submit">
+            &lt;input id="cancelButton" class="Cancel" type="button" value="Cancel">
+        &lt;/div>`;
+  
+      this.shadowRoot.append(styles, article);
+
+      this.AddInstruction();
+      this.RemoveInstruction();
+  
+      this.AddIngredient();
+      this.RemoveIngredient();
+  
+      this.GetImgurImage();
+      this.SubmitRecipe();
+    }
+
+    /**
+   * Sets the recipe that will be used insidet the &lt;recipe-display> element.
+   * Overwrites the previous recipe displayed.
+   */
+   set data(data) {
+    this.json = data;
+    // Reset HTML
+    
+    this.shadowRoot.querySelector('article').innerHTML = `
+    &lt;h1 id="recipe-title">Upload Recipe&lt;/h1>
+
+    &lt;h2>Recipe Name&lt;/h2>
+    &lt;input type="text" id="recipeName" required minlength="2" maxlength="40" size="30">
+    
+    &lt;h2>Description&lt;/h2>
+    &lt;textarea id="recipeDescription" rows="7" cols="50">&lt;/textarea>
+
+    &lt;h2>Upload Photo&lt;/h2>
+    &lt;p>Please upload a picture of your completed dish!&lt;/p>
+
+    &lt;img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
+    &lt;br>
+    &lt;input type="file" id="imgUpload" accept="image/*">
+    &lt;p id="url">&lt;/p>
+
+    &lt;h2>Serving Size&lt;/h2>
+    &lt;input type="number" id="servingSize" min="0" max="59" size = "50" value="0" required>
+
+    &lt;h2>Scoville Heat Units&lt;/h2>
+    &lt;input type="number" id="scoville" min="0" max="3000000" value="0" required>
+
+    &lt;h2>Prep Time&lt;/h2>
+    &lt;input type="number" id="prepHrs" min="0" max="20"  placeholder="Hours" required>
+    &lt;input type="number" id="prepMins" min="0" max="59" placeholder="Minutes" required>
+
+    &lt;h2>Cooking Time&lt;/h2>
+    &lt;input type="number" id="cookHrs" min="0" max="20"  placeholder="Hours" required>
+    &lt;input type="number" id="cookMins" min="0" max="59" placeholder="Minutes" required>
+
+    &lt;div id="ingredients" value="1">
+    &lt;h2>Ingredients&lt;/h2>
+        &lt;input type="text" id="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
+        &lt;input type="number" id="ingredientQuantity" min="0" placeholder="Quantity" required>
+        &lt;select id="ingredientUnits">
+            &lt;option>N/A&lt;/option>
+            &lt;option>tsp&lt;/option>
+            &lt;option>tbsp&lt;/option>
+            &lt;option>oz&lt;/option>
+            &lt;option>c&lt;/option>
+            &lt;option>pt&lt;/option>
+            &lt;option>qt&lt;/option>
+            &lt;option>gal&lt;/option>
+            &lt;option>ml&lt;/option>
+            &lt;option>l&lt;/option>
+        &lt;/select>
+    &lt;/div>
+    &lt;input type="button" id="addIngredientButton" value="Add Ingredient">
+    &lt;input type="button" id="removeIngredientButton" value="Remove Ingredient">
+
+    &lt;div id="instructions" value="1">
+        &lt;h2>Instructions&lt;/h2>
+        &lt;textarea cols='60' rows='2' placeholder="Step 1">&lt;/textarea>
+    &lt;/div>
+    &lt;input id="addStepButton" type="button" value="Add Step">
+    &lt;input id="removeStepButton" type="button" value="Remove Step">
+
+    &lt;div id="formButtons">
+        &lt;input id="submitButton" class="Submit" type="button" value="Submit">
+        &lt;input id="cancelButton" class="Cancel" type="button" value="Cancel">
+    &lt;/div>`;
+    this.AddInstruction();
+    this.RemoveInstruction();
+
+    this.AddIngredient();
+    this.RemoveIngredient();
+
+    this.GetImgurImage();
+    this.SubmitRecipe();
+
+    if(data == null){
+        return;
+    }
+    }
+
+// attempt to take user input and convert to .json file
+SubmitRecipe(event) {
+    // TODO: Check if all boxes have been filled
+
+    const button = this.shadowRoot.getElementById('submitButton');
+
+    button.addEventListener('click', () => {
+        let recipeName = this.shadowRoot.getElementById('recipeName').value;
+        let description = this.shadowRoot.getElementById('recipeDescription').value;
+        let url = this.shadowRoot.getElementById('url').innerText;
+        let scoville = Number(this.shadowRoot.getElementById('scoville').value);
+        let prepMins = Number(this.shadowRoot.getElementById('prepMins').value);
+        let prepHrs = Number(this.shadowRoot.getElementById('prepHrs').value);
+        let cookMins = Number(this.shadowRoot.getElementById('cookMins').value);
+        let cookHrs = Number(this.shadowRoot.getElementById('cookHrs').value);
+        let servingSize = Number(this.shadowRoot.getElementById('servingSize').value);
+        
+        let jsonName = this.RecipeNameGenerator(recipeName);
+        let totalTimeArr = this.CalculateTotalTime(prepHrs, prepMins, cookHrs,cookMins);
+
+        var jsonText = {
+            "title": recipeName,
+            "id": "ID",
+            "description": description,
+            "image": url,
+            "servingSize": servingSize,
+            "scoville": scoville,
+            "time": [
+                {
+                    "name": "prepTime",
+                    "hours": prepHrs,
+                    "minutes": prepMins
+                },
+                {
+                    "name": "cookTime",
+                    "hours": cookHrs,
+                    "minutes": cookMins
+                },
+                {
+                    "name": "totalTime",
+                    "hours": totalTimeArr[0],
+                    "minutes": totalTimeArr[1]
+                }
+            ],
+            "ingredientList": [],
+            "directions": [],
+            "challenges": [],
+            "completed": false
+        };
+
+        const divIngredients = this.shadowRoot.getElementById('ingredients');
+        let ingredientCount = Number(divIngredients.getAttribute('value')) * 2;
+
+        for(let i = 0; i &lt; ingredientCount; i += 2) {
+            let currIngredientName = divIngredients.getElementsByTagName('input')[i].value;
+            let currIngredientQuantity = divIngredients.getElementsByTagName('input')[i + 1].value;
+            let currIngredientUnits = divIngredients.getElementsByTagName('select')[i / 2].value;
+            
+            let ingredientString = {
+                "name": currIngredientName,
+                "quantity": currIngredientQuantity,
+                "units": currIngredientUnits
+            }
+
+            jsonText.ingredientList[i / 2] = ingredientString ;
+        }
+
+        const divInstructions = this.shadowRoot.getElementById('instructions');
+        let instructionCount = Number(divInstructions.getAttribute('value'));
+
+        for(let i = 0; i &lt; instructionCount; i++) {
+            const currInstruction = divInstructions.getElementsByTagName('textarea')[i].value;
+            jsonText.directions[i] = currInstruction;
+        }
+    
+        try {
+            localStorage.setItem(jsonName, JSON.stringify(jsonText));
+        }
+        catch (e) {
+            console.log("Storage failed: " + e);
+        }
+    });
+}
+
+// Takes in recipe name and generates .json name
+RecipeNameGenerator(name) {
+    let recipeName = "";
+    
+    // replace all spaces
+    for(let i = 0; i &lt; name.length; i++) {
+        let curr = name.charAt(i);
+        if(curr == ' ') {
+            recipeName += '-';
+        }
+        else {
+            recipeName += curr;
+        }
+    }
+    // append file extension
+    recipeName += '.json';
+    return recipeName;
+}
+
+// Calculates total cook time, accounting for overflow
+CalculateTotalTime(prepHrs, prepMins, cookHrs,cookMins) {
+    let totalMins = prepMins + cookMins;
+    let carryHrs = Math.round(totalMins / 60);
+
+    totalMins = totalMins % 60;
+    let totalHrs = prepHrs + cookHrs + carryHrs;
+
+    return new Array(totalHrs, totalMins);
+}
+
+// check to see if the user input is valid and let user know what inputs to change to fix input
+RecipeInputsGood(event) {
+    // TODO
+}
+
+// removes last textarea for recipe instruction/steps when remove step button is pressed
+RemoveInstruction(){
+    
+    const button = this.shadowRoot.getElementById('removeStepButton');
+    const div = this.shadowRoot.getElementById('instructions');
+
+    button.addEventListener('click', () => {
+        let stepNum = Number(div.getAttribute('value'));
+        if( stepNum > 1 ){
+            stepNum--;
+            div.setAttribute('value', stepNum);
+            const textArea = div.getElementsByTagName('textarea')[ div.getElementsByTagName('textarea').length - 1 ];
+            const lineBreak = div.getElementsByTagName('br')[ div.getElementsByTagName('br').length - 1 ];
+            div.removeChild(textArea);
+            div.removeChild(lineBreak);
+        }
+    });
+}
+
+// adds another textarea for recipe instruction/steps when add step button is pressed
+AddIngredient(){
+    
+    const button = this.shadowRoot.getElementById('addIngredientButton');
+    const div = this.shadowRoot.getElementById('ingredients');
+    const selectOptions = ['N/A', 'tsp', 'oz', 'c', 'pt', 'qt', 'gal', 'ml', 'l'];
+
+    button.addEventListener('click', () => {
+        let stepNum = Number(div.getAttribute('value'));
+        if( stepNum &lt; 8 ){
+            stepNum++;
+            div.setAttribute('value', stepNum);
+            const inputName = document.createElement('input');
+            inputName.setAttribute('type', 'text');
+            inputName.setAttribute('minlength', '2');
+            inputName.setAttribute('maxlength', '40');
+            inputName.setAttribute('minlength', '2');
+            inputName.setAttribute('placeholder', 'Ingredient Description');
+            const inputQuantity = document.createElement('input');
+            inputQuantity.setAttribute('type', 'number');
+            inputQuantity.setAttribute('min', '0');
+            inputQuantity.setAttribute('placeholder', 'Quantity');
+            const select = document.createElement('select');
+            for( var i = 0; i &lt; selectOptions.length; i++ ){
+                var option = document.createElement('option');
+                option.setAttribute('value', selectOptions[i]);
+                //option.setAttribute('innerText', selectOptions[i]);
+                option.innerText = selectOptions[i];
+                select.appendChild(option);
+            }
+            const lineBreak = document.createElement('br');
+            
+            div.appendChild(lineBreak);
+            div.appendChild(inputName);
+            div.appendChild(inputQuantity);
+            div.appendChild(select);
+        }
+    });
+
+}
+
+// adds another textarea for recipe instruction/steps when add step button is pressed
+AddInstruction(){
+    const button = this.shadowRoot.getElementById('addStepButton');
+    const div = this.shadowRoot.getElementById('instructions');
+
+    button.addEventListener('click', () => {
+        let stepNum = Number(div.getAttribute('value'));
+        
+        if( stepNum &lt; 8 ){
+            stepNum++;
+            div.setAttribute('value', stepNum);
+            const textArea = document.createElement('textarea');
+            textArea.setAttribute('cols', '60');
+            textArea.setAttribute('rows', '2');
+            textArea.setAttribute('placeholder', 'Step ' + stepNum);
+            const lineBreak = document.createElement('br');
+            div.appendChild(lineBreak);
+            div.appendChild(textArea);
+        }
+    });
+}
+
+// removes last textarea for recipe instruction/steps when remove step button is pressed
+RemoveIngredient(){
+    
+    const button = this.shadowRoot.getElementById('removeIngredientButton');
+    const div = this.shadowRoot.getElementById('ingredients');
+
+    button.addEventListener('click', () => {
+        let stepNum = Number(div.getAttribute('value'));
+        if( stepNum > 1 ){
+            stepNum--;
+            div.setAttribute('value', stepNum);
+            const lineBreak = div.getElementsByTagName('br')[ div.getElementsByTagName('br').length - 1 ];
+            const inputName = div.getElementsByTagName('input')[ div.getElementsByTagName('input').length - 2 ];
+            const inputQuantity = div.getElementsByTagName('input')[ div.getElementsByTagName('input').length - 1 ];
+            const select = div.getElementsByTagName('select')[ div.getElementsByTagName('select').length - 1 ];
+
+            div.removeChild(lineBreak);
+            div.removeChild(inputName);
+            div.removeChild(inputQuantity);
+            div.removeChild(select);
+        }
+    });
+}
+
+// uses Imgur API to convert image file into a link
+GetImgurImage(){
+
+    const imgUpload = this.shadowRoot.getElementById('imgUpload')
+    const imgPreview = this.shadowRoot.getElementById('imgPreview')
+    const url = this.shadowRoot.getElementById('url')
+    imgUpload.addEventListener('change', ev => {
+        const formdata = new FormData()
+        formdata.append('image', ev.target.files[0])
+        fetch('https://api.imgur.com/3/image/', {
+            method: 'post',
+            headers: {
+                Authorization: 'Client-ID 0f695d3611373b4'
+            },
+            body: formdata
+        }).then(data => data.json()).then(data => {
+            imgPreview.src = data.data.link
+            url.innerText = data.data.link
+        })
+    })
+
+}
+
+}
+
+customElements.define('recipe-upload', RecipeUpload);</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RecipeCard.html">RecipeCard</a></li><li><a href="RecipeDisplay.html">RecipeDisplay</a></li><li><a href="RecipeUpload.html">RecipeUpload</a></li><li><a href="Router_Router.html">Router</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addRecipe">addRecipe</a></li><li><a href="global.html#bindEscKey">bindEscKey</a></li><li><a href="global.html#bindPopstate">bindPopstate</a></li><li><a href="global.html#bindRecipeCard">bindRecipeCard</a></li><li><a href="global.html#bindSlider">bindSlider</a></li><li><a href="global.html#calculateTime">calculateTime</a></li><li><a href="global.html#countRecipes">countRecipes</a></li><li><a href="global.html#createCheckbox">createCheckbox</a></li><li><a href="global.html#createRecipeCards">createRecipeCards</a></li><li><a href="global.html#dataURItoBlob">dataURItoBlob</a></li><li><a href="global.html#deleteRecipe">deleteRecipe</a></li><li><a href="global.html#getByName">getByName</a></li><li><a href="global.html#getBySpice">getBySpice</a></li><li><a href="global.html#getIngredient">getIngredient</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadDB">loadDB</a></li><li><a href="global.html#saveDB">saveDB</a></li><li><a href="global.html#updateRecipe">updateRecipe</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sat Nov 20 2021 02:56:27 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
