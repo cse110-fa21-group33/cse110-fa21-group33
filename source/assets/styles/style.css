@@ -3,6 +3,18 @@
   font-family: 'Merriweather', serif;
 }
 
+body {
+  overflow: auto;
+  background-image: url('../images/background-draft.png');
+  background-repeat: repeat;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+main::-webkit-scrollbar {
+  display: none;
+}
+
 h1 {
   font-family: 'Mochiy Pop P One', sans-serif;
 }
@@ -69,7 +81,7 @@ section:not(section.shown) {
   appearance: none;
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
-  background: red; /* Green background */
+  background: red; /* Red background */
   cursor: pointer; /* Cursor on hover */
 }
   
@@ -85,11 +97,11 @@ section:not(section.shown) {
   position: sticky;
   top: 0;
   z-index: 1;
-  width: 100%;
+  width: 101%;
   height: 80px;
   padding: 10px;
-  margin-bottom: 10px;
-  /*background-color: var(--ec-white);*/
+  margin: -15px;
+  margin-bottom: 15px;
   background: #04aa6d; /* Green background */
 }
 
@@ -110,6 +122,11 @@ section:not(section.shown) {
   margin-left: 15px;
   margin-top: 10px; 
   border-radius: 50%;
+}
+
+.main-container {
+  max-width: 700px;
+  margin: auto;
 }
 
 /** Main Page section partitioning **/
@@ -135,6 +152,7 @@ section:not(section.shown) {
 
 #spice-slider--wrapper {
   grid-area: slider;
+  position: sticky;
 }
 
 #div--recommended-recipes {

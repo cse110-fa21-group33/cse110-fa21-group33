@@ -1,7 +1,7 @@
 // database.js
 import ShortUniqueId from 'https://esm.sh/short-unique-id';
-import Dexie from '../../../node_modules/dexie/dist/dexie.mjs';
-import { importDB, exportDB } from '../../../node_modules/dexie-export-import/dist/dexie-export-import.mjs';
+import Dexie from '../../node-modules/dexie/dist/dexie.mjs';
+import { importDB, exportDB } from '../../node-modules/dexie-export-import/dist/dexie-export-import.mjs';
 
 export const database = {};
 
