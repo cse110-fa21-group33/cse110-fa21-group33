@@ -1,8 +1,8 @@
 {
     "title": "Ghost Pepper Wings",
+    "id": "EEv8g4",
     "description": "These keto spicy chicken wings made with ghost pepper are so deliciously fiery and spicy, you will definitely feel the burn!",
     "image": "https://lowcarbafrica.com/wp-content/uploads/2020/02/Keto-Hot-Wings-with-Ghost-Pepper-homepage-200x200.jpg",
-    "video": "",
     "servingSize": 12,
     "scoville": 1000000,
     "spiceRating": 5,
@@ -84,6 +84,8 @@
       "Add in the ghost pepper, smoked paprika, thyme, salt, black pepper, and lemon pepper.",
       "Stir till all the spices are blended in.",
       "Put the fried chicken wings in a bowl and stir in the sauce."
-    ]
+    ],
+    "challenges": [],
+    "completed": false
   }
   

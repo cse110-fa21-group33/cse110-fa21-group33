@@ -88,7 +88,8 @@ section:not(section.shown) {
   width: 100%;
   height: 80px;
   padding: 10px;
-  margin-bottom: 10px;
+  margin: -15px;
+  margin-bottom: 15px;
   /*background-color: var(--ec-white);*/
   background: #04aa6d; /* Green background */
 }
@@ -160,47 +161,4 @@ a:link {
   background-color: #ee6858;
 }
 
-.recipe-card {
-  overflow: hidden;
-  border-radius: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0 0 1rem;
-  margin: 0;
-  background-color: #ffffff;
-}
 
-.recipe-card:hover {
-  box-shadow: 0 0 20px black;
-}
-
-.card-img {
-  height: 11rem;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-title {
-  padding: 0.5rem 1rem 0.25rem;
-  overflow: hidden;
-  font-size: 26px;
-  height: 49px;
-  line-height: 26px;
-}
-
-.card-rating {
-  padding: 0 1rem 0.5rem;
-  font-size: 14px;
-  align-items: center;
-  display: flex;
-}
-
-span,
-time {
-  display: flex;
-  justify-content: space-between;
-  color: #70757a;
-  font-size: 12px;
-  padding: 0 0.6rem 0 1rem;
-}
