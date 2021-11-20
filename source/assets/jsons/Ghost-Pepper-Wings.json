@@ -33,47 +33,47 @@
       {
         "name": "Ghost Pepper",
         "quantity": 0.25,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Butter, melted",
         "quantity": 0.25,
-        "units": "cup"
+        "units": "oz"
       },
       {
         "name": "Smoked Paprika",
         "quantity": 1,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Thyme",
         "quantity": 0.5,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Salt",
         "quantity": 0.5,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Black Pepper",
         "quantity": 1,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Coconut Aminos",
         "quantity": 1,
-        "units": "tablespoon"
+        "units": "tbsp"
       },
       {
         "name": "Lemon Pepper",
         "quantity": 0.5,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Oil",
         "quantity": 4,
-        "units": "cups"
+        "units": "c"
       }
     ],
     "directions": [

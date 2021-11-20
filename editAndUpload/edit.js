@@ -76,7 +76,7 @@ var optionIndex = {
  */
 function fill_in_existing_data() {
   const data = recipeData['../source/assets/jsons/Ghost-Pepper-Wings.json'];
-  console.log(data);
+  
   document.getElementById('recipeName').value = data.title;
   document.getElementById('recipeDescription').value = data.description;
   document.getElementById('url').innerText = data.image;
@@ -90,17 +90,24 @@ function fill_in_existing_data() {
 
   for (let i = 1; i < (data.ingredientList.length); i++) {
     MakeExtraSlots(data.ingredientList[i]);
-    console.log(optionIndex[data.ingredientList[i].units]);
+    //console.log(optionIndex[data.ingredientList[i].units]);
     document.getElementById("ingredientUnits").selectedIndex = optionIndex[data.ingredientList[i].units];
   }
-  const div = document.getElementById('ingredients');
-  var inputName = div.getElementsByTagName('input')[0];
-  var inputQuantity = div.getElementsByTagName('input')[1];
-  var select = div.getElementsByTagName('select')[0];
+  const div1 = document.getElementById('ingredients');
+  var inputName = div1.getElementsByTagName('input')[0];
+  var inputQuantity = div1.getElementsByTagName('input')[1];
+  var select = div1.getElementsByTagName('select')[0];
   inputName.value = data.ingredientList[0].name;
   inputQuantity.value = data.ingredientList[0].quantity;
   select.options[optionIndex[data.ingredientList[0].units]].selected = true;
 
+  const directions = data.directions;
+  for (let i = 1; i < (directions.length); i++) {
+    MakeExtraInstructionSlots(directions[i]);
+  }
+  const div2 = document.getElementById('instructions');
+  var textArea = div2.getElementsByTagName('textarea')[0];
+  textArea.value = data.directions[0];
 
 }
 
@@ -204,11 +211,27 @@ function RecipeInputsGood(event) {
   // TODO
 }
 
+// adds another textarea for recipe instructions/steps when add step button is pressed
+function MakeExtraInstructionSlots(data) {
+  const div = document.getElementById('instructions');
+  let stepNum = Number(div.getAttribute('value'));
 
-// adds another textarea for recipe instruction/steps when add step button is pressed
+  if (stepNum < 25) {
+    stepNum++;
+    div.setAttribute('value', stepNum);
+    const textArea = document.createElement('textarea');
+    textArea.setAttribute('cols', '60');
+    textArea.setAttribute('rows', '2');
+    textArea.setAttribute('placeholder', 'Step ' + stepNum);
+    textArea.value = data;
+    div.appendChild(textArea);
+  }
+}
+
+// adds another textarea for recipe instructions/steps when add step button is pressed
 function AddInstruction() {
   const button = document.getElementById('addStepButton');
-  const div = document.getElementById('instruction');
+  const div = document.getElementById('instructions');
 
   button.addEventListener('click', () => {
     let stepNum = Number(div.getAttribute('value'));
@@ -229,7 +252,7 @@ function AddInstruction() {
 function RemoveInstruction() {
 
   const button = document.getElementById('removeStepButton');
-  const div = document.getElementById('instruction');
+  const div = document.getElementById('instructions');
 
   button.addEventListener('click', () => {
     let stepNum = Number(div.getAttribute('value'));
