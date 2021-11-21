@@ -166,7 +166,12 @@ function bindEditButton(button, pageName) {
  function BindCancelButton(button, page) {
    if (button) {
     button.addEventListener('click', () => {
-      router.navigate(page.replace('-edit', ''), false);
+      if (page === 'create') {
+        router.navigate('home');
+      }
+      else {
+        router.navigate(page.replace('-edit', ''), false);
+      }
     });
   }
 }
@@ -256,8 +261,8 @@ function addCreateRecipe() {
     document.querySelector('.section--recipe-display').classList.remove('shown');
     document.querySelector('.section--recipe-upload').classList.add('shown');
     document.querySelector('recipe-upload').data = null;
+    console.log('successfully bound stuff');
     BindSubmitButton(document.querySelector('recipe-upload').shadowRoot.getElementById('submitButton'), 'create');
-    BindDeleteButton(document.querySelector('recipe-upload').shadowRoot.getElementById('deleteButton'));
     BindCancelButton(document.querySelector('recipe-upload').shadowRoot.getElementById('cancelButton'), 'create');
   });
 }
