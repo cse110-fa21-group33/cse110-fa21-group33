@@ -33,7 +33,7 @@
       {
         "name": "Garlic",
         "quantity": 2,
-        "units": "cloves"
+        "units": "N/A"
       },
       {
         "name": "Small Onion",
@@ -43,12 +43,12 @@
       {
         "name": "Lean Ground Beef",
         "quantity": 1,
-        "units": "pound"
+        "units": "lbs"
       },
       {
         "name": "Pepperjack Cheese",
         "quantity": 4,
-        "units": "slices"
+        "units": "N/A"
       },
       {
         "name": "Hamburger Buns",
