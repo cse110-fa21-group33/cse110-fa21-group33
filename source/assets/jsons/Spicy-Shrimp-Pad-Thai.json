@@ -28,12 +28,12 @@
       {
         "name": "Dried Rice Noodles",
         "quantity": 8,
-        "units": "ounces"
+        "units": "oz"
       },
       {
         "name": "Peanut Oil",
         "quantity": 2,
-        "units": "teaspoons"
+        "units": "tsp"
       },
       {
         "name": "Small Onion, diced",
@@ -48,52 +48,52 @@
       {
         "name": "Rice Wine Vinegar",
         "quantity": 3,
-        "units": "tablespoons"
+        "units": "tbsp"
       },
       {
         "name": "Ketchup",
         "quantity": 3,
-        "units": "tablespoons"
+        "units": "tbsp"
       },
       {
         "name": "Fish Sauce",
         "quantity": 3,
-        "units": "tablespoons"
+        "units": "tbsp"
       },
       {
         "name": "Sweet Chile Sauce",
         "quantity": 3,
-        "units": "tablespoons"
+        "units": "tbsp"
       },
       {
         "name": "Creamy Peanut Butter",
         "quantity": 2,
-        "units": "tablespoons"
+        "units": "tbsp"
       },
       {
         "name": "Light Soy Sauce",
         "quantity": 1,
-        "units": "tablespoon"
+        "units": "tbsp"
       },
       {
         "name": "Fresh Lime Juice",
         "quantity": 1,
-        "units": "tablespoon"
+        "units": "tbsp"
       },
       {
         "name": "White Sugar",
         "quantity": 1,
-        "units": "tablespoon"
+        "units": "tbsp"
       },
       {
-        "name": "Red Pepper Flaces",
+        "name": "Red Pepper Flakes",
         "quantity": 1,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Cayenne Pepper",
         "quantity": 0.5,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Uncooked Medium Shrimp, peeled and deveined",
@@ -108,17 +108,17 @@
       {
         "name": "Unsalted Dry-Roased Peanuts, chopped",
         "quantity": 1,
-        "units": "cup"
+        "units": "c"
       },
       {
         "name": "Bean Sprouts",
-        "quantity": 0.5,
-        "units": "pound"
+        "quantity": 8,
+        "units": "oz"
       },
       {
         "name": "Shredded Carrots (optional)",
         "quantity": 0.25,
-        "units": "cup"
+        "units": "c"
       },
       {
         "name": "Lime, cut into wedges",
@@ -128,12 +128,12 @@
       {
         "name": "Chopped Green Onions",
         "quantity": 0.25,
-        "units": "cup"
+        "units": "c"
       },
       {
         "name": "Coarsely Chopped Cilantro",
         "quantity": 0.25,
-        "units": "cup"
+        "units": "c"
       }
     ],
     "directions": [

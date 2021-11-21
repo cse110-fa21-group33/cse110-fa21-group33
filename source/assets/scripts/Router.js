@@ -42,8 +42,7 @@ export class Router {
       } else {
         hash = `#${page}`;
       }
-
-      if ((statePopped !== true) && (window.location.hash != hash)) {
+      if ((!statePopped) && (window.location.hash != hash)) {
         const oldHash = window.location.hash;
         history.pushState({ page }, page, window.location.href.replace(oldHash, '') + hash);
       }
