@@ -33,32 +33,32 @@
       {
         "name": "Ginger, chopped",
         "quantity": 1,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Garlic, chopped",
         "quantity": 1,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Sugar",
         "quantity": 1,
-        "units": "tablespoon"
+        "units": "tbsp"
       },
       {
         "name": "Vinegar",
         "quantity": 5,
-        "units": "tablespoons"
+        "units": "tbsp"
       },
       {
         "name": "Salt",
         "quantity": 1,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Sesame Oil",
         "quantity": 4,
-        "units": "tablespoons"
+        "units": "tbsp"
       }
     ],
     "directions": [
