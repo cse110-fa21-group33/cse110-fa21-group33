@@ -36,9 +36,7 @@ class RecipeDisplay extends HTMLElement {
       
       #recipe-media > img {
         display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 40rem;
+        width: 100%;
         height: auto;
       }
 
@@ -127,10 +125,7 @@ class RecipeDisplay extends HTMLElement {
                   </div>
                   <div class="button-wrapper">
                     <button class="recipe-button">Print</button>
-                  </div>  
-                  <div class="button-wrapper">
-                      <button class="edit-button">Edit</button>
-                  </div>  
+                  </div>   
               </div>      
             </div>
             <div id="recipe-media">
@@ -196,7 +191,7 @@ class RecipeDisplay extends HTMLElement {
                       <button class="print-button">Print</button>
                     </div>  
                     <div class="button-wrapper">
-                      <button class="edit-button">Edit</button>
+                      <button id="editButton" class="edit-button">Edit</button>
                     </div>  
                 </div>      
               </div>
