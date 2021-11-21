@@ -75,6 +75,7 @@ async function fetchRecipes() {
  * Populates with recommended page with recipe cards
  */
 function createRecipeCards(recipes) {
+  console.log(recipes);
   recipes.forEach((recipe) => {
     // Makes a new recipe card
     const recipeCard = document.createElement('recipe-card');
@@ -100,11 +101,15 @@ function createRecipeCards(recipes) {
 =======
       document.querySelector('recipe-display').data = recipe;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 1601d73 (Added functionality to the slider)
 =======
       const button = document.querySelector('recipe-display').shadowRoot.querySelectorAll('button')[1];
       bindEditButton(button, page);
 >>>>>>> 4ad80c5 (added edit button)
+=======
+      bindEditButton(document.querySelector('recipe-display').shadowRoot.getElementById('editButton'), page);
+>>>>>>> 69133c9 (added navigation functional to buttons on edit page)
     });
 
     router.addPage(`${page}-edit`, () => {
@@ -112,6 +117,9 @@ function createRecipeCards(recipes) {
       document.querySelector('.section--recipe-display').classList.remove('shown');
       document.querySelector('.section--recipe-upload').classList.add('shown');
       document.querySelector('recipe-upload').data = recipe;
+      BindSubmitButton(document.querySelector('recipe-upload').shadowRoot.getElementById('submitButton'), page);
+      BindDeleteButton(document.querySelector('recipe-upload').shadowRoot.getElementById('deleteButton'));
+      BindCancelButton(document.querySelector('recipe-upload').shadowRoot.getElementById('cancelButton'), page);
     });
 
     bindRecipeCard(recipeCard, page);
@@ -134,17 +142,62 @@ function bindRecipeCard(recipeCard, pageName) {
 }
 
 /**
- * Binds the click event listener to the <recipe-card> elements added to the page
- * so that when they are clicked, their card expands into the full recipe view mode
- * @param {Element} recipeCard the <recipe-card> element you wish to bind the event
+ * Binds the click event listener to the <edit> elements added to the page
+ * so that when they are clicked, their card expands into the edit recipe mode
+ * @param {Element} button the <edit-button> element you wish to bind the event
  *                             listeners to
  * @param {String} pageName the name of the page to navigate to on click
  */
 function bindEditButton(button, pageName) {
-  button.addEventListener('click', (e) => {
-    if (e.path[0].nodeName === 'A') return;
-    router.navigate(`${pageName}-edit`);
-  });
+  if (button) {
+    button.addEventListener('click', (e) => {
+      if (e.path[0].nodeName === 'A') return;
+      router.navigate(`${pageName}-edit`);
+    });
+  }
+}
+
+/**
+ * Binds the click event listener to the <cancel-button> elements added to the page
+ * so that when they are clicked, the page navigates back to home.
+ * @param {Element} button the <cancel-button> element you wish to bind the event
+ *                             listeners to
+ */
+ function BindCancelButton(button, page) {
+   if (button) {
+    button.addEventListener('click', () => {
+      router.navigate(page.replace('-edit', ''), false);
+    });
+  }
+}
+
+/**
+ * Binds the click event listener to the <submit-button> elements added to the page
+ * so that when they are clicked, the page navigates back to home.
+ * @param {Element} button the <submit-button> element you wish to bind the event
+ *                             listeners to
+ */
+ function BindSubmitButton(button, page) {
+  if (button) {
+    button.addEventListener('click', () => {
+      router.navigate('home', false);
+    });
+ }
+}
+
+/**
+ * Binds the click event listener to the <delete-button> elements added to the page
+ * so that when they are clicked, the page navigates back to home.
+ * @param {Element} button the <delete-button> element you wish to bind the event
+ *                             listeners to
+ */
+function BindDeleteButton(button) {
+  if (button) {
+    button.addEventListener('click', () => {
+      router.navigate('home');
+      window.location.reload();
+    });
+  }
 }
 
 /**
@@ -190,7 +243,7 @@ function bindPopstate() {
 function bindCreateRecipe() {
   const button = document.getElementById('create-button');
   button.addEventListener('click', (event) => {
-    router.navigate('create', true);
+    router.navigate('create', false);
   });
 }
 
@@ -203,6 +256,9 @@ function addCreateRecipe() {
     document.querySelector('.section--recipe-display').classList.remove('shown');
     document.querySelector('.section--recipe-upload').classList.add('shown');
     document.querySelector('recipe-upload').data = null;
+    BindSubmitButton(document.querySelector('recipe-upload').shadowRoot.getElementById('submitButton'), 'create');
+    BindDeleteButton(document.querySelector('recipe-upload').shadowRoot.getElementById('deleteButton'));
+    BindCancelButton(document.querySelector('recipe-upload').shadowRoot.getElementById('cancelButton'), 'create');
   });
 }
 =======

@@ -15,7 +15,21 @@ class RecipeUpload extends HTMLElement {
     this.isCreate = true;
 
     // TODO add CSS to upload page
-    styles.innerHTML = '';
+    styles.innerHTML = `
+      article {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 50%;
+        background-color: #ee6858;
+        padding: 15px 30px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+    `;
 
     article.innerHTML = `
         <h1 id="recipe-title">Upload Recipe</h1>
@@ -78,6 +92,7 @@ class RecipeUpload extends HTMLElement {
         <div id="formButtons">
             <input id="submitButton" class="Submit" type="button" value="Submit">
             <input id="cancelButton" class="Cancel" type="button" value="Cancel">
+            <input id="deleteButton" class="Delete" type="button" value="Delete">
         </div>`;
 
     this.shadowRoot.append(styles, article);
@@ -112,6 +127,7 @@ class RecipeUpload extends HTMLElement {
   set data(data) {
     this.json = data;
     // Reset HTML
+    const styles = document.createElement('style');
 
     this.shadowRoot.querySelector('article').innerHTML = `
     <h1 id="recipe-title">Upload Recipe</h1>
@@ -163,7 +179,7 @@ class RecipeUpload extends HTMLElement {
     </div>
     <input type="button" id="addIngredientButton" value="Add Ingredient">
     <input type="button" id="removeIngredientButton" value="Remove Ingredient">
-
+    
     <div id="instructions" value="1">
         <h2>Instructions</h2>
         <textarea cols='60' rows='2' placeholder="Step 1"></textarea>
@@ -174,6 +190,7 @@ class RecipeUpload extends HTMLElement {
     <div id="formButtons">
         <input id="submitButton" class="Submit" type="button" value="Submit">
         <input id="cancelButton" class="Cancel" type="button" value="Cancel">
+        <input id="deleteButton" class="Delete" type="button" value="Delete">
     </div>`;
     this.AddInstruction();
     this.RemoveInstruction();
@@ -202,12 +219,14 @@ class RecipeUpload extends HTMLElement {
     this.shadowRoot.getElementById('header-upload-photo').innerText = 'Upload New Photo';
     this.shadowRoot.getElementById('p-upload-photo').innerText = 'Upload a new picture if you wish to edit the dish image!';
 
+    /*
     const deleteButton = document.createElement('input');
     deleteButton.setAttribute('id', 'deleteButton');
     deleteButton.classList.add('Delete');
     deleteButton.setAttribute('type', 'button');
     deleteButton.setAttribute('value', 'Delete');
     this.shadowRoot.getElementById('formButtons').appendChild(deleteButton);
+    */
     this.BindDeleteButton();
 
     this.fill_in_existing_data();
