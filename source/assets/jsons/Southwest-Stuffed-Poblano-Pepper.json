@@ -4,7 +4,7 @@
     "description": "Easy, baked Southwest Stuffed Poblano Peppers with ground beef and rice are packed with bold, savory flavors and topped with cheese to make the BEST healthy stuffed peppers recipe you’ll ever taste!",
     "image": "https://www.lecremedelacrumb.com/wp-content/uploads/2018/09/stuffed-poblano-peppers-105.jpg",
     "servingSize": 8,
-    "scoville": 3000,
+    "scoville": 2000,
     "spiceRating": 1,
     "calories": 153,
     "time": [
@@ -32,53 +32,53 @@
       },
       {
         "name": "Lean Ground Beef",
-        "quantity": 1,
-        "units": "pound"
+        "quantity": 16,
+        "units": "oz"
       },
       {
         "name": "Ground Cumin",
         "quantity": 1,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Chili Powder",
         "quantity": 1,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Garlic Powder",
         "quantity": 1,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Cooked Long Grain White Rice",
         "quantity": 1,
-        "units": "cup"
+        "units": "c"
       },
       {
         "name": "Canned Black Beans, drained",
         "quantity": 0.5,
-        "units": "cup"
+        "units": "c"
       },
       {
         "name": "Frozen or Canned Corn, drained",
         "quantity": 0.5,
-        "units": "cup"
+        "units": "c"
       },
       {
         "name": "Fire Roasted Dice Tomatoes, drained",
         "quantity": 15,
-        "units": "ounces"
+        "units": "oz"
       },
       {
         "name": "Diced Green Chiles",
         "quantity": 4,
-        "units": "ounces"
+        "units": "oz"
       },
       {
         "name": "Grated Mozzarella or Mexican-Blend Cheese",
         "quantity": 1,
-        "units": "cup"
+        "units": "c"
       }
     ],
     "directions": [
