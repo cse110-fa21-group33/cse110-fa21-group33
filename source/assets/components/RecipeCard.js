@@ -65,6 +65,7 @@ class RecipeCard extends HTMLElement {
 
     const elem = document.createElement('div');
     elem.classList.add('recipe-card');
+    elem.onclick = function() {};
 
     const image = document.createElement('img');
     image.classList.add('card-img');
