@@ -3,10 +3,6 @@
   font-family: 'Merriweather', serif;
 }
 
-a {
-  cursor: pointer;
-}
-
 body {
   overflow: auto;
   background-image: url('../images/background-draft.png');
