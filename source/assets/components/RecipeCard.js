@@ -27,6 +27,7 @@ class RecipeCard extends HTMLElement {
       padding: 0 0 1rem;
       margin: 0;
       background-color: #ffffff;
+      cursor: pointer;
     }
     
     .recipe-card:hover {
