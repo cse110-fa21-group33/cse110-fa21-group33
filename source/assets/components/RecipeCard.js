@@ -30,7 +30,9 @@ class RecipeCard extends HTMLElement {
       cursor: pointer;
     }
     
-    
+    .recipe-card {
+      webkit-overflow-scrolling: touch;
+    }
     
     .card-img {
       height: 11rem;
