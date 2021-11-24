@@ -122,7 +122,7 @@ function createRecipeCards(recipes) {
       BindCancelButton(document.querySelector('recipe-upload').shadowRoot.getElementById('cancelButton'), page);
     });
 
-    bindRecipeCard(document.querySelector('.card-body'), page);
+    bindRecipeCard(recipeCard, page);
     document.querySelector('.card-body').appendChild(recipeCard);
   });
 }
