@@ -30,7 +30,9 @@ class RecipeCard extends HTMLElement {
       cursor: pointer;
     }
     
-    
+     .recipe-card:hover {
+      box-shadow: 0 0 20px black;
+    }
     
     .card-img {
       height: 11rem;
@@ -63,9 +65,8 @@ class RecipeCard extends HTMLElement {
     }
     `;
 
-    const elem = document.createElement('div');
+    const elem = document.createElement('a');
     elem.classList.add('recipe-card');
-    elem.onclick = function() {};
 
     const image = document.createElement('img');
     image.classList.add('card-img');
