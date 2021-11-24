@@ -86,7 +86,6 @@ function createRecipeCards(recipes) {
  */
 function bindRecipeCard(recipeCard, pageName) {
   recipeCard.addEventListener('click', (e) => {
-    if (e.path[0].nodeName === 'A') return;
     router.navigate(pageName);
   });
 }
@@ -101,7 +100,6 @@ function bindRecipeCard(recipeCard, pageName) {
 function bindEditButton(button, pageName) {
   if (button) {
     button.addEventListener('click', (e) => {
-      if (e.path[0].nodeName === 'A') return;
       router.navigate(`${pageName}-edit`);
     });
   }
