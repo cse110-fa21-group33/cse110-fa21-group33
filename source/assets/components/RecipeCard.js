@@ -28,12 +28,11 @@ class RecipeCard extends HTMLElement {
       margin: 0;
       background-color: #ffffff;
       cursor: pointer;
-    }
-    
-    .recipe-card {
       webkit-overflow-scrolling: touch;
     }
-    
+   
+   
+   
     .card-img {
       height: 11rem;
       width: 100%;
