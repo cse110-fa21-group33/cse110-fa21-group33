@@ -117,9 +117,9 @@ function createRecipeCards(recipes) {
       document.querySelector('.section--recipe-display').classList.remove('shown');
       document.querySelector('.section--recipe-upload').classList.add('shown');
       document.querySelector('recipe-upload').data = recipe;
-      BindSubmitButton(document.querySelector('recipe-upload').shadowRoot.getElementById('submitButton'), page);
-      BindDeleteButton(document.querySelector('recipe-upload').shadowRoot.getElementById('deleteButton'));
-      BindCancelButton(document.querySelector('recipe-upload').shadowRoot.getElementById('cancelButton'), page);
+      bindSubmitButton(document.querySelector('recipe-upload').shadowRoot.getElementById('submitButton'), page);
+      bindDeleteButton(document.querySelector('recipe-upload').shadowRoot.getElementById('deleteButton'));
+      bindCancelButton(document.querySelector('recipe-upload').shadowRoot.getElementById('cancelButton'), page);
     });
 
     bindRecipeCard(recipeCard, page);
@@ -135,7 +135,7 @@ function createRecipeCards(recipes) {
  * @param {String} pageName the name of the page to navigate to on click
  */
 function bindRecipeCard(recipeCard, pageName) {
-  recipeCard.addEventListener('click', (e) => {
+  recipeCard.addEventListener('click', () => {
     router.navigate(pageName);
   });
 }
@@ -149,7 +149,7 @@ function bindRecipeCard(recipeCard, pageName) {
  */
 function bindEditButton(button, pageName) {
   if (button) {
-    button.addEventListener('click', (e) => {
+    button.addEventListener('click', () => {
       router.navigate(`${pageName}-edit`);
     });
   }
@@ -161,13 +161,12 @@ function bindEditButton(button, pageName) {
  * @param {Element} button the <cancel-button> element you wish to bind the event
  *                             listeners to
  */
- function BindCancelButton(button, page) {
-   if (button) {
+function bindCancelButton(button, page) {
+  if (button) {
     button.addEventListener('click', () => {
       if (page === 'create') {
         router.navigate('home');
-      }
-      else {
+      } else {
         router.navigate(page.replace('-edit', ''), false);
       }
     });
@@ -180,12 +179,15 @@ function bindEditButton(button, pageName) {
  * @param {Element} button the <submit-button> element you wish to bind the event
  *                             listeners to
  */
- function BindSubmitButton(button, page) {
+function bindSubmitButton(button) {
   if (button) {
     button.addEventListener('click', () => {
       router.navigate('home', false);
+
+      // trigger slider
+      triggerSlider();
     });
- }
+  }
 }
 
 /**
@@ -194,11 +196,11 @@ function bindEditButton(button, pageName) {
  * @param {Element} button the <delete-button> element you wish to bind the event
  *                             listeners to
  */
-function BindDeleteButton(button) {
+function bindDeleteButton(button) {
   if (button) {
     button.addEventListener('click', () => {
-      router.navigate('home');
-      window.location.reload();
+      router.navigate('home', false);
+      setTimeout(triggerSlider, 100);
     });
   }
 }
@@ -245,7 +247,7 @@ function bindPopstate() {
 >>>>>>> c8622b4 (Populate the edit page)
 function bindCreateRecipe() {
   const button = document.getElementById('create-button');
-  button.addEventListener('click', (event) => {
+  button.addEventListener('click', () => {
     router.navigate('create', false);
   });
 }
@@ -260,8 +262,8 @@ function addCreateRecipe() {
     document.querySelector('.section--recipe-upload').classList.add('shown');
     document.querySelector('recipe-upload').data = null;
     console.log('successfully bound stuff');
-    BindSubmitButton(document.querySelector('recipe-upload').shadowRoot.getElementById('submitButton'), 'create');
-    BindCancelButton(document.querySelector('recipe-upload').shadowRoot.getElementById('cancelButton'), 'create');
+    bindSubmitButton(document.querySelector('recipe-upload').shadowRoot.getElementById('submitButton'), 'create');
+    bindCancelButton(document.querySelector('recipe-upload').shadowRoot.getElementById('cancelButton'), 'create');
   });
 }
 =======
@@ -285,7 +287,6 @@ async function bindSlider() {
     try {
       const spiceLevel = parseInt(event.target.value, 10);
       recipeList = await database.getBySpice(spiceLevel);
-
       if (recipeList.length > 0) {
         createRecipeCards(recipeList);
       }
@@ -295,6 +296,20 @@ async function bindSlider() {
   });
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 1601d73 (Added functionality to the slider)
 =======
 >>>>>>> 4ad80c5 (added edit button)
+=======
+
+/**
+ * Triggers the slider to show newly created/edited/deleted recipes.
+ */
+function triggerSlider() {
+  const spiceSlider = document
+    .querySelector('#spice-slider--wrapper')
+    .querySelector('.slider');
+  const event = new Event('change');
+  spiceSlider.dispatchEvent(event);
+}
+>>>>>>> 5802dc4 (Added feature that shows edited recipe once done)
