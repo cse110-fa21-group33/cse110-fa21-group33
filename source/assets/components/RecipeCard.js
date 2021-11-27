@@ -29,11 +29,11 @@ class RecipeCard extends HTMLElement {
       background-color: #ffffff;
       cursor: pointer;
     }
-    
-    .recipe-card:hover {
+   
+     .recipe-card:hover {
       box-shadow: 0 0 20px black;
     }
-    
+   
     .card-img {
       height: 11rem;
       width: 100%;
