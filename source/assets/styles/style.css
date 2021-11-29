@@ -107,7 +107,7 @@ section:not(section.shown) {
 
 .logo--wrapper > img {
   float: left;
-  width: 5%;
+  width: 25%;
 }
 
 .user-icon--wrapper {
