@@ -13,3 +13,17 @@ This is the repo for team 33's group project for CSE 110 Fall 2021. Our goal is 
 - Tanyunfeng Chen
 - **Advisor:** Sourabh Murali
 - **Instructor:** Thomas Powell
+
+## Why Our Repo Contains the Following Files and Directories
+
+### package.json
+We've included a package.json to highlight our core dependencies: dexie, jest, and eslint. 
+
+### JSDoc/
+This directory is used by JSDoc as a placeholder directory when automatically generating documentation. 
+
+### .vscode/
+This directory contains our settings.json file which is used by our developers to ensure a uniform coding environment.
+
+### .elintrc.js
+This file contains all of our linting rules for our developers to ensure code uniformity.
