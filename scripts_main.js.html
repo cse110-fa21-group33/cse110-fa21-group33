@@ -95,9 +95,9 @@ function createRecipeCards(recipes) {
       document.querySelector('.section--recipe-display').classList.remove('shown');
       document.querySelector('.section--recipe-upload').classList.add('shown');
       document.querySelector('recipe-upload').data = recipe;
-      BindSubmitButton(document.querySelector('recipe-upload').shadowRoot.getElementById('submitButton'), page);
-      BindDeleteButton(document.querySelector('recipe-upload').shadowRoot.getElementById('deleteButton'));
-      BindCancelButton(document.querySelector('recipe-upload').shadowRoot.getElementById('cancelButton'), page);
+      bindSubmitButton(document.querySelector('recipe-upload').shadowRoot.getElementById('submitButton'), page);
+      bindDeleteButton(document.querySelector('recipe-upload').shadowRoot.getElementById('deleteButton'));
+      bindCancelButton(document.querySelector('recipe-upload').shadowRoot.getElementById('cancelButton'), page);
     });
 
     bindRecipeCard(recipeCard, page);
@@ -113,7 +113,7 @@ function createRecipeCards(recipes) {
  * @param {String} pageName the name of the page to navigate to on click
  */
 function bindRecipeCard(recipeCard, pageName) {
-  recipeCard.addEventListener('click', (e) => {
+  recipeCard.addEventListener('click', () => {
     router.navigate(pageName);
   });
 }
@@ -127,7 +127,7 @@ function bindRecipeCard(recipeCard, pageName) {
  */
 function bindEditButton(button, pageName) {
   if (button) {
-    button.addEventListener('click', (e) => {
+    button.addEventListener('click', () => {
       router.navigate(`${pageName}-edit`);
     });
   }
@@ -139,13 +139,12 @@ function bindEditButton(button, pageName) {
  * @param {Element} button the &lt;cancel-button> element you wish to bind the event
  *                             listeners to
  */
- function BindCancelButton(button, page) {
-   if (button) {
+function bindCancelButton(button, page) {
+  if (button) {
     button.addEventListener('click', () => {
       if (page === 'create') {
         router.navigate('home');
-      }
-      else {
+      } else {
         router.navigate(page.replace('-edit', ''), false);
       }
     });
@@ -158,12 +157,15 @@ function bindEditButton(button, pageName) {
  * @param {Element} button the &lt;submit-button> element you wish to bind the event
  *                             listeners to
  */
- function BindSubmitButton(button, page) {
+function bindSubmitButton(button) {
   if (button) {
     button.addEventListener('click', () => {
       router.navigate('home', false);
+
+      // trigger slider
+      triggerSlider();
     });
- }
+  }
 }
 
 /**
@@ -172,11 +174,11 @@ function bindEditButton(button, pageName) {
  * @param {Element} button the &lt;delete-button> element you wish to bind the event
  *                             listeners to
  */
-function BindDeleteButton(button) {
+function bindDeleteButton(button) {
   if (button) {
     button.addEventListener('click', () => {
-      router.navigate('home');
-      window.location.reload();
+      router.navigate('home', false);
+      setTimeout(triggerSlider, 100);
     });
   }
 }
@@ -216,7 +218,7 @@ function bindPopstate() {
  */
 function bindCreateRecipe() {
   const button = document.getElementById('create-button');
-  button.addEventListener('click', (event) => {
+  button.addEventListener('click', () => {
     router.navigate('create', false);
   });
 }
@@ -231,8 +233,8 @@ function addCreateRecipe() {
     document.querySelector('.section--recipe-upload').classList.add('shown');
     document.querySelector('recipe-upload').data = null;
     console.log('successfully bound stuff');
-    BindSubmitButton(document.querySelector('recipe-upload').shadowRoot.getElementById('submitButton'), 'create');
-    BindCancelButton(document.querySelector('recipe-upload').shadowRoot.getElementById('cancelButton'), 'create');
+    bindSubmitButton(document.querySelector('recipe-upload').shadowRoot.getElementById('submitButton'), 'create');
+    bindCancelButton(document.querySelector('recipe-upload').shadowRoot.getElementById('cancelButton'), 'create');
   });
 }
 
@@ -256,7 +258,6 @@ async function bindSlider() {
     try {
       const spiceLevel = parseInt(event.target.value, 10);
       recipeList = await database.getBySpice(spiceLevel);
-
       if (recipeList.length > 0) {
         createRecipeCards(recipeList);
       }
@@ -264,6 +265,17 @@ async function bindSlider() {
       console.log(`Error fetching recipes: ${err}`);
     }
   });
+}
+
+/**
+ * Triggers the slider to show newly created/edited/deleted recipes.
+ */
+function triggerSlider() {
+  const spiceSlider = document
+    .querySelector('#spice-slider--wrapper')
+    .querySelector('.slider');
+  const event = new Event('change');
+  spiceSlider.dispatchEvent(event);
 }
 </code></pre>
         </article>
@@ -275,13 +287,13 @@ async function bindSlider() {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RecipeCard.html">RecipeCard</a></li><li><a href="RecipeDisplay.html">RecipeDisplay</a></li><li><a href="RecipeUpload.html">RecipeUpload</a></li><li><a href="Router_Router.html">Router</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addCreateRecipe">addCreateRecipe</a></li><li><a href="global.html#addRecipe">addRecipe</a></li><li><a href="global.html#BindCancelButton">BindCancelButton</a></li><li><a href="global.html#bindCreateRecipe">bindCreateRecipe</a></li><li><a href="global.html#BindDeleteButton">BindDeleteButton</a></li><li><a href="global.html#bindEditButton">bindEditButton</a></li><li><a href="global.html#bindEscKey">bindEscKey</a></li><li><a href="global.html#bindPopstate">bindPopstate</a></li><li><a href="global.html#bindRecipeCard">bindRecipeCard</a></li><li><a href="global.html#bindSlider">bindSlider</a></li><li><a href="global.html#BindSubmitButton">BindSubmitButton</a></li><li><a href="global.html#calculateTime">calculateTime</a></li><li><a href="global.html#countRecipes">countRecipes</a></li><li><a href="global.html#createCheckbox">createCheckbox</a></li><li><a href="global.html#createRecipeCards">createRecipeCards</a></li><li><a href="global.html#dataURItoBlob">dataURItoBlob</a></li><li><a href="global.html#deleteRecipe">deleteRecipe</a></li><li><a href="global.html#getByName">getByName</a></li><li><a href="global.html#getBySpice">getBySpice</a></li><li><a href="global.html#getIngredient">getIngredient</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadDB">loadDB</a></li><li><a href="global.html#saveDB">saveDB</a></li><li><a href="global.html#updateRecipe">updateRecipe</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RecipeCard.html">RecipeCard</a></li><li><a href="RecipeDisplay.html">RecipeDisplay</a></li><li><a href="RecipeUpload.html">RecipeUpload</a></li><li><a href="Router_Router.html">Router</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addCreateRecipe">addCreateRecipe</a></li><li><a href="global.html#addRecipe">addRecipe</a></li><li><a href="global.html#bindCancelButton">bindCancelButton</a></li><li><a href="global.html#bindCreateRecipe">bindCreateRecipe</a></li><li><a href="global.html#bindDeleteButton">bindDeleteButton</a></li><li><a href="global.html#bindEditButton">bindEditButton</a></li><li><a href="global.html#bindEscKey">bindEscKey</a></li><li><a href="global.html#bindPopstate">bindPopstate</a></li><li><a href="global.html#bindRecipeCard">bindRecipeCard</a></li><li><a href="global.html#bindSlider">bindSlider</a></li><li><a href="global.html#bindSubmitButton">bindSubmitButton</a></li><li><a href="global.html#calculateTime">calculateTime</a></li><li><a href="global.html#countRecipes">countRecipes</a></li><li><a href="global.html#createCheckbox">createCheckbox</a></li><li><a href="global.html#createRecipeCards">createRecipeCards</a></li><li><a href="global.html#dataURItoBlob">dataURItoBlob</a></li><li><a href="global.html#deleteRecipe">deleteRecipe</a></li><li><a href="global.html#getByName">getByName</a></li><li><a href="global.html#getBySpice">getBySpice</a></li><li><a href="global.html#getIngredient">getIngredient</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadDB">loadDB</a></li><li><a href="global.html#saveDB">saveDB</a></li><li><a href="global.html#triggerSlider">triggerSlider</a></li><li><a href="global.html#updateRecipe">updateRecipe</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Nov 29 2021 04:38:19 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Nov 29 2021 20:44:48 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
