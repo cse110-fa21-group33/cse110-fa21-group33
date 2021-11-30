@@ -7,7 +7,7 @@ describe('Basic user flow for Website', () => {
 
   it('Initial Home Page - Check for recipe cards', async () => {
     console.log('Checking for recipe cards');
-    // setTimeout(() => { console.log('awaiting page to load'); }, 1000);
+    await new Promise((r) => setTimeout(r, 2000));
     const numCards = await page.$$eval('recipe-card', (recipeCards) => recipeCards.length);
     expect(numCards).toBe(1);
   });
@@ -33,6 +33,7 @@ describe('Basic user flow for Website', () => {
     console.log('Checking if clicking recipe card brings up recipe');
     const card = await page.$('recipe-card');
     card.click();
+    await new Promise((r) => setTimeout(r, 1000));
     const recipe = await page.$('recipe-display');
     const root = await recipe.getProperty('shadowRoot');
     const spice = await root.$('p#recipe-spice-level');
