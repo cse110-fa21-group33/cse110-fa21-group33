@@ -2,6 +2,7 @@
  * recipe-display.js
  *
  * @author Lynn Dang
+ * Taken from Lab 7
  */
 class RecipeDisplay extends HTMLElement {
   /**
@@ -20,6 +21,12 @@ class RecipeDisplay extends HTMLElement {
         max-width: 700px;
         margin: auto;
       }
+
+      .recipe-section {
+        background-color: #ee6858;
+        padding: 20px 40px;
+        margin: -20px -40px;
+      }
       
       /* generic button */
       .button-wrapper > button{
@@ -27,8 +34,17 @@ class RecipeDisplay extends HTMLElement {
         font-size: 18px;
       }
       
-      #recipe-title{
+      #recipe-media > img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .recipe-title{
         font-size: 50px;
+        font-family: 'Mochiy Pop P One', sans-serif;
+        padding: 0px;
+        margin: 0px;
       }
       
       .recipe-about {
@@ -87,6 +103,11 @@ class RecipeDisplay extends HTMLElement {
         flex-direction: column;
         row-gap: 10px;
       }
+
+      hr {
+        border-color: black;
+      }
+
     `;
 
     article.innerHTML = `
@@ -96,14 +117,15 @@ class RecipeDisplay extends HTMLElement {
             <div class="recipe-header">
               <h1></h1>
               <div class="recipe-about">
-                <p class="recipe-description"></p>
+                <p class="recipe-description">
+                </p>
                   <div class="recipe-spice-info">
                     <img src="">
                     <p id="recipe-spice-level"></p>    
                   </div>
                   <div class="button-wrapper">
                     <button class="recipe-button">Print</button>
-                  </div>  
+                  </div>   
               </div>      
             </div>
             <div id="recipe-media">
@@ -158,7 +180,7 @@ class RecipeDisplay extends HTMLElement {
           <main>
             <article class="recipe-section">
               <div class="recipe-header">
-                <h1></h1>
+                <h1 class="recipe-title"></h1>
                 <div class="recipe-about">
                   <p class="recipe-description"></p>
                     <div class="recipe-spice-info">
@@ -166,7 +188,10 @@ class RecipeDisplay extends HTMLElement {
                       <p id="recipe-spice-level"></p>    
                     </div>
                     <div class="button-wrapper">
-                      <button class="recipe-button">Print</button>
+                      <button class="print-button">Print</button>
+                    </div>  
+                    <div class="button-wrapper">
+                      <button id="editButton" class="edit-button">Edit</button>
                     </div>  
                 </div>      
               </div>
@@ -213,13 +238,13 @@ class RecipeDisplay extends HTMLElement {
     const { description } = data;
     this.shadowRoot.querySelector('.recipe-description').innerHTML = description;
 
-    const imgSrc = data.image;
+    const { image } = data;
     const img = this.shadowRoot.querySelector('#recipe-media > img');
-    img.setAttribute('src', imgSrc);
+    img.setAttribute('src', image);
     img.setAttribute('alt', title);
 
-    const scovilleUnit = data.scoville;
-    this.shadowRoot.querySelector('#recipe-spice-level').innerHTML = scovilleUnit;
+    const { scoville } = data;
+    this.shadowRoot.querySelector('#recipe-spice-level').innerHTML = scoville;
 
     const prepTime = calculateTime(data.time[0]);
     this.shadowRoot.querySelector('#recipe-prep-time > .recipe-info-number').innerHTML = prepTime;
@@ -230,9 +255,8 @@ class RecipeDisplay extends HTMLElement {
     const { servingSize } = data;
     this.shadowRoot.querySelector('#recipe-serving-size > .recipe-info-number').innerHTML = servingSize;
 
-    const ingredientsList = data.ingredientList;
-    console.log(ingredientsList);
-    ingredientsList.forEach((ingredient) => {
+    const { ingredientList } = data;
+    ingredientList.forEach((ingredient) => {
       const ingredientString = getIngredient(ingredient);
       const ingredientContainer = createCheckbox(ingredientString);
       this.shadowRoot.querySelector('#recipe-ingredients > .recipe-list').appendChild(ingredientContainer);

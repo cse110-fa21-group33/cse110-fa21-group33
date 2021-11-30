@@ -1,8 +1,8 @@
 {
     "title": "Spicy Shrimp Pad Thai",
+    "id": "Ey9arg",
     "description": "I used other pad thai recipes from this website and added shrimp and my own little flavor and spice.",
     "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F9126258.jpg",
-    "video": "",
     "servingSize": 4,
     "scoville": 70000,
     "spiceRating": 3,
@@ -28,12 +28,12 @@
       {
         "name": "Dried Rice Noodles",
         "quantity": 8,
-        "units": "ounces"
+        "units": "oz"
       },
       {
         "name": "Peanut Oil",
         "quantity": 2,
-        "units": "teaspoons"
+        "units": "tsp"
       },
       {
         "name": "Small Onion, diced",
@@ -41,59 +41,59 @@
         "units": "N/A"
       },
       {
-        "name": "Garlic, minced",
+        "name": "cloves Garlic, minced",
         "quantity": 2,
-        "units": "cloves"
+        "units": "N/A"
       },
       {
         "name": "Rice Wine Vinegar",
         "quantity": 3,
-        "units": "tablespoons"
+        "units": "tbsp"
       },
       {
         "name": "Ketchup",
         "quantity": 3,
-        "units": "tablespoons"
+        "units": "tbsp"
       },
       {
         "name": "Fish Sauce",
         "quantity": 3,
-        "units": "tablespoons"
+        "units": "tbsp"
       },
       {
         "name": "Sweet Chile Sauce",
         "quantity": 3,
-        "units": "tablespoons"
+        "units": "tbsp"
       },
       {
         "name": "Creamy Peanut Butter",
         "quantity": 2,
-        "units": "tablespoons"
+        "units": "tbsp"
       },
       {
         "name": "Light Soy Sauce",
         "quantity": 1,
-        "units": "tablespoon"
+        "units": "tbsp"
       },
       {
         "name": "Fresh Lime Juice",
         "quantity": 1,
-        "units": "tablespoon"
+        "units": "tbsp"
       },
       {
         "name": "White Sugar",
         "quantity": 1,
-        "units": "tablespoon"
+        "units": "tbsp"
       },
       {
-        "name": "Red Pepper Flaces",
+        "name": "Red Pepper Flakes",
         "quantity": 1,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Cayenne Pepper",
         "quantity": 0.5,
-        "units": "teaspoon"
+        "units": "tsp"
       },
       {
         "name": "Uncooked Medium Shrimp, peeled and deveined",
@@ -108,17 +108,17 @@
       {
         "name": "Unsalted Dry-Roased Peanuts, chopped",
         "quantity": 1,
-        "units": "cup"
+        "units": "c"
       },
       {
         "name": "Bean Sprouts",
-        "quantity": 0.5,
-        "units": "pound"
+        "quantity": 8,
+        "units": "oz"
       },
       {
         "name": "Shredded Carrots (optional)",
         "quantity": 0.25,
-        "units": "cup"
+        "units": "c"
       },
       {
         "name": "Lime, cut into wedges",
@@ -128,12 +128,12 @@
       {
         "name": "Chopped Green Onions",
         "quantity": 0.25,
-        "units": "cup"
+        "units": "c"
       },
       {
         "name": "Coarsely Chopped Cilantro",
         "quantity": 0.25,
-        "units": "cup"
+        "units": "c"
       }
     ],
     "directions": [
@@ -142,6 +142,8 @@
       "Combine rice wine vinegar, ketchup, fish sauce, chile sauce, peanut butter, soy sauce, lime juice, sugar, red pepper flakes, and cayenne pepper together in a bowl. Set aside.",
       "Add shrimp to the wok. Cook and stir until pink, about 4 minutes. Add the ketchup mixture and stir. Move all ingredients to one side to clear a small space in the pan. Pour in eggs and cook without stirring until partially set, about 3 minutes.",
       "Stir the drained noodles into the shrimp and egg mixture. Add 1/2 cup peanuts, 1/4 cup bean sprouts, and carrots. Cook and stir until noodles are heated through, about 2 minutes. Garnish with the remaining peanuts, bean sprouts, lime wedges, green onions, and cilantro."
-    ]
+    ],
+    "challenges": [],
+    "completed": false
   }
   
