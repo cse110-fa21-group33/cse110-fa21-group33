@@ -1,8 +1,10 @@
 {
   "devDependencies": {
     "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
     "babel-jest": "^27.3.1",
+    "cross-env": "^7.0.3",
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",
@@ -15,13 +17,11 @@
   },
   "jest": {
     "preset": "jest-puppeteer",
-    "verbose": true,
-    "globals": {
-      "window": {}
-    }
+    "verbose": true
   },
   "dependencies": {
-    "dexie": "^3.0.3",
+    "@babel/runtime": "^7.16.3",
+    "dexie": "^3.2.0",
     "dexie-export-import": "^1.0.3"
   }
 }
