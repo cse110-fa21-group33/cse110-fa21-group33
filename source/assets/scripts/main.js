@@ -31,6 +31,7 @@ async function init() {
   bindEscKey();
   bindPopstate();
   bindSlider();
+  clickLogoToGoHome();
 }
 
 /**
@@ -165,6 +166,16 @@ function bindEscKey() {
     if ((event.key === 'Escape') || (event.key === 'Esc')) {
       router.navigate('home', false);
     }
+  });
+}
+
+/* Binds clicking the website logo to going to the home page
+ * just using the same code from bindEscKey()
+*/
+function clickLogoToGoHome() {
+  const websiteLogo = document.getElementById('websiteLogo');
+  websiteLogo.addEventListener('click', (event) => {
+      router.navigate('home', false);
   });
 }
 
