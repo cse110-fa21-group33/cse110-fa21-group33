@@ -32,6 +32,7 @@ async function init() {
   bindPopstate();
   bindSlider();
   clickLogoToGoHome();
+  sliderSpiceLevel()
 }
 
 /**
@@ -259,4 +260,26 @@ function triggerSlider() {
     .querySelector('.slider');
   const event = new Event('change');
   spiceSlider.dispatchEvent(event);
+}
+
+/*
+ *  Make the slider display current spice level with pepper emojis
+ */
+function sliderSpiceLevel() {
+  const spiceSlider = document.getElementById('myRange');
+  const spiceLevel = document.getElementById('spiceLevel');
+
+  let emojiString = '';
+  for( var i = 0; i < spiceSlider.value; i++ ){
+    emojiString += '🌶️';
+  }
+  spiceLevel.innerHTML = emojiString;
+  
+  spiceSlider.oninput = function () {
+    emojiString = ''
+    for( var i = 0; i < this.value; i++ ){
+      emojiString += '🌶️';
+    }
+    spiceLevel.innerHTML = emojiString;    
+  }
 }

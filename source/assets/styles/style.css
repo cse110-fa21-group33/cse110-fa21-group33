@@ -49,7 +49,6 @@ section:not(section.shown) {
 .slider {
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
- 
   width: 50%; /* Full-width */
   height: 10px; /* Specified height */
   background: #d3d3d3; /* Grey background */
@@ -71,6 +70,10 @@ section:not(section.shown) {
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
   background: red; /* Red background */
+  
+  /* Not sure why this doesnt work...
+  background: url('../images/fireGif.gif');
+  */
   cursor: pointer; /* Cursor on hover */
 }
   
@@ -78,15 +81,17 @@ section:not(section.shown) {
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
   background: #04aa6d; /* Green background */
+  
+  /*  Not sure why this doesnt work...
+  background: url('../images/fireGif.gif');
+  */
   cursor: pointer; /* Cursor on hover */
 }
 /* Slider end*/
 
 /* Header for the webpage*/
 .nav--header {
-  /*
-  display: block;
-  */
+
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   grid-template-rows: 80px;
@@ -105,11 +110,25 @@ section:not(section.shown) {
 }
 /* Start of Header Elements */
 /* Main logo and website title, on top left */
+
+/* Website Logo Start */
+
+/*  Not sure if we should delete
 .logo--wrapper > img {     
   max-width: 100%;
   max-height: 100%;
 }
+*/
+#websiteLogo{
+  height: 80px ;
+}
 
+.logo--wrapper{
+  width: auto;
+}
+/* Website Logo End */
+
+/* SearchBar Start */
 .Searchbar {
   justify-content: center;
   align-items: center;
@@ -118,26 +137,49 @@ section:not(section.shown) {
 
 .Searchbar input {
   height: 50px;
-  width: 400px;
+  width: 80%;
   box-sizing: border-box;
 }
+/* SearchBar End */
 
+/* Slider Start */
 #spice-slider--wrapper{
-  justify-content: center;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 60px 20px;
+  grid-gap: 0px;
+}
+
+#sliderDiv{
   align-items: center;
+  justify-content: center;
   display: flex;
+  width: auto;
 }
 
 #myRange.slider{
-  width: 300px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+}
+/* Slider End */
+
+/* Pepper Emojis */
+#spiceLevel{
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
+/* Create Recipe Button */
 .button--wrapper{
   justify-content: center;
   align-items: center;
   display: flex;
 }
 
+/* Top Right Image Start */
 .user-icon--wrapper {
   justify-content: center;
   align-items: center;
@@ -149,6 +191,8 @@ section:not(section.shown) {
   height: 50px;
   border-radius: 50%;
 }
+/* Top Right Image Start */
+
 /* End of Header Elements */
 
 
