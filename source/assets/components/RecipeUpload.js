@@ -219,7 +219,7 @@ class RecipeUpload extends HTMLElement {
     this.shadowRoot.getElementById('formButtons').appendChild(deleteButton);
     this.BindDeleteButton();
 
-    this.fill_in_existing_data();
+    this.FillExistingData();
   }
 
   // attempt to take user input and convert to .json file
@@ -488,12 +488,10 @@ class RecipeUpload extends HTMLElement {
     });
   }
 
-  /**
- * The function that will fill in the data into the text boxes for some specific recipe edit page
- * Right now the data we use is whatever the recipe we manually choose
- * Later it will correspond to the recipe we clicked on to edit
+/**
+ * This function will populate the edit page for a current recipe with its latest information
  */
-  fill_in_existing_data() {
+  FillExistingData() {
     this.shadowRoot.getElementById('recipeName').value = this.json.title;
     this.shadowRoot.getElementById('recipeDescription').value = this.json.description;
     this.shadowRoot.getElementById('url').innerText = this.json.image;
@@ -506,7 +504,7 @@ class RecipeUpload extends HTMLElement {
     this.shadowRoot.getElementById('cookHrs').value = this.json.time[1].hours;
 
     for (let i = 1; i < (this.json.ingredientList.length); i += 1) {
-      this.MakeExtraSlots(this.json.ingredientList[i]);
+      this.MakeExtraIngredientsSlots(this.json.ingredientList[i]);
       // console.log(optionIndex[data.ingredientList[i].units]);
       this.shadowRoot.getElementById('ingredientUnits').selectedIndex = this.optionIndex[this.json.ingredientList[i].units];
     }
@@ -527,7 +525,10 @@ class RecipeUpload extends HTMLElement {
     textArea.value = this.json.directions[0];
   }
 
-  // adds another textarea for recipe instructions/steps when add step button is pressed
+  /**
+   * This is a helper function that creates new text boxes for the recipe's existing instructions
+   * The text boxes then will be filled with the proper information accordingly 
+   */
   MakeExtraInstructionSlots(data) {
     const div = this.shadowRoot.getElementById('instructions');
     let stepNum = Number(div.getAttribute('value'));
@@ -546,8 +547,11 @@ class RecipeUpload extends HTMLElement {
     }
   }
 
-  // adds another textarea for recipe instruction/steps when add step button is pressed
-  MakeExtraSlots(data) {
+  /**
+   * This is a helper function that creates new text boxes for the recipe's existing ingredients
+   * The text boxes then will be filled with the proper information accordingly 
+   */
+  MakeExtraIngredientsSlots(data) {
     const button = this.shadowRoot.getElementById('addIngredientButton');
     const div = this.shadowRoot.getElementById('ingredients');
     const selectOptions = ['N/A', 'tsp', 'tbsp', 'oz', 'c', 'pt', 'qt', 'gal', 'ml', 'l'];
