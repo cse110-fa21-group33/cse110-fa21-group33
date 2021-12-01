@@ -274,12 +274,14 @@ function sliderSpiceLevel() {
     emojiString += '🌶️';
   }
   spiceLevel.innerHTML = emojiString;
+  spiceSlider.style.backgroundImage='url(../images/fireGif' + spiceSlider.value + '.gif';
   
   spiceSlider.oninput = function () {
     emojiString = ''
     for( var i = 0; i < this.value; i++ ){
       emojiString += '🌶️';
     }
-    spiceLevel.innerHTML = emojiString;    
+    spiceLevel.innerHTML = emojiString;
+    spiceSlider.style.backgroundImage='url(../images/fireGif' + spiceSlider.value + '.gif';
   }
 }
