@@ -44,8 +44,9 @@ class RecipeCard extends HTMLElement {
       padding: 0.5rem 1rem 0.25rem;
       overflow: hidden;
       font-size: 26px;
-      height: 49px;
-      line-height: 26px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical
     }
     
     .card-rating {
