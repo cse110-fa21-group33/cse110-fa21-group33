@@ -36,22 +36,22 @@ Yuang - Worked on the progress bar functionality. This will go with the challeng
 
 - Progress Bar:
 
-![Untitled](113021-sprint-2-review%20babd4cda641240caaf646854ddd278fb/Untitled.png)
+![Untitled](media/sprint-2/ProgressBar.png)
 
 Main Page Layout:
 
-![Untitled](113021-sprint-2-review%20babd4cda641240caaf646854ddd278fb/Untitled%201.png)
+![Untitled](media/sprint-2/MainPageLayout.png)
 
 Recipe Display Layout
 
-![Untitled](113021-sprint-2-review%20babd4cda641240caaf646854ddd278fb/Untitled%202.png)
+![Untitled](media/sprint-2/RecipeDisplayLayout.png)
 
 Recipe Upload (same layout for editing)
 
-![Untitled](113021-sprint-2-review%20babd4cda641240caaf646854ddd278fb/Untitled%203.png)
+![Untitled](media/sprint-2/RecipeUpload.png)
 
 Recipe Edit:
 
-![Untitled](113021-sprint-2-review%20babd4cda641240caaf646854ddd278fb/Untitled%204.png)
+![Untitled](media/sprint-2/RecipeEdit1.png)
 
-![Untitled](113021-sprint-2-review%20babd4cda641240caaf646854ddd278fb/Untitled%205.png)
+![Untitled](media/sprint-2/RecipeEdit2.png)
