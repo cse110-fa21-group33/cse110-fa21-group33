@@ -10,6 +10,11 @@ const router = new Router(() => {
   document.querySelector('.section--recipe-upload').classList.remove('shown');
 });
 
+const [recommendTitle, searchTitle] = [
+  'Recommended Recipes For You',
+  'Search Results',
+];
+
 const challengePath = 'assets/jsons/challenges.json';
 let challengeData;
 
@@ -82,26 +87,6 @@ function createRecipeCards(recipes) {
 
     bindRecipeCard(recipeCard, page);
     document.querySelector('.card-body').appendChild(recipeCard);
-  });
-}
-
-/**
- * Populates the challenge progress section
- */
-async function createProgressBars() {
-  // TODO change this to getting the challengeData from the database
-  await fetch(challengePath)
-    .then((response) => response.json())
-    .then((data) => {
-      challengeData = data.challenges;
-    })
-    .catch((error) => {
-    });
-  challengeData.forEach((challenge) => {
-    const challengeBar = document.createElement('challenge-bar');
-    challengeBar.data = challenge;
-
-    document.querySelector('.challenge-body').appendChild(challengeBar);
   });
 }
 
@@ -186,12 +171,12 @@ function bindDeleteButton(button) {
 /**
  * Binds the 'keydown' event listener to the Escape key (esc) such that when
  * it is clicked, the home page is returned to
- * TEMPORARY, TODO CHANGE THIS TO WHEN YOU CLICK THE LOGO IT LEADS TO HOME
  */
 function bindEscKey() {
   document.addEventListener('keydown', (event) => {
     if ((event.key === 'Escape') || (event.key === 'Esc')) {
       router.navigate('home', false);
+      triggerSlider();
     }
   });
 }
@@ -203,6 +188,7 @@ function clickLogoToGoHome() {
   const websiteLogo = document.getElementById('websiteLogo');
   websiteLogo.addEventListener('click', (event) => {
     router.navigate('home', false);
+    triggerSlider();
   });
 }
 
@@ -248,6 +234,8 @@ function addCreateRecipe() {
   });
 }
 
+// ******************** SLIDER FUNCTIONS *************************************************
+
 /**
  * Binds the slider so that the recommended recipes will display cards
  * according to the spice level. This will also include any additional
@@ -258,6 +246,8 @@ async function bindSlider() {
     .querySelector('#spice-slider--wrapper')
     .querySelector('.slider');
   spiceSlider.addEventListener('change', async (event) => {
+    document.getElementById('middle-title').innerHTML = recommendTitle;
+    document.getElementById('searchBar').value = '';
     const cardBody = document.querySelector('.card-body');
     const cards = cardBody.getElementsByTagName('recipe-card');
     while (cards.length > 0) {
@@ -289,33 +279,6 @@ function triggerSlider() {
 }
 
 /**
- * Test
- */
-async function displaySearchCards() {
-  const searchBar = document.getElementById('searchBar');
-  searchBar.addEventListener('keyup', (event) => {
-    const cardBody = document.querySelector('.card-body');
-    const cards = cardBody.getElementsByTagName('recipe-card');
-    while (cards.length > 0) {
-      cards[0].remove();
-    }
-    const searchString = event.target.value;
-    document.getElementById('middle-title').innerHTML = 'Search Results';
-    let recipeList;
-    (async () => {
-      try {
-        recipeList = await database.getByName(searchString);
-        if (recipeList.length > 0) {
-          createRecipeCards(recipeList);
-        }
-      } catch (err) {
-        console.log(`Error fetching recipes: ${err}`);
-      }
-    })();
-  });
-}
-
-/**
    * Spice slider logic.
    */
 function sliderSpiceLevel() {
@@ -335,4 +298,63 @@ function sliderSpiceLevel() {
     }
     spiceLevel.innerHTML = emojiString;
   };
+}
+
+// ******************** SEARCH FUNCTIONS *************************************************
+
+/**
+ * Displays the search results according to name
+ */
+async function displaySearchCards() {
+  const searchBar = document.getElementById('searchBar');
+  searchBar.addEventListener('keyup', (event) => {
+    const searchString = event.target.value;
+    const cardBody = document.querySelector('.card-body');
+    const cards = cardBody.getElementsByTagName('recipe-card');
+
+    if (searchString.length === 0) {
+      if (document.getElementById('middle-title').innerHTML === searchTitle) {
+        triggerSlider();
+      }
+      return;
+    }
+
+    while (cards.length > 0) {
+      cards[0].remove();
+    }
+    document.getElementById('middle-title').innerHTML = searchTitle;
+    let recipeList;
+    (async () => {
+      try {
+        recipeList = await database.getByName(searchString);
+        if (recipeList.length > 0) {
+          createRecipeCards(recipeList);
+        }
+      } catch (err) {
+        console.log(`Error fetching recipes: ${err}`);
+      }
+    })();
+  });
+}
+
+// ************************ CHALLENGE BAR FUNCTIONS *****************************************
+
+/**
+ * Populates the challenge progress section
+ */
+async function createProgressBars() {
+  // TODO change this to getting the challengeData from the database
+  await fetch(challengePath)
+    .then((response) => response.json())
+    .then((data) => {
+      challengeData = data.challenges;
+    })
+    .catch((error) => {
+    });
+  challengeData.forEach((challenge) => {
+    const challengeBar = document.createElement('challenge-bar');
+    challengeBar.data = challenge;
+
+    document.querySelector('.challenge-body').appendChild(challengeBar);
+  });
 }
