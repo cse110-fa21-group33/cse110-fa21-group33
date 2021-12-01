@@ -284,4 +284,5 @@ function sliderSpiceLevel() {
     spiceLevel.innerHTML = emojiString;
     spiceSlider.style.background='url(../images/fireGif' + spiceSlider.value + '.gif';
   }
+  console.log('url(../images/fireGif' + spiceSlider.value + '.gif');
 }
