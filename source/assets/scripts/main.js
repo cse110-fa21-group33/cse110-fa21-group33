@@ -11,6 +11,9 @@ const router = new Router(() => {
 });
 
 
+const challengePath = 'assets/jsons/challenges.json';
+let challengeData;
+
 window.addEventListener('DOMContentLoaded', init);
 
 /**
@@ -34,6 +37,8 @@ async function init() {
   bindSlider();
   displaySearchCards();
   clickLogoToGoHome();
+  sliderSpiceLevel();
+  createProgressBars();
 }
 
 /**
@@ -78,6 +83,26 @@ function createRecipeCards(recipes) {
 
     bindRecipeCard(recipeCard, page);
     document.querySelector('.card-body').appendChild(recipeCard);
+  });
+}
+
+/**
+ * Populates the challenge progress section
+ */
+async function createProgressBars() {
+  // TODO change this to getting the challengeData from the database
+  await fetch(challengePath)
+    .then((response) => response.json())
+    .then((data) => {
+      challengeData = data.challenges;
+    })
+    .catch((error) => {
+    });
+  challengeData.forEach((challenge) => {
+    const challengeBar = document.createElement('challenge-bar');
+    challengeBar.data = challenge;
+
+    document.querySelector('.challenge-body').appendChild(challengeBar);
   });
 }
 
@@ -172,13 +197,13 @@ function bindEscKey() {
   });
 }
 
-/* Binds clicking the website logo to going to the home page
+/** Binds clicking the website logo to going to the home page
  * just using the same code from bindEscKey()
-*/
+ */
 function clickLogoToGoHome() {
   const websiteLogo = document.getElementById('websiteLogo');
   websiteLogo.addEventListener('click', (event) => {
-      router.navigate('home', false);
+    router.navigate('home', false);
   });
 }
 
@@ -264,6 +289,7 @@ function triggerSlider() {
   spiceSlider.dispatchEvent(event);
 }
 
+
 async function displaySearchCards() {
   const searchBar = document.getElementById('searchBar');
   searchBar.addEventListener('keyup', (event) => {
@@ -286,4 +312,25 @@ async function displaySearchCards() {
       }
     })();
   });
+
+/**
+ *  Make the slider display current spice level with pepper emojis
+ */
+function sliderSpiceLevel() {
+  const spiceSlider = document.getElementById('myRange');
+  const spiceLevel = document.getElementById('spiceLevel');
+
+  let emojiString = '';
+  for (let i = 0; i < spiceSlider.value; i++) {
+    emojiString += '🌶️';
+  }
+  spiceLevel.innerHTML = emojiString;
+
+  spiceSlider.oninput = function () {
+    emojiString = '';
+    for (let i = 0; i < this.value; i++) {
+      emojiString += '🌶️';
+    }
+    spiceLevel.innerHTML = emojiString;
+  };
 }

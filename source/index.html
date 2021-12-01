@@ -13,9 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
 
   <!-- Web Components -->
-  <script src="assets/components/RecipeCard.js" type="module"></script>
-  <script src="assets/components/RecipeDisplay.js" type="module"></script>
-  <script src='assets/components/RecipeUpload.js' type='module'></script>
+  <script src='assets/components/RecipeCard.js' type="module"></script>
+  <script src='assets/components/RecipeDisplay.js' type="module"></script>
+  <script src='assets/components/RecipeUpload.js' type="module"></script>
+  <script src='assets/components/ChallengeBar.js' type="module"></script>
 
   <!-- Router -->
   <script src="assets/scripts/Router.js" type="module"></script>
@@ -39,29 +40,26 @@
     </div>
     <!--This div is for the spice slider-->
     <div id="spice-slider--wrapper">
-      <input type ="range" min="1" max="5" value="3" class="slider" id="myRange">
+      <div id="sliderDiv">
+        <input type ="range" min="1" max="5" value="3" class="slider" id="myRange">
+      </div>
+      <span id="spiceLevel"></span>
     </div>
     <!--This div is for the create recipe button-->
     <div class="button--wrapper">
       <button id="create-button">Create Recipe</button>
-    </div>
-    <!--This is the upperright user part-->
-    <div class="user-icon--wrapper">
-      <img src='assets/images/v2.png' alt='usericon'>
     </div>
   </header>
   <main>
     <div>
       <section class="section--main-page shown">
       <!--This division is for the challenge part which is on the left side of the page-->
-        <div id="challenge-cards--wrapper" class="main--div hidden">
-          <img src='assets/images/v2.png' width ='70' height='70' align ='right'>
-          <h2>Haunted Bowels</h2>
-          <label for="file">progress:</label>
-          <progress id="file" value="32" max="100"> 32% </progress>
-          <img src='assets/images/v2.png' width ='70' height='70' align ='right'>
+        <div id="challenge-cards--wrapper" class="main--div">
+          <h1>Challenges</h1>
+          <div class="challenge-body"></div>
         </div>
         <div id="div--recommended-recipes" class="main--div">
+
           <h1 id="middle-title">Recommended Recipes For You</h1>
           <div class='card-body'></div>    
         </div>
@@ -72,6 +70,7 @@
             <img src='assets/images/v2.png' width ='150' height='150'>
             <p>Kung Pao Chicken</p>
           </div>
+
         </div>
       </section>      
       <section class="section--recipe-display">

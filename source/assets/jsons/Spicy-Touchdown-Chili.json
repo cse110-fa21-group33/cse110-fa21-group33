@@ -68,12 +68,12 @@
       {
         "name": "chili powder",
         "quantity": 0.25,
-        "units": "c"
+        "units": "cups"
       },
       {
         "name": "chopped pickled jalapeno slices",
         "quantity": 0.25,
-        "units": "c"
+        "units": "cups"
       },
       {
         "name": "ground cumin",
