@@ -1,0 +1,104 @@
+{
+    "title": "Spicy Touchdown Chili",
+    "id": "aDFEyT",
+    "description": "For me, football, cool weather and chili just seem to go together. Whether I’m cheering on the local team on a Friday night or enjoying a Saturday afternoon of Oklahoma Sooner football with some friends, I enjoy serving this chili on game day. —Chris Neal, Quapaw, Oklahoma",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Spicy-Touchdown-Chili_EXPS_SBZ19_113278_B09_14_4b-3.jpg",
+    "servingSize": 12,
+    "scoville": 3000,
+    "spiceRating": 2,
+    "calories": 365,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 30
+      },
+      {
+        "name": "cookTime",
+        "hours": 4,
+        "minutes": 0 
+      },
+      {
+        "name": "totalTime",
+        "hours": 4,
+        "minutes": 30      
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "ground beef",
+        "quantity": 16,
+        "units": "oz"
+      },
+      {
+        "name": "bulk pork sausage",
+        "quantity": 16,
+        "units": "oz"
+      },
+      {
+        "name": "cans (16 ounces each) kidney beans, rinsed and drained",
+        "quantity": 2,
+        "units": "N/A"
+      },
+      {
+        "name": "cans (15 ounces each) pinto beans, rinsed and drained",
+        "quantity": 2,
+        "units": "N/A"
+      },
+      {
+        "name": "cans (14-1/2 ounces each ) diced tomatoes with mild green chiles, undrained",
+        "quantity": 2,
+        "units": "N/A"
+      },
+      {
+        "name": "can (14-1/2 ounces) diced tomatoes with onions, undrained",
+        "quantity": 1,
+        "units": "N/A"
+      },
+      {
+        "name": "can (12 ounces) beer",
+        "quantity": 1,
+        "units": "N/A"
+      },
+      {
+        "name": "bacon strips, cooked and crumbled",
+        "quantity": 6,
+        "units": "N/A"
+      },
+      {
+        "name": "chili powder",
+        "quantity": 0.25,
+        "units": "c"
+      },
+      {
+        "name": "chopped pickled jalapeno slices",
+        "quantity": 0.25,
+        "units": "c"
+      },
+      {
+        "name": "ground cumin",
+        "quantity": 1,
+        "units": "tsp"
+      },
+      {
+        "name": "garlic cloves, minced",
+        "quantity": 2,
+        "units": "N/A"
+      },
+      {
+        "name": "dried basil",
+        "quantity": 1,
+        "units": "tsp"
+      },
+      {
+        "name": "cayenne pepper",
+        "quantity": 0.75,
+        "units": "tsp"
+      }
+    ],
+    "directions": [
+      "In a large skillet, cook beef over medium heat until no longer pink, 6-8 minutes; crumble beef; drain. Transfer to a 6-qt. slow cooker. Repeat with sausage.",
+      "Stir in the next 13 ingredients. Cook, covered, on low 4-5 hours or until heated through. If desired, top individual servings with shredded cheddar cheese, sour cream and chopped green onions when serving."],
+    "challenges": [],
+    "completed": false
+  }
