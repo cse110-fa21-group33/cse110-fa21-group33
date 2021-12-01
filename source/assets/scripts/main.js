@@ -10,7 +10,6 @@ const router = new Router(() => {
   document.querySelector('.section--recipe-upload').classList.remove('shown');
 });
 
-
 const challengePath = 'assets/jsons/challenges.json';
 let challengeData;
 
@@ -46,7 +45,7 @@ async function init() {
  */
 function createRecipeCards(recipes) {
   // console.log(recipes);
-  let i = 0;
+  const i = 0;
   recipes.forEach((recipe) => {
     // Makes a new recipe card
     const recipeCard = document.createElement('recipe-card');
@@ -289,7 +288,9 @@ function triggerSlider() {
   spiceSlider.dispatchEvent(event);
 }
 
-
+/**
+ * Test
+ */
 async function displaySearchCards() {
   const searchBar = document.getElementById('searchBar');
   searchBar.addEventListener('keyup', (event) => {
@@ -299,7 +300,7 @@ async function displaySearchCards() {
       cards[0].remove();
     }
     const searchString = event.target.value;
-    document.getElementById("middle-title").innerHTML = "Search Results";
+    document.getElementById('middle-title').innerHTML = 'Search Results';
     let recipeList;
     (async () => {
       try {
@@ -312,10 +313,11 @@ async function displaySearchCards() {
       }
     })();
   });
+}
 
 /**
- *  Make the slider display current spice level with pepper emojis
- */
+   * Spice slider logic.
+   */
 function sliderSpiceLevel() {
   const spiceSlider = document.getElementById('myRange');
   const spiceLevel = document.getElementById('spiceLevel');
