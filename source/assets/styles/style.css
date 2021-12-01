@@ -180,6 +180,13 @@ section:not(section.shown) {
   display: flex;
 }
 
+button {
+  background-color: white;
+  border-radius: 20px;
+  font-family: 'Mochiy Pop P One', sans-serif;
+  border: 2px solid #EE6858;
+}
+
 /* Top Right Image Start */
 .user-icon--wrapper {
   justify-content: center;
