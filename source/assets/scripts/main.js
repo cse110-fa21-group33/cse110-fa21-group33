@@ -274,7 +274,7 @@ function sliderSpiceLevel() {
     emojiString += '🌶️';
   }
   spiceLevel.innerHTML = emojiString;
-  spiceSlider.style.backgroundImage='url(../images/fireGif' + spiceSlider.value + '.gif';
+  spiceSlider.style.background='url(../images/fireGif' + spiceSlider.value + '.gif';
   
   spiceSlider.oninput = function () {
     emojiString = ''
@@ -282,6 +282,6 @@ function sliderSpiceLevel() {
       emojiString += '🌶️';
     }
     spiceLevel.innerHTML = emojiString;
-    spiceSlider.style.backgroundImage='url(../images/fireGif' + spiceSlider.value + '.gif';
+    spiceSlider.style.background='url(../images/fireGif' + spiceSlider.value + '.gif';
   }
 }
