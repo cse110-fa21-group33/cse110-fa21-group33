@@ -10,6 +10,7 @@ const router = new Router(() => {
   document.querySelector('.section--recipe-upload').classList.remove('shown');
 });
 
+
 window.addEventListener('DOMContentLoaded', init);
 
 /**
@@ -31,6 +32,7 @@ async function init() {
   bindEscKey();
   bindPopstate();
   bindSlider();
+  displaySearchCards();
   clickLogoToGoHome();
 }
 
@@ -38,7 +40,8 @@ async function init() {
  * Populates with recommended page with recipe cards
  */
 function createRecipeCards(recipes) {
-  console.log(recipes);
+  // console.log(recipes);
+  let i = 0;
   recipes.forEach((recipe) => {
     // Makes a new recipe card
     const recipeCard = document.createElement('recipe-card');
@@ -259,4 +262,28 @@ function triggerSlider() {
     .querySelector('.slider');
   const event = new Event('change');
   spiceSlider.dispatchEvent(event);
+}
+
+async function displaySearchCards() {
+  const searchBar = document.getElementById('searchBar');
+  searchBar.addEventListener('keyup', (event) => {
+    const cardBody = document.querySelector('.card-body');
+    const cards = cardBody.getElementsByTagName('recipe-card');
+    while (cards.length > 0) {
+      cards[0].remove();
+    }
+    const searchString = event.target.value;
+    document.getElementById("middle-title").innerHTML = "Search Results";
+    let recipeList;
+    (async () => {
+      try {
+        recipeList = await database.getByName(searchString);
+        if (recipeList.length > 0) {
+          createRecipeCards(recipeList);
+        }
+      } catch (err) {
+        console.log(`Error fetching recipes: ${err}`);
+      }
+    })();
+  });
 }
