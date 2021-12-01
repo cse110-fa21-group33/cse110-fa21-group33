@@ -9,12 +9,12 @@ describe('Basic user flow for Website', () => {
     console.log('Checking for recipe cards');
     await new Promise((r) => setTimeout(r, 1000));
     const numCards = await page.$$eval('recipe-card', (recipeCards) => recipeCards.length);
-    expect(numCards).toBe(1);
+    expect(numCards).toBeGreaterThanOrEqual(1);
   });
   it('Test slider exists', async () => {
     console.log('Checking if the spice slider exists');
     const spiceSlider = await page.$$eval('#myRange', (slider) => slider.length);
-    expect(spiceSlider).toBeGreaterThanOrEqual(1);
+    expect(spiceSlider).toBe(1);
   });
   it('Test spice filter', async () => {
     console.log('Checking if spice slider works correctly');
