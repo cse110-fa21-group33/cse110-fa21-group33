@@ -53,17 +53,17 @@
       {
         "name": "Cooked Long Grain White Rice",
         "quantity": 1,
-        "units": "c"
+        "units": "cups"
       },
       {
         "name": "Canned Black Beans, drained",
         "quantity": 0.5,
-        "units": "c"
+        "units": "cups"
       },
       {
         "name": "Frozen or Canned Corn, drained",
         "quantity": 0.5,
-        "units": "c"
+        "units": "cups"
       },
       {
         "name": "Fire Roasted Dice Tomatoes, drained",
@@ -78,7 +78,7 @@
       {
         "name": "Grated Mozzarella or Mexican-Blend Cheese",
         "quantity": 1,
-        "units": "c"
+        "units": "cups"
       }
     ],
     "directions": [

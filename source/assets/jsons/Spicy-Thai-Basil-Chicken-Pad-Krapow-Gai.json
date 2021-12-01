@@ -28,7 +28,7 @@
       {
         "name": "chicken broth",
         "quantity": 0.5,
-        "units": "c"
+        "units": "cups"
       },
       {
         "name": "oyster sauce",
@@ -68,7 +68,7 @@
       {
         "name": "sliced shallots",
         "quantity": 0.25,
-        "units": "c"
+        "units": "cups"
       },
       {
         "name": "cloves garlic, minced",
@@ -83,12 +83,12 @@
       {
         "name": "very thinly sliced fresh basil leaves",
         "quantity": 1,
-        "units": "c"
+        "units": "cups"
       },
       {
         "name": "hot cooked rice",
         "quantity": 2,
-        "units": "c"
+        "units": "cups"
       }
     ],
     "directions": [
