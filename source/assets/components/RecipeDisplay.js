@@ -123,9 +123,6 @@ class RecipeDisplay extends HTMLElement {
                     <img src="">
                     <p id="recipe-spice-level"></p>    
                   </div>
-                  <div class="button-wrapper">
-                    <button class="recipe-button">Print</button>
-                  </div>   
               </div>      
             </div>
             <div id="recipe-media">
@@ -187,9 +184,6 @@ class RecipeDisplay extends HTMLElement {
                       <img src="">
                       <p id="recipe-spice-level"></p>    
                     </div>
-                    <div class="button-wrapper">
-                      <button class="print-button">Print</button>
-                    </div>  
                     <div class="button-wrapper">
                       <button id="editButton" class="edit-button">Edit</button>
                     </div>  
