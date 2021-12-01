@@ -69,10 +69,10 @@ section:not(section.shown) {
   appearance: none;
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
-  background: red; /* Red background */
+  background: url('../images/fireGif.gif');
   
   /* Not sure why this doesnt work...
-  background: url('../images/fireGif.gif');
+  
   */
   cursor: pointer; /* Cursor on hover */
 }
