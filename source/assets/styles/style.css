@@ -70,7 +70,7 @@ section:not(section.shown) {
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
   background: url('../images/fireGif.gif');
-  background-size: scale-down;
+  background-size: 25px 25px;
   /* Not sure why this doesnt work...
   
   */
