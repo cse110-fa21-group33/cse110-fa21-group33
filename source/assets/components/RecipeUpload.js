@@ -68,7 +68,7 @@ class RecipeUpload extends HTMLElement {
             <input type="number" id="ingredientQuantity" min="0" placeholder="Quantity" required>
             <select id="ingredientUnits">
               <option>N/A</option>
-              <option>c</option>
+              <option>cups</option>
               <option>pt</option>
               <option>qt</option>
               <option>gal</option>
@@ -185,7 +185,7 @@ class RecipeUpload extends HTMLElement {
         <input type="number" id="ingredientQuantity" min="0" placeholder="Quantity" required>
         <select id="ingredientUnits">
             <option>N/A</option>
-            <option>c</option>
+            <option>cups</option>
             <option>pt</option>
             <option>qt</option>
             <option>gal</option>
