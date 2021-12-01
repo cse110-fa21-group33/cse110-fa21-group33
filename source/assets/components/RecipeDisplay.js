@@ -1,3 +1,4 @@
+import { database } from '../scripts/database.js';
 /**
  * recipe-display.js
  *
@@ -250,17 +251,26 @@ class RecipeDisplay extends HTMLElement {
       const directionContainer = createCheckbox(direction);
       this.shadowRoot.querySelector('#recipe-directions > .recipe-list').appendChild(directionContainer);
     });
-
+    const btn = this.shadowRoot.getElementById('made-this-button');
+    if (data.completed === true) {
+      const newBox = document.createElement('completed');
+      newBox.innerHTML = 'Completed!';
+      btn.parentElement.appendChild(newBox);
+      btn.parentElement.removeChild(btn);
+    }
     this.bindCompleteButton(data);
   }
 
   bindCompleteButton(data) {
     const btn = this.shadowRoot.getElementById('made-this-button');
     btn.addEventListener('click', () => {
-      if (data.completed === false) {
-        // eslint-disable-next-line no-param-reassign
-        data.completed = true;
-      }
+      // eslint-disable-next-line no-param-reassign
+      data.completed = true;
+      const newBox = document.createElement('completed');
+      newBox.innerHTML = 'Completed!';
+      btn.parentElement.appendChild(newBox);
+      btn.parentElement.removeChild(btn);
+      database.updateRecipe(data);
     });
   }
 }
