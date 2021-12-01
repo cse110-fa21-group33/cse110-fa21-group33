@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: scripts/Router.js</title>
+    <title>JSDoc: Source: components/ChallengeBar.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: scripts/Router.js</h1>
+    <h1 class="page-title">Source: components/ChallengeBar.js</h1>
 
     
 
@@ -26,58 +26,80 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>// Router.js
+            <pre class="prettyprint source linenums"><code>// ChallengeBar.js
 // Taken from Lab 7
 
-// eslint-disable-next-line import/prefer-default-export
-export class Router {
-  static routes = {};
-
-  /**
-   * Sets up the home function, the page name should always be 'home', which
-   * is why no page name variable is passed in.
-   * @param {Function} homeFunc The function to run to set the home route
-   *                            visually
-   */
-  constructor(homeFunc) {
-    this.home = homeFunc;
+/**
+ * Creates recipe card and appends it to the main page.
+ * @param {json} data The json containing the data to create the card.
+ */
+class ChallengeBar extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
   }
 
-  /**
-   * Adds a page name &amp; function so to the router so that the function
-   * can be called later when the page is passed in
-   * @param {String} page The name of the page to route to (this is used
-   *                      as the page's hash as well in the URL)
-   * @param {Function} pageFunc The function to run when the page is called
-   */
-  addPage(page, pageFunc) {
-    this[page] = pageFunc;
-  }
+  set data(data) {
+    if (!data) return;
 
-  /**
-   * Changes the page visually to the page that has been passed in. statePopped
-   * is used to avoid pushing a new history state on back/forward button presses
-   * @param {String} page The name of the page to route to
-   * @param {Boolean} statePopped True if this function is being called from a
-   *                              'popstate' event instead of a normal card click
-   */
-  navigate(page, statePopped) {
-    console.log(`navigate() function called, requested page: ${page}`);
-    if (typeof this[page] === 'function') {
-      let hash;
-      if (page === 'home') {
-        hash = '';
+    const challenge = document.createElement('article');
+    const style = document.createElement('style');
+
+    style.innerHTML = `
+      h3 {
+        font-family: 'Mochiy Pop P One', sans-serif;
+      }
+      .progress {
+        width: 100%;
+        background-color: var(--ec-white);
+        border-radius: 20px
+      }
+      .my-bar {
+        width: 0%;
+        height: 30px;
+        background-color: var(--ec-spicy5);
+        text-align: center;
+        line-height: 30px;
+        color: rgb(241, 235, 235);
+        border-radius: 20px
+      }
+    `;
+
+    const elem = document.createElement('div');
+    elem.classList.add('challenge-bar');
+
+    const title = document.createElement('h3');
+    title.classList.add('challenge-title');
+    title.innerText = data.title;
+    elem.appendChild(title);
+
+    const progress = document.createElement('div');
+    progress.classList.add('progress');
+    const bar = document.createElement('div');
+    bar.classList.add('my-bar');
+    progress.appendChild(bar);
+    elem.appendChild(progress);
+
+    const width = Math.round((data.numberCompleted / data.total) * 100);
+    const id = setInterval(frame, 10);
+    /**
+     * Sets the interval for the progress bar
+     */
+    function frame() {
+      if (width > 100) {
+        clearInterval(id);
       } else {
-        hash = `#${page}`;
+        bar.style.width = `${width}%`;
+        bar.innerHTML = `${width}%`;
       }
-      if ((!statePopped) &amp;&amp; (window.location.hash != hash)) {
-        const oldHash = window.location.hash;
-        history.pushState({ page }, page, window.location.href.replace(oldHash, '') + hash);
-      }
-      this[page]();
     }
+
+    challenge.append(elem);
+    this.shadowRoot.append(style, elem);
   }
 }
+
+customElements.define('challenge-bar', ChallengeBar);
 </code></pre>
         </article>
     </section>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: scripts/Router.js</title>
+    <title>JSDoc: Class: ChallengeBar</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,70 +17,186 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: scripts/Router.js</h1>
+    <h1 class="page-title">Class: ChallengeBar</h1>
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>// Router.js
-// Taken from Lab 7
+        <h2><span class="attribs"><span class="type-signature"></span></span>ChallengeBar<span class="signature">(data)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">Creates recipe card and appends it to the main page.</div>
+        
+    
+</header>
 
-// eslint-disable-next-line import/prefer-default-export
-export class Router {
-  static routes = {};
+<article>
+    <div class="container-overview">
+    
+        
 
-  /**
-   * Sets up the home function, the page name should always be 'home', which
-   * is why no page name variable is passed in.
-   * @param {Function} homeFunc The function to run to set the home route
-   *                            visually
-   */
-  constructor(homeFunc) {
-    this.home = homeFunc;
-  }
+    
+    <h2>Constructor</h2>
+    
 
-  /**
-   * Adds a page name &amp; function so to the router so that the function
-   * can be called later when the page is passed in
-   * @param {String} page The name of the page to route to (this is used
-   *                      as the page's hash as well in the URL)
-   * @param {Function} pageFunc The function to run when the page is called
-   */
-  addPage(page, pageFunc) {
-    this[page] = pageFunc;
-  }
+    
+    <h4 class="name" id="ChallengeBar"><span class="type-signature"></span>new ChallengeBar<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    
 
-  /**
-   * Changes the page visually to the page that has been passed in. statePopped
-   * is used to avoid pushing a new history state on back/forward button presses
-   * @param {String} page The name of the page to route to
-   * @param {Boolean} statePopped True if this function is being called from a
-   *                              'popstate' event instead of a normal card click
-   */
-  navigate(page, statePopped) {
-    console.log(`navigate() function called, requested page: ${page}`);
-    if (typeof this[page] === 'function') {
-      let hash;
-      if (page === 'home') {
-        hash = '';
-      } else {
-        hash = `#${page}`;
-      }
-      if ((!statePopped) &amp;&amp; (window.location.hash != hash)) {
-        const oldHash = window.location.hash;
-        history.pushState({ page }, page, window.location.href.replace(oldHash, '') + hash);
-      }
-      this[page]();
-    }
-  }
-}
-</code></pre>
-        </article>
-    </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">json</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The json containing the data to create the card.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_ChallengeBar.js.html">components/ChallengeBar.js</a>, <a href="components_ChallengeBar.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
