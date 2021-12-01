@@ -108,7 +108,7 @@
       {
         "name": "Unsalted Dry-Roased Peanuts, chopped",
         "quantity": 1,
-        "units": "c"
+        "units": "cups"
       },
       {
         "name": "Bean Sprouts",
@@ -118,7 +118,7 @@
       {
         "name": "Shredded Carrots (optional)",
         "quantity": 0.25,
-        "units": "c"
+        "units": "cups"
       },
       {
         "name": "Lime, cut into wedges",
@@ -128,12 +128,12 @@
       {
         "name": "Chopped Green Onions",
         "quantity": 0.25,
-        "units": "c"
+        "units": "cups"
       },
       {
         "name": "Coarsely Chopped Cilantro",
         "quantity": 0.25,
-        "units": "c"
+        "units": "cups"
       }
     ],
     "directions": [
@@ -146,4 +146,3 @@
     "challenges": [],
     "completed": false
   }
-  

@@ -67,16 +67,26 @@ class RecipeUpload extends HTMLElement {
             <input type="text" id="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
             <input type="number" id="ingredientQuantity" min="0" placeholder="Quantity" required>
             <select id="ingredientUnits">
-                <option>N/A</option>
-                <option>tsp</option>
-                <option>tbsp</option>
-                <option>oz</option>
-                <option>c</option>
-                <option>pt</option>
-                <option>qt</option>
-                <option>gal</option>
-                <option>ml</option>
-                <option>l</option>
+              <option>N/A</option>
+              <option>cups</option>
+              <option>pt</option>
+              <option>qt</option>
+              <option>gal</option>
+              <option>tsp</option>
+              <option>tbsp</option>
+              <option>fl oz</option>
+              <option>mL</option>
+              <option>L</option>
+              <option>g</option>
+              <option>kg</option>
+              <option>oz</option>
+              <option>lbs</option>
+              <option>mm</option>
+              <option>cm</option>
+              <option>m</option>
+              <option>in</option>
+              <option>pinch</option>
+              <option>drop</option>
             </select>
         </div>
         <input type="button" id="addIngredientButton" value="Add Ingredient">
@@ -108,15 +118,25 @@ class RecipeUpload extends HTMLElement {
 
   optionIndex = {
     'N/A': 0,
-    tsp: 1,
-    tbsp: 2,
-    oz: 3,
-    c: 4,
-    pt: 5,
-    qt: 6,
-    gal: 7,
-    ml: 8,
-    l: 9,
+    'cups': 1,
+    'pt': 2,
+    'qt': 3,
+    'gal': 4,
+    'tsp': 5,
+    'tbsp': 6,
+    'fl oz': 7,
+    'mL': 8,
+    'L': 9,
+    'g': 10,
+    'kg': 11,
+    'oz': 12,
+    'lbs': 13,
+    'mm': 14,
+    'cm': 15,
+    'm': 16,
+    'in': 17,
+    'pinch': 18,
+    'drop': 19
   };
 
   /**
@@ -165,15 +185,25 @@ class RecipeUpload extends HTMLElement {
         <input type="number" id="ingredientQuantity" min="0" placeholder="Quantity" required>
         <select id="ingredientUnits">
             <option>N/A</option>
-            <option>tsp</option>
-            <option>tbsp</option>
-            <option>oz</option>
-            <option>c</option>
+            <option>cups</option>
             <option>pt</option>
             <option>qt</option>
             <option>gal</option>
-            <option>ml</option>
-            <option>l</option>
+            <option>tsp</option>
+            <option>tbsp</option>
+            <option>fl oz</option>
+            <option>mL</option>
+            <option>L</option>
+            <option>g</option>
+            <option>kg</option>
+            <option>oz</option>
+            <option>lbs</option>
+            <option>mm</option>
+            <option>cm</option>
+            <option>m</option>
+            <option>in</option>
+            <option>pinch</option>
+            <option>drop</option>
         </select>
     </div>
     <input type="button" id="addIngredientButton" value="Add Ingredient">
@@ -210,7 +240,7 @@ class RecipeUpload extends HTMLElement {
     this.shadowRoot.getElementById('header-upload-photo').innerText = 'Upload New Photo';
     this.shadowRoot.getElementById('p-upload-photo').innerText = 'Upload a new picture if you wish to edit the dish image!';
 
-    
+
     const deleteButton = document.createElement('input');
     deleteButton.setAttribute('id', 'deleteButton');
     deleteButton.classList.add('Delete');
@@ -219,7 +249,7 @@ class RecipeUpload extends HTMLElement {
     this.shadowRoot.getElementById('formButtons').appendChild(deleteButton);
     this.BindDeleteButton();
 
-    this.fill_in_existing_data();
+    this.FillExistingData();
   }
 
   // attempt to take user input and convert to .json file
@@ -383,11 +413,29 @@ class RecipeUpload extends HTMLElement {
     });
   }
 
+  RemoveSpecificInstruction() {
+    const button = this.shadowRoot.getElementById('removeStepButton');
+    const div = this.shadowRoot.getElementById('instructions');
+
+    button.addEventListener('click', () => {
+      let stepNum = Number(div.getAttribute('value'));
+      if (stepNum > 1) {
+        stepNum -= 1;
+        div.setAttribute('value', stepNum);
+        const textArea = div.getElementsByTagName('textarea')[div.getElementsByTagName('textarea').length - 1];
+        const lineBreak = div.getElementsByTagName('br')[div.getElementsByTagName('br').length - 1];
+        div.removeChild(textArea);
+        div.removeChild(lineBreak);
+      }
+    });
+  }
+
   // adds another textarea for recipe instruction/steps when add step button is pressed
   AddIngredient() {
     const button = this.shadowRoot.getElementById('addIngredientButton');
     const div = this.shadowRoot.getElementById('ingredients');
-    const selectOptions = ['N/A', 'tsp', 'oz', 'c', 'pt', 'qt', 'gal', 'ml', 'l'];
+    const selectOptions = ['N/A', 'cups', 'pt', 'qt', 'gal', 'tsp', 'tbsp', 'fl oz', 'mL', 'L', 'g', 
+                          'kg', 'oz', 'lbs', 'mm', 'cm', 'm', 'in', 'pinch', 'drop'];
 
     button.addEventListener('click', () => {
       let stepNum = Number(div.getAttribute('value'));
@@ -489,11 +537,9 @@ class RecipeUpload extends HTMLElement {
   }
 
   /**
- * The function that will fill in the data into the text boxes for some specific recipe edit page
- * Right now the data we use is whatever the recipe we manually choose
- * Later it will correspond to the recipe we clicked on to edit
- */
-  fill_in_existing_data() {
+   * This function will populate the edit page for a current recipe with its latest information
+   */
+  FillExistingData() {
     this.shadowRoot.getElementById('recipeName').value = this.json.title;
     this.shadowRoot.getElementById('recipeDescription').value = this.json.description;
     this.shadowRoot.getElementById('url').innerText = this.json.image;
@@ -505,8 +551,16 @@ class RecipeUpload extends HTMLElement {
     this.shadowRoot.getElementById('cookMins').value = this.json.time[1].minutes;
     this.shadowRoot.getElementById('cookHrs').value = this.json.time[1].hours;
 
+    const ingredients_div = this.shadowRoot.getElementById('ingredients');
+    let btn1 = document.createElement("button");
+    btn1.innerHTML = "Remove this ingredient";
+    btn1.id = "specificIngredientRemove"
+    btn1.type = "button";
+    btn1.value = 0;
+    ingredients_div.appendChild(btn1);
+
     for (let i = 1; i < (this.json.ingredientList.length); i += 1) {
-      this.MakeExtraSlots(this.json.ingredientList[i]);
+      this.MakeExtraIngredientsSlots(this.json.ingredientList[i]);
       // console.log(optionIndex[data.ingredientList[i].units]);
       this.shadowRoot.getElementById('ingredientUnits').selectedIndex = this.optionIndex[this.json.ingredientList[i].units];
     }
@@ -518,6 +572,14 @@ class RecipeUpload extends HTMLElement {
     inputQuantity.value = this.json.ingredientList[0].quantity;
     select.options[this.optionIndex[this.json.ingredientList[0].units]].selected = true;
 
+    const instructions_div = this.shadowRoot.getElementById('instructions');
+    let btn2 = document.createElement("button");
+    btn2.innerHTML = "Remove this instruction";
+    btn2.id = "specificInstructionRemove"
+    btn2.type = "button";
+    btn2.value = 0;
+    instructions_div.appendChild(btn2);
+
     const { directions } = this.json;
     for (let i = 1; i < (directions.length); i += 1) {
       this.MakeExtraInstructionSlots(directions[i]);
@@ -525,9 +587,13 @@ class RecipeUpload extends HTMLElement {
     const div2 = this.shadowRoot.getElementById('instructions');
     const textArea = div2.getElementsByTagName('textarea')[0];
     textArea.value = this.json.directions[0];
+
   }
 
-  // adds another textarea for recipe instructions/steps when add step button is pressed
+  /**
+   * This is a helper function that creates new text boxes for the recipe's existing instructions
+   * The text boxes then will be filled with the proper information accordingly 
+   */
   MakeExtraInstructionSlots(data) {
     const div = this.shadowRoot.getElementById('instructions');
     let stepNum = Number(div.getAttribute('value'));
@@ -543,14 +609,31 @@ class RecipeUpload extends HTMLElement {
       textArea.value = data;
       div.appendChild(lineBreak);
       div.appendChild(textArea);
+
+      let btn = document.createElement("button");
+      btn.innerHTML = "Remove this instruction";
+      btn.id = "specificInstructionRemove"
+      btn.type = "button";
+      btn.value = stepNum;
+      div.appendChild(btn);
     }
+    /*
+    const textArea = div.getElementsByTagName('textarea')[div.getElementsByTagName('textarea').length - 1];
+    const lineBreak = div.getElementsByTagName('br')[div.getElementsByTagName('br').length - 1];
+    div.removeChild(textArea);
+    div.removeChild(lineBreak);
+    */
   }
 
-  // adds another textarea for recipe instruction/steps when add step button is pressed
-  MakeExtraSlots(data) {
+  /**
+   * This is a helper function that creates new text boxes for the recipe's existing ingredients
+   * The text boxes then will be filled with the proper information accordingly 
+   */
+  MakeExtraIngredientsSlots(data) {
     const button = this.shadowRoot.getElementById('addIngredientButton');
     const div = this.shadowRoot.getElementById('ingredients');
-    const selectOptions = ['N/A', 'tsp', 'tbsp', 'oz', 'c', 'pt', 'qt', 'gal', 'ml', 'l'];
+    const selectOptions = ['N/A', 'cups', 'pt', 'qt', 'gal', 'tsp', 'tbsp', 'fl oz', 'mL', 'L', 'g', 
+                          'kg', 'oz', 'lbs', 'mm', 'cm', 'm', 'in', 'pinch', 'drop'];
 
     let stepNum = Number(div.getAttribute('value'));
     if (stepNum < 25) {
@@ -584,12 +667,19 @@ class RecipeUpload extends HTMLElement {
       const lineBreak = document.createElement('br');
 
       select.options[this.optionIndex[data.units]].selected = true;
-      // document.getElementById("dropdown").selectedIndex = "1";
+      //document.getElementById("dropdown").selectedIndex = "1";
 
       div.appendChild(lineBreak);
       div.appendChild(inputName);
       div.appendChild(inputQuantity);
       div.appendChild(select);
+
+      let btn = document.createElement("button");
+      btn.innerHTML = "Remove this ingredient";
+      btn.id = "specificIngredientRemove"
+      btn.type = "button";
+      btn.value = stepNum;
+      div.appendChild(btn);
     }
   }
 

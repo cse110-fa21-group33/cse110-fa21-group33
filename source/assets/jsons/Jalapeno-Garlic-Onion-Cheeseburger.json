@@ -42,8 +42,8 @@
       },
       {
         "name": "Lean Ground Beef",
-        "quantity": 16,
-        "units": "oz"
+        "quantity": 1,
+        "units": "lbs"
       },
       {
         "name": "Pepperjack Cheese",
@@ -64,4 +64,3 @@
     "challenges": [],
     "completed": false
   }
-  
