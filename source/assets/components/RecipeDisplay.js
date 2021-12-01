@@ -12,16 +12,13 @@ class RecipeDisplay extends HTMLElement {
     super();
     // Create Shadow DOM
     this.attachShadow({ mode: 'open' });
-
     const styles = document.createElement('style');
     const article = document.createElement('article');
-
     styles.innerHTML = `
       .main-container {
         max-width: 700px;
         margin: auto;
       }
-
       .recipe-section {
         background-color: #ee6858;
         padding: 20px 40px;
@@ -39,7 +36,6 @@ class RecipeDisplay extends HTMLElement {
         width: 100%;
         height: auto;
       }
-
       .recipe-title{
         font-size: 50px;
         font-family: 'Mochiy Pop P One', sans-serif;
@@ -103,13 +99,10 @@ class RecipeDisplay extends HTMLElement {
         flex-direction: column;
         row-gap: 10px;
       }
-
       hr {
         border-color: black;
       }
-
     `;
-
     article.innerHTML = `
       <div class="main-container">
         <main>
@@ -158,13 +151,12 @@ class RecipeDisplay extends HTMLElement {
             </div>
             <hr>
             <div class="button-wrapper">
-              <button class="recipe-button">I Made This!</button>
+              <button class="recipe-button" id="made-this-button">I Made This!</button>
             </div>
           </article>
         </main>
       </div>
       `;
-
     this.shadowRoot.append(styles, article);
   }
 
@@ -225,51 +217,53 @@ class RecipeDisplay extends HTMLElement {
               </div>
               <hr>
               <div class="button-wrapper">
-                <button class="recipe-button">I Made This!</button>
+                <button class="recipe-button" id="made-this-button">I Made This!</button>
               </div>
             </article>
           </main>
         </div>
     `;
-
     const { title } = data;
     this.shadowRoot.querySelector('h1').innerHTML = title;
-
     const { description } = data;
     this.shadowRoot.querySelector('.recipe-description').innerHTML = description;
-
     const { image } = data;
     const img = this.shadowRoot.querySelector('#recipe-media > img');
     img.setAttribute('src', image);
     img.setAttribute('alt', title);
-
     const { scoville } = data;
     this.shadowRoot.querySelector('#recipe-spice-level').innerHTML = scoville;
-
     const prepTime = calculateTime(data.time[0]);
     this.shadowRoot.querySelector('#recipe-prep-time > .recipe-info-number').innerHTML = prepTime;
-
     const cookTime = calculateTime(data.time[1]);
     this.shadowRoot.querySelector('#recipe-cook-time > .recipe-info-number').innerHTML = cookTime;
-
     const { servingSize } = data;
     this.shadowRoot.querySelector('#recipe-serving-size > .recipe-info-number').innerHTML = servingSize;
-
     const { ingredientList } = data;
     ingredientList.forEach((ingredient) => {
       const ingredientString = getIngredient(ingredient);
       const ingredientContainer = createCheckbox(ingredientString);
       this.shadowRoot.querySelector('#recipe-ingredients > .recipe-list').appendChild(ingredientContainer);
     });
-
     const { directions } = data;
     directions.forEach((direction) => {
       const directionContainer = createCheckbox(direction);
       this.shadowRoot.querySelector('#recipe-directions > .recipe-list').appendChild(directionContainer);
     });
+
+    this.bindCompleteButton(data);
+  }
+
+  bindCompleteButton(data) {
+    const btn = this.shadowRoot.getElementById('made-this-button');
+    btn.addEventListener('click', () => {
+      if (data.completed === false) {
+        // eslint-disable-next-line no-param-reassign
+        data.completed = true;
+      }
+    });
   }
 }
-
 /**
  * Calculates the time string to display
  * @param {*} time
@@ -277,7 +271,6 @@ class RecipeDisplay extends HTMLElement {
  */
 function calculateTime(time) {
   let timeString = '';
-
   if (time.hours > 0) {
     timeString += `${time.hours} hours`;
     if (time.minutes > 0) {
@@ -288,7 +281,6 @@ function calculateTime(time) {
   }
   return timeString;
 }
-
 /**
  * Parses the ingredient JSON to make it into a readable string to
  * display the ingredient
@@ -299,9 +291,7 @@ function getIngredient(ingredient) {
   const { name } = ingredient;
   const { quantity } = ingredient;
   const { units } = ingredient;
-
   let ingredientString = '';
-
   if (quantity !== 0) {
     ingredientString += `${quantity} `;
   }
@@ -311,7 +301,6 @@ function getIngredient(ingredient) {
   ingredientString += name;
   return ingredientString;
 }
-
 /**
  * Creates a checkbox given the string
  * @param {*} checkboxString
@@ -321,10 +310,8 @@ function createCheckbox(checkboxString) {
   const container = document.createElement('label');
   const checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
-
   container.appendChild(checkbox);
   container.appendChild(document.createTextNode(checkboxString));
-
   return container;
 }
 
