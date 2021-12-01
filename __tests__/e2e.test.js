@@ -14,7 +14,7 @@ describe('Basic user flow for Website', () => {
   it('Test slider exists', async () => {
     console.log('Checking if the spice slider exists');
     const spiceSlider = await page.$$eval('#myRange', (slider) => slider.length);
-    expect(spiceSlider).toBeGreaterThanOrEqual(1);
+    expect(spiceSlider).toBe(1);
   });
   it('Test spice filter', async () => {
     console.log('Checking if spice slider works correctly');
