@@ -1,0 +1,20 @@
+{
+  "challenges": [
+    {
+      "title": "Test Challenge",
+      "numberCompleted": 5,
+      "total": 10,
+      "recipes": [
+        "id"
+      ]
+    },
+    {
+      "title": "Test Challenge 2",
+      "numberCompleted": 0,
+      "total": 10,
+      "recipes": [
+        "id"
+      ]
+    }
+  ]
+}
