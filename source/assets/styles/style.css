@@ -70,7 +70,7 @@ section:not(section.shown) {
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
   background: url('../images/fireGif.gif');
-  background-size: cover;
+  background-size: scale-down;
   /* Not sure why this doesnt work...
   
   */
@@ -102,14 +102,15 @@ section:not(section.shown) {
   z-index: 1;
   width: auto;
   height: 80px;
-  padding: 10px;
-  margin: -15px;
+  margin: -8px;
   margin-bottom: 15px;
-  background: #04aa6d; /* Green background */
+  background: #FFF; /* White background */
+  border-bottom: 3px solid #EE6858;
 
 }
 /* Start of Header Elements */
 /* Main logo and website title, on top left */
+
 
 /* Website Logo Start */
 
