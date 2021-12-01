@@ -25,6 +25,7 @@ async function init() {
     console.log(`Error fetching recipes: ${err}`);
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   addCreateRecipe();
 <<<<<<< HEAD
   createRecipeCards();
@@ -69,6 +70,15 @@ async function fetchRecipes() {
 >>>>>>> 4ad80c5 (added edit button)
   bindSlider();
 >>>>>>> 1601d73 (Added functionality to the slider)
+=======
+
+  addCreateRecipe();
+  bindCreateRecipe();
+  createRecipeCards(recipeList);
+  bindEscKey();
+  bindPopstate();
+  bindSlider();
+>>>>>>> 90a139ad14b820b6304e7247de7f162238305f85
 }
 
 /**
@@ -96,6 +106,7 @@ function createRecipeCards(recipes) {
       document.querySelector('.section--main-page').classList.remove('shown');
       document.querySelector('.section--recipe-display').classList.add('shown');
 <<<<<<< HEAD
+<<<<<<< HEAD
       document.querySelector('.section--recipe-upload').classList.remove('shown');
       document.querySelector('recipe-display').data = recipeData[recipes[i]];
 =======
@@ -110,6 +121,11 @@ function createRecipeCards(recipes) {
 =======
       bindEditButton(document.querySelector('recipe-display').shadowRoot.getElementById('editButton'), page);
 >>>>>>> 69133c9 (added navigation functional to buttons on edit page)
+=======
+      document.querySelector('.section--recipe-upload').classList.remove('shown');
+      document.querySelector('recipe-display').data = recipe;
+      bindEditButton(document.querySelector('recipe-display').shadowRoot.getElementById('editButton'), page);
+>>>>>>> 90a139ad14b820b6304e7247de7f162238305f85
     });
 
     router.addPage(`${page}-edit`, () => {
@@ -238,6 +254,7 @@ function bindPopstate() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ad80c5 (added edit button)
 =======
@@ -245,6 +262,11 @@ function bindPopstate() {
  * Navigate to create page
  */
 >>>>>>> c8622b4 (Populate the edit page)
+=======
+/**
+ * Navigate to create page
+ */
+>>>>>>> 90a139ad14b820b6304e7247de7f162238305f85
 function bindCreateRecipe() {
   const button = document.getElementById('create-button');
   button.addEventListener('click', () => {
@@ -266,7 +288,11 @@ function addCreateRecipe() {
     bindCancelButton(document.querySelector('recipe-upload').shadowRoot.getElementById('cancelButton'), 'create');
   });
 }
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 90a139ad14b820b6304e7247de7f162238305f85
 /**
  * Binds the slider so that the recommended recipes will display cards
  * according to the spice level. This will also include any additional
@@ -297,10 +323,13 @@ async function bindSlider() {
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 1601d73 (Added functionality to the slider)
 =======
 >>>>>>> 4ad80c5 (added edit button)
 =======
+=======
+>>>>>>> 90a139ad14b820b6304e7247de7f162238305f85
 
 /**
  * Triggers the slider to show newly created/edited/deleted recipes.
@@ -312,4 +341,7 @@ function triggerSlider() {
   const event = new Event('change');
   spiceSlider.dispatchEvent(event);
 }
+<<<<<<< HEAD
 >>>>>>> 5802dc4 (Added feature that shows edited recipe once done)
+=======
+>>>>>>> 90a139ad14b820b6304e7247de7f162238305f85

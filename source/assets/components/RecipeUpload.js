@@ -199,16 +199,22 @@ class RecipeUpload extends HTMLElement {
     this.GetImgurImage();
     this.SubmitRecipe();
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     if(data == null){
         return;
     }
 =======
+=======
+>>>>>>> 90a139ad14b820b6304e7247de7f162238305f85
 
     if (data == null) {
       this.isCreate = true;
       return;
+<<<<<<< HEAD
 >>>>>>> d132bda (Added things to do with upload recipe)
+=======
+>>>>>>> 90a139ad14b820b6304e7247de7f162238305f85
     }
     this.isCreate = false;
 
@@ -379,6 +385,7 @@ class RecipeUpload extends HTMLElement {
 
     button.addEventListener('click', () => {
 <<<<<<< HEAD
+<<<<<<< HEAD
         let stepNum = Number(div.getAttribute('value'));
         if( stepNum > 1 ){
             stepNum--;
@@ -387,6 +394,8 @@ class RecipeUpload extends HTMLElement {
             div.removeChild(textArea);
         }
 =======
+=======
+>>>>>>> 90a139ad14b820b6304e7247de7f162238305f85
       let stepNum = Number(div.getAttribute('value'));
       if (stepNum > 1) {
         stepNum -= 1;
@@ -396,7 +405,10 @@ class RecipeUpload extends HTMLElement {
         div.removeChild(textArea);
         div.removeChild(lineBreak);
       }
+<<<<<<< HEAD
 >>>>>>> d132bda (Added things to do with upload recipe)
+=======
+>>>>>>> 90a139ad14b820b6304e7247de7f162238305f85
     });
   }
 
@@ -446,6 +458,7 @@ class RecipeUpload extends HTMLElement {
 
     button.addEventListener('click', () => {
 <<<<<<< HEAD
+<<<<<<< HEAD
         let stepNum = Number(div.getAttribute('value'));
         
         if( stepNum < 8 ){
@@ -458,6 +471,8 @@ class RecipeUpload extends HTMLElement {
             div.appendChild(textArea);
         }
 =======
+=======
+>>>>>>> 90a139ad14b820b6304e7247de7f162238305f85
       let stepNum = Number(div.getAttribute('value'));
 
       if (stepNum < 25) {
@@ -471,7 +486,10 @@ class RecipeUpload extends HTMLElement {
         div.appendChild(lineBreak);
         div.appendChild(textArea);
       }
+<<<<<<< HEAD
 >>>>>>> d132bda (Added things to do with upload recipe)
+=======
+>>>>>>> 90a139ad14b820b6304e7247de7f162238305f85
     });
   }
 

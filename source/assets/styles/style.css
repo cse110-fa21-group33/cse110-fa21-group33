@@ -101,12 +101,17 @@ section:not(section.shown) {
   height: 80px;
   padding: 10px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin-bottom: 10px;
   /*background-color: var(--ec-white);*/
 =======
   margin: -15px;
   margin-bottom: 15px;
 >>>>>>> 4ad80c5 (added edit button)
+=======
+  margin: -15px;
+  margin-bottom: 15px;
+>>>>>>> 90a139ad14b820b6304e7247de7f162238305f85
   background: #04aa6d; /* Green background */
 }
 

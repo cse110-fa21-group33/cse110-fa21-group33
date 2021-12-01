@@ -2,6 +2,10 @@ node_modules/
 node_modules
 <<<<<<< HEAD
 jest-puppeteer.config.js
+<<<<<<< HEAD
 =======
 .DS_Store
 >>>>>>> 5802dc4 (Added feature that shows edited recipe once done)
+=======
+.DS_Store
+>>>>>>> 90a139ad14b820b6304e7247de7f162238305f85
