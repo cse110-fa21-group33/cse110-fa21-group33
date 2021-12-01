@@ -30,11 +30,22 @@ class RecipeDisplay extends HTMLElement {
         padding: 5px;
         font-size: 18px;
       }
+
+      button {
+        background-color: white;
+        border-radius: 20px;
+        font-family: 'Mochiy Pop P One', sans-serif;
+        border: 2px solid black;
+      }
       
       #recipe-media > img {
         display: block;
-        width: 100%;
+        width: 75%;
+        align-content: center;
+        margin-left: auto;
+        margin-right: auto;
         height: auto;
+        border: 1px black
       }
       .recipe-title{
         font-size: 50px;
@@ -45,7 +56,7 @@ class RecipeDisplay extends HTMLElement {
       
       .recipe-about {
         display: grid;
-        justify-content: up;
+        align-items: end;
         grid-template-columns: 1fr 0.5fr;
         padding-bottom: 30px;
       }
@@ -81,17 +92,15 @@ class RecipeDisplay extends HTMLElement {
       }
       
       #recipe-information > span {
-        display: grid;
-        grid-template-columns: 2fr 2fr 2fr;
-      }
-      
-      .recipe-info-number {
-        grid-column-start: 4;
+        display: flex;
+        justify-content: space-between;
+        height: auto;
       }
       
       .recipe-subtitle {
         font-size: 35px;
         margin-bottom: 20px;
+        margin-top: 0px;
       }
       
       .recipe-list {
