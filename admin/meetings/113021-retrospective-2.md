@@ -18,11 +18,11 @@ Retrospective Templates
 
 - Team health (psychological safety)
 
-![Screen Shot 2021-12-01 at 12.49.28 PM.png](113021-retrospective-2%20f91bd8a0ba0d4fb0a0e0e8371d4fb59e/Screen_Shot_2021-12-01_at_12.49.28_PM.png)
+![Screen Shot 2021-12-01 at 12.49.28 PM.png](media/sprint-2/TeamHealth.png)
 
 - Development Processes
 
-![Screen Shot 2021-12-01 at 12.49.17 PM.png](113021-retrospective-2%20f91bd8a0ba0d4fb0a0e0e8371d4fb59e/Screen_Shot_2021-12-01_at_12.49.17_PM.png)
+![Screen Shot 2021-12-01 at 12.49.17 PM.png](media/sprint-2/DevelopmentProcess.png)
 
 - What went well/what didn't
     - Went well
@@ -34,6 +34,6 @@ Retrospective Templates
         - We kinda threw the subteams out the window. People are working on specific tasks based on priority over team-related.
         - Merge Conflicts!!
     
-    ![Screen Shot 2021-12-01 at 12.48.22 PM.png](113021-retrospective-2%20f91bd8a0ba0d4fb0a0e0e8371d4fb59e/Screen_Shot_2021-12-01_at_12.48.22_PM.png)
+    ![Screen Shot 2021-12-01 at 12.48.22 PM.png](media/sprint-2/WhatWentWell1.png)
     
-    ![Screen Shot 2021-12-01 at 12.48.38 PM.png](113021-retrospective-2%20f91bd8a0ba0d4fb0a0e0e8371d4fb59e/Screen_Shot_2021-12-01_at_12.48.38_PM.png)
+    ![Screen Shot 2021-12-01 at 12.48.38 PM.png](media/sprint-2/WhatWentWell2.png)
