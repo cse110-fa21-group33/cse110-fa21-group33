@@ -221,15 +221,12 @@ section:not(section.shown) {
 
 #challenge-cards--wrapper {
   grid-area: sidebarl;
+  padding: 10px 30px 30px;
 }
 
 #div--recommended-recipes {
   grid-area: main;
   padding: 10px 30px 30px;
-}
-
-#fav-cards--wrapper {
-  grid-area: sidebarr;
 }
 
 a:link {
@@ -243,7 +240,13 @@ a:link {
   grid-template-columns: repeat(auto-fit, minmax(10rem, 15rem));
   justify-content: space-evenly;
   gap: 2rem;
-  background-color: #ee6858;
 }
 
+.challenge-body {
+  font-family: 'Merriweather', sans-serif;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 15rem));
+  justify-content: space-evenly;
+  gap: 2rem;
+}
 
