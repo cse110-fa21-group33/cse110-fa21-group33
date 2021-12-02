@@ -234,7 +234,12 @@ class RecipeDisplay extends HTMLElement {
     this.shadowRoot.querySelector('.recipe-description').innerHTML = description;
     const { image } = data;
     const img = this.shadowRoot.querySelector('#recipe-media > img');
-    img.setAttribute('src', image);
+    if (image == "") {
+      img.setAttribute('src', "https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png");
+    }
+    else {
+      img.setAttribute('src', image);
+    }
     img.setAttribute('alt', title);
     const { scoville } = data;
     this.shadowRoot.querySelector('#recipe-spice-level').innerHTML = scoville;

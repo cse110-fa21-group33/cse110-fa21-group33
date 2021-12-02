@@ -71,7 +71,12 @@ class RecipeCard extends HTMLElement {
 
     const image = document.createElement('img');
     image.classList.add('card-img');
-    image.setAttribute('src', data.image);
+    if (data.image == "") {
+      image.setAttribute('src', "https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png");
+    }
+    else {
+      image.setAttribute('src', data.image);
+    }
     elem.appendChild(image);
 
     const title = document.createElement('div');
