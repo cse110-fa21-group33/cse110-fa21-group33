@@ -1,0 +1,93 @@
+{
+    "title": "Zesty Mango Habanero Hot Sauce",
+    "id": "i43eYV",
+    "description": "Hot sauce is enjoyed around the world, and many different variations exist. But the common ingredient in them all? Chili peppers — which have been around for more than 6,000 years in Mexico and Central and South America.\n\nBut who came up with the genius idea of combining sweet mangoes with spicy peppers? Our search didn’t result in a clear answer, but mango in hot sauce seems to be common in the Caribbean, particularly in Jamaica and Belize.\n\nThe following is an oil-free, wonderfully spicy version adapted from the talented chef and author Bryant Terry.",
+    "image": "https://minimalistbaker.com/wp-content/uploads/2021/08/Mango-Habanero-Hot-Sauce-Spicy-vibrant-and-just-8-ingredients-and-25-minutes-required-minimalistbaker-recipe-plantbased-mango-hotsauce-7.jpg",
+    "servingSize": 16,
+    "scoville": 100000,
+    "time": [
+        {
+            "name": "prepTime",
+            "hours": 0,
+            "minutes": 15
+        },
+        {
+            "name": "cookTime",
+            "hours": 0,
+            "minutes": 10
+        },
+        {
+            "name": "totalTime",
+            "hours": 0,
+            "minutes": 25
+        }
+    ],
+    "ingredientList": [
+        {
+            "name": "Water",
+            "quantity": "0.5",
+            "units": "cups"
+        },
+        {
+            "name": "Dice white or yellow onion",
+            "quantity": "0.5",
+            "units": "cups"
+        },
+        {
+            "name": "Cumin Seeds",
+            "quantity": "1",
+            "units": "tsp"
+        },
+        {
+            "name": "Garlic cloves minced",
+            "quantity": "2",
+            "units": "N/A"
+        },
+        {
+            "name": "Habanero chilis",
+            "quantity": "2",
+            "units": "N/A"
+        },
+        {
+            "name": "Sea Salt",
+            "quantity": "0.5",
+            "units": "tsp"
+        },
+        {
+            "name": "Diced Mango",
+            "quantity": "0.5",
+            "units": "cups"
+        },
+        {
+            "name": "Lime zest",
+            "quantity": "0.5",
+            "units": "tsp"
+        },
+        {
+            "name": "Lime juice",
+            "quantity": "2",
+            "units": "tbsp"
+        },
+        {
+            "name": "White Wine Vinegar",
+            "quantity": "1",
+            "units": "tbsp"
+        },
+        {
+            "name": "Maple Syrup",
+            "quantity": "1",
+            "units": "tsp"
+        }
+    ],
+    "directions": [
+        "To a small saucepan over medium heat, add water, onion, and cumin seeds. Sauté for 4-5 minutes covered, stirring occasionally to prevent sticking. Turn down heat and/or add a bit more water if browning too quickly.",
+        "Add garlic, habanero, and salt and sauté covered for 2 minutes, stirring occasionally.",
+        "Add mango, lime zest, and lime juice (starting with the lesser amount), vinegar (starting with the lesser amount), and water (starting with the lesser amount) and simmer covered for 3-4 minutes more.",
+        "Let cool slightly then blend until creamy and smooth (use a small blender safe for blending hot foods, such as a NutriBullet or Vitamix with a narrow base). Add more water to thin if too thick, then blend again.",
+        "Taste and adjust flavor as needed, adding more salt to taste, lime juice for brightness, vinegar for acidity, or some maple syrup (optional) to balance the heat and salt with a little sweetness (will depend on ripeness of mango).",
+        "Use immediately or store well sealed in the refrigerator for up to 2 weeks. Or freeze into ice cubes (using a mold) and store in the freezer for up to 2 months."
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 4
+}

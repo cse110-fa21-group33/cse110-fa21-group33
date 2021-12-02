@@ -43,7 +43,7 @@ class RecipeUpload extends HTMLElement {
         <h2>Upload Photo</h2>
         <p>Please upload a picture of your completed dish!</p>
 
-        <img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
+        <img src="https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
         <br>
         <input type="file" id="imgUpload" accept="image/*">
         <p id="url"></p>
@@ -118,25 +118,25 @@ class RecipeUpload extends HTMLElement {
 
   optionIndex = {
     'N/A': 0,
-    'cups': 1,
-    'pt': 2,
-    'qt': 3,
-    'gal': 4,
-    'tsp': 5,
-    'tbsp': 6,
+    cups: 1,
+    pt: 2,
+    qt: 3,
+    gal: 4,
+    tsp: 5,
+    tbsp: 6,
     'fl oz': 7,
-    'mL': 8,
-    'L': 9,
-    'g': 10,
-    'kg': 11,
-    'oz': 12,
-    'lbs': 13,
-    'mm': 14,
-    'cm': 15,
-    'm': 16,
-    'in': 17,
-    'pinch': 18,
-    'drop': 19
+    mL: 8,
+    L: 9,
+    g: 10,
+    kg: 11,
+    oz: 12,
+    lbs: 13,
+    mm: 14,
+    cm: 15,
+    m: 16,
+    in: 17,
+    pinch: 18,
+    drop: 19,
   };
 
   /**
@@ -160,7 +160,7 @@ class RecipeUpload extends HTMLElement {
     <h2 id="header-upload-photo">Upload Photo</h2>
     <p id="p-upload-photo">Please upload a picture of your completed dish!</p>
 
-    <img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
+    <img src="https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
     <br>
     <input type="file" id="imgUpload" accept="image/*">
     <p id="url"></p>
@@ -240,14 +240,15 @@ class RecipeUpload extends HTMLElement {
     this.shadowRoot.getElementById('header-upload-photo').innerText = 'Upload New Photo';
     this.shadowRoot.getElementById('p-upload-photo').innerText = 'Upload a new picture if you wish to edit the dish image!';
 
-
-    const deleteButton = document.createElement('input');
-    deleteButton.setAttribute('id', 'deleteButton');
-    deleteButton.classList.add('Delete');
-    deleteButton.setAttribute('type', 'button');
-    deleteButton.setAttribute('value', 'Delete');
-    this.shadowRoot.getElementById('formButtons').appendChild(deleteButton);
-    this.BindDeleteButton();
+    if (data.challenges.length === 0) {
+      const deleteButton = document.createElement('input');
+      deleteButton.setAttribute('id', 'deleteButton');
+      deleteButton.classList.add('Delete');
+      deleteButton.setAttribute('type', 'button');
+      deleteButton.setAttribute('value', 'Delete');
+      this.shadowRoot.getElementById('formButtons').appendChild(deleteButton);
+      this.BindDeleteButton();
+    }
 
     this.FillExistingData();
     this.RemoveSpecificInstruction();
@@ -609,8 +610,15 @@ class RecipeUpload extends HTMLElement {
   FillExistingData() {
     this.shadowRoot.getElementById('recipeName').value = this.json.title;
     this.shadowRoot.getElementById('recipeDescription').value = this.json.description;
-    this.shadowRoot.getElementById('url').innerText = this.json.image;
-    this.shadowRoot.getElementById('imgPreview').src = this.json.image;
+    console.log(this.json);
+    if (this.json.image == "") {
+      this.shadowRoot.getElementById('url').innerText = "";
+      this.shadowRoot.getElementById('imgPreview').src = "https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png";
+    }
+    else {
+      this.shadowRoot.getElementById('url').innerText = this.json.image;
+      this.shadowRoot.getElementById('imgPreview').src = this.json.image;
+    }
     this.shadowRoot.getElementById('servingSize').value = this.json.servingSize;
     this.shadowRoot.getElementById('scoville').value = this.json.scoville;
     this.shadowRoot.getElementById('prepMins').value = this.json.time[0].minutes;
@@ -660,12 +668,11 @@ class RecipeUpload extends HTMLElement {
     const div2 = this.shadowRoot.getElementById('instructions');
     const textArea = div2.getElementsByTagName('textarea')[0];
     textArea.value = this.json.directions[0];
-
   }
 
   /**
    * This is a helper function that creates new text boxes for the recipe's existing instructions
-   * The text boxes then will be filled with the proper information accordingly 
+   * The text boxes then will be filled with the proper information accordingly
    */
   MakeExtraInstructionSlots(data) {
     const div = this.shadowRoot.getElementById('instructions');
@@ -701,7 +708,7 @@ class RecipeUpload extends HTMLElement {
 
   /**
    * This is a helper function that creates new text boxes for the recipe's existing ingredients
-   * The text boxes then will be filled with the proper information accordingly 
+   * The text boxes then will be filled with the proper information accordingly
    */
   MakeExtraIngredientsSlots(data) {
     const button = this.shadowRoot.getElementById('addIngredientButton');
@@ -741,7 +748,7 @@ class RecipeUpload extends HTMLElement {
       const lineBreak = document.createElement('br');
 
       select.options[this.optionIndex[data.units]].selected = true;
-      //document.getElementById("dropdown").selectedIndex = "1";
+      // document.getElementById("dropdown").selectedIndex = "1";
 
       //div.appendChild(lineBreak);
       div.appendChild(inputName);

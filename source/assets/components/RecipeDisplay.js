@@ -1,3 +1,5 @@
+import { database } from '../scripts/database.js';
+
 /**
  * recipe-display.js
  *
@@ -12,16 +14,13 @@ class RecipeDisplay extends HTMLElement {
     super();
     // Create Shadow DOM
     this.attachShadow({ mode: 'open' });
-
     const styles = document.createElement('style');
     const article = document.createElement('article');
-
     styles.innerHTML = `
       .main-container {
         max-width: 700px;
         margin: auto;
       }
-
       .recipe-section {
         background-color: #ee6858;
         padding: 20px 40px;
@@ -33,13 +32,23 @@ class RecipeDisplay extends HTMLElement {
         padding: 5px;
         font-size: 18px;
       }
+
+      button {
+        background-color: white;
+        border-radius: 20px;
+        font-family: 'Mochiy Pop P One', sans-serif;
+        border: 2px solid black;
+      }
       
       #recipe-media > img {
         display: block;
-        width: 100%;
+        width: 75%;
+        align-content: center;
+        margin-left: auto;
+        margin-right: auto;
         height: auto;
+        border: 1px black
       }
-
       .recipe-title{
         font-size: 50px;
         font-family: 'Mochiy Pop P One', sans-serif;
@@ -49,7 +58,7 @@ class RecipeDisplay extends HTMLElement {
       
       .recipe-about {
         display: grid;
-        justify-content: up;
+        align-items: end;
         grid-template-columns: 1fr 0.5fr;
         padding-bottom: 30px;
       }
@@ -85,17 +94,15 @@ class RecipeDisplay extends HTMLElement {
       }
       
       #recipe-information > span {
-        display: grid;
-        grid-template-columns: 2fr 2fr 2fr;
-      }
-      
-      .recipe-info-number {
-        grid-column-start: 4;
+        display: flex;
+        justify-content: space-between;
+        height: auto;
       }
       
       .recipe-subtitle {
         font-size: 35px;
         margin-bottom: 20px;
+        margin-top: 0px;
       }
       
       .recipe-list {
@@ -103,13 +110,10 @@ class RecipeDisplay extends HTMLElement {
         flex-direction: column;
         row-gap: 10px;
       }
-
       hr {
         border-color: black;
       }
-
     `;
-
     article.innerHTML = `
       <div class="main-container">
         <main>
@@ -123,9 +127,6 @@ class RecipeDisplay extends HTMLElement {
                     <img src="">
                     <p id="recipe-spice-level"></p>    
                   </div>
-                  <div class="button-wrapper">
-                    <button class="recipe-button">Print</button>
-                  </div>   
               </div>      
             </div>
             <div id="recipe-media">
@@ -158,13 +159,12 @@ class RecipeDisplay extends HTMLElement {
             </div>
             <hr>
             <div class="button-wrapper">
-              <button class="recipe-button">I Made This!</button>
+              <button class="recipe-button" id="made-this-button">I Made This!</button>
             </div>
           </article>
         </main>
       </div>
       `;
-
     this.shadowRoot.append(styles, article);
   }
 
@@ -187,9 +187,6 @@ class RecipeDisplay extends HTMLElement {
                       <img src="">
                       <p id="recipe-spice-level"></p>    
                     </div>
-                    <div class="button-wrapper">
-                      <button class="print-button">Print</button>
-                    </div>  
                     <div class="button-wrapper">
                       <button id="editButton" class="edit-button">Edit</button>
                     </div>  
@@ -225,51 +222,68 @@ class RecipeDisplay extends HTMLElement {
               </div>
               <hr>
               <div class="button-wrapper">
-                <button class="recipe-button">I Made This!</button>
+                <button class="recipe-button" id="made-this-button">I Made This!</button>
               </div>
             </article>
           </main>
         </div>
     `;
-
     const { title } = data;
     this.shadowRoot.querySelector('h1').innerHTML = title;
-
     const { description } = data;
     this.shadowRoot.querySelector('.recipe-description').innerHTML = description;
-
     const { image } = data;
     const img = this.shadowRoot.querySelector('#recipe-media > img');
-    img.setAttribute('src', image);
+    if (image == "") {
+      img.setAttribute('src', "https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png");
+    }
+    else {
+      img.setAttribute('src', image);
+    }
     img.setAttribute('alt', title);
-
     const { scoville } = data;
     this.shadowRoot.querySelector('#recipe-spice-level').innerHTML = scoville;
-
     const prepTime = calculateTime(data.time[0]);
     this.shadowRoot.querySelector('#recipe-prep-time > .recipe-info-number').innerHTML = prepTime;
-
     const cookTime = calculateTime(data.time[1]);
     this.shadowRoot.querySelector('#recipe-cook-time > .recipe-info-number').innerHTML = cookTime;
-
     const { servingSize } = data;
     this.shadowRoot.querySelector('#recipe-serving-size > .recipe-info-number').innerHTML = servingSize;
-
     const { ingredientList } = data;
     ingredientList.forEach((ingredient) => {
       const ingredientString = getIngredient(ingredient);
       const ingredientContainer = createCheckbox(ingredientString);
       this.shadowRoot.querySelector('#recipe-ingredients > .recipe-list').appendChild(ingredientContainer);
     });
-
     const { directions } = data;
     directions.forEach((direction) => {
       const directionContainer = createCheckbox(direction);
       this.shadowRoot.querySelector('#recipe-directions > .recipe-list').appendChild(directionContainer);
     });
+    const btn = this.shadowRoot.getElementById('made-this-button');
+    if (data.completed === true) {
+      const newBox = document.createElement('completed');
+      newBox.innerHTML = 'Completed!';
+      btn.parentElement.appendChild(newBox);
+      btn.parentElement.removeChild(btn);
+    } else {
+      this.bindCompleteButton(data);
+    }
+  }
+
+  bindCompleteButton(data) {
+    const btn = this.shadowRoot.getElementById('made-this-button');
+    btn.addEventListener('click', () => {
+      if (data.completed === false) {
+        database.completeRecipe(data);
+        const newBox = document.createElement('completed');
+        newBox.innerHTML = 'Completed!';
+        btn.parentElement.appendChild(newBox);
+        btn.parentElement.removeChild(btn);
+      }
+    });
   }
 }
-
 /**
  * Calculates the time string to display
  * @param {*} time
@@ -277,7 +291,6 @@ class RecipeDisplay extends HTMLElement {
  */
 function calculateTime(time) {
   let timeString = '';
-
   if (time.hours > 0) {
     timeString += `${time.hours} hours`;
     if (time.minutes > 0) {
@@ -288,7 +301,6 @@ function calculateTime(time) {
   }
   return timeString;
 }
-
 /**
  * Parses the ingredient JSON to make it into a readable string to
  * display the ingredient
@@ -299,9 +311,7 @@ function getIngredient(ingredient) {
   const { name } = ingredient;
   const { quantity } = ingredient;
   const { units } = ingredient;
-
   let ingredientString = '';
-
   if (quantity !== 0) {
     ingredientString += `${quantity} `;
   }
@@ -311,7 +321,6 @@ function getIngredient(ingredient) {
   ingredientString += name;
   return ingredientString;
 }
-
 /**
  * Creates a checkbox given the string
  * @param {*} checkboxString
@@ -321,10 +330,8 @@ function createCheckbox(checkboxString) {
   const container = document.createElement('label');
   const checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
-
   container.appendChild(checkbox);
   container.appendChild(document.createTextNode(checkboxString));
-
   return container;
 }
 

@@ -44,8 +44,9 @@ class RecipeCard extends HTMLElement {
       padding: 0.5rem 1rem 0.25rem;
       overflow: hidden;
       font-size: 26px;
-      height: 49px;
-      line-height: 26px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical
     }
     
     .card-rating {
@@ -70,7 +71,11 @@ class RecipeCard extends HTMLElement {
 
     const image = document.createElement('img');
     image.classList.add('card-img');
-    image.setAttribute('src', data.image);
+    if (data.image == '') {
+      image.setAttribute('src', 'https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png');
+    } else {
+      image.setAttribute('src', data.image);
+    }
     elem.appendChild(image);
 
     const title = document.createElement('div');

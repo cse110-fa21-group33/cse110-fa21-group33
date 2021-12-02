@@ -10,6 +10,14 @@ const router = new Router(() => {
   document.querySelector('.section--recipe-upload').classList.remove('shown');
 });
 
+const [recommendTitle, searchTitle] = [
+  'Recommended Recipes For You',
+  'Search Results',
+];
+
+const challengePath = 'assets/jsons/challenges.json';
+let challengeData;
+
 window.addEventListener('DOMContentLoaded', init);
 
 /**
@@ -31,14 +39,18 @@ async function init() {
   bindEscKey();
   bindPopstate();
   bindSlider();
+  displaySearchCards();
   clickLogoToGoHome();
+  sliderSpiceLevel();
+  createProgressBars();
 }
 
 /**
  * Populates with recommended page with recipe cards
  */
 function createRecipeCards(recipes) {
-  console.log(recipes);
+  // console.log(recipes);
+  const i = 0;
   recipes.forEach((recipe) => {
     // Makes a new recipe card
     const recipeCard = document.createElement('recipe-card');
@@ -159,23 +171,26 @@ function bindDeleteButton(button) {
 /**
  * Binds the 'keydown' event listener to the Escape key (esc) such that when
  * it is clicked, the home page is returned to
- * TEMPORARY, TODO CHANGE THIS TO WHEN YOU CLICK THE LOGO IT LEADS TO HOME
  */
 function bindEscKey() {
   document.addEventListener('keydown', (event) => {
     if ((event.key === 'Escape') || (event.key === 'Esc')) {
       router.navigate('home', false);
+      triggerSlider();
+      createProgressBars();
     }
   });
 }
 
-/* Binds clicking the website logo to going to the home page
+/** Binds clicking the website logo to going to the home page
  * just using the same code from bindEscKey()
-*/
+ */
 function clickLogoToGoHome() {
   const websiteLogo = document.getElementById('websiteLogo');
-  websiteLogo.addEventListener('click', (event) => {
-      router.navigate('home', false);
+  websiteLogo.addEventListener('click', () => {
+    router.navigate('home', false);
+    triggerSlider();
+    createProgressBars();
   });
 }
 
@@ -221,6 +236,8 @@ function addCreateRecipe() {
   });
 }
 
+// ******************** SLIDER FUNCTIONS *************************************************
+
 /**
  * Binds the slider so that the recommended recipes will display cards
  * according to the spice level. This will also include any additional
@@ -231,6 +248,8 @@ async function bindSlider() {
     .querySelector('#spice-slider--wrapper')
     .querySelector('.slider');
   spiceSlider.addEventListener('change', async (event) => {
+    document.getElementById('middle-title').innerHTML = recommendTitle;
+    document.getElementById('searchBar').value = '';
     const cardBody = document.querySelector('.card-body');
     const cards = cardBody.getElementsByTagName('recipe-card');
     while (cards.length > 0) {
@@ -259,4 +278,112 @@ function triggerSlider() {
     .querySelector('.slider');
   const event = new Event('change');
   spiceSlider.dispatchEvent(event);
+}
+
+/**
+   * Spice slider logic.
+   */
+function sliderSpiceLevel() {
+  const spiceSlider = document.getElementById('myRange');
+  const spiceLevel = document.getElementById('spiceLevel');
+  const style = document.querySelector('[data="test"]');
+  let emojiString = '';
+  for (let i = 0; i < spiceSlider.value; i += 1) {
+    emojiString += '🌶️';
+  }
+  spiceLevel.innerHTML = emojiString;
+
+  spiceSlider.oninput = function () {
+    emojiString = '';
+    for (let i = 0; i < this.value; i += 1) {
+      emojiString += '🌶️';
+    }
+    spiceLevel.innerHTML = emojiString;
+
+    style.innerHTML = `.slider::-webkit-slider-thumb{ background-image: url('assets/images/fireGif${spiceSlider.value}.gif'); }`;
+  };
+}
+
+// ******************** SEARCH FUNCTIONS *************************************************
+
+/**
+ * Displays the search results according to name
+ */
+async function displaySearchCards() {
+  const searchBar = document.getElementById('searchBar');
+  searchBar.addEventListener('keyup', (event) => {
+    const searchString = event.target.value;
+    const cardBody = document.querySelector('.card-body');
+    const cards = cardBody.getElementsByTagName('recipe-card');
+
+    if (searchString.length === 0) {
+      if (document.getElementById('middle-title').innerHTML === searchTitle) {
+        triggerSlider();
+      }
+      return;
+    }
+
+    while (cards.length > 0) {
+      cards[0].remove();
+    }
+    document.getElementById('middle-title').innerHTML = searchTitle;
+    let recipeList;
+    (async () => {
+      try {
+        recipeList = await database.getByName(searchString);
+        if (recipeList.length > 0) {
+          createRecipeCards(recipeList);
+        }
+      } catch (err) {
+        console.log(`Error fetching recipes: ${err}`);
+      }
+    })();
+  });
+}
+
+// ************************ CHALLENGE BAR FUNCTIONS *****************************************
+
+/**
+ * Populates the challenge progress section
+ */
+async function createProgressBars() {
+  // Clear the challenge bars to be updated
+  const challengeBody = document.querySelector('.challenge-body');
+  const challengeBars = challengeBody.getElementsByTagName('challenge-bar');
+  while (challengeBars.length > 0) {
+    challengeBars[0].remove();
+  }
+
+  // Update the new challenge information
+  challengeData = database.getChallenges().challenges;
+  challengeData.forEach((challenge) => {
+    const challengeBar = document.createElement('challenge-bar');
+    challengeBar.data = challenge;
+
+    challengeBody.appendChild(challengeBar);
+    bindProgressBar(challengeBar, challenge);
+  });
+}
+
+/**
+ * When the user clicks on the progress bar it will populate the middle box with the recipe
+ * cards included in the challenge
+ * @param {*} progressBar
+ */
+async function bindProgressBar(challengeBar, challenge) {
+  challengeBar.addEventListener('click', async () => {
+    document.getElementById('middle-title').innerHTML = challenge.title;
+    document.getElementById('searchBar').value = '';
+    const cardBody = document.querySelector('.card-body');
+    const cards = cardBody.getElementsByTagName('recipe-card');
+    while (cards.length > 0) {
+      cards[0].remove();
+    }
+
+    const recipeList = await Promise.all(
+      challenge.recipes.map((recipe) => database.getById(recipe)),
+    );
+
+    createRecipeCards(recipeList);
+  });
 }

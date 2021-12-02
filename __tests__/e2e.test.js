@@ -9,7 +9,7 @@ describe('Basic user flow for Website', () => {
     console.log('Checking for recipe cards');
     await new Promise((r) => setTimeout(r, 1000));
     const numCards = await page.$$eval('recipe-card', (recipeCards) => recipeCards.length);
-    expect(numCards).toBe(1);
+    expect(numCards).toBeGreaterThanOrEqual(1);
   });
   it('Test slider exists', async () => {
     console.log('Checking if the spice slider exists');

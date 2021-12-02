@@ -22,6 +22,11 @@ const recipesFromFile = [
   'assets/jsons/Spicy-Touchdown-Chili.json',
   'assets/jsons/Tteokbokki-Spicy-Stir-Fried-Rice-Cakes.json',
   'assets/jsons/Jjam-Bbong-Korean-Chinese-Spicy-Noodle.json',
+  'assets/jsons/Carne-Asada-Tacos.json',
+  'assets/jsons/Japanese-Curry-From-Scratch.json',
+  'assets/jsons/Spicy-Chicken-Sandwich.json',
+  'assets/jsons/Spicy-Habanero-Salsa.json',
+  'assets/jsons/Zesty-Mango-Habanero-Hot-Sauce.json',
 ];
 
 let loaded = false;
@@ -113,11 +118,15 @@ async function loadDB() {
               })
                 .then(() => {
                   if (numImported === recipesFromFile.length) {
-                  // Importing from file takes a while, so save to local storage
-                    loaded = true;
-                    saveDB()
-                      .then(() => {
-                        resolve(true);
+                  // After importing all of the recipes, import the challenge list
+                    loadChallengesFromFile()
+                      .then((challenges) => {
+                        saveChallenges(challenges);
+                        loaded = true;
+                        saveDB()
+                          .then(() => {
+                            resolve(true);
+                          });
                       });
                   }
                 });
@@ -132,8 +141,32 @@ async function loadDB() {
   });
 }
 
-// TODO: addRecipe() currently rejects if trying to add a recipe of the same name.
-// Find a way to accept different recipes of the same name (maybe by ID?)
+/**
+ * Fetches the challenge list from file.
+ * @returns {Promise} Resolves with the challenge list json if successful, rejects otherwise.
+ */
+async function loadChallengesFromFile() {
+  return new Promise((resolve, reject) => {
+    fetch('assets/jsons/challenges.json')
+      .then((response) => response.json())
+      .then((data) => {
+        resolve(data);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+/**
+ * Saves the challenge JSON into local storage
+ * @param {JSON} challengeJSON The JSON to save
+ */
+function saveChallenges(challengeJSON) {
+  const challengeString = JSON.stringify(challengeJSON);
+  localStorage.setItem('challenges', challengeString);
+}
+
 /**
  * Adds a recipe to the database.
  * If a recipe of the same name already exists, does not add in the recipe.
@@ -223,6 +256,37 @@ async function deleteRecipe(recipeJSON) {
               });
           });
       });
+    }
+  });
+}
+
+/**
+ * Marks a recipe as completed and updates the challenge list to reflect completion.
+ * @param {JSON} recipeJSON The JSON of the recipe to complete
+ * @returns {Promise} Resolves true if the recipe is successfully completed, rejects otherwise.
+ */
+async function completeRecipe(recipeJSON) {
+  return new Promise((resolve, reject) => {
+    if (!loaded) {
+      reject(new Error('Database not loaded yet! Call loadDB().'));
+    } else if (recipeJSON.completed) {
+      reject(new Error('Recipe already completed!'));
+    } else {
+      const challengeJSON = JSON.parse(localStorage.getItem('challenges'));
+      for (let i = 0; i < recipeJSON.challenges.length; i += 1) {
+        for (let j = 0; j < challengeJSON.challenges.length; j += 1) {
+          if (challengeJSON.challenges[j].title === recipeJSON.challenges[i]) {
+            challengeJSON.challenges[j].numberCompleted += 1;
+            break;
+          }
+        }
+      }
+      recipeJSON.completed = true;
+      updateRecipe(recipeJSON)
+        .then(() => {
+          saveChallenges(challengeJSON);
+          resolve(true);
+        });
     }
   });
 }
@@ -324,10 +388,39 @@ async function getByName(query) {
   });
 }
 
+/**
+ * Returns a recipe json associated with the ID
+ * @param {String} id The recipe id query.
+ * @returns {Promise} Resolves with a recipe JSON whose id is the query,
+ *                    rejects if it fails.
+ */
+async function getById(id) {
+  return new Promise((resolve, reject) => {
+    db.recipes.get(id)
+      .then((data) => {
+        resolve(data.recipe_data);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+/**
+ * Gets the challenge list from local storage
+ * @returns {JSON} The challenge list JSON
+ */
+function getChallenges() {
+  return JSON.parse(localStorage.getItem('challenges'));
+}
+
 database.loadDB = loadDB;
 database.saveDB = saveDB;
 database.addRecipe = addRecipe;
 database.updateRecipe = updateRecipe;
 database.deleteRecipe = deleteRecipe;
+database.completeRecipe = completeRecipe;
 database.getBySpice = getBySpice;
 database.getByName = getByName;
+database.getById = getById;
+database.getChallenges = getChallenges;
