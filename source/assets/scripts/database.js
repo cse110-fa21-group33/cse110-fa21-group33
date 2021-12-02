@@ -29,14 +29,6 @@ const recipesFromFile = [
   'assets/jsons/Zesty-Mango-Habanero-Hot-Sauce.json',
 ];
 
-/*  The 5 jsons I added, for some reason if I put them in the array ^^ it doesn't work
-  'assets/jsons/Carne-Asada-Tacos.json',
-  'assets/jsons/Japanese-Curry-From-Scratch.json',
-  'assets/jsons/Spicy-Chicken-Sandwich.json',
-  'assets/jsons/Spicy-Habanero-Salsa.json',
-  'assets/jsons/Zesty-Mango-Habanero-Hot-Sauce.json',
-*/
-
 let loaded = false;
 const uid = new ShortUniqueId();
 
