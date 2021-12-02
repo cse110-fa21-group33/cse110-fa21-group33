@@ -32,7 +32,8 @@ async function init() {
   bindPopstate();
   bindSlider();
   clickLogoToGoHome();
-  sliderSpiceLevel()
+  sliderSpiceLevel();
+  confettiTime();
 }
 
 /**
@@ -268,7 +269,7 @@ function triggerSlider() {
 function sliderSpiceLevel() {
   const spiceSlider = document.getElementById('myRange');
   const spiceLevel = document.getElementById('spiceLevel');
-
+  const style = document.querySelector('[data="test"]');
   let emojiString = '';
   for( var i = 0; i < spiceSlider.value; i++ ){
     emojiString += '🌶️';
@@ -281,5 +282,22 @@ function sliderSpiceLevel() {
       emojiString += '🌶️';
     }
     spiceLevel.innerHTML = emojiString;
+    style.innerHTML = ".slider::-webkit-slider-thumb{ background-image: url('assets/images/fireGif" + spiceSlider.value + ".gif'); }";
   }
+}
+
+/*
+ *  Add confetti when you press the create recipe button
+ *  TODO add any other buttons you want this effect on
+ */ 
+function confettiTime(){
+  // initailize confetti 
+  const jsConfetti = new JSConfetti()
+  const button = document.getElementById('create-button');
+  
+  button.addEventListener('click', () => {
+    jsConfetti.addConfetti({
+      emojis: ['🌶️', '🔥', '🥵'],
+    })
+  });
 }

@@ -50,12 +50,13 @@ section:not(section.shown) {
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
   width: 50%; /* Full-width */
-  height: 10px; /* Specified height */
+  height: 40px; /* Specified height */
   background: #d3d3d3; /* Grey background */
   outline: none; /* Remove outline */
   opacity: 0.9; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
   transition: opacity 5s;
+  overflow: hidden;
 }
   
 /* Mouse-over effects */
@@ -67,33 +68,30 @@ section:not(section.shown) {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: url('../images/fireGif3.gif');
-  background-size: 25px 25px;
-  /* Not sure why this doesnt work...
-  
-  */
+  width: 40px; /* Set a specific slider handle width */
+  height: 40px; /* Slider handle height */
+  background-image: url('../images/fireGif3.gif');
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
   cursor: pointer; /* Cursor on hover */
+  box-shadow: -400px 0 0 400px #ca5507;
 }
-  
-.slider::-moz-range-thumb {
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #04aa6d; /* Green background */
-  
-  /*  Not sure why this doesnt work...
-  background: url('../images/fireGif.gif');
-  */
-  cursor: pointer; /* Cursor on hover */
+
+/* This should work but it doesnt 
+.slider::-webkit-fill-lower {
+  -webkit-appearance: none; 
+  appearance: none;
+  background: #ee6858;
 }
+*/
+
 /* Slider end*/
 
 /* Header for the webpage*/
 .nav--header {
 
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
   grid-template-rows: 80px;
   grid-gap: 0px;
   
