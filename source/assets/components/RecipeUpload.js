@@ -240,15 +240,15 @@ class RecipeUpload extends HTMLElement {
     this.shadowRoot.getElementById('header-upload-photo').innerText = 'Upload New Photo';
     this.shadowRoot.getElementById('p-upload-photo').innerText = 'Upload a new picture if you wish to edit the dish image!';
 
-
-    const deleteButton = document.createElement('input');
-    deleteButton.setAttribute('id', 'deleteButton');
-    deleteButton.classList.add('Delete');
-    deleteButton.setAttribute('type', 'button');
-    deleteButton.setAttribute('value', 'Delete');
-    this.shadowRoot.getElementById('formButtons').appendChild(deleteButton);
-    this.BindDeleteButton();
-
+    if (data.challenges.length === 0) {
+      const deleteButton = document.createElement('input');
+      deleteButton.setAttribute('id', 'deleteButton');
+      deleteButton.classList.add('Delete');
+      deleteButton.setAttribute('type', 'button');
+      deleteButton.setAttribute('value', 'Delete');
+      this.shadowRoot.getElementById('formButtons').appendChild(deleteButton);
+      this.BindDeleteButton();
+    }
     this.FillExistingData();
     this.RemoveSpecificInstruction();
     this.RemoveSpecificIngredient();
@@ -621,8 +621,15 @@ class RecipeUpload extends HTMLElement {
   FillExistingData() {
     this.shadowRoot.getElementById('recipeName').value = this.json.title;
     this.shadowRoot.getElementById('recipeDescription').value = this.json.description;
-    this.shadowRoot.getElementById('url').innerText = this.json.image;
-    this.shadowRoot.getElementById('imgPreview').src = this.json.image;
+    console.log(this.json);
+    if (this.json.image == "") {
+      this.shadowRoot.getElementById('url').innerText = "";
+      this.shadowRoot.getElementById('imgPreview').src = "https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png";
+    }
+    else {
+      this.shadowRoot.getElementById('url').innerText = this.json.image;
+      this.shadowRoot.getElementById('imgPreview').src = this.json.image;
+    }
     this.shadowRoot.getElementById('servingSize').value = this.json.servingSize;
     this.shadowRoot.getElementById('scoville').value = this.json.scoville;
     this.shadowRoot.getElementById('prepMins').value = this.json.time[0].minutes;
