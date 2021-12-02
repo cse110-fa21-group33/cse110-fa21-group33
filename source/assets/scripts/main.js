@@ -177,6 +177,7 @@ function bindEscKey() {
     if ((event.key === 'Escape') || (event.key === 'Esc')) {
       router.navigate('home', false);
       triggerSlider();
+      createProgressBars();
     }
   });
 }
@@ -186,9 +187,10 @@ function bindEscKey() {
  */
 function clickLogoToGoHome() {
   const websiteLogo = document.getElementById('websiteLogo');
-  websiteLogo.addEventListener('click', (event) => {
+  websiteLogo.addEventListener('click', () => {
     router.navigate('home', false);
     triggerSlider();
+    createProgressBars();
   });
 }
 
@@ -284,19 +286,21 @@ function triggerSlider() {
 function sliderSpiceLevel() {
   const spiceSlider = document.getElementById('myRange');
   const spiceLevel = document.getElementById('spiceLevel');
-
+  const style = document.querySelector('[data="test"]');
   let emojiString = '';
-  for (let i = 0; i < spiceSlider.value; i++) {
+  for (let i = 0; i < spiceSlider.value; i += 1) {
     emojiString += '🌶️';
   }
   spiceLevel.innerHTML = emojiString;
 
   spiceSlider.oninput = function () {
     emojiString = '';
-    for (let i = 0; i < this.value; i++) {
+    for (let i = 0; i < this.value; i += 1) {
       emojiString += '🌶️';
     }
     spiceLevel.innerHTML = emojiString;
+
+    style.innerHTML = `.slider::-webkit-slider-thumb{ background-image: url('assets/images/fireGif${spiceSlider.value}.gif'); }`;
   };
 }
 
@@ -343,18 +347,43 @@ async function displaySearchCards() {
  * Populates the challenge progress section
  */
 async function createProgressBars() {
-  // TODO change this to getting the challengeData from the database
-  await fetch(challengePath)
-    .then((response) => response.json())
-    .then((data) => {
-      challengeData = data.challenges;
-    })
-    .catch((error) => {
-    });
+  // Clear the challenge bars to be updated
+  const challengeBody = document.querySelector('.challenge-body');
+  const challengeBars = challengeBody.getElementsByTagName('challenge-bar');
+  while (challengeBars.length > 0) {
+    challengeBars[0].remove();
+  }
+
+  // Update the new challenge information
+  challengeData = database.getChallenges().challenges;
   challengeData.forEach((challenge) => {
     const challengeBar = document.createElement('challenge-bar');
     challengeBar.data = challenge;
 
-    document.querySelector('.challenge-body').appendChild(challengeBar);
+    challengeBody.appendChild(challengeBar);
+    bindProgressBar(challengeBar, challenge);
+  });
+}
+
+/**
+ * When the user clicks on the progress bar it will populate the middle box with the recipe
+ * cards included in the challenge
+ * @param {*} progressBar
+ */
+async function bindProgressBar(challengeBar, challenge) {
+  challengeBar.addEventListener('click', async () => {
+    document.getElementById('middle-title').innerHTML = challenge.title;
+    document.getElementById('searchBar').value = '';
+    const cardBody = document.querySelector('.card-body');
+    const cards = cardBody.getElementsByTagName('recipe-card');
+    while (cards.length > 0) {
+      cards[0].remove();
+    }
+
+    const recipeList = await Promise.all(
+      challenge.recipes.map((recipe) => database.getById(recipe)),
+    );
+
+    createRecipeCards(recipeList);
   });
 }

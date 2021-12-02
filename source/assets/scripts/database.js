@@ -22,6 +22,11 @@ const recipesFromFile = [
   'assets/jsons/Spicy-Touchdown-Chili.json',
   'assets/jsons/Tteokbokki-Spicy-Stir-Fried-Rice-Cakes.json',
   'assets/jsons/Jjam-Bbong-Korean-Chinese-Spicy-Noodle.json',
+  'assets/jsons/Carne-Asada-Tacos.json',
+  'assets/jsons/Japanese-Curry-From-Scratch.json',
+  'assets/jsons/Spicy-Chicken-Sandwich.json',
+  'assets/jsons/Spicy-Habanero-Salsa.json',
+  'assets/jsons/Zesty-Mango-Habanero-Hot-Sauce.json',
 ];
 
 let loaded = false;
@@ -393,7 +398,7 @@ async function getById(id) {
   return new Promise((resolve, reject) => {
     db.recipes.get(id)
       .then((data) => {
-        resolve(data);
+        resolve(data.recipe_data);
       })
       .catch((error) => {
         reject(error);

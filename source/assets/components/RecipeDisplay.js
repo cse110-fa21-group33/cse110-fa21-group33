@@ -1,3 +1,5 @@
+import { database } from '../scripts/database.js';
+
 /**
  * recipe-display.js
  *
@@ -233,7 +235,12 @@ class RecipeDisplay extends HTMLElement {
     this.shadowRoot.querySelector('.recipe-description').innerHTML = description;
     const { image } = data;
     const img = this.shadowRoot.querySelector('#recipe-media > img');
-    img.setAttribute('src', image);
+    if (image == "") {
+      img.setAttribute('src', "https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png");
+    }
+    else {
+      img.setAttribute('src', image);
+    }
     img.setAttribute('alt', title);
     const { scoville } = data;
     this.shadowRoot.querySelector('#recipe-spice-level').innerHTML = scoville;
@@ -254,8 +261,15 @@ class RecipeDisplay extends HTMLElement {
       const directionContainer = createCheckbox(direction);
       this.shadowRoot.querySelector('#recipe-directions > .recipe-list').appendChild(directionContainer);
     });
-
-    this.bindCompleteButton(data);
+    const btn = this.shadowRoot.getElementById('made-this-button');
+    if (data.completed === true) {
+      const newBox = document.createElement('completed');
+      newBox.innerHTML = 'Completed!';
+      btn.parentElement.appendChild(newBox);
+      btn.parentElement.removeChild(btn);
+    } else {
+      this.bindCompleteButton(data);
+    }
   }
 
   bindCompleteButton(data) {
@@ -263,8 +277,11 @@ class RecipeDisplay extends HTMLElement {
     btn.addEventListener('click', () => {
       RecipeDisplay.jSConfetti.addConfetti();
       if (data.completed === false) {
-        // eslint-disable-next-line no-param-reassign
-        data.completed = true;
+        database.completeRecipe(data);
+        const newBox = document.createElement('completed');
+        newBox.innerHTML = 'Completed!';
+        btn.parentElement.appendChild(newBox);
+        btn.parentElement.removeChild(btn);
       }
     });
   }

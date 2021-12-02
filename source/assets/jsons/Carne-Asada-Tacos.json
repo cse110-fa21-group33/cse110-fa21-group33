@@ -1,0 +1,102 @@
+{
+    "title": "Carne Asada Tacos",
+    "id": "vMdT3Q",
+    "description": "Carne Asada steak tacos are loaded with juicy grilled steak packed into warm tortillas and topped with tangy fresh tomato salsa and a light drizzle of sour-cream and lime. These delicious tacos are bursting with flavor and texture and are made in under 30 minutes with just a few fresh ingredients.\nCarne Asada (Aka steak) tacos were our go-to meal while living in Philadelphia. We purchased them from a popular Mexican taco stand on the busy market street in south Philly and ever since tasting them, I couldn’t forget how simple yet flavor-packed they were. After years of perfecting the recipe, we’ve come to realize that authentic Mexican tacos should not be complicated. The 4 main elements of a delicious taco grilled meat, salsa, warm tortillas, and a drizzle of lime. Anything beyond that is optional.",
+    "image": "https://gimmedelicious.com/wp-content/uploads/2019/11/Carne-Asada-Tacos-6.jpg",
+    "servingSize": 8,
+    "scoville": 1500,
+    "time": [
+        {
+            "name": "prepTime",
+            "hours": 0,
+            "minutes": 15
+        },
+        {
+            "name": "cookTime",
+            "hours": 0,
+            "minutes": 15
+        },
+        {
+            "name": "totalTime",
+            "hours": 1,
+            "minutes": 30
+        }
+    ],
+    "ingredientList": [
+        {
+            "name": "Fresh cilantro",
+            "quantity": "0.25",
+            "units": "cups"
+        },
+        {
+            "name": "Oil of choice",
+            "quantity": "2",
+            "units": "tbsp"
+        },
+        {
+            "name": "Lime juice",
+            "quantity": "2",
+            "units": "tbsp"
+        },
+        {
+            "name": "Chili powder",
+            "quantity": "1",
+            "units": "tsp"
+        },
+        {
+            "name": "Cumin",
+            "quantity": "1",
+            "units": "tsp"
+        },
+        {
+            "name": "Coriander",
+            "quantity": "1",
+            "units": "tsp"
+        },
+        {
+            "name": "Salt",
+            "quantity": "0.5",
+            "units": "tsp"
+        },
+        {
+            "name": "Pepper",
+            "quantity": "0.5",
+            "units": "tsp"
+        },
+        {
+            "name": "Flank or skirt steak",
+            "quantity": "1",
+            "units": "lbs"
+        },
+        {
+            "name": "Small corn or flour tortillas",
+            "quantity": "8",
+            "units": "N/A"
+        },
+        {
+            "name": "Pico de gallo",
+            "quantity": "",
+            "units": "N/A"
+        },
+        {
+            "name": "Lime wedges",
+            "quantity": "",
+            "units": "N/A"
+        },
+        {
+            "name": "Sour Cream",
+            "quantity": "",
+            "units": "N/A"
+        }
+    ],
+    "directions": [
+        "Whisk to combine all the ingredients for the marinade in a large bowl. Add the steak to the marinade and marinate for 30 minutes or overnight.",
+        "Heat a heavy-duty pan or grill on medium-high heat for at least 2-3 minutes. Remove the steak from the marinade and grill 5-6 minutes per side depending on the thickness of the steak.",
+        "Remove from heat and rest for 5-8 minutes before slicing. Slice into thin 1/4” slices or into tiny bite-size pieces.",
+        "While the steak is cooking, warm tortillas on the stovetop over an open flame or in a frypan until the edges are charred.",
+        "Divide steak onto warm tortillas and top with pico de gallo. Serve with lime wedges and your favorite salsa or a light drizzle of sour cream if desired."
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 1
+}
