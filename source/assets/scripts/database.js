@@ -22,6 +22,11 @@ const recipesFromFile = [
   'assets/jsons/Spicy-Touchdown-Chili.json',
   'assets/jsons/Tteokbokki-Spicy-Stir-Fried-Rice-Cakes.json',
   'assets/jsons/Jjam-Bbong-Korean-Chinese-Spicy-Noodle.json',
+  'assets/jsons/Carne-Asada-Tacos.json',
+  'assets/jsons/Japanese-Curry-From-Scratch.json',
+  'assets/jsons/Spicy-Chicken-Sandwich.json',
+  'assets/jsons/Spicy-Habanero-Salsa.json',
+  'assets/jsons/Zesty-Mango-Habanero-Hot-Sauce.json',
 ];
 
 /*  The 5 jsons I added, for some reason if I put them in the array ^^ it doesn't work
