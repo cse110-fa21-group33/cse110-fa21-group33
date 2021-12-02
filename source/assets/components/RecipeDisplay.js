@@ -7,6 +7,7 @@ import { database } from '../scripts/database.js';
  * Taken from Lab 7
  */
 class RecipeDisplay extends HTMLElement {
+  static jSConfetti = new JSConfetti();
   /**
    * Constructor builds the layout for the recipe page
    */
@@ -274,6 +275,7 @@ class RecipeDisplay extends HTMLElement {
   bindCompleteButton(data) {
     const btn = this.shadowRoot.getElementById('made-this-button');
     btn.addEventListener('click', () => {
+      RecipeDisplay.jSConfetti.addConfetti();
       if (data.completed === false) {
         database.completeRecipe(data);
         const newBox = document.createElement('completed');
