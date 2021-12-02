@@ -250,6 +250,8 @@ class RecipeUpload extends HTMLElement {
     this.BindDeleteButton();
 
     this.FillExistingData();
+    this.RemoveSpecificInstruction();
+    this.RemoveSpecificIngredient();
   }
 
   // attempt to take user input and convert to .json file
@@ -407,25 +409,38 @@ class RecipeUpload extends HTMLElement {
         div.setAttribute('value', stepNum);
         const textArea = div.getElementsByTagName('textarea')[div.getElementsByTagName('textarea').length - 1];
         const lineBreak = div.getElementsByTagName('br')[div.getElementsByTagName('br').length - 1];
+        const button = div.getElementsByTagName('button')[div.getElementsByTagName('button').length - 1];
         div.removeChild(textArea);
         div.removeChild(lineBreak);
+        div.removeChild(button);
       }
     });
   }
-
+  /**
+  * Removes a specific instruction/step based on which remove button has been called
+  */
   RemoveSpecificInstruction() {
-    const button = this.shadowRoot.getElementById('removeStepButton');
     const div = this.shadowRoot.getElementById('instructions');
+    div.addEventListener('click', function (e) {
+      if (e.target && e.target.id == 'specificInstructionRemove') {
+        let instr_number = e.target.value;
+        let stepNum = Number(div.getAttribute('value'));
+        if (stepNum > 1) {
+          const textArea = div.getElementsByTagName('textarea')[instr_number];
+          const lineBreak = div.getElementsByTagName('br')[instr_number];
+          const button = div.getElementsByTagName('button')[instr_number];
+          div.removeChild(textArea);
+          div.removeChild(button);
+          div.removeChild(lineBreak);
 
-    button.addEventListener('click', () => {
-      let stepNum = Number(div.getAttribute('value'));
-      if (stepNum > 1) {
-        stepNum -= 1;
-        div.setAttribute('value', stepNum);
-        const textArea = div.getElementsByTagName('textarea')[div.getElementsByTagName('textarea').length - 1];
-        const lineBreak = div.getElementsByTagName('br')[div.getElementsByTagName('br').length - 1];
-        div.removeChild(textArea);
-        div.removeChild(lineBreak);
+          for (let i = instr_number; i < div.getElementsByTagName('button').length; i++) {
+            let new_index = +i + +1;
+            div.getElementsByTagName('textarea')[i].placeholder = `Step ${new_index}`;
+            div.getElementsByTagName('button')[i].value--;
+          }
+          stepNum -= 1;
+          div.setAttribute('value', stepNum);
+        }
       }
     });
   }
@@ -434,8 +449,8 @@ class RecipeUpload extends HTMLElement {
   AddIngredient() {
     const button = this.shadowRoot.getElementById('addIngredientButton');
     const div = this.shadowRoot.getElementById('ingredients');
-    const selectOptions = ['N/A', 'cups', 'pt', 'qt', 'gal', 'tsp', 'tbsp', 'fl oz', 'mL', 'L', 'g', 
-                          'kg', 'oz', 'lbs', 'mm', 'cm', 'm', 'in', 'pinch', 'drop'];
+    const selectOptions = ['N/A', 'cups', 'pt', 'qt', 'gal', 'tsp', 'tbsp', 'fl oz', 'mL', 'L', 'g',
+      'kg', 'oz', 'lbs', 'mm', 'cm', 'm', 'in', 'pinch', 'drop'];
 
     button.addEventListener('click', () => {
       let stepNum = Number(div.getAttribute('value'));
@@ -462,10 +477,19 @@ class RecipeUpload extends HTMLElement {
         }
         const lineBreak = document.createElement('br');
 
-        div.appendChild(lineBreak);
+        //div.appendChild(lineBreak);
+        let btn1 = document.createElement("button");
+        btn1.innerHTML = "Remove this ingredient";
+        btn1.classList.add("specificIngredientRemove");
+        btn1.id = "specificIngredientRemove";
+        btn1.type = "button";
+        btn1.value = div.getElementsByTagName('button').length;
+
         div.appendChild(inputName);
         div.appendChild(inputQuantity);
         div.appendChild(select);
+        div.appendChild(btn1);
+        div.appendChild(lineBreak);
       }
     });
   }
@@ -485,9 +509,17 @@ class RecipeUpload extends HTMLElement {
         textArea.setAttribute('cols', '60');
         textArea.setAttribute('rows', '2');
         textArea.setAttribute('placeholder', `Step ${stepNum}`);
+        div.appendChild(textArea);
+        //const instructions_div = this.shadowRoot.getElementById('instructions');
+        let btn2 = document.createElement("button");
+        btn2.innerHTML = "Remove this instruction";
+        btn2.classList.add("specificInstructionRemove");
+        btn2.id = "specificInstructionRemove";
+        btn2.type = "button";
+        btn2.value = div.getElementsByTagName('button').length;
+        div.appendChild(btn2);
         const lineBreak = document.createElement('br');
         div.appendChild(lineBreak);
-        div.appendChild(textArea);
       }
     });
   }
@@ -506,14 +538,49 @@ class RecipeUpload extends HTMLElement {
         const inputName = div.getElementsByTagName('input')[div.getElementsByTagName('input').length - 2];
         const inputQuantity = div.getElementsByTagName('input')[div.getElementsByTagName('input').length - 1];
         const select = div.getElementsByTagName('select')[div.getElementsByTagName('select').length - 1];
-
+        const button = div.getElementsByTagName('button')[div.getElementsByTagName('button').length - 1];
         div.removeChild(lineBreak);
         div.removeChild(inputName);
         div.removeChild(inputQuantity);
         div.removeChild(select);
+        div.removeChild(button);
       }
     });
   }
+
+    /**
+     * Removes a specific ingredient based on which remove button has been called
+     */
+    RemoveSpecificIngredient() {
+      const div = this.shadowRoot.getElementById('ingredients');
+      div.addEventListener('click', function (e) {
+        if (e.target && e.target.id == 'specificIngredientRemove') {
+          let instr_number = e.target.value;
+          let stepNum = Number(div.getAttribute('value'));
+          if (stepNum > 1) {
+            let one = parseInt(instr_number) * 2;
+            let two = parseInt(instr_number) * 2 + 1;
+            //console.log(one);
+            //console.log(two);
+            const lineBreak = div.getElementsByTagName('br')[instr_number];
+            const inputName = div.getElementsByTagName('input')[one];
+            const inputQuantity = div.getElementsByTagName('input')[two];
+            const select = div.getElementsByTagName('select')[instr_number];
+            const button = div.getElementsByTagName('button')[instr_number];
+            div.removeChild(lineBreak);
+            div.removeChild(inputName);
+            div.removeChild(inputQuantity);
+            div.removeChild(select);
+            div.removeChild(button);
+            for (let i = instr_number; i < div.getElementsByTagName('button').length; i++) {
+              div.getElementsByTagName('button')[i].value--;
+            }
+            stepNum -= 1;
+            div.setAttribute('value', stepNum);
+          }
+        }
+      });
+    }
 
   // uses Imgur API to convert image file into a link
   GetImgurImage() {
@@ -554,10 +621,13 @@ class RecipeUpload extends HTMLElement {
     const ingredients_div = this.shadowRoot.getElementById('ingredients');
     let btn1 = document.createElement("button");
     btn1.innerHTML = "Remove this ingredient";
-    btn1.id = "specificIngredientRemove"
+    btn1.classList.add("specificIngredientRemove");
+    btn1.id = "specificIngredientRemove";
     btn1.type = "button";
     btn1.value = 0;
     ingredients_div.appendChild(btn1);
+    const lineBreak1 = document.createElement('br');
+    ingredients_div.appendChild(lineBreak1);
 
     for (let i = 1; i < (this.json.ingredientList.length); i += 1) {
       this.MakeExtraIngredientsSlots(this.json.ingredientList[i]);
@@ -575,10 +645,13 @@ class RecipeUpload extends HTMLElement {
     const instructions_div = this.shadowRoot.getElementById('instructions');
     let btn2 = document.createElement("button");
     btn2.innerHTML = "Remove this instruction";
-    btn2.id = "specificInstructionRemove"
+    btn2.classList.add("specificInstructionRemove");
+    btn2.id = "specificInstructionRemove";
     btn2.type = "button";
     btn2.value = 0;
     instructions_div.appendChild(btn2);
+    const lineBreak = document.createElement('br');
+    instructions_div.appendChild(lineBreak);
 
     const { directions } = this.json;
     for (let i = 1; i < (directions.length); i += 1) {
@@ -607,15 +680,16 @@ class RecipeUpload extends HTMLElement {
       textArea.setAttribute('rows', '2');
       textArea.setAttribute('placeholder', `Step ${stepNum}`);
       textArea.value = data;
-      div.appendChild(lineBreak);
       div.appendChild(textArea);
 
       let btn = document.createElement("button");
       btn.innerHTML = "Remove this instruction";
+      btn.classList.add("specificInstructionRemove");
       btn.id = "specificInstructionRemove"
       btn.type = "button";
-      btn.value = stepNum;
+      btn.value = stepNum - 1;
       div.appendChild(btn);
+      div.appendChild(lineBreak);
     }
     /*
     const textArea = div.getElementsByTagName('textarea')[div.getElementsByTagName('textarea').length - 1];
@@ -632,8 +706,8 @@ class RecipeUpload extends HTMLElement {
   MakeExtraIngredientsSlots(data) {
     const button = this.shadowRoot.getElementById('addIngredientButton');
     const div = this.shadowRoot.getElementById('ingredients');
-    const selectOptions = ['N/A', 'cups', 'pt', 'qt', 'gal', 'tsp', 'tbsp', 'fl oz', 'mL', 'L', 'g', 
-                          'kg', 'oz', 'lbs', 'mm', 'cm', 'm', 'in', 'pinch', 'drop'];
+    const selectOptions = ['N/A', 'cups', 'pt', 'qt', 'gal', 'tsp', 'tbsp', 'fl oz', 'mL', 'L', 'g',
+      'kg', 'oz', 'lbs', 'mm', 'cm', 'm', 'in', 'pinch', 'drop'];
 
     let stepNum = Number(div.getAttribute('value'));
     if (stepNum < 25) {
@@ -669,17 +743,19 @@ class RecipeUpload extends HTMLElement {
       select.options[this.optionIndex[data.units]].selected = true;
       //document.getElementById("dropdown").selectedIndex = "1";
 
-      div.appendChild(lineBreak);
+      //div.appendChild(lineBreak);
       div.appendChild(inputName);
       div.appendChild(inputQuantity);
       div.appendChild(select);
 
       let btn = document.createElement("button");
       btn.innerHTML = "Remove this ingredient";
-      btn.id = "specificIngredientRemove"
+      btn.classList.add("specificIngredientRemove");
+      btn.id = "specificIngredientRemove";
       btn.type = "button";
-      btn.value = stepNum;
+      btn.value = (stepNum - 1);
       div.appendChild(btn);
+      div.appendChild(lineBreak);
     }
   }
 
