@@ -239,7 +239,6 @@ class RecipeUpload extends HTMLElement {
 
     this.RemoveSpecificIngredient();
     this.RemoveSpecificInstruction();
-
     if (data == null) {
       this.isCreate = true;
       return;
@@ -438,7 +437,6 @@ class RecipeUpload extends HTMLElement {
       if (e.target && e.target.id == 'specificInstructionRemove') {
         let instr_number = e.target.value;
         let stepNum = Number(div.getAttribute('value'));
-        //console.log(instr_number);
         if (stepNum > 1) {
           const textArea = div.getElementsByTagName('textarea')[instr_number];
           const lineBreak = div.getElementsByTagName('br')[instr_number];
@@ -526,7 +524,6 @@ class RecipeUpload extends HTMLElement {
         textArea.setAttribute('maxlength', '500');
         textArea.setAttribute('placeholder', `Step ${stepNum}`);
         div.appendChild(textArea);
-        //const instructions_div = this.shadowRoot.getElementById('instructions');
         let btn2 = document.createElement("button");
         btn2.innerHTML = "Remove this instruction";
         btn2.classList.add("specificInstructionRemove");
@@ -575,7 +572,7 @@ class RecipeUpload extends HTMLElement {
       if (e.target && e.target.id == 'specificIngredientRemove') {
         let instr_number = e.target.value;
         let stepNum = Number(div.getAttribute('value'));
-        //(instr_number);
+        //console.log(instr_number);
         if (stepNum > 1) {
           let one = parseInt(instr_number) * 2;
           let two = parseInt(instr_number) * 2 + 1;
@@ -650,7 +647,6 @@ class RecipeUpload extends HTMLElement {
       //console.log(optionIndex[data.ingredientList[i].units]);
       this.shadowRoot.getElementById('ingredientUnits').selectedIndex = this.optionIndex[this.json.ingredientList[i].units];
     }
-
     const div1 = this.shadowRoot.getElementById('ingredients');
     const inputName = div1.getElementsByTagName('input')[0];
     const inputQuantity = div1.getElementsByTagName('input')[1];
