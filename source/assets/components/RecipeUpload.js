@@ -88,6 +88,8 @@ class RecipeUpload extends HTMLElement {
               <option>pinch</option>
               <option>drop</option>
             </select>
+            <button class="specificIngredientRemove" id="specificIngredientRemove" type="button" value="0">Remove this ingredient</button>
+            <br>
         </div>
         <input type="button" id="addIngredientButton" value="Add Ingredient">
         <input type="button" id="removeIngredientButton" value="Remove Ingredient">
@@ -95,6 +97,8 @@ class RecipeUpload extends HTMLElement {
         <div id="instructions" value="1">
             <h2>Instructions</h2>
             <textarea cols='60' rows='2' placeholder="Step 1"></textarea>
+            <button class="specificInstructionRemove" id="specificInstructionRemove" type="button" value="0">Remove this instruction</button>
+            <br>
         </div>
         <input id="addStepButton" type="button" value="Add Step">
         <input id="removeStepButton" type="button" value="Remove Step">
@@ -205,6 +209,8 @@ class RecipeUpload extends HTMLElement {
             <option>pinch</option>
             <option>drop</option>
         </select>
+        <button class="specificIngredientRemove" id="specificIngredientRemove" type="button" value="0">Remove this ingredient</button>
+        <br>
     </div>
     <input type="button" id="addIngredientButton" value="Add Ingredient">
     <input type="button" id="removeIngredientButton" value="Remove Ingredient">
@@ -212,6 +218,8 @@ class RecipeUpload extends HTMLElement {
     <div id="instructions" value="1">
         <h2>Instructions</h2>
         <textarea cols='60' rows='2' placeholder="Step 1"></textarea>
+        <button class="specificInstructionRemove" id="specificInstructionRemove" type="button" value="0">Remove this instruction</button>
+        <br>
     </div>
     <input id="addStepButton" type="button" value="Add Step">
     <input id="removeStepButton" type="button" value="Remove Step">
@@ -229,6 +237,8 @@ class RecipeUpload extends HTMLElement {
     this.GetImgurImage();
     this.SubmitRecipe();
 
+    this.RemoveSpecificIngredient();
+    this.RemoveSpecificInstruction();
     if (data == null) {
       this.isCreate = true;
       return;
@@ -250,8 +260,6 @@ class RecipeUpload extends HTMLElement {
       this.BindDeleteButton();
     }
     this.FillExistingData();
-    this.RemoveSpecificInstruction();
-    this.RemoveSpecificIngredient();
   }
 
   // attempt to take user input and convert to .json file
@@ -429,7 +437,6 @@ class RecipeUpload extends HTMLElement {
       if (e.target && e.target.id == 'specificInstructionRemove') {
         let instr_number = e.target.value;
         let stepNum = Number(div.getAttribute('value'));
-        console.log(instr_number);
         if (stepNum > 1) {
           const textArea = div.getElementsByTagName('textarea')[instr_number];
           const lineBreak = div.getElementsByTagName('br')[instr_number];
@@ -517,7 +524,6 @@ class RecipeUpload extends HTMLElement {
         textArea.setAttribute('maxlength', '500');
         textArea.setAttribute('placeholder', `Step ${stepNum}`);
         div.appendChild(textArea);
-        //const instructions_div = this.shadowRoot.getElementById('instructions');
         let btn2 = document.createElement("button");
         btn2.innerHTML = "Remove this instruction";
         btn2.classList.add("specificInstructionRemove");
@@ -566,12 +572,12 @@ class RecipeUpload extends HTMLElement {
       if (e.target && e.target.id == 'specificIngredientRemove') {
         let instr_number = e.target.value;
         let stepNum = Number(div.getAttribute('value'));
-        console.log(instr_number);
+        //console.log(instr_number);
         if (stepNum > 1) {
           let one = parseInt(instr_number) * 2;
           let two = parseInt(instr_number) * 2 + 1;
-          console.log(one);
-          console.log(two);
+          //console.log(one);
+          //console.log(two);
           const lineBreak = div.getElementsByTagName('br')[instr_number];
           const inputName = div.getElementsByTagName('input')[one];
           const inputQuantity = div.getElementsByTagName('input')[two];
@@ -621,7 +627,7 @@ class RecipeUpload extends HTMLElement {
   FillExistingData() {
     this.shadowRoot.getElementById('recipeName').value = this.json.title;
     this.shadowRoot.getElementById('recipeDescription').value = this.json.description;
-    console.log(this.json);
+    //console.log(this.json);
     if (this.json.image == "") {
       this.shadowRoot.getElementById('url').innerText = "";
       this.shadowRoot.getElementById('imgPreview').src = "https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png";
@@ -636,18 +642,6 @@ class RecipeUpload extends HTMLElement {
     this.shadowRoot.getElementById('prepHrs').value = this.json.time[0].hours;
     this.shadowRoot.getElementById('cookMins').value = this.json.time[1].minutes;
     this.shadowRoot.getElementById('cookHrs').value = this.json.time[1].hours;
-
-    const ingredients_div = this.shadowRoot.getElementById('ingredients');
-    let btn1 = document.createElement("button");
-    btn1.innerHTML = "Remove this ingredient";
-    btn1.classList.add("specificIngredientRemove");
-    btn1.id = "specificIngredientRemove";
-    btn1.type = "button";
-    btn1.value = 0;
-    ingredients_div.appendChild(btn1);
-    const lineBreak1 = document.createElement('br');
-    ingredients_div.appendChild(lineBreak1);
-
     for (let i = 1; i < (this.json.ingredientList.length); i += 1) {
       this.MakeExtraIngredientsSlots(this.json.ingredientList[i]);
       //console.log(optionIndex[data.ingredientList[i].units]);
@@ -660,16 +654,6 @@ class RecipeUpload extends HTMLElement {
     inputName.value = this.json.ingredientList[0].name;
     inputQuantity.value = this.json.ingredientList[0].quantity;
     select.options[this.optionIndex[this.json.ingredientList[0].units]].selected = true;
-    const instructions_div = this.shadowRoot.getElementById('instructions');
-    let btn2 = document.createElement("button");
-    btn2.innerHTML = "Remove this instruction";
-    btn2.classList.add("specificInstructionRemove");
-    btn2.id = "specificInstructionRemove";
-    btn2.type = "button";
-    btn2.value = 0;
-    instructions_div.appendChild(btn2);
-    const lineBreak = document.createElement('br');
-    instructions_div.appendChild(lineBreak);
     const { directions } = this.json;
     for (let i = 1; i < (directions.length); i += 1) {
       this.MakeExtraInstructionSlots(directions[i]);
