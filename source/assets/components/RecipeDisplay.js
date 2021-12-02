@@ -1,4 +1,5 @@
 import { database } from '../scripts/database.js';
+
 /**
  * recipe-display.js
  *
@@ -260,20 +261,21 @@ class RecipeDisplay extends HTMLElement {
       newBox.innerHTML = 'Completed!';
       btn.parentElement.appendChild(newBox);
       btn.parentElement.removeChild(btn);
+    } else {
+      this.bindCompleteButton(data);
     }
-    this.bindCompleteButton(data);
   }
 
   bindCompleteButton(data) {
     const btn = this.shadowRoot.getElementById('made-this-button');
     btn.addEventListener('click', () => {
-      // eslint-disable-next-line no-param-reassign
-      data.completed = true;
-      const newBox = document.createElement('completed');
-      newBox.innerHTML = 'Completed!';
-      btn.parentElement.appendChild(newBox);
-      btn.parentElement.removeChild(btn);
-      database.updateRecipe(data);
+      if (data.completed === false) {
+        database.completeRecipe(data);
+        const newBox = document.createElement('completed');
+        newBox.innerHTML = 'Completed!';
+        btn.parentElement.appendChild(newBox);
+        btn.parentElement.removeChild(btn);
+      }
     });
   }
 }

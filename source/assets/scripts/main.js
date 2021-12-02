@@ -177,6 +177,7 @@ function bindEscKey() {
     if ((event.key === 'Escape') || (event.key === 'Esc')) {
       router.navigate('home', false);
       triggerSlider();
+      createProgressBars();
     }
   });
 }
@@ -189,6 +190,7 @@ function clickLogoToGoHome() {
   websiteLogo.addEventListener('click', (event) => {
     router.navigate('home', false);
     triggerSlider();
+    createProgressBars();
   });
 }
 
@@ -286,14 +288,14 @@ function sliderSpiceLevel() {
   const spiceLevel = document.getElementById('spiceLevel');
 
   let emojiString = '';
-  for (let i = 0; i < spiceSlider.value; i++) {
+  for (let i = 0; i < spiceSlider.value; i += 1) {
     emojiString += '🌶️';
   }
   spiceLevel.innerHTML = emojiString;
 
   spiceSlider.oninput = function () {
     emojiString = '';
-    for (let i = 0; i < this.value; i++) {
+    for (let i = 0; i < this.value; i += 1) {
       emojiString += '🌶️';
     }
     spiceLevel.innerHTML = emojiString;
@@ -342,19 +344,20 @@ async function displaySearchCards() {
 /**
  * Populates the challenge progress section
  */
-async function createProgressBars() {
-  // TODO change this to getting the challengeData from the database
-  await fetch(challengePath)
-    .then((response) => response.json())
-    .then((data) => {
-      challengeData = data.challenges;
-    })
-    .catch((error) => {
-    });
+function createProgressBars() {
+  // Clear the challenge bars to be updated
+  const challengeBody = document.querySelector('.challenge-body');
+  const challengeBars = challengeBody.getElementsByTagName('challenge-bar');
+  while (challengeBars.length > 0) {
+    challengeBars[0].remove();
+  }
+
+  // Update the new challenge information
+  challengeData = database.getChallenges().challenges;
   challengeData.forEach((challenge) => {
     const challengeBar = document.createElement('challenge-bar');
     challengeBar.data = challenge;
 
-    document.querySelector('.challenge-body').appendChild(challengeBar);
+    challengeBody.appendChild(challengeBar);
   });
 }
