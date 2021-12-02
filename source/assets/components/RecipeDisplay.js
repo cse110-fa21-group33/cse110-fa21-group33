@@ -260,6 +260,8 @@ class RecipeDisplay extends HTMLElement {
   bindCompleteButton(data) {
     const btn = this.shadowRoot.getElementById('made-this-button');
     btn.addEventListener('click', () => {
+      const jSConfetti = new JSConfetti();
+      jSConfetti.addConfetti();
       if (data.completed === false) {
         // eslint-disable-next-line no-param-reassign
         data.completed = true;
