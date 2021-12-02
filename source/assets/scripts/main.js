@@ -187,7 +187,7 @@ function bindEscKey() {
  */
 function clickLogoToGoHome() {
   const websiteLogo = document.getElementById('websiteLogo');
-  websiteLogo.addEventListener('click', (event) => {
+  websiteLogo.addEventListener('click', () => {
     router.navigate('home', false);
     triggerSlider();
     createProgressBars();
@@ -300,8 +300,8 @@ function sliderSpiceLevel() {
     }
     spiceLevel.innerHTML = emojiString;
 
-    style.innerHTML = ".slider::-webkit-slider-thumb{ background-image: url('assets/images/fireGif" + spiceSlider.value + ".gif'); }";
-  }
+    style.innerHTML = `.slider::-webkit-slider-thumb{ background-image: url('assets/images/fireGif${spiceSlider.value}.gif'); }`;
+  };
 }
 
 // ******************** SEARCH FUNCTIONS *************************************************
@@ -346,7 +346,7 @@ async function displaySearchCards() {
 /**
  * Populates the challenge progress section
  */
-function createProgressBars() {
+async function createProgressBars() {
   // Clear the challenge bars to be updated
   const challengeBody = document.querySelector('.challenge-body');
   const challengeBars = challengeBody.getElementsByTagName('challenge-bar');
@@ -361,5 +361,29 @@ function createProgressBars() {
     challengeBar.data = challenge;
 
     challengeBody.appendChild(challengeBar);
+    bindProgressBar(challengeBar, challenge);
+  });
+}
+
+/**
+ * When the user clicks on the progress bar it will populate the middle box with the recipe
+ * cards included in the challenge
+ * @param {*} progressBar
+ */
+async function bindProgressBar(challengeBar, challenge) {
+  challengeBar.addEventListener('click', async () => {
+    document.getElementById('middle-title').innerHTML = challenge.title;
+    document.getElementById('searchBar').value = '';
+    const cardBody = document.querySelector('.card-body');
+    const cards = cardBody.getElementsByTagName('recipe-card');
+    while (cards.length > 0) {
+      cards[0].remove();
+    }
+
+    const recipeList = await Promise.all(
+      challenge.recipes.map((recipe) => database.getById(recipe)),
+    );
+
+    createRecipeCards(recipeList);
   });
 }
