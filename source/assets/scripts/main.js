@@ -286,7 +286,7 @@ function triggerSlider() {
 function sliderSpiceLevel() {
   const spiceSlider = document.getElementById('myRange');
   const spiceLevel = document.getElementById('spiceLevel');
-
+  const style = document.querySelector('[data="test"]');
   let emojiString = '';
   for (let i = 0; i < spiceSlider.value; i += 1) {
     emojiString += '🌶️';
@@ -299,7 +299,9 @@ function sliderSpiceLevel() {
       emojiString += '🌶️';
     }
     spiceLevel.innerHTML = emojiString;
-  };
+
+    style.innerHTML = ".slider::-webkit-slider-thumb{ background-image: url('assets/images/fireGif" + spiceSlider.value + ".gif'); }";
+  }
 }
 
 // ******************** SEARCH FUNCTIONS *************************************************

@@ -1,0 +1,140 @@
+{
+    "title": "JAPANESE CURRY FROM SCRATCH",
+    "id": "ID",
+    "description": "Although they won’t admit it, many restaurants also use packaged roux mixes to make their curry, the way they set their curry apart from others is through technique and the use of Kakushiaji. \n\nKakushiaji (隠し味) literally means “hidden taste,” and it’s a cooking technique that involves adding a very small quantity of a contrasting ingredient to make subtle improvements to the taste of the dish. In the case of curry, this includes things like coffee, chocolate, vanilla, butter, chutney, fruit, etc.\n\nThe idea is to add just enough to make a subtle change, but not enough to be able to tell you’ve added that ingredient. For this curry recipe, the kakushiaji ingredients include banana, soy sauce, and cocoa powder. The banana adds sweetness and a silky texture to the sauce, you want to use a ripe (yellow, but no brown speckles yet) banana. The soy sauce adds loads of umami, and the cocoa powder lends an earthy depth as well as a rich brown color. \n\nOnce you’ve tried this recipe as written, I encourage you to experiment with different combinations of kakushiaji ingredients to come up with a curry that fits your ideal for a perfect Japanese Curry. ",
+    "image": "https://i.imgur.com/UPOB5x1.jpg",
+    "servingSize": 6,
+    "scoville": 25000,
+    "time": [
+        {
+            "name": "prepTime",
+            "hours": 0,
+            "minutes": 10
+        },
+        {
+            "name": "cookTime",
+            "hours": 1,
+            "minutes": 30
+        },
+        {
+            "name": "totalTime",
+            "hours": 2,
+            "minutes": 40
+        }
+    ],
+    "ingredientList": [
+        {
+            "name": "Vegetable oil",
+            "quantity": "1",
+            "units": "tbsp"
+        },
+        {
+            "name": "Skin-on boneless chicken thighs",
+            "quantity": "800",
+            "units": "g"
+        },
+        {
+            "name": "Ginger",
+            "quantity": "30",
+            "units": "g"
+        },
+        {
+            "name": "Garlic",
+            "quantity": "20",
+            "units": "g"
+        },
+        {
+            "name": "Water",
+            "quantity": "0.25",
+            "units": "cups"
+        },
+        {
+            "name": "Salt",
+            "quantity": "1",
+            "units": "tsp"
+        },
+        {
+            "name": "Baking soda",
+            "quantity": "0.125",
+            "units": "tsp"
+        },
+        {
+            "name": "Onions",
+            "quantity": "2",
+            "units": "N/A"
+        },
+        {
+            "name": "Carrot",
+            "quantity": "370",
+            "units": "g"
+        },
+        {
+            "name": "Japanese Curry Powder",
+            "quantity": "24",
+            "units": "g"
+        },
+        {
+            "name": "Vegetable stock",
+            "quantity": "4",
+            "units": "cups"
+        },
+        {
+            "name": "Banana",
+            "quantity": "1",
+            "units": "N/A"
+        },
+        {
+            "name": "Potatoes",
+            "quantity": "400",
+            "units": "g"
+        },
+        {
+            "name": "Bay Leaf",
+            "quantity": "1",
+            "units": "N/A"
+        },
+        {
+            "name": "Star Anise",
+            "quantity": "1",
+            "units": "N/A"
+        },
+        {
+            "name": "Soy Sauce",
+            "quantity": "2",
+            "units": "tbsp"
+        },
+        {
+            "name": "Chunou Sauce",
+            "quantity": "1",
+            "units": "tbsp"
+        },
+        {
+            "name": "Tomato Paste",
+            "quantity": "1",
+            "units": "tbsp"
+        },
+        {
+            "name": "Cocoa powder",
+            "quantity": "2",
+            "units": "tsp"
+        }
+    ],
+    "directions": [
+        "Add the salt and baking soda to the water and mix until dissolved.",
+        "Add the vegetable oil to a heavy-bottomed pot such as a dutch oven and heat over medium-high heat until the oil is shimmering (but not smoking).",
+        "Add the chicken in a single layer with the skin-side down and fry undisturbed until the skin is browned and crisp (about 3 minutes). Flip the chicken over and brown the second side.",
+        "When the chicken is browned on both sides, remove it from the pan and add grated ginger and garlic. Saute until you have a thick layer of brown fond on the bottom of the pot and the mixture is caramelized.",
+        "Add the onions along with the baking soda solution and quickly give it a stir to coat the onions evenly with the mixture. Cover the pot with a lid and turn down the leat to low, allowing the onions to steam for 10 minutes.",
+        "Remove the lid and turn up the heat to medium-high, boiling the mixture until there is very little liquid left.",
+        "Add the grated carrot and fry the mixture by stirring and then spreading the vegetables into an even layer and then stirring again until the onions are fully caramelized, and the mixture is cinnamon brown.",
+        "Add the curry powder and stir the mixture together until it is very fragrant (about 1 minute). Be careful not to burn it.",
+        "Add the vegetable stock and banana, and then use a stick blender to puree the mixture until smooth.",
+        "Now you want to return the chicken to the pot along with the potatoes, carrots, soy sauce, chunou sauce, tomato paste, bay leaf, star anise, and cocoa powder.",
+        "Adjust the heat to maintain a gentle simmer and then let this cook until the carrots and potatoes are tender (about 1 hour). You’ll want to mix the curry every 10 minutes or so to make sure it is not burning to the bottom of the pot.",
+        "The curry is done when the vegetables and chicken are tender, and the sauce is very thick. Taste the curry and adjust the seasonings with salt and cayenne pepper to taste. If you like a looser curry, you can add water to thin it out.",
+        "Serve the Japanese curry with Japanese short-grain rice."
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 3
+}
