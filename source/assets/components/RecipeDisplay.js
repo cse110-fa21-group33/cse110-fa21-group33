@@ -255,16 +255,26 @@ class RecipeDisplay extends HTMLElement {
       const directionContainer = createCheckbox(direction);
       this.shadowRoot.querySelector('#recipe-directions > .recipe-list').appendChild(directionContainer);
     });
-
-    this.bindCompleteButton(data);
+    const btn = this.shadowRoot.getElementById('made-this-button');
+    if (data.completed === true) {
+      const newBox = document.createElement('completed');
+      newBox.innerHTML = 'Completed!';
+      btn.parentElement.appendChild(newBox);
+      btn.parentElement.removeChild(btn);
+    } else {
+      this.bindCompleteButton(data);
+    }
   }
 
   bindCompleteButton(data) {
     const btn = this.shadowRoot.getElementById('made-this-button');
     btn.addEventListener('click', () => {
       if (data.completed === false) {
-        // eslint-disable-next-line no-param-reassign
         database.completeRecipe(data);
+        const newBox = document.createElement('completed');
+        newBox.innerHTML = 'Completed!';
+        btn.parentElement.appendChild(newBox);
+        btn.parentElement.removeChild(btn);
       }
     });
   }
