@@ -398,7 +398,7 @@ async function getById(id) {
   return new Promise((resolve, reject) => {
     db.recipes.get(id)
       .then((data) => {
-        resolve(data);
+        resolve(data.recipe_data);
       })
       .catch((error) => {
         reject(error);
