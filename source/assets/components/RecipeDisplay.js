@@ -1,3 +1,5 @@
+import { database } from '../scripts/database.js';
+
 /**
  * recipe-display.js
  *
@@ -262,7 +264,7 @@ class RecipeDisplay extends HTMLElement {
     btn.addEventListener('click', () => {
       if (data.completed === false) {
         // eslint-disable-next-line no-param-reassign
-        data.completed = true;
+        database.completeRecipe(data);
       }
     });
   }
