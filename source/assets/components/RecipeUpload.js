@@ -65,7 +65,7 @@ class RecipeUpload extends HTMLElement {
         <div id="ingredients" value="1">
         <h2>Ingredients</h2>
             <input type="text" id="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
-            <input type="number" id="ingredientQuantity" min="0" placeholder="Quantity" required>
+            <input type="number" id="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
             <select id="ingredientUnits">
               <option>N/A</option>
               <option>cups</option>
@@ -182,7 +182,7 @@ class RecipeUpload extends HTMLElement {
     <div id="ingredients" value="1">
     <h2>Ingredients</h2>
         <input type="text" id="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
-        <input type="number" id="ingredientQuantity" min="0" placeholder="Quantity" required>
+        <input type="number" id="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
         <select id="ingredientUnits">
             <option>N/A</option>
             <option>cups</option>
@@ -455,18 +455,18 @@ class RecipeUpload extends HTMLElement {
 
     button.addEventListener('click', () => {
       let stepNum = Number(div.getAttribute('value'));
-      if (stepNum < 25) {
+      if (stepNum < 100) {
         stepNum += 1;
         div.setAttribute('value', stepNum);
         const inputName = document.createElement('input');
         inputName.setAttribute('type', 'text');
         inputName.setAttribute('minlength', '2');
         inputName.setAttribute('maxlength', '40');
-        inputName.setAttribute('minlength', '2');
         inputName.setAttribute('placeholder', 'Ingredient Description');
         const inputQuantity = document.createElement('input');
         inputQuantity.setAttribute('type', 'number');
         inputQuantity.setAttribute('min', '0');
+        inputQuantity.setAttribute('max', '999999');
         inputQuantity.setAttribute('placeholder', 'Quantity');
         const select = document.createElement('select');
         for (let i = 0; i < selectOptions.length; i += 1) {
@@ -503,12 +503,14 @@ class RecipeUpload extends HTMLElement {
     button.addEventListener('click', () => {
       let stepNum = Number(div.getAttribute('value'));
 
-      if (stepNum < 25) {
+      if (stepNum < 100) {
         stepNum += 1;
         div.setAttribute('value', stepNum);
         const textArea = document.createElement('textarea');
         textArea.setAttribute('cols', '60');
         textArea.setAttribute('rows', '2');
+        textArea.setAttribute('minlength', '1');
+        textArea.setAttribute('maxlength', '500');
         textArea.setAttribute('placeholder', `Step ${stepNum}`);
         div.appendChild(textArea);
         //const instructions_div = this.shadowRoot.getElementById('instructions');
@@ -673,13 +675,15 @@ class RecipeUpload extends HTMLElement {
     const div = this.shadowRoot.getElementById('instructions');
     let stepNum = Number(div.getAttribute('value'));
 
-    if (stepNum < 25) {
+    if (stepNum < 100) {
       stepNum += 1;
       div.setAttribute('value', stepNum);
       const textArea = document.createElement('textarea');
       const lineBreak = document.createElement('br');
       textArea.setAttribute('cols', '60');
       textArea.setAttribute('rows', '2');
+      textArea.setAttribute('minlength', '1');
+      textArea.setAttribute('maxlength', '500');
       textArea.setAttribute('placeholder', `Step ${stepNum}`);
       textArea.value = data;
       div.appendChild(textArea);
@@ -712,14 +716,13 @@ class RecipeUpload extends HTMLElement {
       'kg', 'oz', 'lbs', 'mm', 'cm', 'm', 'in', 'pinch', 'drop'];
 
     let stepNum = Number(div.getAttribute('value'));
-    if (stepNum < 25) {
+    if (stepNum < 100) {
       stepNum += 1;
       div.setAttribute('value', stepNum);
       const inputName = document.createElement('input');
       inputName.setAttribute('type', 'text');
       inputName.setAttribute('minlength', '2');
       inputName.setAttribute('maxlength', '40');
-      inputName.setAttribute('minlength', '2');
       inputName.setAttribute('placeholder', 'Ingredient Description');
 
       inputName.value = this.shadowRoot.getElementById('ingredientDescription').value = data.name;
@@ -728,6 +731,7 @@ class RecipeUpload extends HTMLElement {
       const inputQuantity = document.createElement('input');
       inputQuantity.setAttribute('type', 'number');
       inputQuantity.setAttribute('min', '0');
+      inputQuantity.setAttribute('max', '999999');
       inputQuantity.setAttribute('placeholder', 'Quantity');
 
       inputQuantity.value = this.shadowRoot.getElementById('ingredientDescription').value = data.quantity;
