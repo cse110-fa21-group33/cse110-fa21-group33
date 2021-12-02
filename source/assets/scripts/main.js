@@ -10,6 +10,14 @@ const router = new Router(() => {
   document.querySelector('.section--recipe-upload').classList.remove('shown');
 });
 
+const [recommendTitle, searchTitle] = [
+  'Recommended Recipes For You',
+  'Search Results',
+];
+
+const challengePath = 'assets/jsons/challenges.json';
+let challengeData;
+
 window.addEventListener('DOMContentLoaded', init);
 
 /**
@@ -31,16 +39,18 @@ async function init() {
   bindEscKey();
   bindPopstate();
   bindSlider();
+  displaySearchCards();
   clickLogoToGoHome();
   sliderSpiceLevel();
-  confettiTime();
+  createProgressBars();
 }
 
 /**
  * Populates with recommended page with recipe cards
  */
 function createRecipeCards(recipes) {
-  console.log(recipes);
+  // console.log(recipes);
+  const i = 0;
   recipes.forEach((recipe) => {
     // Makes a new recipe card
     const recipeCard = document.createElement('recipe-card');
@@ -161,23 +171,24 @@ function bindDeleteButton(button) {
 /**
  * Binds the 'keydown' event listener to the Escape key (esc) such that when
  * it is clicked, the home page is returned to
- * TEMPORARY, TODO CHANGE THIS TO WHEN YOU CLICK THE LOGO IT LEADS TO HOME
  */
 function bindEscKey() {
   document.addEventListener('keydown', (event) => {
     if ((event.key === 'Escape') || (event.key === 'Esc')) {
       router.navigate('home', false);
+      triggerSlider();
     }
   });
 }
 
-/* Binds clicking the website logo to going to the home page
+/** Binds clicking the website logo to going to the home page
  * just using the same code from bindEscKey()
-*/
+ */
 function clickLogoToGoHome() {
   const websiteLogo = document.getElementById('websiteLogo');
   websiteLogo.addEventListener('click', (event) => {
-      router.navigate('home', false);
+    router.navigate('home', false);
+    triggerSlider();
   });
 }
 
@@ -223,6 +234,8 @@ function addCreateRecipe() {
   });
 }
 
+// ******************** SLIDER FUNCTIONS *************************************************
+
 /**
  * Binds the slider so that the recommended recipes will display cards
  * according to the spice level. This will also include any additional
@@ -233,6 +246,8 @@ async function bindSlider() {
     .querySelector('#spice-slider--wrapper')
     .querySelector('.slider');
   spiceSlider.addEventListener('change', async (event) => {
+    document.getElementById('middle-title').innerHTML = recommendTitle;
+    document.getElementById('searchBar').value = '';
     const cardBody = document.querySelector('.card-body');
     const cards = cardBody.getElementsByTagName('recipe-card');
     while (cards.length > 0) {
@@ -263,25 +278,88 @@ function triggerSlider() {
   spiceSlider.dispatchEvent(event);
 }
 
-/*
- *  Make the slider display current spice level with pepper emojis
- */
+/**
+   * Spice slider logic.
+   */
 function sliderSpiceLevel() {
   const spiceSlider = document.getElementById('myRange');
   const spiceLevel = document.getElementById('spiceLevel');
   const style = document.querySelector('[data="test"]');
   let emojiString = '';
-  for( var i = 0; i < spiceSlider.value; i++ ){
+  for (let i = 0; i < spiceSlider.value; i++) {
     emojiString += '🌶️';
   }
   spiceLevel.innerHTML = emojiString;
-  
+
   spiceSlider.oninput = function () {
-    emojiString = ''
-    for( var i = 0; i < this.value; i++ ){
+    emojiString = '';
+    for (let i = 0; i < this.value; i++) {
       emojiString += '🌶️';
     }
     spiceLevel.innerHTML = emojiString;
+
     style.innerHTML = ".slider::-webkit-slider-thumb{ background-image: url('assets/images/fireGif" + spiceSlider.value + ".gif'); }";
   }
+}
+
+  };
+}
+
+// ******************** SEARCH FUNCTIONS *************************************************
+
+/**
+ * Displays the search results according to name
+ */
+async function displaySearchCards() {
+  const searchBar = document.getElementById('searchBar');
+  searchBar.addEventListener('keyup', (event) => {
+    const searchString = event.target.value;
+    const cardBody = document.querySelector('.card-body');
+    const cards = cardBody.getElementsByTagName('recipe-card');
+
+    if (searchString.length === 0) {
+      if (document.getElementById('middle-title').innerHTML === searchTitle) {
+        triggerSlider();
+      }
+      return;
+    }
+
+    while (cards.length > 0) {
+      cards[0].remove();
+    }
+    document.getElementById('middle-title').innerHTML = searchTitle;
+    let recipeList;
+    (async () => {
+      try {
+        recipeList = await database.getByName(searchString);
+        if (recipeList.length > 0) {
+          createRecipeCards(recipeList);
+        }
+      } catch (err) {
+        console.log(`Error fetching recipes: ${err}`);
+      }
+    })();
+  });
+}
+
+// ************************ CHALLENGE BAR FUNCTIONS *****************************************
+
+/**
+ * Populates the challenge progress section
+ */
+async function createProgressBars() {
+  // TODO change this to getting the challengeData from the database
+  await fetch(challengePath)
+    .then((response) => response.json())
+    .then((data) => {
+      challengeData = data.challenges;
+    })
+    .catch((error) => {
+    });
+  challengeData.forEach((challenge) => {
+    const challengeBar = document.createElement('challenge-bar');
+    challengeBar.data = challenge;
+
+    document.querySelector('.challenge-body').appendChild(challengeBar);
+  });
 }

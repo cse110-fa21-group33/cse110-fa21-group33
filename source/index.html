@@ -13,9 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
 
   <!-- Web Components -->
-  <script src="assets/components/RecipeCard.js" type="module"></script>
-  <script src="assets/components/RecipeDisplay.js" type="module"></script>
-  <script src='assets/components/RecipeUpload.js' type='module'></script>
+  <script src='assets/components/RecipeCard.js' type="module"></script>
+  <script src='assets/components/RecipeDisplay.js' type="module"></script>
+  <script src='assets/components/RecipeUpload.js' type="module"></script>
+  <script src='assets/components/ChallengeBar.js' type="module"></script>
 
   <!-- Router -->
   <script src="assets/scripts/Router.js" type="module"></script>
@@ -38,7 +39,7 @@
     </div>
     <!--This division is for the search bar-->
     <div class="Searchbar">
-     <input type="text" placeholder="Search..">
+     <input id="searchBar" type="text" placeholder="Search..">
     </div>
     <!--This div is for the spice slider-->
     <div id="spice-slider--wrapper">
@@ -57,15 +58,13 @@
     <div>
       <section class="section--main-page shown">
       <!--This division is for the challenge part which is on the left side of the page-->
-        <div id="challenge-cards--wrapper" class="main--div hidden">
-          <img src='assets/images/v2.png' width ='70' height='70' align ='right'>
-          <h2>Haunted Bowels</h2>
-          <label for="file">progress:</label>
-          <progress id="file" value="32" max="100"> 32% </progress>
-          <img src='assets/images/v2.png' width ='70' height='70' align ='right'>
+        <div id="challenge-cards--wrapper" class="main--div">
+          <h1>Challenges</h1>
+          <div class="challenge-body"></div>
         </div>
         <div id="div--recommended-recipes" class="main--div">
-          <h1>Recommended Recipes For You</h1>
+
+          <h1 id="middle-title">Recommended Recipes For You</h1>
           <div class='card-body'></div>    
         </div>
         <!--This division is for the Favorite Recipes on the right side-->
@@ -75,6 +74,7 @@
             <img src='assets/images/v2.png' width ='150' height='150'>
             <p>Kung Pao Chicken</p>
           </div>
+
         </div>
       </section>      
       <section class="section--recipe-display">

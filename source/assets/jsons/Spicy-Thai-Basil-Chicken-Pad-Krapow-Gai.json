@@ -1,0 +1,102 @@
+{
+    "title": "Spicy Thai Basil Chicken (Pad Krapow Gai)",
+    "id": "aDFEyT",
+    "description": "My version of this classic Thai dish has spectacular taste even with regular basil instead of Thai or holy basil. The sauce actually acts like a glaze as the chicken mixture cooks over high heat. The recipe works best if you chop or grind your own chicken and have all ingredients prepped before you start cooking.",
+    "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2021%2F07%2F15%2F4507925-spicy-thai-basil-chicken-pad-krapow-gai-photo-by-chef-john-cropped.jpg",
+    "servingSize": 2,
+    "scoville": 75000,
+    "spiceRating": 3,
+    "calories": 715,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 15
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 10
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 25      
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "chicken broth",
+        "quantity": 0.5,
+        "units": "cups"
+      },
+      {
+        "name": "oyster sauce",
+        "quantity": 1,
+        "units": "tbsp"
+      },
+      {
+        "name": "soy sauce, or as needed",
+        "quantity": 1,
+        "units": "tbsp"
+      },
+      {
+        "name": "fish sauce",
+        "quantity": 1,
+        "units": "tsp"
+      },
+      {
+        "name": "white sugar",
+        "quantity": 1,
+        "units": "tsp"
+      },
+      {
+        "name": "brown sugar",
+        "quantity": 1,
+        "units": "tsp"
+      },
+      {
+        "name": "vegetable oil",
+        "quantity": 2,
+        "units": "tbsp"
+      },
+      {
+        "name": "skinless, boneless chicken thighs, coarsely chopped",
+        "quantity": 1,
+        "units": "lbs"
+      },
+      {
+        "name": "sliced shallots",
+        "quantity": 0.25,
+        "units": "cups"
+      },
+      {
+        "name": "cloves garlic, minced",
+        "quantity": 4,
+        "units": "N/A"
+      },
+      {
+        "name": "minced Thai chilies, Serrano, or other hot pepper",
+        "quantity": 2,
+        "units": "tbsp"
+      },
+      {
+        "name": "very thinly sliced fresh basil leaves",
+        "quantity": 1,
+        "units": "cups"
+      },
+      {
+        "name": "hot cooked rice",
+        "quantity": 2,
+        "units": "cups"
+      }
+    ],
+    "directions": [
+      "Whisk chicken broth, oyster sauce, soy sauce, fish sauce, white sugar, and brown sugar together in a bowl until well blended.",
+      "Heat large skillet over high heat. Drizzle in oil. Add chicken and stir fry until it loses its raw color, 2 to 3 minutes. Stir in shallots, garlic, and sliced chilies. Continue cooking on high heat until some of the juices start to caramelize in the bottom of the pan, about 2 or 3 more minutes. Add about a tablespoon of the sauce mixture to the skillet; cook and stir until sauce begins to caramelize, about 1 minute.",
+      "Pour in the rest of the sauce. Cook and stir until sauce has deglazed the bottom of the pan. Continue to cook until sauce glazes onto the meat, 1 or 2 more minutes. Remove from heat.",
+      "Stir in basil. Cook and stir until basil is wilted, about 20 seconds. Serve with rice."
+    ],
+    "challenges": [],
+    "completed": false
+  }
