@@ -285,19 +285,3 @@ function sliderSpiceLevel() {
     style.innerHTML = ".slider::-webkit-slider-thumb{ background-image: url('assets/images/fireGif" + spiceSlider.value + ".gif'); }";
   }
 }
-
-/*
- *  Add confetti when you press the create recipe button
- *  TODO add any other buttons you want this effect on
- */ 
-function confettiTime(){
-  // initailize confetti 
-  const jsConfetti = new JSConfetti()
-  const button = document.getElementById('create-button');
-  
-  button.addEventListener('click', () => {
-    jsConfetti.addConfetti({
-      emojis: ['🌶️', '🔥', '🥵'],
-    })
-  });
-}
