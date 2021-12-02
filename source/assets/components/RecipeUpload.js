@@ -692,7 +692,7 @@ class RecipeUpload extends HTMLElement {
       let btn = document.createElement("button");
       btn.innerHTML = "Remove this instruction";
       btn.classList.add("specificInstructionRemove");
-      btn.id = "specificInstructionRemove"
+      btn.id = "specificInstructionRemove";
       btn.type = "button";
       btn.value = stepNum - 1;
       div.appendChild(btn);
