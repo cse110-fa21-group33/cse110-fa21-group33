@@ -1,0 +1,70 @@
+{
+  "title": "Slow Cooker Spicy Dr. Pepper Pork Tacos",
+  "id": "ks2EE1",
+  "description": "Looking for a new recipe for your slow cooker?  How about an awesome recipe for Spicy Dr. Pepper Pork Tacos?!?  DE-LISH!",
+  "image": "https://thefamilyfreezer.com/wp-content/uploads/2014/02/Slow-Cooker-Dr.-Pepper-Pork-Tacos.jpg",
+  "servingSize": 4,
+  "scoville": 2000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 30
+    },
+    {
+      "name": "cookTime",
+      "hours": 9,
+      "minutes": 0
+    },
+    {
+      "name": "totalTime",
+      "hours": 10,
+      "minutes": 30
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "bone-in pork shoulder roast",
+      "quantity": "3",
+      "units": "lbs"
+    },
+    {
+      "name": "medium-sized onion, peeled and quartered",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "brown sugar",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "salt",
+      "quantity": ".5",
+      "units": "tsp"
+    },
+    {
+      "name": "pepper",
+      "quantity": ".25",
+      "units": "tsp"
+    },
+    {
+      "name": "Dr Pepper",
+      "quantity": "3",
+      "units": "cups"
+    },
+    {
+      "name": "chipotle peppers in adobo sauce",
+      "quantity": "7",
+      "units": "oz"
+    }
+  ],
+  "directions": [
+    "Add all ingredients to your slow cooker and cook on “low” setting for 8 hours.  (You’ll know it’s done when the meat easily falls off the bone.)",
+    "Use a fork and knife to separate meat from the bone and shred meat.",
+    "Return shredded meat to slow cooker, and stir to combine with juice."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 1
+}

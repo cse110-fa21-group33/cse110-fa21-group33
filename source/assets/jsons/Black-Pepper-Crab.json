@@ -1,0 +1,119 @@
+{
+  "title": "Black Pepper Crab",
+  "id": "2kZdOg",
+  "description": "This spicy, buttery, and sweet black pepper Thai crab dish will have you fighting over the last bite.",
+  "image": "https://munchies-images.vice.com/wp_upload/Maenam-PepperCrab-keep-it-canada-british-columbia.jpg?crop=1xw:0.84375xh;center,center&resize=600:* 1x, https://munchies-images.vice.com/wp_upload/Maenam-PepperCrab-keep-it-canada-british-columbia.jpg?crop=1xw:0.84375xh;center,center&resize=1200:* 2x",
+  "servingSize": 4,
+  "scoville": 75000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 40
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 40
+    },
+    {
+      "name": "totalTime",
+      "hours": 1,
+      "minutes": 20
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "whole black peppercorns",
+      "quantity": "6",
+      "units": "tbsp"
+    },
+    {
+      "name": "whole white peppercorns",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "unsalted butter",
+      "quantity": ".5",
+      "units": "cups"
+    },
+    {
+      "name": "oyster sauce",
+      "quantity": ".25",
+      "units": "cups"
+    },
+    {
+      "name": "granulated sugar",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "fish sauce",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "cloves garlic",
+      "quantity": "3",
+      "units": "N/A"
+    },
+    {
+      "name": "red bird's-eye chilis",
+      "quantity": "3",
+      "units": "N/A"
+    },
+    {
+      "name": "cooking oil",
+      "quantity": "3",
+      "units": "tbsp"
+    },
+    {
+      "name": "chicken stock",
+      "quantity": ".5",
+      "units": "cups"
+    },
+    {
+      "name": "cornstarch",
+      "quantity": "1.5",
+      "units": "cups"
+    },
+    {
+      "name": "live crab",
+      "quantity": "3",
+      "units": "lbs"
+    },
+    {
+      "name": "water",
+      "quantity": "1.5",
+      "units": "cups"
+    },
+    {
+      "name": "green onion, thinly sliced",
+      "quantity": "",
+      "units": "N/A"
+    },
+    {
+      "name": "ginger, julienned",
+      "quantity": "",
+      "units": "N/A"
+    },
+    {
+      "name": "cilantro leaves, for garnish",
+      "quantity": "",
+      "units": "N/A"
+    }
+  ],
+  "directions": [
+    "First, make the sauce. Over medium heat, lightly toast the peppercorns and add the butter to the pan. Without burning the butter, continue to toast the peppercorns until aromatic.",
+    "Blend with a hand blender or a mortar and pestle. Pound the garlic and chilis together with a mortar and pestle into a paste and fry with oil until fragrant.",
+    "Add the peppercorn paste and cook until smoky. Stir in all the seasonings and taste.",
+    "Adjust sugar level if too spicy. Use the chicken stock to achieve desired consistency. If the sauce is too thin, use the cornstarch to thicken. (Should be thick enough to coat the back of a spoon).",
+    "Clean and butcher the crab. Save the top shell and cut the legs into 4 pieces.",
+    "Make a slurry with the cornstarch and water (it should resemble the consistency of thick cream). Coat the crab with the slurry and fry at 350° F degrees for 2-4 minutes.",
+    "Remove from the fryer and stir-fry in the wok with black pepper sauce. Plate and garnish with the green onion, ginger, and cilantro leaves."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 3
+}

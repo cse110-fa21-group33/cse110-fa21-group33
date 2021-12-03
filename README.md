@@ -1,5 +1,8 @@
 # cse110-fa21-group33
 This is the repo for team 33's group project for CSE 110 Fall 2021. Our goal is to plan, design, and implement a recipe web app. Users should be able to create, read, update, and delete recipes from our app. To read more about us, here's our [team page](admin/team.md).
+
+Our deployed site: https://exploding-kitchen.netlify.app/
+
 ## Team Members:
 - Lynn Dang
 - Lorenzo Mendes

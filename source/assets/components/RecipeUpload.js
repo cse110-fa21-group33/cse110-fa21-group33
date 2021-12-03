@@ -65,7 +65,7 @@ class RecipeUpload extends HTMLElement {
         <div id="ingredients" value="1">
         <h2>Ingredients</h2>
             <input type="text" id="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
-            <input type="number" id="ingredientQuantity" min="0" placeholder="Quantity" required>
+            <input type="number" id="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
             <select id="ingredientUnits">
               <option>N/A</option>
               <option>cups</option>
@@ -88,6 +88,8 @@ class RecipeUpload extends HTMLElement {
               <option>pinch</option>
               <option>drop</option>
             </select>
+            <button class="specificIngredientRemove" id="specificIngredientRemove" type="button" value="0">Remove this ingredient</button>
+            <br>
         </div>
         <input type="button" id="addIngredientButton" value="Add Ingredient">
         <input type="button" id="removeIngredientButton" value="Remove Ingredient">
@@ -95,6 +97,8 @@ class RecipeUpload extends HTMLElement {
         <div id="instructions" value="1">
             <h2>Instructions</h2>
             <textarea cols='60' rows='2' placeholder="Step 1"></textarea>
+            <button class="specificInstructionRemove" id="specificInstructionRemove" type="button" value="0">Remove this instruction</button>
+            <br>
         </div>
         <input id="addStepButton" type="button" value="Add Step">
         <input id="removeStepButton" type="button" value="Remove Step">
@@ -118,25 +122,25 @@ class RecipeUpload extends HTMLElement {
 
   optionIndex = {
     'N/A': 0,
-    cups: 1,
-    pt: 2,
-    qt: 3,
-    gal: 4,
-    tsp: 5,
-    tbsp: 6,
+    'cups': 1,
+    'pt': 2,
+    'qt': 3,
+    'gal': 4,
+    'tsp': 5,
+    'tbsp': 6,
     'fl oz': 7,
-    mL: 8,
-    L: 9,
-    g: 10,
-    kg: 11,
-    oz: 12,
-    lbs: 13,
-    mm: 14,
-    cm: 15,
-    m: 16,
-    in: 17,
-    pinch: 18,
-    drop: 19,
+    'mL': 8,
+    'L': 9,
+    'g': 10,
+    'kg': 11,
+    'oz': 12,
+    'lbs': 13,
+    'mm': 14,
+    'cm': 15,
+    'm': 16,
+    'in': 17,
+    'pinch': 18,
+    'drop': 19
   };
 
   /**
@@ -182,7 +186,7 @@ class RecipeUpload extends HTMLElement {
     <div id="ingredients" value="1">
     <h2>Ingredients</h2>
         <input type="text" id="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
-        <input type="number" id="ingredientQuantity" min="0" placeholder="Quantity" required>
+        <input type="number" id="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
         <select id="ingredientUnits">
             <option>N/A</option>
             <option>cups</option>
@@ -205,6 +209,8 @@ class RecipeUpload extends HTMLElement {
             <option>pinch</option>
             <option>drop</option>
         </select>
+        <button class="specificIngredientRemove" id="specificIngredientRemove" type="button" value="0">Remove this ingredient</button>
+        <br>
     </div>
     <input type="button" id="addIngredientButton" value="Add Ingredient">
     <input type="button" id="removeIngredientButton" value="Remove Ingredient">
@@ -212,6 +218,8 @@ class RecipeUpload extends HTMLElement {
     <div id="instructions" value="1">
         <h2>Instructions</h2>
         <textarea cols='60' rows='2' placeholder="Step 1"></textarea>
+        <button class="specificInstructionRemove" id="specificInstructionRemove" type="button" value="0">Remove this instruction</button>
+        <br>
     </div>
     <input id="addStepButton" type="button" value="Add Step">
     <input id="removeStepButton" type="button" value="Remove Step">
@@ -229,6 +237,8 @@ class RecipeUpload extends HTMLElement {
     this.GetImgurImage();
     this.SubmitRecipe();
 
+    this.RemoveSpecificIngredient();
+    this.RemoveSpecificInstruction();
     if (data == null) {
       this.isCreate = true;
       return;
@@ -249,7 +259,6 @@ class RecipeUpload extends HTMLElement {
       this.shadowRoot.getElementById('formButtons').appendChild(deleteButton);
       this.BindDeleteButton();
     }
-
     this.FillExistingData();
   }
 
@@ -391,12 +400,16 @@ class RecipeUpload extends HTMLElement {
     return new Array(totalHrs, totalMins);
   }
 
-  // check to see if the user input is valid and let user know what inputs to change to fix input
+  /**
+   * Check to see if the user input is valid and let user know what inputs to change to fix input
+   */
   RecipeInputsGood(event) {
     // TODO
   }
 
-  // removes last textarea for recipe instruction/steps when remove step button is pressed
+  /**
+   * Removes last textarea for recipe instruction/steps when remove step button is pressed
+   */
   RemoveInstruction() {
     const button = this.shadowRoot.getElementById('removeStepButton');
     const div = this.shadowRoot.getElementById('instructions');
@@ -408,30 +421,45 @@ class RecipeUpload extends HTMLElement {
         div.setAttribute('value', stepNum);
         const textArea = div.getElementsByTagName('textarea')[div.getElementsByTagName('textarea').length - 1];
         const lineBreak = div.getElementsByTagName('br')[div.getElementsByTagName('br').length - 1];
+        const button = div.getElementsByTagName('button')[div.getElementsByTagName('button').length - 1];
         div.removeChild(textArea);
         div.removeChild(lineBreak);
+        div.removeChild(button);
       }
     });
   }
-
+  /**
+  * Removes a specific instruction/step based on which remove button has been called
+  */
   RemoveSpecificInstruction() {
-    const button = this.shadowRoot.getElementById('removeStepButton');
     const div = this.shadowRoot.getElementById('instructions');
+    div.addEventListener('click', function (e) {
+      if (e.target && e.target.id == 'specificInstructionRemove') {
+        let instr_number = e.target.value;
+        let stepNum = Number(div.getAttribute('value'));
+        if (stepNum > 1) {
+          const textArea = div.getElementsByTagName('textarea')[instr_number];
+          const lineBreak = div.getElementsByTagName('br')[instr_number];
+          const button = div.getElementsByTagName('button')[instr_number];
+          div.removeChild(textArea);
+          div.removeChild(button);
+          div.removeChild(lineBreak);
 
-    button.addEventListener('click', () => {
-      let stepNum = Number(div.getAttribute('value'));
-      if (stepNum > 1) {
-        stepNum -= 1;
-        div.setAttribute('value', stepNum);
-        const textArea = div.getElementsByTagName('textarea')[div.getElementsByTagName('textarea').length - 1];
-        const lineBreak = div.getElementsByTagName('br')[div.getElementsByTagName('br').length - 1];
-        div.removeChild(textArea);
-        div.removeChild(lineBreak);
+          for (let i = instr_number; i < div.getElementsByTagName('button').length; i++) {
+            let new_index = +i + +1;
+            div.getElementsByTagName('textarea')[i].placeholder = `Step ${new_index}`;
+            div.getElementsByTagName('button')[i].value--;
+          }
+          stepNum -= 1;
+          div.setAttribute('value', stepNum);
+        }
       }
     });
   }
 
-  // adds another textarea for recipe instruction/steps when add step button is pressed
+  /**
+   * Adds another textarea for recipe instruction/steps when add step button is pressed
+   */
   AddIngredient() {
     const button = this.shadowRoot.getElementById('addIngredientButton');
     const div = this.shadowRoot.getElementById('ingredients');
@@ -440,38 +468,45 @@ class RecipeUpload extends HTMLElement {
 
     button.addEventListener('click', () => {
       let stepNum = Number(div.getAttribute('value'));
-      if (stepNum < 25) {
+      if (stepNum < 100) {
         stepNum += 1;
         div.setAttribute('value', stepNum);
         const inputName = document.createElement('input');
         inputName.setAttribute('type', 'text');
         inputName.setAttribute('minlength', '2');
         inputName.setAttribute('maxlength', '40');
-        inputName.setAttribute('minlength', '2');
         inputName.setAttribute('placeholder', 'Ingredient Description');
         const inputQuantity = document.createElement('input');
         inputQuantity.setAttribute('type', 'number');
         inputQuantity.setAttribute('min', '0');
+        inputQuantity.setAttribute('max', '999999');
         inputQuantity.setAttribute('placeholder', 'Quantity');
         const select = document.createElement('select');
         for (let i = 0; i < selectOptions.length; i += 1) {
           const option = document.createElement('option');
           option.setAttribute('value', selectOptions[i]);
-          // option.setAttribute('innerText', selectOptions[i]);
           option.innerText = selectOptions[i];
           select.appendChild(option);
         }
         const lineBreak = document.createElement('br');
-
-        div.appendChild(lineBreak);
+        let btn1 = document.createElement("button");
+        btn1.innerHTML = "Remove this ingredient";
+        btn1.classList.add("specificIngredientRemove");
+        btn1.id = "specificIngredientRemove";
+        btn1.type = "button";
+        btn1.value = div.getElementsByTagName('button').length;
         div.appendChild(inputName);
         div.appendChild(inputQuantity);
         div.appendChild(select);
+        div.appendChild(btn1);
+        div.appendChild(lineBreak);
       }
     });
   }
 
-  // adds another textarea for recipe instruction/steps when add step button is pressed
+  /**
+   * Adds another textarea for recipe instruction/steps when add step button is pressed
+   */
   AddInstruction() {
     const button = this.shadowRoot.getElementById('addStepButton');
     const div = this.shadowRoot.getElementById('instructions');
@@ -479,21 +514,32 @@ class RecipeUpload extends HTMLElement {
     button.addEventListener('click', () => {
       let stepNum = Number(div.getAttribute('value'));
 
-      if (stepNum < 25) {
+      if (stepNum < 100) {
         stepNum += 1;
         div.setAttribute('value', stepNum);
         const textArea = document.createElement('textarea');
         textArea.setAttribute('cols', '60');
         textArea.setAttribute('rows', '2');
+        textArea.setAttribute('minlength', '1');
+        textArea.setAttribute('maxlength', '500');
         textArea.setAttribute('placeholder', `Step ${stepNum}`);
+        div.appendChild(textArea);
+        let btn2 = document.createElement("button");
+        btn2.innerHTML = "Remove this instruction";
+        btn2.classList.add("specificInstructionRemove");
+        btn2.id = "specificInstructionRemove";
+        btn2.type = "button";
+        btn2.value = div.getElementsByTagName('button').length;
+        div.appendChild(btn2);
         const lineBreak = document.createElement('br');
         div.appendChild(lineBreak);
-        div.appendChild(textArea);
       }
     });
   }
 
-  // removes last textarea for recipe instruction/steps when remove step button is pressed
+  /**
+   * Removes last textarea for recipe instruction/steps when remove step button is pressed
+   */
   RemoveIngredient() {
     const button = this.shadowRoot.getElementById('removeIngredientButton');
     const div = this.shadowRoot.getElementById('ingredients');
@@ -507,16 +553,54 @@ class RecipeUpload extends HTMLElement {
         const inputName = div.getElementsByTagName('input')[div.getElementsByTagName('input').length - 2];
         const inputQuantity = div.getElementsByTagName('input')[div.getElementsByTagName('input').length - 1];
         const select = div.getElementsByTagName('select')[div.getElementsByTagName('select').length - 1];
-
+        const button = div.getElementsByTagName('button')[div.getElementsByTagName('button').length - 1];
         div.removeChild(lineBreak);
         div.removeChild(inputName);
         div.removeChild(inputQuantity);
         div.removeChild(select);
+        div.removeChild(button);
       }
     });
   }
 
-  // uses Imgur API to convert image file into a link
+  /**
+   * Removes a specific ingredient based on which remove button has been called
+   */
+  RemoveSpecificIngredient() {
+    const div = this.shadowRoot.getElementById('ingredients');
+    div.addEventListener('click', function (e) {
+      if (e.target && e.target.id == 'specificIngredientRemove') {
+        let instr_number = e.target.value;
+        let stepNum = Number(div.getAttribute('value'));
+        //console.log(instr_number);
+        if (stepNum > 1) {
+          let one = parseInt(instr_number) * 2;
+          let two = parseInt(instr_number) * 2 + 1;
+          //console.log(one);
+          //console.log(two);
+          const lineBreak = div.getElementsByTagName('br')[instr_number];
+          const inputName = div.getElementsByTagName('input')[one];
+          const inputQuantity = div.getElementsByTagName('input')[two];
+          const select = div.getElementsByTagName('select')[instr_number];
+          const button = div.getElementsByTagName('button')[instr_number];
+          div.removeChild(lineBreak);
+          div.removeChild(inputName);
+          div.removeChild(inputQuantity);
+          div.removeChild(select);
+          div.removeChild(button);
+          for (let i = instr_number; i < div.getElementsByTagName('button').length; i++) {
+            div.getElementsByTagName('button')[i].value--;
+          }
+          stepNum -= 1;
+          div.setAttribute('value', stepNum);
+        }
+      }
+    });
+  }
+
+  /**
+   * Uses Imgur API to convert image file into a link
+   */
   GetImgurImage() {
     const imgUpload = this.shadowRoot.getElementById('imgUpload');
     const imgPreview = this.shadowRoot.getElementById('imgPreview');
@@ -543,7 +627,7 @@ class RecipeUpload extends HTMLElement {
   FillExistingData() {
     this.shadowRoot.getElementById('recipeName').value = this.json.title;
     this.shadowRoot.getElementById('recipeDescription').value = this.json.description;
-    console.log(this.json);
+    //console.log(this.json);
     if (this.json.image == "") {
       this.shadowRoot.getElementById('url').innerText = "";
       this.shadowRoot.getElementById('imgPreview').src = "https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png";
@@ -558,18 +642,9 @@ class RecipeUpload extends HTMLElement {
     this.shadowRoot.getElementById('prepHrs').value = this.json.time[0].hours;
     this.shadowRoot.getElementById('cookMins').value = this.json.time[1].minutes;
     this.shadowRoot.getElementById('cookHrs').value = this.json.time[1].hours;
-
-    const ingredients_div = this.shadowRoot.getElementById('ingredients');
-    const btn1 = document.createElement('button');
-    btn1.innerHTML = 'Remove this ingredient';
-    btn1.id = 'specificIngredientRemove';
-    btn1.type = 'button';
-    btn1.value = 0;
-    ingredients_div.appendChild(btn1);
-
     for (let i = 1; i < (this.json.ingredientList.length); i += 1) {
       this.MakeExtraIngredientsSlots(this.json.ingredientList[i]);
-      // console.log(optionIndex[data.ingredientList[i].units]);
+      //console.log(optionIndex[data.ingredientList[i].units]);
       this.shadowRoot.getElementById('ingredientUnits').selectedIndex = this.optionIndex[this.json.ingredientList[i].units];
     }
     const div1 = this.shadowRoot.getElementById('ingredients');
@@ -579,15 +654,6 @@ class RecipeUpload extends HTMLElement {
     inputName.value = this.json.ingredientList[0].name;
     inputQuantity.value = this.json.ingredientList[0].quantity;
     select.options[this.optionIndex[this.json.ingredientList[0].units]].selected = true;
-
-    const instructions_div = this.shadowRoot.getElementById('instructions');
-    const btn2 = document.createElement('button');
-    btn2.innerHTML = 'Remove this instruction';
-    btn2.id = 'specificInstructionRemove';
-    btn2.type = 'button';
-    btn2.value = 0;
-    instructions_div.appendChild(btn2);
-
     const { directions } = this.json;
     for (let i = 1; i < (directions.length); i += 1) {
       this.MakeExtraInstructionSlots(directions[i]);
@@ -599,42 +665,37 @@ class RecipeUpload extends HTMLElement {
 
   /**
    * This is a helper function that creates new text boxes for the recipe's existing instructions
-   * The text boxes then will be filled with the proper information accordingly
+   * The text boxes then will be filled with the proper information accordingly 
    */
   MakeExtraInstructionSlots(data) {
     const div = this.shadowRoot.getElementById('instructions');
     let stepNum = Number(div.getAttribute('value'));
-
-    if (stepNum < 25) {
+    if (stepNum < 100) {
       stepNum += 1;
       div.setAttribute('value', stepNum);
       const textArea = document.createElement('textarea');
       const lineBreak = document.createElement('br');
       textArea.setAttribute('cols', '60');
       textArea.setAttribute('rows', '2');
+      textArea.setAttribute('minlength', '1');
+      textArea.setAttribute('maxlength', '500');
       textArea.setAttribute('placeholder', `Step ${stepNum}`);
       textArea.value = data;
-      div.appendChild(lineBreak);
       div.appendChild(textArea);
-
-      const btn = document.createElement('button');
-      btn.innerHTML = 'Remove this instruction';
-      btn.id = 'specificInstructionRemove';
-      btn.type = 'button';
-      btn.value = stepNum;
+      let btn = document.createElement("button");
+      btn.innerHTML = "Remove this instruction";
+      btn.classList.add("specificInstructionRemove");
+      btn.id = "specificInstructionRemove";
+      btn.type = "button";
+      btn.value = stepNum - 1;
       div.appendChild(btn);
+      div.appendChild(lineBreak);
     }
-    /*
-    const textArea = div.getElementsByTagName('textarea')[div.getElementsByTagName('textarea').length - 1];
-    const lineBreak = div.getElementsByTagName('br')[div.getElementsByTagName('br').length - 1];
-    div.removeChild(textArea);
-    div.removeChild(lineBreak);
-    */
   }
 
   /**
    * This is a helper function that creates new text boxes for the recipe's existing ingredients
-   * The text boxes then will be filled with the proper information accordingly
+   * The text boxes then will be filled with the proper information accordingly 
    */
   MakeExtraIngredientsSlots(data) {
     const button = this.shadowRoot.getElementById('addIngredientButton');
@@ -643,27 +704,23 @@ class RecipeUpload extends HTMLElement {
       'kg', 'oz', 'lbs', 'mm', 'cm', 'm', 'in', 'pinch', 'drop'];
 
     let stepNum = Number(div.getAttribute('value'));
-    if (stepNum < 25) {
+    if (stepNum < 100) {
       stepNum += 1;
       div.setAttribute('value', stepNum);
       const inputName = document.createElement('input');
       inputName.setAttribute('type', 'text');
       inputName.setAttribute('minlength', '2');
       inputName.setAttribute('maxlength', '40');
-      inputName.setAttribute('minlength', '2');
       inputName.setAttribute('placeholder', 'Ingredient Description');
-
       inputName.value = this.shadowRoot.getElementById('ingredientDescription').value = data.name;
       // console.log(data.name);
-
       const inputQuantity = document.createElement('input');
       inputQuantity.setAttribute('type', 'number');
       inputQuantity.setAttribute('min', '0');
+      inputQuantity.setAttribute('max', '999999');
       inputQuantity.setAttribute('placeholder', 'Quantity');
-
       inputQuantity.value = this.shadowRoot.getElementById('ingredientDescription').value = data.quantity;
       // console.log(data.quantity);
-
       const select = document.createElement('select');
       for (let i = 0; i < selectOptions.length; i += 1) {
         const option = document.createElement('option');
@@ -672,21 +729,18 @@ class RecipeUpload extends HTMLElement {
         select.appendChild(option);
       }
       const lineBreak = document.createElement('br');
-
       select.options[this.optionIndex[data.units]].selected = true;
-      // document.getElementById("dropdown").selectedIndex = "1";
-
-      div.appendChild(lineBreak);
       div.appendChild(inputName);
       div.appendChild(inputQuantity);
       div.appendChild(select);
-
-      const btn = document.createElement('button');
-      btn.innerHTML = 'Remove this ingredient';
-      btn.id = 'specificIngredientRemove';
-      btn.type = 'button';
-      btn.value = stepNum;
+      let btn = document.createElement("button");
+      btn.innerHTML = "Remove this ingredient";
+      btn.classList.add("specificIngredientRemove");
+      btn.id = "specificIngredientRemove";
+      btn.type = "button";
+      btn.value = (stepNum - 1);
       div.appendChild(btn);
+      div.appendChild(lineBreak);
     }
   }
 
