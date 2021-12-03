@@ -223,6 +223,7 @@ async function updateRecipe(recipeJSON) {
     if (!loaded) {
       reject(new Error('Database not loaded yet! Call loadDB().'));
     } else {
+      console.log(JSON.stringify(recipeJSON));
       db.recipes.put({
         recipe_id: recipeJSON.id,
         recipe_name: recipeJSON.title,
