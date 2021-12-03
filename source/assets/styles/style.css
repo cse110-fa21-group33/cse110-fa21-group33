@@ -228,10 +228,6 @@ button {
   grid-area: sidebarl;
   padding: 10px 30px 30px;
 }
-#quenchers--wrapper {
-  grid-area: sidebarr;
-  padding: 10px 30px 30px;
-}
 
 #div--recommended-recipes {
   grid-area: main;
