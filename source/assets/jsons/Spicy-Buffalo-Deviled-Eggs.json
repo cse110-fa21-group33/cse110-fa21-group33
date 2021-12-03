@@ -1,0 +1,62 @@
+{
+  "title": "Spicy Buffalo Deviled Eggs",
+  "id": "1tOu9p",
+  "description": "Buffalo wings and deviled eggs come together to create this unique appetizer. Our Spicy Buffalo Deviled Eggs recipe is perfect for your Labor Day weekend and summer parties.",
+  "image": "https://leaf.nutrisystem.com/wp-content/uploads/2019/09/buffalo-deviled-eggs-740x400.jpg",
+  "servingSize": 4,
+  "scoville": 500,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 0
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 10
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 10
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "eggs, hard boiled",
+      "quantity": "4",
+      "units": "N/A"
+    },
+    {
+      "name": "buffalo sauce",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "light mayonaise",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "black pepper",
+      "quantity": "0.25",
+      "units": "tsp"
+    },
+    {
+      "name": "pinch chives, chopped",
+      "quantity": "1",
+      "units": "N/A"
+    }
+  ],
+  "directions": [
+    "Cut hard-boiled eggs in half lengthwise.",
+    "Remove egg yolks and place in a bowl.",
+    "Mash together the yolks with buffalo sauce, black pepper and mayonnaise with a fork.",
+    "Place a generous scoop of the buffalo sauce mixture into the egg white hole.",
+    "Garnish with chopped chives."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 1
+}

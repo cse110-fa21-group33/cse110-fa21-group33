@@ -1,0 +1,134 @@
+{
+  "title": "Chongqing Chicken Wings",
+  "id": "DGqfvT",
+  "description": "Make Mission Chinese Food's highly addictive and spicy chicken wings.",
+  "image": "https://munchies-images.vice.com/wp_upload/MCF-Chongqing-Chicken-Wings.jpg?crop=1xw:0.84375xh;center,center&resize=300:* 1x, https://munchies-images.vice.com/wp_upload/MCF-Chongqing-Chicken-Wings.jpg?crop=1xw:0.84375xh;center,center&resize=600:* 2x",
+  "servingSize": 4,
+  "scoville": 80000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 1,
+      "minutes": 30
+    },
+    {
+      "name": "cookTime",
+      "hours": 16,
+      "minutes": 30
+    },
+    {
+      "name": "totalTime",
+      "hours": 18,
+      "minutes": 0
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "square dashi kombu",
+      "quantity": "1",
+      "units": "in"
+    },
+    {
+      "name": "stemmed, dried shiitake mushrooms",
+      "quantity": "14",
+      "units": "g"
+    },
+    {
+      "name": "whole Sichuan peppercorns",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "cumin seeds",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "fennel seeds",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "whole cloves",
+      "quantity": "1.5",
+      "units": "tbsp"
+    },
+    {
+      "name": "star anise",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "black cardamom pods",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "granulated sugar",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "mushroom powder",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "cayenne pepper",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "kosher salt",
+      "quantity": "0.25",
+      "units": "cups"
+    },
+    {
+      "name": "chicken wings",
+      "quantity": "3",
+      "units": "lbs"
+    },
+    {
+      "name": "vegetable or peanut oil",
+      "quantity": "8",
+      "units": "cups"
+    },
+    {
+      "name": "honeycomb tripe",
+      "quantity": ".5",
+      "units": "lbs"
+    },
+    {
+      "name": "cornstarch, for dredging",
+      "quantity": ".5",
+      "units": "cups"
+    },
+    {
+      "name": "dried Tianjin chiles",
+      "quantity": "4",
+      "units": "cups"
+    },
+    {
+      "name": "Chongqing wing spice mix",
+      "quantity": ".75",
+      "units": "cups"
+    }
+  ],
+  "directions": [
+    "Make the mushroom powder: Use a pair of kitchen shears to snip the kombu into 4 or 5 smaller pieces, then grind it to a fine powder in a spice or coffee grinder or blender. Transfer to a bowl.",
+    "Grind the mushrooms to a powder and combine with the kombu. Store in an airtight container at room temperature. Like ground spices, this begins to lose its potency immediately.",
+    "Make the spice mixture: Toast the Sichuan peppercorns, cumin seeds, fennel seeds, star anise, cardamom, and cloves in a medium dry skillet over medium, stirring continuously, until fragrant. In a small bowl, combine the toasted spices with the sugar, mushroom powder, cayenne, and salt.",
+    "In a spice or coffee grinder, grind the spice mix to a powder, working in batches if necessary. The spice mix will keep in an airtight container for about a week before losing much of its potency.",
+    "Make the chicken wings: Heat the oven to 350°F. In a large bowl, toss the wings with the salt and ½ cup|120 ml oil. Spread the wings out on a wire rack set over a baking sheet. Bake the wings for 15 minutes, or just until the skin appears cooked but not browned. Let the par-baked wings cool to room temperature, then lay them in a single layer on a baking sheet and freeze, uncovered, overnight.",
+    "The next day, clean the tripe thoroughly under cold running water, scrubbing vigorously to remove any grit. Put in a large pot, cover with 2 inches of cold, salted water, and bring to a boil over high. Boil for 10 minutes, partially covered, then reduce the heat to a simmer and cook for 2 to 3 hours, until the tripe is very tender. Drain in a colander, rinse under cold water, and cool completely.",
+    "Meanwhile, retrieve the wings from the freezer and allow them to thaw at room temperature for 1 to 2 hours.",
+    "Slice the cooked tripe into strips about ½-inch wide and 2 inches long. Set aside.",
+    "In a deep pot or a wok (or use a deep-fryer), heat about 4 inches of oil to 350°F. Meanwhile, pat the tripe strips dry with paper towels, then dredge them in the cornstarch, shaking off any excess. Working in batches, deep-fry the wings and tripe for 4 to 6 minutes, or until golden and crispy. They should cook in about the same amount of time.",
+    "Meanwhile, toast the Tianjin chiles in a hot, dry wok or skillet for about a minute over high, stirring continuously so the chiles cook evenly. Transfer to a plate.",
+    "Drain the fried wings and tripe, shaking off as much oil as you can (or let them briefly drain on paper towels). Then transfer to a large bowl and dust them generously with the spice mix, tossing to coat. Add the toasted chiles and toss well. The chiles will perfume the dish, but they aren't meant to be eaten.",
+    "To serve, transfer everything—aromatic chiles and all—to a serving platter and present to your awestruck and possibly terrified guests."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 3
+}

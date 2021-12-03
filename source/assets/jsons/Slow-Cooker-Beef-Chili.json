@@ -1,0 +1,121 @@
+{
+  "title": "Slow-Cooker Beef Chili",
+  "id": "3JvhP1",
+  "description": "It's perfect—especially when topped with cheese and FRITOS.",
+  "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/slow-cooker-chili-horizontal-1529354330.png?resize=480:*",
+  "servingSize": 8,
+  "scoville": 4000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 15
+    },
+    {
+      "name": "cookTime",
+      "hours": 6,
+      "minutes": 5
+    },
+    {
+      "name": "totalTime",
+      "hours": 6,
+      "minutes": 20
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "ground beef",
+      "quantity": "2",
+      "units": "lbs"
+    },
+    {
+      "name": "large onion, chopped",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "tomato paste",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "kidney beans, drained and rinsed",
+      "quantity": "15",
+      "units": "oz"
+    },
+    {
+      "name": "crushed tomatoes",
+      "quantity": "28",
+      "units": "oz"
+    },
+    {
+      "name": "beer",
+      "quantity": "1",
+      "units": "cups"
+    },
+    {
+      "name": "cloves garlic, minced",
+      "quantity": "4",
+      "units": "N/A"
+    },
+    {
+      "name": "chili powder",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "ground ciumin",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "dried oregano",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "paprika",
+      "quantity": "0.5",
+      "units": "tsp"
+    },
+    {
+      "name": "pinch cayenne pepper",
+      "quantity": "",
+      "units": "N/A"
+    },
+    {
+      "name": "kosher salt",
+      "quantity": "",
+      "units": "N/A"
+    },
+    {
+      "name": "freshly ground black pepper",
+      "quantity": "",
+      "units": "N/A"
+    },
+    {
+      "name": "shredded cheddar, for serving",
+      "quantity": "",
+      "units": "N/A"
+    },
+    {
+      "name": "Fritos, for serving",
+      "quantity": "",
+      "units": "N/A"
+    },
+    {
+      "name": "thinly sliced green onions, for serving",
+      "quantity": "",
+      "units": "N/A"
+    }
+  ],
+  "directions": [
+    "Heat a large skillet over medium-high heat. Add beef and onion and cook until meat is browned (not too brown) all over, about 3 minutes. (It doesn’t need to cook all the way through!) Drain fat, then stir in tomato paste.",
+    "In a large slow cooker, combine beef mixture, kidney beans, crushed tomatoes, beer, garlic, chili powder, cumin, oregano, paprika, and cayenne. Season with salt and pepper. ",
+    "Cook on low for 6 and up to 8 hours. (The longer it's in the slow-cooker, the more flavor it gets.)",
+    "Taste for seasonings. Serve warm with cheese, Fritos, and green onions, if desired. "
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 2
+}
