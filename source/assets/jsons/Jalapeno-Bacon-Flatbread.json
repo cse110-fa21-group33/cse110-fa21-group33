@@ -1,0 +1,66 @@
+{
+  "title": "Spicy Jalapeno & Bacon Flatbread",
+  "id": "4ssQm5",
+  "description": "Enjoy a crispy crust and kick of heat in this jalapeño and bacon flatbread.",
+  "image": "https://cdn-us-ec.yottaa.net/5c8fa1e52bb0ac74cc828a3e/d9df52b0e4910138f4cc0ead9ecbf798.yottaa.net/v~4b.45f/adaptivemedia/rendition/143602.jpg?id=dbd58dd5ee52d773f67d425ec945effaef7d2193&ht=198&wd=296&version=1&clid=pim&yocs=2f_",
+  "servingSize": 8,
+  "scoville": 3000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 10
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 22
+    },
+    {
+      "name": "totalTime",
+      "hours": 1,
+      "minutes": 32
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "refrigerated pizza dough",
+      "quantity": "1",
+      "units": "lbs"
+    },
+    {
+      "name": "Spicy Jalapeno Cream Cheese Spread",
+      "quantity": "8",
+      "units": "oz"
+    },
+    {
+      "name": "slices of cooked bacon, crumbled",
+      "quantity": "8",
+      "units": "N/A"
+    },
+    {
+      "name": "cherry tomatoes, halved",
+      "quantity": "1",
+      "units": "cups"
+    },
+    {
+      "name": "thinly sliced red onions",
+      "quantity": ".25",
+      "units": "cups"
+    },
+    {
+      "name": "shredded three cheese",
+      "quantity": "1",
+      "units": "cups"
+    }
+  ],
+  "directions": [
+    "Heat oven to 425ºF",
+    "Pat pizza dough into 16x12-inch rectangle on lightly floured baking sheet. Bake 10 min.",
+    "Spread crust with cream cheese spread; top with remaining ingredients.",
+    "Bake 10 to 12 min. or until shredded cheese is melted and edge of crust is golden brown."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 2
+}
