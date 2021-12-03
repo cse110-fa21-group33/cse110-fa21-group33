@@ -27,6 +27,16 @@ const recipesFromFile = [
   'assets/jsons/Spicy-Chicken-Sandwich.json',
   'assets/jsons/Spicy-Habanero-Salsa.json',
   'assets/jsons/Zesty-Mango-Habanero-Hot-Sauce.json',
+  'assets/jsons/Black-Pepper-Crab.json',
+  'assets/jsons/Chongqing-Chicken-Wings.json',
+  'assets/jsons/Jalapeno-Bacon-Flatbread.json',
+  'assets/jsons/Rabbit-Tikka-Masala.json',
+  'assets/jsons/Slow-Cooker-Beef-Chili.json',
+  'assets/jsons/Slow-Cooker-Pork-Tacos.json',
+  'assets/jsons/Spicy-Buffalo-Deviled-Eggs.json',
+  'assets/jsons/Spicy-Butter-Linguini.json',
+  'assets/jsons/Thai-Rind-Herb-Salad.json',
+  'assets/jsons/Tomato-Cucumber-Salad.json',
 ];
 
 let loaded = false;
