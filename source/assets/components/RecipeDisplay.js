@@ -270,6 +270,9 @@ class RecipeDisplay extends HTMLElement {
     } else {
       this.bindCompleteButton(data);
     }
+    if(data.challenges.length != 0 ){
+      this.ShowChanllenge(data);
+    }
   }
 
   bindCompleteButton(data) {
@@ -284,6 +287,16 @@ class RecipeDisplay extends HTMLElement {
         btn.parentElement.removeChild(btn);
       }
     });
+  }
+  ShowChanllenge(data) {
+    const dummyChild = this.shadowRoot.getElementById('recipe-directions');
+    const challengeHeader = document.createElement('challengeHeader');
+    challengeHeader.innerHTML = 'Included in Challenges'; 
+    data.challenges.forEach((childChallenge) => { 
+      const li = document.createElement('li'); 
+      li.innerHTML = childChallenge; 
+      challengeHeader.append(li); });
+    dummyChild.parentElement.appendChild(challengeHeader); 
   }
 }
 /**
