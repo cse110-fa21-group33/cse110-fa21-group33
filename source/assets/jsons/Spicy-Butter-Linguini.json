@@ -1,0 +1,81 @@
+{
+  "title": "Spicy Garlic Butter Linguini",
+  "id": "TDeTTs",
+  "description": "You know me and fusion pasta – it’s an absolute passion of mine! This winning dish is so simple and incredibly delicious, too, making maximum use from minimal ingredients. It’s also ideal as a meat-free meal.",
+  "image": "https://marionskitchen.com/wp-content/uploads/2019/12/Spicy-Garlic-Butter-Linguini1.jpg",
+  "servingSize": 2,
+  "scoville": 5000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 5
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 10
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 15
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "spaghetti",
+      "quantity": "200",
+      "units": "g"
+    },
+    {
+      "name": "unsalted butter",
+      "quantity": "75",
+      "units": "g"
+    },
+    {
+      "name": "garlic cloves, finely chopped",
+      "quantity": "10",
+      "units": "N/A"
+    },
+    {
+      "name": "chili flakes",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "soy sauce",
+      "quantity": "2.5",
+      "units": "tbsp"
+    },
+    {
+      "name": "oyster sauce",
+      "quantity": "2.5",
+      "units": "tbsp"
+    },
+    {
+      "name": "finely grated parmesan cheese",
+      "quantity": "3",
+      "units": "tbsp"
+    },
+    {
+      "name": "finely sliced spring onions",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "extra virgin olive oil",
+      "quantity": "4",
+      "units": "tbsp"
+    }
+  ],
+  "directions": [
+    "To make the garlic oil, place the oil and the garlic in a small saucepan over medium heat. Once the garlic is sizzling, cook for 2-3 minutes or until the garlic is just starting to turn golden at the edges. Transfer to a heat-proof bowl and set aside for later (the garlic will continue cooking and turn evenly golden in the bowl).",
+    "Heat a large pot of salted water over high heat. When boiling rapidly, add the pasta and cook until al dente.",
+    "While the pasta is cooking, add the butter, garlic and chilli flakes into a large frying pan over medium-high heat. Cook stirring until the butter is just melted (you want the garlic to soften but not colour), then add the soy sauce and oyster sauce. Simmer for a minute and then take off the heat until the pasta is cooked.",
+    "When the pasta is al dente, reserve a cup of pasta cooking liquid in case you need it later. Place the butter sauce back on the heat and add the pasta straight into the pan. Cook, stirring, for 3-4 minutes or until the liquid has been absorbed by the pasta and everything is looking super glossy and thick. Toss through the parmesan cheese (add a little pasta cooking water here if necessary). Divide among serving plates. Top with a drizzle of garlic oil and some garlic chips. Sprinkle with spring onion and add extra cheese."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 2
+}

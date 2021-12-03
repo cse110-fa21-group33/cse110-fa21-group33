@@ -1,0 +1,105 @@
+{
+  "title": "Thai Fried Pork Rind and Herb Salad",
+  "id": "QvEBNi",
+  "description": "The dressing for this salad fires on all cylinders with big bursts of hot, acidic, sweet, and savory elements all in balance. The dressing coats crisp fried pork rinds, softening them up slightly, and making them taste almost bright and refreshing when coupled with plenty of fresh herbs and bean sprouts.",
+  "image": "https://www.seriouseats.com/thmb/4UclcKfMgmn6BHUjhKmYakFEwrM=/900x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2015__01__20130110-chicharron-thai-salad-1-6ac65b78f4b841b6a836d07436d576fc.jpg",
+  "servingSize": 4,
+  "scoville": 40000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 10
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 0
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 10
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "small red onion, thinly sliced",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "scallions, thinly sliced",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "medium cloves garlic",
+      "quantity": "3",
+      "units": "N/A"
+    },
+    {
+      "name": "Thai red pepper flakes",
+      "quantity": "2",
+      "units": "tsp"
+    },
+    {
+      "name": "small green Thai chili",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "brown sugar",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "Asian fish cause",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "juice from 1 lime",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "roma tomato, thinly sliced",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "mung bean sprouts, dried",
+      "quantity": "1",
+      "units": "cups"
+    },
+    {
+      "name": "unflavored fried pork rinds",
+      "quantity": "1.75",
+      "units": "oz"
+    },
+    {
+      "name": "fresh picked mint leaves",
+      "quantity": ".5",
+      "units": "cups"
+    },
+    {
+      "name": "fresh picked cilantro leaves",
+      "quantity": ".5",
+      "units": "cups"
+    },
+    {
+      "name": "lime wedges, for serving",
+      "quantity": "",
+      "units": "N/A"
+    }
+  ],
+  "directions": [
+    "Place onions and scallions in a bowl, cover with cold water, add 6 ice cubes, and place in refrigerator until ready to use, at least 5 minutes.",
+    "Combine garlic, pepper flakes, and Thai chiles in a mortar and pestle and pound into a fine paste (see note). Add sugar, fish sauce, and lime juice, and pound until the sugar is dissolved. Taste dressing and add more sugar, fish sauce, lime juice, or pepper flakes to taste. It should be strongly spicy, sweet, salty, and acidic.",
+    "Combine tomatoes, bean sprouts, pork rinds, mint, cilantro, and dressing in a large bowl and toss to combine. Carefully drain onions and scallions. Add to bowl and toss to combine. Serve immediately."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 3
+}

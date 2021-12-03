@@ -1,0 +1,157 @@
+{
+  "title": "Rabbit Tikka Masala",
+  "id": "xGe5rI",
+  "description": "Dominic Chapman's take on a classic tikka masala uses rabbit instead of chicken. The delicate spices of the curry work beautifully with the slightly gamey meat to create an Indian-inspired dish with a twist.",
+  "image": "https://media-cdn.greatbritishchefs.com/media/5wmjiz14/img79381.jpg?mode=crop&width=520&height=347",
+  "servingSize": 6,
+  "scoville": 20000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 1,
+      "minutes": 0
+    },
+    {
+      "name": "cookTime",
+      "hours": 1,
+      "minutes": 0
+    },
+    {
+      "name": "totalTime",
+      "hours": 2,
+      "minutes": 0
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "live yoghurt",
+      "quantity": "500",
+      "units": "g"
+    },
+    {
+      "name": "ground coriander",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "cumin seeds",
+      "quantity": "2",
+      "units": "tsp"
+    },
+    {
+      "name": "turmeric",
+      "quantity": "2",
+      "units": "tsp"
+    },
+    {
+      "name": "paprika",
+      "quantity": "2",
+      "units": "tsp"
+    },
+    {
+      "name": "garam masala",
+      "quantity": "4",
+      "units": "tsp"
+    },
+    {
+      "name": "chili powder",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "lemon, juiced",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "salt",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "garlic paste",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "ginger paste",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "rabbit legs",
+      "quantity": "6",
+      "units": "N/A"
+    },
+    {
+      "name": "tomatoes, blanched and pulsed",
+      "quantity": "3",
+      "units": "kg"
+    },
+    {
+      "name": "onion, diced",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "bay leaves",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "cinnamon stick",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "green chilies, chopped",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "coriander seeds",
+      "quantity": "5",
+      "units": "g"
+    },
+    {
+      "name": "butter",
+      "quantity": "100",
+      "units": "g"
+    },
+    {
+      "name": "red chilies, finely sliced",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "ketchup",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "mace",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "sugar",
+      "quantity": "1",
+      "units": "tsp"
+    }
+  ],
+  "directions": [
+    "Begin by preparing the marinade 36 hours before you plan to serve the dish. Strain the yoghurt by setting a sieve over a bowl and line the sieve with muslin cloth. Place the yoghurt into the cloth and leave in the fridge to drain for 12 hours. Reserve the thickened yoghurt for the marinade",
+    "Once the yoghurt has finished draining, roast the spices in a dry frying pan until aromatic then blitz to a powder in a blender, spice grinder or pestle and mortar",
+    "Combine the yoghurt, spices, lemon juice, salt, garlic paste and ginger paste and massage into the rabbit legs. Cover and leave to marinate in the fridge for 24 hours",
+    "The next day, prepare the tomato sauce. In a large pan set over a medium heat, combine the tomatoes, onion, cinnamon and bay leaves with a splash of water. Simmer gently until the mixture softens",
+    "Add the green chillies and coriander seeds and cook out for a few more minutes. Blend, strain and set aside",
+    "To make the tikka masala, set a heavy-based saucepan over a medium heat and melt the butter until it starts to foam. Add the garlic and ginger pastes and fry for a few minutes until fragrant",
+    "Add the red chilli, garam masala, ground mace, turmeric, paprika, sugar and ketchup, and cook until the chilli slightly softens. Add the tomato mixture and simmer, allowing the sauce to thicken and reduce",
+    "When the sauce has thickened slightly, add the rabbit and gently cook for 1 hour or until the rabbit is tender",
+    "Season to taste, adding a little more garam masala if needed",
+    "Serve alongside steamed kale and top with flaked almonds, micro coriander and red chilli, with an optional spoon of crème fraiche"
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 2
+}

@@ -1,0 +1,78 @@
+{
+  "title": "Spicy Tomato-Cucumber Salad",
+  "id": "58Hdkd",
+  "description": "This elegantly simple salad is summer in a bowl. Sunshine-yellow and ruby-red wedges of juicy tomato anchor this dish with a hefty dose of lycopene, a heart-helping, cancer-fighting antioxidant. Cucumber and bell pepper bring their crunch to the party, while lemon and chili keep things lively with heat and zing. Remember—summer tomatoes are extra juicy, so plan to serve this salad soon after making it for the most concentrated flavor.",
+  "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F19%2F2018%2F11%2F01%2Fspicy-tomato-cucumber-salad-1807-p18-2000.jpg",
+  "servingSize": 6,
+  "scoville": 500,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 15
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 0
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 15
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "red tomatoes, cut into wedges",
+      "quantity": "4",
+      "units": "N/A"
+    },
+    {
+      "name": "yellow tomato, cut into wedges",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "sliced English cucumber",
+      "quantity": "1",
+      "units": "cups"
+    },
+    {
+      "name": "chopped yellow bell pepper",
+      "quantity": ".5",
+      "units": "cups"
+    },
+    {
+      "name": "minced and seeded jalapeno",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "fresh lemon juice",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "kosher salt",
+      "quantity": ".75",
+      "units": "tsp"
+    },
+    {
+      "name": "pepper",
+      "quantity": ".25",
+      "units": "tsp"
+    },
+    {
+      "name": "fresh basil leaves",
+      "quantity": "2",
+      "units": "tbsp"
+    }
+  ],
+  "directions": [
+    "Combine red tomatoes, cut into wedges; yellow tomato, cut into wedges; sliced English cucumber; chopped yellow bell pepper; minced and seeded jalapeño; fresh lemon juice; kosher salt; and pepper in a large bowl. Cover and chill at least 1 hour. Garnish with fresh basil leaves."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 1
+}
