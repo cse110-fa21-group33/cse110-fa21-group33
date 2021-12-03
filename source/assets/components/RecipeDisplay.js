@@ -296,24 +296,21 @@ class RecipeDisplay extends HTMLElement {
     if (data.completed === true) {
       const newBox = document.createElement('completed');
       newBox.innerHTML = 'Completed!';
+      newBox.innerHTML += "<br><br>Upload a picture of your reaction!";
       btn.parentElement.appendChild(newBox);
+      const box = btn.parentElement;
       btn.parentElement.removeChild(btn);
       const uploadImg = this.shadowRoot.getElementById('imgUpload');
       const submitBtn = this.shadowRoot.getElementById('submitButton');
       const imgPreview = this.shadowRoot.getElementById('imgPreview');
+      uploadImg.style.display = '';
+      submitBtn.style.display = '';
+      imgPreview.style.display = '';
       if ('reactions' in data) {
-        uploadImg.style.display = 'none';
-        submitBtn.style.display = 'none';
-        imgPreview.style.display = '';
         imgPreview.src = data.reactions;
       }
-      else {
-        uploadImg.style.display = '';
-        submitBtn.style.display = '';
-        imgPreview.style.display = '';
-        this.GetImgurImage();
-        this.SubmitReaction();
-      }
+      this.GetImgurImage();
+      this.SubmitReaction();
     } else {
       this.bindCompleteButton(data);
     }
@@ -327,8 +324,6 @@ class RecipeDisplay extends HTMLElement {
       const imgPreview = this.shadowRoot.getElementById('imgPreview');
       this.json.reactions = imgPreview.src;
       database.updateRecipe(this.json);
-      uploadImg.style.display = 'none';
-      submitBtn.style.display = 'none';
     });
   }
 
@@ -340,6 +335,7 @@ class RecipeDisplay extends HTMLElement {
         database.completeRecipe(data);
         const newBox = document.createElement('completed');
         newBox.innerHTML = 'Completed!';
+        newBox.innerHTML += "<br><br>Upload a picture of your reaction!";
         btn.parentElement.appendChild(newBox);
         btn.parentElement.removeChild(btn);
         const imgPreview = this.shadowRoot.getElementById('imgPreview');
