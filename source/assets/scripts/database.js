@@ -409,11 +409,7 @@ async function getById(id) {
   return new Promise((resolve, reject) => {
     db.recipes.get(id)
       .then((data) => {
-<<<<<<< HEAD
         resolve(data.recipe_data);
-=======
-        resolve(data);
->>>>>>> Added challenge functions to database.js
       })
       .catch((error) => {
         reject(error);
