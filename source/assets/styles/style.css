@@ -237,8 +237,8 @@ button:active {
   grid-template-columns: 0fr 1fr 3.75fr .25fr;
   grid-template-rows: 30px auto;
   grid-template-areas: 
-    "margin sidebarl main"
-    "margin sidebarl main";
+    "sidebarl main"
+    "sidebarl main";
   column-gap: 30px;
   row-gap: 10px;
   height: fit-content;
