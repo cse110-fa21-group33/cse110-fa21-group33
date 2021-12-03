@@ -162,11 +162,36 @@ class RecipeDisplay extends HTMLElement {
             <div class="button-wrapper">
               <button class="recipe-button" id="made-this-button">I Made This!</button>
             </div>
+            <br>
+            <img src="https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
+            <br>
+            <input style="display:none;" type="file" id="imgUpload" accept="image/*"></input>
+            <br>
+            <input style="display:none;" id="submitButton" class="Submit" type="button" value="Submit">
           </article>
         </main>
       </div>
       `;
     this.shadowRoot.append(styles, article);
+  }
+
+  GetImgurImage() {
+    const imgUpload = this.shadowRoot.getElementById('imgUpload');
+    const imgPreview = this.shadowRoot.getElementById('imgPreview');
+    // const url = this.shadowRoot.getElementById('url');
+    imgUpload.addEventListener('change', (ev) => {
+      const formdata = new FormData();
+      formdata.append('image', ev.target.files[0]);
+      fetch('https://api.imgur.com/3/image/', {
+        method: 'post',
+        headers: {
+          Authorization: 'Client-ID 0f695d3611373b4',
+        },
+        body: formdata,
+      }).then((data) => data.json()).then((data) => {
+        imgPreview.src = data.data.link;
+      });
+    });
   }
 
   /**
@@ -225,6 +250,12 @@ class RecipeDisplay extends HTMLElement {
               <div class="button-wrapper">
                 <button class="recipe-button" id="made-this-button">I Made This!</button>
               </div>
+              <br>
+              <img style="display:none;" src="https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
+              <br>
+              <input style="display:none;" type="file" id="imgUpload" accept="image/*"></input>
+              <br>
+              <input style="display:none;" id="submitButton" class="Submit" type="button" value="Submit">
             </article>
           </main>
         </div>
@@ -265,11 +296,35 @@ class RecipeDisplay extends HTMLElement {
     if (data.completed === true) {
       const newBox = document.createElement('completed');
       newBox.innerHTML = 'Completed!';
+      newBox.innerHTML += "<br><br>Upload a picture of your reaction!";
       btn.parentElement.appendChild(newBox);
+      const box = btn.parentElement;
       btn.parentElement.removeChild(btn);
+      const uploadImg = this.shadowRoot.getElementById('imgUpload');
+      const submitBtn = this.shadowRoot.getElementById('submitButton');
+      const imgPreview = this.shadowRoot.getElementById('imgPreview');
+      uploadImg.style.display = '';
+      submitBtn.style.display = '';
+      imgPreview.style.display = '';
+      if ('reactions' in data) {
+        imgPreview.src = data.reactions;
+      }
+      this.GetImgurImage();
+      this.SubmitReaction();
     } else {
       this.bindCompleteButton(data);
     }
+  }
+
+  SubmitReaction() {
+    const button = this.shadowRoot.getElementById('submitButton');
+    const uploadImg = this.shadowRoot.getElementById('imgUpload');
+    const submitBtn = this.shadowRoot.getElementById('submitButton');
+    button.addEventListener('click', () => {
+      const imgPreview = this.shadowRoot.getElementById('imgPreview');
+      this.json.reactions = imgPreview.src;
+      database.updateRecipe(this.json);
+    });
   }
 
   bindCompleteButton(data) {
@@ -280,8 +335,17 @@ class RecipeDisplay extends HTMLElement {
         database.completeRecipe(data);
         const newBox = document.createElement('completed');
         newBox.innerHTML = 'Completed!';
+        newBox.innerHTML += "<br><br>Upload a picture of your reaction!";
         btn.parentElement.appendChild(newBox);
         btn.parentElement.removeChild(btn);
+        const imgPreview = this.shadowRoot.getElementById('imgPreview');
+        imgPreview.style.display = '';
+        const uploadImg = this.shadowRoot.getElementById('imgUpload');
+        uploadImg.style.display = '';
+        const submitBtn = this.shadowRoot.getElementById('submitButton');
+        submitBtn.style.display = '';
+        this.GetImgurImage();
+        this.SubmitReaction();
       }
     });
   }
