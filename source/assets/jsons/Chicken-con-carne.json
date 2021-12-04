@@ -1,0 +1,125 @@
+{
+  "title": "Chilli con Carne",
+  "id": "IGqtQB",
+  "description": "This chilli ticks all the boxes. Rich, smoky, and blessed with a gentle heat thanks to Bull’s-Eye Carolina Reaper Hot Sauce, it’s perfect for feeding a crowd.",
+  "image": "https://i.imgur.com/lOF9tiU.jpg",
+  "servingSize": 4,
+  "scoville": 2000000,
+  "time": [
+      {
+          "name": "prepTime",
+          "hours": 0,
+          "minutes": 30
+      },
+      {
+          "name": "cookTime",
+          "hours": 1,
+          "minutes": 0
+      },
+      {
+          "name": "totalTime",
+          "hours": 2,
+          "minutes": 30
+      }
+  ],
+  "ingredientList": [
+      {
+          "name": "Onion",
+          "quantity": "1",
+          "units": "N/A"
+      },
+      {
+          "name": "Red Pepper",
+          "quantity": "1",
+          "units": "N/A"
+      },
+      {
+          "name": "Chorizo",
+          "quantity": "75",
+          "units": "g"
+      },
+      {
+          "name": "Clove of Garlic",
+          "quantity": "1",
+          "units": "N/A"
+      },
+      {
+          "name": "Tomato Purée",
+          "quantity": "1",
+          "units": "tbsp"
+      },
+      {
+          "name": "Bull’s-Eye Carolina Reaper Hot Sauce",
+          "quantity": "1",
+          "units": "tbsp"
+      },
+      {
+          "name": "Dried Oregano",
+          "quantity": "1",
+          "units": "tbsp"
+      },
+      {
+          "name": "Ground Cumin",
+          "quantity": "1",
+          "units": "tsp"
+      },
+      {
+          "name": "Smoked Paprika",
+          "quantity": "1",
+          "units": "tsp"
+      },
+      {
+          "name": "Cinnamon",
+          "quantity": "0.5",
+          "units": "tsp"
+      },
+      {
+          "name": "Beef Mince",
+          "quantity": "500",
+          "units": "g"
+      },
+      {
+          "name": "Tin of Chopped Tomatoes",
+          "quantity": "1",
+          "units": "N/A"
+      },
+      {
+          "name": "Tin of Kidney Beans",
+          "quantity": "1",
+          "units": "N/A"
+      },
+      {
+          "name": "Lime",
+          "quantity": "1",
+          "units": "N/A"
+      },
+      {
+          "name": "Bunch of Coriander",
+          "quantity": "1",
+          "units": "N/A"
+      },
+      {
+          "name": "Sour Cream",
+          "quantity": "200",
+          "units": "g"
+      },
+      {
+          "name": "Olive Oil",
+          "quantity": "",
+          "units": "N/A"
+      }
+  ],
+  "directions": [
+      "Dice the onion, pepper and chorizo before adding them to a large pan over a medium-low heat along with a good drizzle of olive oil.",
+      "Sweat down for 5 mins until soft then add the minced garlic, tomato purée, Bull’s-Eye Carolina Reaper Hot Sauce and spices. Stir and cook for another 3 mins.",
+      "Empty the contents of the pan into a small bowl and set aside. Return the pan to a very high heat.",
+      "Add the beef mince to the pan along with a good pinch of salt. Cook for a few mins until the beef is browned all over.",
+      "Add the onion and pepper mix back to the pan along with the tinned tomatoes and half a can of water. Stir well, scraping the bottom of the pan.",
+      "Add the kidney beans, bring to a gentle simmer and leave to cook for at least an hour, stirring occasionally.",
+      "Once it’s all thickened up and rich, take off the heat and add a big squeeze of lime juice. Stir well and taste for seasoning.",
+      "Serve over rice with a sprinkle of chopped coriander and an (optional) spoon of sour cream."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 5
+}
