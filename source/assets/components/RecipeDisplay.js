@@ -163,7 +163,7 @@ class RecipeDisplay extends HTMLElement {
               <button class="recipe-button" id="made-this-button">I Made This!</button>
             </div>
             <br>
-            <img src="https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
+            <img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
             <br>
             <input style="display:none;" type="file" id="imgUpload" accept="image/*"></input>
             <br>
@@ -251,7 +251,7 @@ class RecipeDisplay extends HTMLElement {
                 <button class="recipe-button" id="made-this-button">I Made This!</button>
               </div>
               <br>
-              <img style="display:none;" src="https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
+              <img style="display:none;" src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
               <br>
               <input style="display:none;" type="file" id="imgUpload" accept="image/*"></input>
               <br>
@@ -267,7 +267,7 @@ class RecipeDisplay extends HTMLElement {
     const { image } = data;
     const img = this.shadowRoot.querySelector('#recipe-media > img');
     if (image == "") {
-      img.setAttribute('src', "https://www.ranjaniskitchen.com/wp-content/plugins/osetin-helper/assets/img/placeholder-category.png");
+      img.setAttribute('src', "assets/images/placeholder.png");
     }
     else {
       img.setAttribute('src', image);
