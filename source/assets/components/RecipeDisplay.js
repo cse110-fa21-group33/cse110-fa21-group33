@@ -333,7 +333,7 @@ class RecipeDisplay extends HTMLElement {
   bindCompleteButton(data) {
     const btn = this.shadowRoot.getElementById('made-this-button');
     btn.addEventListener('click', () => {
-      RecipeDisplay.jSConfetti.addConfetti();
+      RecipeDisplay.jSConfetti.addConfetti( {emojis: ['🥵', '🔥', '🌶️']} );
       if (data.completed === false) {
         database.completeRecipe(data);
         const newBox = document.createElement('completed');
