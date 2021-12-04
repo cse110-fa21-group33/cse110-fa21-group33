@@ -210,11 +210,11 @@ button {
 /** Main Page section partitioning **/
 .section--main-page {
   display:grid;
-  grid-template-columns: 1fr 3.5fr .5fr;
+  grid-template-columns: 0fr 1fr 3.75fr .25fr;
   grid-template-rows: 30px auto;
   grid-template-areas: 
-    "sidebarl main"
-    "sidebarl main";
+    "margin sidebarl main"
+    "margin sidebarl main";
   column-gap: 30px;
   row-gap: 10px;
   height: fit-content;
@@ -258,5 +258,17 @@ a:link {
   grid-template-columns: repeat(auto-fit, minmax(5rem, 15rem));
   justify-content: space-evenly;
   gap: 2rem;
+}
+
+.entire-webpage{
+  zoom: .8;
+}
+
+.section--recipe-display{
+  zoom: 1.25;
+}
+
+.section--recipe-upload{
+  zoom: 1.25;
 }
 
