@@ -210,7 +210,7 @@ button {
 /** Main Page section partitioning **/
 .section--main-page {
   display:grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 3.5fr .5fr;
   grid-template-rows: 30px auto;
   grid-template-areas: 
     "sidebarl main"
@@ -236,6 +236,7 @@ button {
 #div--recommended-recipes {
   grid-area: main;
   padding: 10px 30px 30px;
+  border-radius: 25px;
 }
 
 a:link {
