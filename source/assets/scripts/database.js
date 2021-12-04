@@ -37,6 +37,8 @@ const recipesFromFile = [
   'assets/jsons/Spicy-Butter-Linguini.json',
   'assets/jsons/Thai-Rind-Herb-Salad.json',
   'assets/jsons/Tomato-Cucumber-Salad.json',
+  'assets/jsons/Mongolian-Beef.json',
+  'assets/jsons/Phaal-Curry-Recipe.json',
 ];
 
 let loaded = false;
