@@ -1,0 +1,104 @@
+{
+  "title": "Sweet&Spicy Reaper Smoked Turkey Breast",
+  "id": "ez7Z7Y",
+  "description": "The Carolina Reaper chile is a good representation of human creativity in engaging with Creation, since this piquant pepper was a hybrid result of one man’s quest to help cure cancer. If your family loves spicy food as much as my family does, this amped-up turkey breast is well worth revving up the smoker for next Thanksgiving. Also be sure to check out other great recipes for when company’s coming. Enjoy!",
+  "image": "https://i.imgur.com/0v8UTZc.jpg",
+  "servingSize": 4,
+  "scoville": 2000000,
+  "time": [
+      {
+          "name": "prepTime",
+          "hours": 20,
+          "minutes": 15
+      },
+      {
+          "name": "cookTime",
+          "hours": 3,
+          "minutes": 0
+      },
+      {
+          "name": "totalTime",
+          "hours": 23,
+          "minutes": 15
+      }
+  ],
+  "ingredientList": [
+      {
+          "name": "bone-in turkey breast",
+          "quantity": "15",
+          "units": "lbs"
+      },
+      {
+          "name": "water",
+          "quantity": "1",
+          "units": "gal"
+      },
+      {
+          "name": "salt",
+          "quantity": "1",
+          "units": "cups"
+      },
+      {
+          "name": "Dijon mustard",
+          "quantity": "1",
+          "units": "tbsp"
+      },
+      {
+          "name": "bacon grease",
+          "quantity": "1",
+          "units": "tbsp"
+      },
+      {
+          "name": "brown sugar",
+          "quantity": "2",
+          "units": "tbsp"
+      },
+      {
+          "name": "garlic powder",
+          "quantity": "1",
+          "units": "tsp"
+      },
+      {
+          "name": "onion powder",
+          "quantity": "1",
+          "units": "tsp"
+      },
+      {
+          "name": "freshly ground black pepper",
+          "quantity": "0.5",
+          "units": "tsp"
+      },
+      {
+          "name": "Carolina reaper chile pepper",
+          "quantity": "0.25",
+          "units": "tsp"
+      },
+      {
+          "name": "sage ground",
+          "quantity": "0.25",
+          "units": "tsp"
+      },
+      {
+          "name": "bag charcoal",
+          "quantity": "1",
+          "units": "N/A"
+      },
+      {
+          "name": " bag wood chips",
+          "quantity": "1",
+          "units": "N/A"
+      }
+  ],
+  "directions": [
+      "Rinse the turkey breast and place in a non-reactive plastic bucket or a large stockpot lined with a slow-cooker liner. Mix together the water and salt in a pitcher until the salt is completely dissolved. (This happens more quickly with 2 cups of hot water, swirling in the salt, and then filling in the rest with cold water.) Pour the brine solution over the turkey breast to cover completely. Place in the refrigerator and brine for 8 hours (overnight is perfect).",
+      "Drain the brine liquid, and pat the turkey breast dry. Mix together the Dijon mustard and melted butter, and brush a thin coat over the entire surface of the turkey breast.",
+      "n a small bowl, mix together the brown sugar, garlic powder, onion powder, black pepper, Carolina Reaper chile pepper, and sage. Using a spoon (or your hands with rubber/plastic gloves), sprinkle or rub the spice mix over the entire surface of the turkey breast.",
+      "Wrap the turkey breast in plastic food wrap and place it back into the refrigerator for 12-24 hours.",
+      "Prepare your smoker by stacking about 24 charcoal briquettes in a pyramid. Be sure to place your charcoal in a spot that will provide indirect heat to the turkey breast (many dedicated smokers have a box for this.) You may use lighter fluid to start the charcoal if you wish. When the initial fire has died down and the coals are glowing, bring the temperature to 225 and maintain for 20 minutes.",
+      "Unwrap the turkey breast and place it in the smoker, breast side down. Toss a generous handful of wood chips on top to get the smoke going. You may also create a pouch for the chips out of aluminum foil to place on top of the glowing coals. Add charcoal as necessary to maintain the heat between 225 and 250230 is ideal. Each time you add charcoal, add more wood chips for smoke. After an hour and a half, flip it breast side up. Once you flip it, stop adding wood chips and allow it to cook the rest",
+      "Remove the turkey breast from the smoker and cover loosely with aluminum foil. Allow to rest 10-20 minutes before slicing. Enjoy!"
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 5
+}
