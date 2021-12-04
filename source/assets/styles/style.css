@@ -210,14 +210,14 @@ button {
 /** Main Page section partitioning **/
 .section--main-page {
   display:grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 0fr 1fr 3.75fr .25fr;
   grid-template-rows: 30px auto;
   grid-template-areas: 
-    "sidebarl slider sidebarr"
-    "sidebarl main sidebarr";
+    "margin sidebarl main"
+    "margin sidebarl main";
   column-gap: 30px;
   row-gap: 10px;
-  height: 90vh;
+  height: fit-content;
 }
 
 .section--main-page > .main--div{
@@ -227,11 +227,16 @@ button {
 #challenge-cards--wrapper {
   grid-area: sidebarl;
   padding: 10px 30px 30px;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  border-radius: 25px;
 }
 
 #div--recommended-recipes {
   grid-area: main;
   padding: 10px 30px 30px;
+  border-radius: 25px;
 }
 
 a:link {
@@ -253,5 +258,17 @@ a:link {
   grid-template-columns: repeat(auto-fit, minmax(5rem, 15rem));
   justify-content: space-evenly;
   gap: 2rem;
+}
+
+.entire-webpage{
+  zoom: .8;
+}
+
+.section--recipe-display{
+  zoom: 1.25;
+}
+
+.section--recipe-upload{
+  zoom: 1.25;
 }
 
