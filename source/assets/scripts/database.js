@@ -39,6 +39,11 @@ const recipesFromFile = [
   'assets/jsons/Tomato-Cucumber-Salad.json',
   'assets/jsons/Mongolian-Beef.json',
   'assets/jsons/Phaal-Curry-Recipe.json',
+  'assets/jsons/Firecracker-Chicken.json',
+  'assets/jsons/Ghost-Pepper-Queso.json',
+  'assets/jsons/Ghost-Pepper-Bison.json',
+  'assets/jsons/Ghost-Pepper-Jelly.json',
+  'assets/jsons/Cherry-Bomb-Chicken.json',
 ];
 
 let loaded = false;

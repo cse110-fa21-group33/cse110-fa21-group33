@@ -1,0 +1,94 @@
+{
+  "title": "FIRECRACKER CHICKEN",
+  "id": "SwTJZZ",
+  "description": "This firecracker chicken recipe is chunks of crispy chicken tossed in a sweet and spicy sauce. An easy dinner option that the whole family will love!",
+  "image": "https://i.imgur.com/xFjZwiE.jpg",
+  "servingSize": 4,
+  "scoville": 3000,
+  "time": [
+      {
+          "name": "prepTime",
+          "hours": 0,
+          "minutes": 10
+      },
+      {
+          "name": "cookTime",
+          "hours": 0,
+          "minutes": 40
+      },
+      {
+          "name": "totalTime",
+          "hours": 1,
+          "minutes": 50
+      }
+  ],
+  "ingredientList": [
+      {
+          "name": "boneless skinless chicken breasts 1 in",
+          "quantity": "1.25",
+          "units": "lbs"
+      },
+      {
+          "name": "salt and pepper to taste",
+          "quantity": "",
+          "units": "N/A"
+      },
+      {
+          "name": "cornstarch",
+          "quantity": "0.33",
+          "units": "cups"
+      },
+      {
+          "name": "eggs beaten",
+          "quantity": "2",
+          "units": "N/A"
+      },
+      {
+          "name": "vegetable oil",
+          "quantity": "3",
+          "units": "tbsp"
+      },
+      {
+          "name": "buffalo hot sauce",
+          "quantity": "0.33",
+          "units": "N/A"
+      },
+      {
+          "name": "brown sugar",
+          "quantity": "0.5",
+          "units": "cups"
+      },
+      {
+          "name": "rice vinegar",
+          "quantity": "1",
+          "units": "tbsp"
+      },
+      {
+          "name": "red pepper flakes or more to taste",
+          "quantity": "0.25",
+          "units": "tsp"
+      },
+      {
+          "name": "sliced green onions",
+          "quantity": "0.25",
+          "units": "cups"
+      },
+      {
+          "name": "cooking spray",
+          "quantity": "",
+          "units": "N/A"
+      }
+  ],
+  "directions": [
+      "Preheat the oven to 350 degrees F. Coat a 9\"x13\" pan with cooking spray.",
+      "Place the chicken pieces on a plate and season with salt and pepper to taste. Sprinkle the cornstarch over the chicken and toss to coat evenly.",
+      "Dip each piece of chicken into the beaten eggs.",
+      "Heat the oil over high heat in a large pan. Place the chicken in a single layer and cook for 3-4 minutes on each side or until golden brown. You may have to work in batches.",
+      "Place the chicken pieces in a single layer in the 9\"x13\" pan.",
+      "In a small bowl, whisk together the buffalo sauce, brown sugar, rice vinegar and red pepper flakes.",
+      "Pour the sauce over the chicken. Bake for 35 minutes, stirring once halfway through to coat the chicken with the sauce. Top with green onions and serve."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 2
+}

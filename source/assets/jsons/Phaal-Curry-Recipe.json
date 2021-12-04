@@ -4,7 +4,7 @@
   "description": "It’s spicy hot curry in the Chili Pepper Madness kitchen today, my friends, and when I say “spicy hot”, I truly mean spicy hot! Why? Because today we’re making Phaal Curry, and if you’ve never tried it, you’re in for a wonderful experience.",
   "image": "https://i.imgur.com/qv3KOkA.jpg",
   "servingSize": 4,
-  "scoville": 300000,
+  "scoville": 1000000,
   "time": [
       {
           "name": "prepTime",
@@ -133,5 +133,5 @@
   ],
   "challenges": [],
   "completed": false,
-  "spiceRating": 4
+  "spiceRating": 5
 }
