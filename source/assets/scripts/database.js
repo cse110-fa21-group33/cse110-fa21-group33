@@ -37,6 +37,16 @@ const recipesFromFile = [
   'assets/jsons/Spicy-Butter-Linguini.json',
   'assets/jsons/Thai-Rind-Herb-Salad.json',
   'assets/jsons/Tomato-Cucumber-Salad.json',
+  'assets/jsons/Mongolian-Beef.json',
+  'assets/jsons/Phaal-Curry-Recipe.json',
+  'assets/jsons/Firecracker-Chicken.json',
+  'assets/jsons/Ghost-Pepper-Queso.json',
+  'assets/jsons/Ghost-Pepper-Bison.json',
+  'assets/jsons/Ghost-Pepper-Jelly.json',
+  'assets/jsons/Cherry-Bomb-Chicken.json',
+  'assets/jsons/Reaper-Smoked-Breast.json',
+  'assets/jsons/Trinidad-Scorpion-Pepper-Barbacoa.json',
+  'assets/jsons/Scorpion-Mac-and-Cheese.json',
 ];
 
 let loaded = false;

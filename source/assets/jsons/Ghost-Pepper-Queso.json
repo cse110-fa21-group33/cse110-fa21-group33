@@ -1,0 +1,72 @@
+{
+  "title": "Sweet and Spicy Ghost Pepper Queso",
+  "id": "97DXtg",
+  "description": "I'm a sucker for any kind of dip and this spicy Ghost Pepper Queso is no exception! It is warm, creamy, comforting, perfectly cheesy and packed with both sweet and spicy notes for a match made in heaven.",
+  "image": "https://i.imgur.com/BZicqeW.jpg",
+  "servingSize": 8,
+  "scoville": 1000000,
+  "time": [
+      {
+          "name": "prepTime",
+          "hours": 0,
+          "minutes": 10
+      },
+      {
+          "name": "cookTime",
+          "hours": 0,
+          "minutes": 10
+      },
+      {
+          "name": "totalTime",
+          "hours": 0,
+          "minutes": 20
+      }
+  ],
+  "ingredientList": [
+      {
+          "name": "butter salted or unsalted",
+          "quantity": "2",
+          "units": "tbsp"
+      },
+      {
+          "name": "cloves garlic minced",
+          "quantity": "4",
+          "units": "N/A"
+      },
+      {
+          "name": "half and half",
+          "quantity": "1.5",
+          "units": "cups"
+      },
+      {
+          "name": "tapioca starch",
+          "quantity": "1",
+          "units": "tbsp"
+      },
+      {
+          "name": "cream cheese",
+          "quantity": "0.25",
+          "units": "cups"
+      },
+      {
+          "name": "shredded Mexican cheese blend",
+          "quantity": "3",
+          "units": "cups"
+      },
+      {
+          "name": "Naturacentric Ghost Pepper Honey",
+          "quantity": "0.25",
+          "units": "cups"
+      }
+  ],
+  "directions": [
+      "In a pot over medium heat add the butter and garlic. Saute for 5 minutes, or until the garlic is beginning to turn golden.",
+      "Add the half and half and bring to a simmer, while stirring frequently. Add the tapioca starch, while continuing to simmer and stir, about 2 minutes longer or until the mixture begins to thicken.",
+      "Add the cream cheese and stir until smoothly combined.",
+      "Turn off the heat, then whisk in the shredded cheese until completely melted. Add the ghost pepper honey and stir well.",
+      "Serve and enjoy!"
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 5
+}

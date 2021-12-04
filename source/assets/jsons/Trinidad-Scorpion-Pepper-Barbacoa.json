@@ -1,0 +1,127 @@
+{
+  "title": "Spicy Trinidad Scorpion Pepper Barbacoa",
+  "id": "TfpG3E",
+  "description": "My original recipe for Barbacoa is not very spicy, it is rather based on cumin powder which brings out quite a bit of flavor but it is kinda boring because it lacks any heat. This version is tastier, it slightly sweet because of the sugar which works well with the acidic taste of the lime. The Trinidad Scorpion Powder adds the perfect kick, you just have to be careful when adding it as a little goes a long way.",
+  "image": "https://i.imgur.com/2eSZjGH.jpg",
+  "servingSize": 4,
+  "scoville": 1200000,
+  "time": [
+      {
+          "name": "prepTime",
+          "hours": 0,
+          "minutes": 10
+      },
+      {
+          "name": "cookTime",
+          "hours": 3,
+          "minutes": 10
+      },
+      {
+          "name": "totalTime",
+          "hours": 3,
+          "minutes": 20
+      }
+  ],
+  "ingredientList": [
+      {
+          "name": "beef chuck roast cut into chunks",
+          "quantity": "2",
+          "units": "lbs"
+      },
+      {
+          "name": "canola oil",
+          "quantity": "1",
+          "units": "tbsp"
+      },
+      {
+          "name": "onion diced",
+          "quantity": "1",
+          "units": "N/A"
+      },
+      {
+          "name": "beef broth",
+          "quantity": "1",
+          "units": "cups"
+      },
+      {
+          "name": "apple cider vinegar",
+          "quantity": "0.5",
+          "units": "cups"
+      },
+      {
+          "name": "Trinidad Scorpion Pepper Powder",
+          "quantity": "2",
+          "units": "tsp"
+      },
+      {
+          "name": "lime juice",
+          "quantity": "3",
+          "units": "tbsp"
+      },
+      {
+          "name": "bay leaves",
+          "quantity": "3",
+          "units": "N/A"
+      },
+      {
+          "name": "oregano dried",
+          "quantity": "1",
+          "units": "tbsp"
+      },
+      {
+          "name": "garlic cloves",
+          "quantity": "3",
+          "units": "N/A"
+      },
+      {
+          "name": "white sugar",
+          "quantity": "1",
+          "units": "tbsp"
+      },
+      {
+          "name": "green bell pepper",
+          "quantity": "2",
+          "units": "N/A"
+      },
+      {
+          "name": "avocado",
+          "quantity": "1",
+          "units": "N/A"
+      },
+      {
+          "name": "cilantro",
+          "quantity": "1",
+          "units": "tbsp"
+      },
+      {
+          "name": "red onion",
+          "quantity": "1",
+          "units": "N/A"
+      },
+      {
+          "name": "tortillas",
+          "quantity": "8",
+          "units": "N/A"
+      },
+      {
+          "name": "dash salt",
+          "quantity": "",
+          "units": "N/A"
+      },
+      {
+          "name": "dash pepper",
+          "quantity": "",
+          "units": "N/A"
+      }
+  ],
+  "directions": [
+      "Start by browning all of the sides of the beef pieces in a big nonstick pot (could be a slow cooker) for 10 minutes on high heat. Set aside",
+      "Add the canola oil and sauté the onion until tender then add the garlic and the Trinidad Pepper powder. Sauté the pepper with garlic and onion for 4 minutes. Pour the beef broth, lime juice, apple cider vinegar and bay leaves, salt and pepper.",
+      "Bring to boil, add the meat pieces and reduce the heat. Cover and let it cook for 2 to 3 hours. Mix occasionally and make sure there is enough liquid at all times to prevent burning. Add additional water if needed.",
+      "When the meat is tender, remove the pieces and shred them with two forks. Put the pieces back in the pot and mix, the meat must be thoroughly soaked in the sauce.",
+      "For tacos top with sliced green bell peppers, red onion, and avocado. You can also add to crunchy taco shells or make burritos"
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 5
+}
