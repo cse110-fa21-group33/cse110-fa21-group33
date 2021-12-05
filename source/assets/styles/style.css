@@ -255,7 +255,7 @@ button:active {
   grid-area: sidebarl;
   padding: 10px 30px 30px;
   position: sticky;
-  top: 100px;
+  top: 98px;
   height: fit-content;
   border-radius: 25px;
 }
