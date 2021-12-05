@@ -1,125 +1,125 @@
 {
-  "title": "Cherry Bomb Chicken",
-  "id": "Qem9Rj",
-  "description": "Cherry Bomb Chicken is salt-brined and then smothered in an easy Cherry Pepper BBQ Sauce while cooking. This recipe makes for the most tender and sticky sweet spicy chicken ever!",
-  "image": "https://i.imgur.com/Lj6vn0p.jpg",
-  "servingSize": 6,
-  "scoville": 2000000,
-  "time": [
+    "title": "Cherry Bomb Chicken",
+    "id": "Qem9Rj",
+    "description": "Cherry Bomb Chicken is salt-brined and then smothered in an easy Cherry Pepper BBQ Sauce while cooking. This recipe makes for the most tender and sticky sweet spicy chicken ever!",
+    "image": "https://i.imgur.com/Lj6vn0p.jpg",
+    "servingSize": 6,
+    "scoville": 2000000,
+    "time": [
       {
-          "name": "prepTime",
-          "hours": 0,
-          "minutes": 10
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 10
       },
       {
-          "name": "cookTime",
-          "hours": 0,
-          "minutes": 50
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 50
       },
       {
-          "name": "totalTime",
-          "hours": 1,
-          "minutes": 0
+        "name": "totalTime",
+        "hours": 1,
+        "minutes": 0
       }
-  ],
-  "ingredientList": [
+    ],
+    "ingredientList": [
       {
-          "name": "chicken legs, skin-on",
-          "quantity": "10",
-          "units": "N/A"
+        "name": "chicken legs, skin-on",
+        "quantity": "10",
+        "units": "N/A"
       },
       {
-          "name": "warm water",
-          "quantity": "1",
-          "units": "qt"
+        "name": "warm water",
+        "quantity": "1",
+        "units": "qt"
       },
       {
-          "name": "kosher salt",
-          "quantity": "0.33",
-          "units": "cups"
+        "name": "kosher salt",
+        "quantity": "0.33",
+        "units": "cups"
       },
       {
-          "name": "granulated sugar",
-          "quantity": "0.5",
-          "units": "cups"
+        "name": "granulated sugar",
+        "quantity": "0.5",
+        "units": "cups"
       },
       {
-          "name": "allspice",
-          "quantity": "0.5",
-          "units": "tsp"
+        "name": "allspice",
+        "quantity": "0.5",
+        "units": "tsp"
       },
       {
-          "name": "fresh cherries, pitted",
-          "quantity": "1.5",
-          "units": "N/A"
+        "name": "fresh cherries, pitted",
+        "quantity": "1.5",
+        "units": "N/A"
       },
       {
-          "name": "Carolina Reaper peppers, chopped",
-          "quantity": "2",
-          "units": "N/A"
+        "name": "Carolina Reaper peppers, chopped",
+        "quantity": "2",
+        "units": "N/A"
       },
       {
-          "name": "cloves garlic",
-          "quantity": "2",
-          "units": "N/A"
+        "name": "cloves garlic",
+        "quantity": "2",
+        "units": "N/A"
       },
       {
-          "name": "oil",
-          "quantity": "1",
-          "units": "tbsp"
+        "name": "oil",
+        "quantity": "1",
+        "units": "tbsp"
       },
       {
-          "name": "onion, diced",
-          "quantity": "1",
-          "units": "cups"
+        "name": "onion, diced",
+        "quantity": "1",
+        "units": "cups"
       },
       {
-          "name": "kosher salt",
-          "quantity": "1",
-          "units": "tsp"
+        "name": "kosher salt",
+        "quantity": "1",
+        "units": "tsp"
       },
       {
-          "name": "fresh cherries, halved and pitted",
-          "quantity": "1",
-          "units": "pt"
+        "name": "fresh cherries, halved and pitted",
+        "quantity": "1",
+        "units": "pt"
       },
       {
-          "name": "Carolina Reaper pepper",
-          "quantity": "1",
-          "units": "N/A"
+        "name": "Carolina Reaper pepper",
+        "quantity": "1",
+        "units": "N/A"
       },
       {
-          "name": "water",
-          "quantity": "1",
-          "units": "cups"
+        "name": "water",
+        "quantity": "1",
+        "units": "cups"
       },
       {
-          "name": "cornstarch",
-          "quantity": "1",
-          "units": "tbsp"
+        "name": "cornstarch",
+        "quantity": "1",
+        "units": "tbsp"
       },
       {
-          "name": "rice vinegar",
-          "quantity": "0.25",
-          "units": "cups"
+        "name": "rice vinegar",
+        "quantity": "0.25",
+        "units": "cups"
       },
       {
-          "name": "honey",
-          "quantity": "0.25",
-          "units": "cups"
+        "name": "honey",
+        "quantity": "0.25",
+        "units": "cups"
       },
       {
-          "name": "molasses",
-          "quantity": "0.25",
-          "units": "cups"
+        "name": "molasses",
+        "quantity": "0.25",
+        "units": "cups"
       },
       {
-          "name": "granulated sugar",
-          "quantity": "3",
-          "units": "tbsp"
+        "name": "granulated sugar",
+        "quantity": "3",
+        "units": "tbsp"
       }
-  ],
-  "directions": [
+    ],
+    "directions": [
       "Place the pitted cherries, warm water, kosher salt, sugar, allspice, chili peppers, and garlic in the blender. Blend until you have frothy pink liquid.",
       "Place the chicken pieces in a large container or bowl, pour the brine over the chicken, cover, and refrigerate for 4-6 hours.",
       "While the chicken marinates, make the cherry pepper glaze. Heat the oil and add the onion and salt. Continue cooking over medium heat for about 10 minutes, stirring occasionally.",
@@ -130,8 +130,8 @@
       "Place the chicken pieces on the HOT HOT grill for about 2 minutes. Flip them and cook for another minute or 2. Reduce the heat to medium, close the lid, and let them cook for about 10 minutes. Turn them again, close the lid and cook for 10 more minutes. (If you are cooking on a charcoal grill: Make a hot hot side and a less hot side by piling the coals to one side of the cook kettle. Sear the chicken on the hot hot side and then move the pieces to the other side, cover, cook, and continue)",
       "Brush each piece with the cherry pepper glaze. Cook for a few more minutes, turn, and glaze the other side. Remove the chicken to a plate and serve.",
       "*****Degree of Doneness/Cook Time will depend on the size of your chicken pieces and whether or not there is a bone. Use a meat thermometer to check that the internal temperature at the thickest part is 165 degrees.*****"
-  ],
-  "challenges": [],
-  "completed": false,
-  "spiceRating": 5
-}
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 5
+  }

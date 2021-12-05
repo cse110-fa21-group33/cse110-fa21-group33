@@ -7,79 +7,79 @@
   "scoville": 3000,
   "time": [
       {
-          "name": "prepTime",
-          "hours": 0,
-          "minutes": 10
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 10
       },
       {
-          "name": "cookTime",
-          "hours": 0,
-          "minutes": 40
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 40
       },
       {
-          "name": "totalTime",
-          "hours": 1,
-          "minutes": 50
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 50
       }
-  ],
-  "ingredientList": [
+    ],
+    "ingredientList": [
       {
-          "name": "boneless skinless chicken breasts 1 in",
-          "quantity": "1.25",
-          "units": "lbs"
+        "name": "boneless skinless chicken breasts 1 in",
+        "quantity": "1.25",
+        "units": "lbs"
       },
       {
-          "name": "salt and pepper to taste",
-          "quantity": "",
-          "units": "N/A"
+        "name": "salt and pepper to taste",
+        "quantity": "",
+        "units": "N/A"
       },
       {
-          "name": "cornstarch",
-          "quantity": "0.33",
-          "units": "cups"
+        "name": "cornstarch",
+        "quantity": "0.33",
+        "units": "cups"
       },
       {
-          "name": "eggs beaten",
-          "quantity": "2",
-          "units": "N/A"
+        "name": "eggs beaten",
+        "quantity": "2",
+        "units": "N/A"
       },
       {
-          "name": "vegetable oil",
-          "quantity": "3",
-          "units": "tbsp"
+        "name": "vegetable oil",
+        "quantity": "3",
+        "units": "tbsp"
       },
       {
-          "name": "buffalo hot sauce",
-          "quantity": "0.33",
-          "units": "N/A"
+        "name": "buffalo hot sauce",
+        "quantity": "0.33",
+        "units": "N/A"
       },
       {
-          "name": "brown sugar",
-          "quantity": "0.5",
-          "units": "cups"
+        "name": "brown sugar",
+        "quantity": "0.5",
+        "units": "cups"
       },
       {
-          "name": "rice vinegar",
-          "quantity": "1",
-          "units": "tbsp"
+        "name": "rice vinegar",
+        "quantity": "1",
+        "units": "tbsp"
       },
       {
-          "name": "red pepper flakes or more to taste",
-          "quantity": "0.25",
-          "units": "tsp"
+        "name": "red pepper flakes or more to taste",
+        "quantity": "0.25",
+        "units": "tsp"
       },
       {
-          "name": "sliced green onions",
-          "quantity": "0.25",
-          "units": "cups"
+        "name": "sliced green onions",
+        "quantity": "0.25",
+        "units": "cups"
       },
       {
-          "name": "cooking spray",
-          "quantity": "",
-          "units": "N/A"
+        "name": "cooking spray",
+        "quantity": "",
+        "units": "N/A"
       }
-  ],
-  "directions": [
+    ],
+    "directions": [
       "Preheat the oven to 350 degrees F. Coat a 9\"x13\" pan with cooking spray.",
       "Place the chicken pieces on a plate and season with salt and pepper to taste. Sprinkle the cornstarch over the chicken and toss to coat evenly.",
       "Dip each piece of chicken into the beaten eggs.",
