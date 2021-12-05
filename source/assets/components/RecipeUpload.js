@@ -23,14 +23,46 @@ class RecipeUpload extends HTMLElement {
         max-width: 50%;
         background-color: #ee6858;
         padding: 15px 30px;
+        border-radius: 20px;
       }
 
       h1 {
         text-align: center;
       }
 
-    `;
+      input[type="button"] {
+        background-color: white;
+        border-radius: 20px;
+        font-family: 'Mochiy Pop P One', sans-serif;
+        border: 2px solid black;
+        margin: 1px;
+        cursor: pointer;
+      }
 
+      input[type="button"]:active {
+        background-color: rgb(187, 187, 187);
+      }
+
+      button {
+        font-size: 18px;
+        background-color: transparent;
+        cursor: pointer;
+        font-weight: bold;
+        padding-bottom: 2px;
+        height: 25px;
+        width: 20px;
+        color: #767676;
+        font-family: 'Mochiy Pop P One', sans-serif;
+        box-sizing: border-box;
+        line-height: 25px;
+        border: transparent;
+        cursor: pointer;
+      }
+
+      
+      
+    `;
+      //background: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Red_X.svg') no-repeat scroll 0 0 white;
     article.innerHTML = `
         <h1 id="recipe-title">Upload Recipe</h1>
 
@@ -88,7 +120,7 @@ class RecipeUpload extends HTMLElement {
               <option>pinch</option>
               <option>drop</option>
             </select>
-            <button class="specificIngredientRemove" id="specificIngredientRemove" type="button" value="0">Remove this ingredient</button>
+            <button class="specificIngredientRemove" id="specificIngredientRemove" type="button" value="0">X</button>
             <br>
         </div>
         <input type="button" id="addIngredientButton" value="Add Ingredient">
@@ -97,7 +129,7 @@ class RecipeUpload extends HTMLElement {
         <div id="instructions" value="1">
             <h2>Instructions</h2>
             <textarea cols='60' rows='2' placeholder="Step 1"></textarea>
-            <button class="specificInstructionRemove" id="specificInstructionRemove" type="button" value="0">Remove this instruction</button>
+            <button class="specificInstructionRemove" id="specificInstructionRemove" type="button" value="0">X</button>
             <br>
         </div>
         <input id="addStepButton" type="button" value="Add Step">
@@ -209,7 +241,7 @@ class RecipeUpload extends HTMLElement {
             <option>pinch</option>
             <option>drop</option>
         </select>
-        <button class="specificIngredientRemove" id="specificIngredientRemove" type="button" value="0">Remove this ingredient</button>
+        <button class="specificIngredientRemove" id="specificIngredientRemove" type="button" value="0">X</button>
         <br>
     </div>
     <input type="button" id="addIngredientButton" value="Add Ingredient">
@@ -218,7 +250,7 @@ class RecipeUpload extends HTMLElement {
     <div id="instructions" value="1">
         <h2>Instructions</h2>
         <textarea cols='60' rows='2' placeholder="Step 1"></textarea>
-        <button class="specificInstructionRemove" id="specificInstructionRemove" type="button" value="0">Remove this instruction</button>
+        <button class="specificInstructionRemove" id="specificInstructionRemove" type="button" value="0">X</button>
         <br>
     </div>
     <input id="addStepButton" type="button" value="Add Step">
@@ -490,7 +522,7 @@ class RecipeUpload extends HTMLElement {
         }
         const lineBreak = document.createElement('br');
         let btn1 = document.createElement("button");
-        btn1.innerHTML = "Remove this ingredient";
+        btn1.innerHTML = "X";
         btn1.classList.add("specificIngredientRemove");
         btn1.id = "specificIngredientRemove";
         btn1.type = "button";
@@ -525,7 +557,7 @@ class RecipeUpload extends HTMLElement {
         textArea.setAttribute('placeholder', `Step ${stepNum}`);
         div.appendChild(textArea);
         let btn2 = document.createElement("button");
-        btn2.innerHTML = "Remove this instruction";
+        btn2.innerHTML = "X";
         btn2.classList.add("specificInstructionRemove");
         btn2.id = "specificInstructionRemove";
         btn2.type = "button";
@@ -642,6 +674,8 @@ class RecipeUpload extends HTMLElement {
     this.shadowRoot.getElementById('prepHrs').value = this.json.time[0].hours;
     this.shadowRoot.getElementById('cookMins').value = this.json.time[1].minutes;
     this.shadowRoot.getElementById('cookHrs').value = this.json.time[1].hours;
+
+    const ingredients_div = this.shadowRoot.getElementById('ingredients');
     for (let i = 1; i < (this.json.ingredientList.length); i += 1) {
       this.MakeExtraIngredientsSlots(this.json.ingredientList[i]);
       //console.log(optionIndex[data.ingredientList[i].units]);
@@ -654,6 +688,7 @@ class RecipeUpload extends HTMLElement {
     inputName.value = this.json.ingredientList[0].name;
     inputQuantity.value = this.json.ingredientList[0].quantity;
     select.options[this.optionIndex[this.json.ingredientList[0].units]].selected = true;
+    const instructions_div = this.shadowRoot.getElementById('instructions');
     const { directions } = this.json;
     for (let i = 1; i < (directions.length); i += 1) {
       this.MakeExtraInstructionSlots(directions[i]);
@@ -683,11 +718,12 @@ class RecipeUpload extends HTMLElement {
       textArea.value = data;
       div.appendChild(textArea);
       let btn = document.createElement("button");
-      btn.innerHTML = "Remove this instruction";
+      btn.innerHTML = 'X';
       btn.classList.add("specificInstructionRemove");
       btn.id = "specificInstructionRemove";
       btn.type = "button";
-      btn.value = stepNum - 1;
+      //btn.value = stepNum - 1;
+      btn.value = stepNum;
       div.appendChild(btn);
       div.appendChild(lineBreak);
     }
@@ -734,11 +770,12 @@ class RecipeUpload extends HTMLElement {
       div.appendChild(inputQuantity);
       div.appendChild(select);
       let btn = document.createElement("button");
-      btn.innerHTML = "Remove this ingredient";
+      btn.innerHTML = 'X';
       btn.classList.add("specificIngredientRemove");
       btn.id = "specificIngredientRemove";
       btn.type = "button";
-      btn.value = (stepNum - 1);
+      //btn.value = (stepNum - 1); 
+      btn.value = stepNum;
       div.appendChild(btn);
       div.appendChild(lineBreak);
     }

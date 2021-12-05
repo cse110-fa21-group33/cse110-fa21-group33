@@ -287,6 +287,7 @@ function sliderSpiceLevel() {
   const spiceSlider = document.getElementById('myRange');
   const spiceLevel = document.getElementById('spiceLevel');
   const style = document.querySelector('[data="test"]');
+  spiceSlider.style.background = `linear-gradient(to right, #ca5507 0%, #ca5507 ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #d3d3d3 ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #d3d3d3 100%)`;
   let emojiString = '';
   for (let i = 0; i < spiceSlider.value; i += 1) {
     emojiString += '🌶️';
@@ -295,6 +296,7 @@ function sliderSpiceLevel() {
 
   spiceSlider.oninput = function () {
     emojiString = '';
+    this.style.background = `linear-gradient(to right, #ca5507 0%, #ca5507 ${(this.value-this.min)/(this.max-this.min)*100}%, #d3d3d3 ${(this.value-this.min)/(this.max-this.min)*100}%, #d3d3d3 100%)`;
     for (let i = 0; i < this.value; i += 1) {
       emojiString += '🌶️';
     }

@@ -47,6 +47,8 @@ const recipesFromFile = [
   'assets/jsons/Reaper-Smoked-Breast.json',
   'assets/jsons/Trinidad-Scorpion-Pepper-Barbacoa.json',
   'assets/jsons/Scorpion-Mac-and-Cheese.json',
+  'assets/jsons/Habanero-Hellfire-Chili.json',
+  'assets/jsons/Spicy-Thai-Basil-Chicken-Pad-Krapow-Gai.json'
 ];
 
 let loaded = false;

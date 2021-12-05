@@ -19,13 +19,14 @@ class RecipeDisplay extends HTMLElement {
     const article = document.createElement('article');
     styles.innerHTML = `
       .main-container {
-        max-width: 700px;
+        max-width: 1000px;
         margin: auto;
+        
       }
       .recipe-section {
         background-color: #ee6858;
         padding: 20px 40px;
-        margin: -20px -40px;
+        border-radius: 40px;
       }
       
       /* generic button */
@@ -39,6 +40,11 @@ class RecipeDisplay extends HTMLElement {
         border-radius: 20px;
         font-family: 'Mochiy Pop P One', sans-serif;
         border: 2px solid black;
+        cursor: pointer;
+      }
+
+      button:active {
+        background-color: rgb(187, 187, 187);
       }
       
       #recipe-media > img {
@@ -50,6 +56,7 @@ class RecipeDisplay extends HTMLElement {
         height: auto;
         border: 1px black
       }
+
       .recipe-title{
         font-size: 50px;
         font-family: 'Mochiy Pop P One', sans-serif;
@@ -111,6 +118,7 @@ class RecipeDisplay extends HTMLElement {
         flex-direction: column;
         row-gap: 10px;
       }
+
       hr {
         border-color: black;
       }
@@ -315,7 +323,7 @@ class RecipeDisplay extends HTMLElement {
       this.bindCompleteButton(data);
     }
     if(data.challenges.length != 0 ){
-      this.ShowChanllenge(data);
+      this.showChallenge(data);
     }
   }
 
@@ -352,7 +360,7 @@ class RecipeDisplay extends HTMLElement {
       }
     });
   }
-  ShowChanllenge(data) {
+  showChallenge(data) {
     const dummyChild = this.shadowRoot.getElementById('recipe-directions');
     const challengeHeader = document.createElement('challengeHeader');
     challengeHeader.innerHTML = 'Included in Challenges'; 

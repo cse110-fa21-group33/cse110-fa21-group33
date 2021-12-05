@@ -56,9 +56,9 @@ section:not(section.shown) {
   opacity: 0.9; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
   transition: opacity 5s;
-  overflow: hidden;
+  border-radius: 20px;
 }
-  
+
 /* Mouse-over effects */
 .slider:hover {
   opacity: 1; /* Fully shown on mouse-over */
@@ -68,14 +68,31 @@ section:not(section.shown) {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  width: 30px; /* Set a specific slider handle width */
-  height: 30px; /* Slider handle height */
+  width: 40px; /* Set a specific slider handle width */
+  height: 40px; /* Slider handle height */
   background-image: url('../images/fireGif3.gif');
+  background-color: var(--ec-spicy5);
   background-repeat: no-repeat;
-  background-size: 30px 30px;
+  background-size: 40px 40px; 
   cursor: pointer; /* Cursor on hover */
-  box-shadow: -400px 0 0 400px #ca5507;
+  /* box-shadow: -400px 0 0 400px #ca5507;*/
+  border-radius: 50%;
 }
+
+.slider::-moz-range-progress {
+  background-color: #ca5507; 
+}
+.slider::-moz-range-track {  
+  background-color: #d3d3d3;
+}
+/* IE*/
+.slider::-ms-fill-lower {
+  background-color: #ca5507; 
+}
+.slider::-ms-fill-upper {  
+  background-color: #d3d3d3;
+}
+
 
 /* This should work but it doesnt 
 .slider::-webkit-fill-lower {
@@ -94,7 +111,6 @@ section:not(section.shown) {
   grid-template-columns: auto auto auto auto;
   grid-template-rows: 80px;
   grid-gap: 0px;
-  
   position: sticky;
   top: 0;
   z-index: 1;
@@ -119,7 +135,8 @@ section:not(section.shown) {
 }
 */
 #websiteLogo{
-  height: 80px ;
+  height: 81px;
+  cursor: pointer;
 }
 
 .logo--wrapper{
@@ -154,6 +171,7 @@ section:not(section.shown) {
   justify-content: center;
   display: flex;
   width: auto;
+  height: 78px;
 }
 
 #myRange.slider{
@@ -176,6 +194,7 @@ section:not(section.shown) {
   justify-content: center;
   align-items: center;
   display: flex;
+  height: 76px;
 }
 
 button {
@@ -183,6 +202,11 @@ button {
   border-radius: 20px;
   font-family: 'Mochiy Pop P One', sans-serif;
   border: 2px solid #EE6858;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: rgb(187, 187, 187);
 }
 
 /* Top Right Image Start */
@@ -224,11 +248,15 @@ button {
   background: var(--ec-orange); /* Green background */
 }
 
+.section--main-page > .main--div {
+  background: var(--ec-orange); /* Green background */
+}
+
 #challenge-cards--wrapper {
   grid-area: sidebarl;
   padding: 10px 30px 30px;
   position: sticky;
-  top: 100px;
+  top: 98px;
   height: fit-content;
   border-radius: 25px;
 }
