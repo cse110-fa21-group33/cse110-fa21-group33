@@ -1,0 +1,74 @@
+{
+    "title": "Peri Peri Sauce",
+    "id": "eDAFaB",
+    "description": "Make your own peri peri, or piri piri, sauce at home with this recipe. A traditional African sauce made from African Bird’s Eye chiles.",
+    "image": "https://i.imgur.com/j6sYbd2.jpg",
+    "servingSize": 20,
+    "scoville": 100000,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 5
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 5
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 10
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "pound red chilies chopped",
+        "quantity": "1",
+        "units": "lbs"
+      },
+      {
+        "name": "cloves garlic chopped",
+        "quantity": "4",
+        "units": "N/A"
+      },
+      {
+        "name": "smoked paprika",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "chopped cilantro",
+        "quantity": "0.5",
+        "units": "cups"
+      },
+      {
+        "name": "chopped basil",
+        "quantity": "0.25",
+        "units": "cups"
+      },
+      {
+        "name": "olive oil or vegetable oil",
+        "quantity": "0.5",
+        "units": "cups"
+      },
+      {
+        "name": "Juice from lemon",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "Salt to taste",
+        "quantity": "",
+        "units": "N/A"
+      }
+    ],
+    "directions": [
+      "Add all ingredients to a food processor or blender. Process to form a smooth sauce to your preferred consistency.",
+      "Enjoy! Refrigerate until ready to use."
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 4
+  }

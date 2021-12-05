@@ -550,6 +550,7 @@ class RecipeUpload extends HTMLElement {
         stepNum += 1;
         div.setAttribute('value', stepNum);
         const textArea = document.createElement('textarea');
+        textArea.setAttribute('style', 'width: 90%;');
         textArea.setAttribute('cols', '60');
         textArea.setAttribute('rows', '2');
         textArea.setAttribute('minlength', '1');
@@ -659,6 +660,7 @@ class RecipeUpload extends HTMLElement {
   FillExistingData() {
     this.shadowRoot.getElementById('recipeName').value = this.json.title;
     this.shadowRoot.getElementById('recipeDescription').value = this.json.description;
+    this.shadowRoot.getElementById('recipeDescription').style = "width: 70%;"
     //console.log(this.json);
     if (this.json.image == "") {
       this.shadowRoot.getElementById('url').innerText = "";
@@ -695,6 +697,7 @@ class RecipeUpload extends HTMLElement {
     }
     const div2 = this.shadowRoot.getElementById('instructions');
     const textArea = div2.getElementsByTagName('textarea')[0];
+    textArea.setAttribute('style', 'width: 90%;');
     textArea.value = this.json.directions[0];
   }
 
@@ -710,6 +713,7 @@ class RecipeUpload extends HTMLElement {
       div.setAttribute('value', stepNum);
       const textArea = document.createElement('textarea');
       const lineBreak = document.createElement('br');
+      textArea.setAttribute('style', 'width: 90%;');
       textArea.setAttribute('cols', '60');
       textArea.setAttribute('rows', '2');
       textArea.setAttribute('minlength', '1');
