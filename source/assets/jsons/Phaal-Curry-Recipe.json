@@ -7,119 +7,119 @@
   "scoville": 1000000,
   "time": [
       {
-          "name": "prepTime",
-          "hours": 0,
-          "minutes": 10
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 10
       },
       {
-          "name": "cookTime",
-          "hours": 0,
-          "minutes": 25
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 25
       },
       {
-          "name": "totalTime",
-          "hours": 1,
-          "minutes": 35
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 35
       }
-  ],
-  "ingredientList": [
+    ],
+    "ingredientList": [
       {
-          "name": "chicken breast chopped (or use lamb)",
-          "quantity": "1",
-          "units": "lbs"
+        "name": "chicken breast chopped (or use lamb)",
+        "quantity": "1",
+        "units": "lbs"
       },
       {
-          "name": "vegetable oil",
-          "quantity": "1",
-          "units": "tbsp"
+        "name": "vegetable oil",
+        "quantity": "1",
+        "units": "tbsp"
       },
       {
-          "name": "ghost peppers chopped",
-          "quantity": "3",
-          "units": "N/A"
+        "name": "ghost peppers chopped",
+        "quantity": "3",
+        "units": "N/A"
       },
       {
-          "name": "medium onion chopped",
-          "quantity": "1",
-          "units": "N/A"
+        "name": "medium onion chopped",
+        "quantity": "1",
+        "units": "N/A"
       },
       {
-          "name": "chopped green onions",
-          "quantity": "0.25",
-          "units": "cups"
+        "name": "chopped green onions",
+        "quantity": "0.25",
+        "units": "cups"
       },
       {
-          "name": "cloves garlic chopped",
-          "quantity": "4",
-          "units": "N/A"
+        "name": "cloves garlic chopped",
+        "quantity": "4",
+        "units": "N/A"
       },
       {
-          "name": "finely chopped ginger",
-          "quantity": "1",
-          "units": "tbsp"
+        "name": "finely chopped ginger",
+        "quantity": "1",
+        "units": "tbsp"
       },
       {
-          "name": "curry powder I use 2 tablespoons in mine",
-          "quantity": "1",
-          "units": "tbsp"
+        "name": "curry powder I use 2 tablespoons in mine",
+        "quantity": "1",
+        "units": "tbsp"
       },
       {
-          "name": "paprika",
-          "quantity": "1",
-          "units": "tsp"
+        "name": "paprika",
+        "quantity": "1",
+        "units": "tsp"
       },
       {
-          "name": "cardamom powder",
-          "quantity": "1",
-          "units": "tsp"
+        "name": "cardamom powder",
+        "quantity": "1",
+        "units": "tsp"
       },
       {
-          "name": "turmeric",
-          "quantity": "1",
-          "units": "tsp"
+        "name": "turmeric",
+        "quantity": "1",
+        "units": "tsp"
       },
       {
-          "name": "cumin",
-          "quantity": "1",
-          "units": "tsp"
+        "name": "cumin",
+        "quantity": "1",
+        "units": "tsp"
       },
       {
-          "name": "tomato paste",
-          "quantity": "2",
-          "units": "tbsp"
+        "name": "tomato paste",
+        "quantity": "2",
+        "units": "tbsp"
       },
       {
-          "name": "can diced tomatoes",
-          "quantity": "14",
-          "units": "oz"
+        "name": "can diced tomatoes",
+        "quantity": "14",
+        "units": "oz"
       },
       {
-          "name": "chicken broth or use vegetable stock",
-          "quantity": "1",
-          "units": "cups"
+        "name": "chicken broth or use vegetable stock",
+        "quantity": "1",
+        "units": "cups"
       },
       {
-          "name": "Salt and pepper to taste",
-          "quantity": "",
-          "units": "N/A"
+        "name": "Salt and pepper to taste",
+        "quantity": "",
+        "units": "N/A"
       },
       {
-          "name": "Juice from fresh limes + lime wedges",
-          "quantity": "",
-          "units": "N/A"
+        "name": "Juice from fresh limes + lime wedges",
+        "quantity": "",
+        "units": "N/A"
       },
       {
-          "name": "Chopped cilantro and spicy chili flakes ",
-          "quantity": "",
-          "units": "N/A"
+        "name": "Chopped cilantro and spicy chili flakes ",
+        "quantity": "",
+        "units": "N/A"
       },
       {
-          "name": "cooked rice for serving",
-          "quantity": "2",
-          "units": "cups"
+        "name": "cooked rice for serving",
+        "quantity": "2",
+        "units": "cups"
       }
-  ],
-  "directions": [
+    ],
+    "directions": [
       "Season the chopped chicken with a bit of salt and pepper.",
       "Heat the vegetable oil in a large pan or wok to medium heat.\n",
       "Add the ghost peppers and onion. Cook them down about 5 minutes, until the peppers and onions have softened. It's a good idea to cook in a well-ventilated room with ghost peppers.",
@@ -130,8 +130,8 @@
       "Add the diced tomatoes and chicken broth and stir. Bring to a quick boil and reduce the heat. Simmer for 15 minutes or more to let the flavors develop, and the chicken to cook through.",
       "Serve the spicy chicken curry over prepared white rice, then squeeze a bit of fresh lime juice over the top.",
       "Top with extra green onions, parsley or cilantro, spicy chili flakes and lime slices or wedges."
-  ],
-  "challenges": [],
-  "completed": false,
-  "spiceRating": 5
-}
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 5
+  }

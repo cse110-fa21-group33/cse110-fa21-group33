@@ -6,115 +6,115 @@
     "servingSize": 4,
     "scoville": 25000,
     "time": [
-        {
-            "name": "prepTime",
-            "hours": 4,
-            "minutes": 10
-        },
-        {
-            "name": "cookTime",
-            "hours": 0,
-            "minutes": 10
-        },
-        {
-            "name": "totalTime",
-            "hours": 4,
-            "minutes": 20
-        }
+      {
+        "name": "prepTime",
+        "hours": 4,
+        "minutes": 10
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 10
+      },
+      {
+        "name": "totalTime",
+        "hours": 4,
+        "minutes": 20
+      }
     ],
     "ingredientList": [
-        {
-            "name": "Boneless skinless chicken breasts",
-            "quantity": "4",
-            "units": "N/A"
-        },
-        {
-            "name": "Buttermilk",
-            "quantity": "2",
-            "units": "cups"
-        },
-        {
-            "name": "Cajun seasoning",
-            "quantity": "2",
-            "units": "tbsp"
-        },
-        {
-            "name": "Hot Sauce",
-            "quantity": "2",
-            "units": "tbsp"
-        },
-        {
-            "name": "Self Rising Flour",
-            "quantity": "2",
-            "units": "cups"
-        },
-        {
-            "name": "Cornstarch",
-            "quantity": "1",
-            "units": "tbsp"
-        },
-        {
-            "name": "Canola oil for frying",
-            "quantity": "",
-            "units": "N/A"
-        },
-        {
-            "name": "Brioche buns",
-            "quantity": "4",
-            "units": "N/A"
-        },
-        {
-            "name": "Poultry seasoning",
-            "quantity": "2",
-            "units": "tbsp"
-        },
-        {
-            "name": "Onion powder",
-            "quantity": "1",
-            "units": "tbsp"
-        },
-        {
-            "name": "Garlic powder",
-            "quantity": "1",
-            "units": "tsp"
-        },
-        {
-            "name": "Black pepper",
-            "quantity": "1",
-            "units": "tsp"
-        },
-        {
-            "name": "Cayenne pepper",
-            "quantity": "1",
-            "units": "tsp"
-        },
-        {
-            "name": "Accent seasoning",
-            "quantity": "1",
-            "units": "tsp"
-        },
-        {
-            "name": "Celery salt",
-            "quantity": "0.5",
-            "units": "tsp"
-        }
+      {
+        "name": "Boneless skinless chicken breasts",
+        "quantity": "4",
+        "units": "N/A"
+      },
+      {
+        "name": "Buttermilk",
+        "quantity": "2",
+        "units": "cups"
+      },
+      {
+        "name": "Cajun seasoning",
+        "quantity": "2",
+        "units": "tbsp"
+      },
+      {
+        "name": "Hot Sauce",
+        "quantity": "2",
+        "units": "tbsp"
+      },
+      {
+        "name": "Self Rising Flour",
+        "quantity": "2",
+        "units": "cups"
+      },
+      {
+        "name": "Cornstarch",
+        "quantity": "1",
+        "units": "tbsp"
+      },
+      {
+        "name": "Canola oil for frying",
+        "quantity": "",
+        "units": "N/A"
+      },
+      {
+        "name": "Brioche buns",
+        "quantity": "4",
+        "units": "N/A"
+      },
+      {
+        "name": "Poultry seasoning",
+        "quantity": "2",
+        "units": "tbsp"
+      },
+      {
+        "name": "Onion powder",
+        "quantity": "1",
+        "units": "tbsp"
+      },
+      {
+        "name": "Garlic powder",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "Black pepper",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "Cayenne pepper",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "Accent seasoning",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "Celery salt",
+        "quantity": "0.5",
+        "units": "tsp"
+      }
     ],
     "directions": [
-        "Mix the buttermilk, Cajun seasoning, and hot sauce together in a bowl.",
-        "Add in the chicken.",
-        "Cover with plastic wrap and refrigerate for 4 hours or overnight.",
-        "In a shallow dish, mix the flour, cornstarch, and spice blend together.",
-        "Pour 3 TBS of the buttermilk mixture into the flour mixture and stir until little lumps are formed.",
-        "Dredge each breast into the flour mixture. Be sure to press and pack the flour onto each breast.",
-        "Shake off the excess flour and refrigerate the battered breasts for 20 mins.",
-        "Preheat a deep fryer to 350 F.",
-        "Fry each breast in canola oil for 9-10 mins or until it reaches an internal temp of 170 F.",
-        "Drain breasts on a paper towel.",
-        "Allow chicken to rest for 5 minutes.",
-        "Assemble the sandwich as desired.",
-        "Enjoy!"
+      "Mix the buttermilk, Cajun seasoning, and hot sauce together in a bowl.",
+      "Add in the chicken.",
+      "Cover with plastic wrap and refrigerate for 4 hours or overnight.",
+      "In a shallow dish, mix the flour, cornstarch, and spice blend together.",
+      "Pour 3 TBS of the buttermilk mixture into the flour mixture and stir until little lumps are formed.",
+      "Dredge each breast into the flour mixture. Be sure to press and pack the flour onto each breast.",
+      "Shake off the excess flour and refrigerate the battered breasts for 20 mins.",
+      "Preheat a deep fryer to 350 F.",
+      "Fry each breast in canola oil for 9-10 mins or until it reaches an internal temp of 170 F.",
+      "Drain breasts on a paper towel.",
+      "Allow chicken to rest for 5 minutes.",
+      "Assemble the sandwich as desired.",
+      "Enjoy!"
     ],
     "challenges": [],
     "completed": false,
     "spiceRating": 3
-}
+  }
