@@ -33,7 +33,7 @@ class ChallengeBar extends HTMLElement {
         text-align: center;
         line-height: 30px;
         color: black;
-        border-radius: 180px 180px 180px 180px
+        border-radius: 388px;
       }
     `;
 
