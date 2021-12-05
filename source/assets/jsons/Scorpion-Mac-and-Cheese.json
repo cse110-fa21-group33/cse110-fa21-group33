@@ -1,125 +1,125 @@
 {
-  "title": "Scorpion Mac and Cheese",
-  "id": "wEs6oe",
-  "description": "Looking for ways to spice up Mac and Cheese? You’ll get a kick out of this Baked Trinidad Scorpion Mac and Cheese! Loaded with three different types of cheese, infused with Trinidad Scorpion spices, and filled with warmth, your taste buds will thank you for the delicious flavors and heat this dish will bring to the table.",
-  "image": "https://i.imgur.com/z6AFYk7.jpg",
-  "servingSize": 4,
-  "scoville": 1200000,
-  "time": [
+    "title": "Scorpion Mac and Cheese",
+    "id": "wEs6oe",
+    "description": "Looking for ways to spice up Mac and Cheese? You’ll get a kick out of this Baked Trinidad Scorpion Mac and Cheese! Loaded with three different types of cheese, infused with Trinidad Scorpion spices, and filled with warmth, your taste buds will thank you for the delicious flavors and heat this dish will bring to the table.",
+    "image": "https://i.imgur.com/z6AFYk7.jpg",
+    "servingSize": 4,
+    "scoville": 1200000,
+    "time": [
       {
-          "name": "prepTime",
-          "hours": 0,
-          "minutes": 30
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 30
       },
       {
-          "name": "cookTime",
-          "hours": 0,
-          "minutes": 40
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 40
       },
       {
-          "name": "totalTime",
-          "hours": 1,
-          "minutes": 10
+        "name": "totalTime",
+        "hours": 1,
+        "minutes": 10
       }
-  ],
-  "ingredientList": [
+    ],
+    "ingredientList": [
       {
-          "name": "package cavatappi pasta",
-          "quantity": "1",
-          "units": "N/A"
+        "name": "package cavatappi pasta",
+        "quantity": "1",
+        "units": "N/A"
       },
       {
-          "name": "heavy cream",
-          "quantity": "4.5",
-          "units": "cups"
+        "name": "heavy cream",
+        "quantity": "4.5",
+        "units": "cups"
       },
       {
-          "name": "cream cheese",
-          "quantity": "4",
-          "units": "oz"
+        "name": "cream cheese",
+        "quantity": "4",
+        "units": "oz"
       },
       {
-          "name": "stick unsalted butter",
-          "quantity": "1",
-          "units": "N/A"
+        "name": "stick unsalted butter",
+        "quantity": "1",
+        "units": "N/A"
       },
       {
-          "name": "unsalted butter, cut into small cubes",
-          "quantity": "2",
-          "units": "tbsp"
+        "name": "unsalted butter, cut into small cubes",
+        "quantity": "2",
+        "units": "tbsp"
       },
       {
-          "name": "small onion",
-          "quantity": "1",
-          "units": "N/A"
+        "name": "small onion",
+        "quantity": "1",
+        "units": "N/A"
       },
       {
-          "name": "cloves garlic minced",
-          "quantity": "6",
-          "units": "N/A"
+        "name": "cloves garlic minced",
+        "quantity": "6",
+        "units": "N/A"
       },
       {
-          "name": "flour",
-          "quantity": "2",
-          "units": "tbsp"
+        "name": "flour",
+        "quantity": "2",
+        "units": "tbsp"
       },
       {
-          "name": "Pepper Joe’s Scorpion Cheddar, shredded",
-          "quantity": "1",
-          "units": "cups"
+        "name": "Pepper Joe’s Scorpion Cheddar, shredded",
+        "quantity": "1",
+        "units": "cups"
       },
       {
-          "name": "pepper jack, shredded",
-          "quantity": "1",
-          "units": "cups"
+        "name": "pepper jack, shredded",
+        "quantity": "1",
+        "units": "cups"
       },
       {
-          "name": "white cheddar, shredded",
-          "quantity": "1",
-          "units": "cups"
+        "name": "white cheddar, shredded",
+        "quantity": "1",
+        "units": "cups"
       },
       {
-          "name": "garlic powder",
-          "quantity": "0.5",
-          "units": "tsp"
+        "name": "garlic powder",
+        "quantity": "0.5",
+        "units": "tsp"
       },
       {
-          "name": "onion powder",
-          "quantity": "0.5",
-          "units": "tsp"
+        "name": "onion powder",
+        "quantity": "0.5",
+        "units": "tsp"
       },
       {
-          "name": "black pepper",
-          "quantity": "0.5",
-          "units": "tsp"
+        "name": "black pepper",
+        "quantity": "0.5",
+        "units": "tsp"
       },
       {
-          "name": "salt",
-          "quantity": "0.5",
-          "units": "tsp"
+        "name": "salt",
+        "quantity": "0.5",
+        "units": "tsp"
       },
       {
-          "name": "Trinidad Moruga Scorpion Flakes",
-          "quantity": "0.5",
-          "units": "tsp"
+        "name": "Trinidad Moruga Scorpion Flakes",
+        "quantity": "0.5",
+        "units": "tsp"
       },
       {
-          "name": "turmeric",
-          "quantity": "0.25",
-          "units": "tsp"
+        "name": "turmeric",
+        "quantity": "0.25",
+        "units": "tsp"
       },
       {
-          "name": "garlic salt",
-          "quantity": "1",
-          "units": "tbsp"
+        "name": "garlic salt",
+        "quantity": "1",
+        "units": "tbsp"
       },
       {
-          "name": "Pepper Joe's Trinidad Scorpion Hot Sauce",
-          "quantity": "",
-          "units": "N/A"
+        "name": "Pepper Joe's Trinidad Scorpion Hot Sauce",
+        "quantity": "",
+        "units": "N/A"
       }
-  ],
-  "directions": [
+    ],
+    "directions": [
       "Fill a large pot 2/3 full with water. Add a couple pinches of salt and bring to a rolling boil.* Once water is boiling, add pasta and cook al dente, according to box instructions. Drain and set aside. Rinse pot thoroughly and wipe dry with a paper towel. (careful—it could be hot!)",
       "*You can start step 2 while water boils.",
       "\nDice the onion, mince the garlic, and shred the Trinidad Scorpion Cheddar, white cheddar, and pepper jack with a cheese grater. Preheat oven to 350°F",
@@ -131,8 +131,8 @@
       "\nIn a small bowl, mix garlic salt with breadcrumbs. Add breadcrumb mixture to the top of mac and cheese. Cut 2 tbsp butter into small cubes and spread evenly on top of the breadcrumbs",
       "\nBake uncovered for 25 minutes, or until breadcrumbs are golden brown. When ready to serve, garnish with Trinidad Scorpion Hot Sauce for even more heat. ",
       "Enjoy the cheesy goodness!"
-  ],
-  "challenges": [],
-  "completed": false,
-  "spiceRating": 5
-}
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 5
+  }

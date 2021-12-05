@@ -5,8 +5,6 @@
   "image": "https://i.imgur.com/mmJgX3E.jpg",
   "servingSize": 3,
   "scoville": 3000,
-  "spiceRating": 2,
-  "calories": 217,
   "time": [
     {
       "name": "prepTime",
@@ -16,68 +14,68 @@
     {
       "name": "cookTime",
       "hours": 0,
-      "minutes": 20 
+      "minutes": 20
     },
     {
       "name": "totalTime",
       "hours": 0,
-      "minutes": 30      
+      "minutes": 30
     }
   ],
   "ingredientList": [
     {
       "name": "tteokbokki tteok 떡볶이떡 (about 24 3-inch long rice cake pieces)",
-      "quantity": 1,
+      "quantity": "1",
       "units": "lbs"
     },
     {
       "name": "sheet eomuk 어묵 (fish cake)",
-      "quantity": 1,
+      "quantity": "1",
       "units": "N/A"
     },
     {
       "name": "green cabbage (yangbaechu, 양배추)",
-      "quantity": 4,
+      "quantity": "4",
       "units": "oz"
     },
     {
       "name": "scallions",
-      "quantity": 2,
+      "quantity": "2",
       "units": "N/A"
     },
     {
       "name": "anchovy broth or water (use 4 cups for more sauce)",
-      "quantity": 3,
+      "quantity": "3",
       "units": "cups"
     },
     {
       "name": "Korean red chili pepper paste (gochujang, 고추장)",
-      "quantity": 3,
+      "quantity": "3",
       "units": "tbsp"
     },
     {
       "name": "Korean red chili pepper flakes (gochugaru, 고추가루) - preferably finely ground",
-      "quantity": 3,
+      "quantity": "3",
       "units": "tsp"
     },
     {
       "name": "soy sauce",
-      "quantity": 1,
+      "quantity": "1",
       "units": "tbsp"
     },
     {
       "name": "sugar (or use 1 tablespoon if you like it less sweet)",
-      "quantity": 2,
+      "quantity": "2",
       "units": "tbsp"
     },
     {
       "name": "corn syrup (or 1 more tablespoon sugar)",
-      "quantity": 1,
+      "quantity": "1",
       "units": "tbsp"
     },
     {
       "name": "minced garlic",
-      "quantity": 1,
+      "quantity": "1",
       "units": "tbsp"
     }
   ],
@@ -85,7 +83,9 @@
     "Make anchovy broth (see note). Soak the rice cakes for about 20 minutes if hardened or refrigerated. Cut the fish cake, cabbage, and scallions into about 2-inch long pieces.",
     "Add the anchovy broth (or water) to a large pan. Stir in the sauce ingredients. Bring it to a boil over medium high heat, stirring to dissolve the red chili pepper paste (gochujang).",
     "Add the rice cakes. Boil until the rice cakes become very soft and the sauce is thickened, about 8 - 10 minutes. Stir frequently so the rice cakes don't stick to the bottom of the pan.",
-    "Add the vegetables and fish cakes. Continue to boil, stirring constantly, for an additional 4 - 6 minutes. Depending on rice cakes, you may need more time to reach a desired level of softness. Add more broth or water as necessary. Taste the sauce, and adjust the seasoning if needed. Serve immediately."],
-  "challenges": ["Two Spicy"],
-  "completed": false
+    "Add the vegetables and fish cakes. Continue to boil, stirring constantly, for an additional 4 - 6 minutes. Depending on rice cakes, you may need more time to reach a desired level of softness. Add more broth or water as necessary. Taste the sauce, and adjust the seasoning if needed. Serve immediately."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 2
 }

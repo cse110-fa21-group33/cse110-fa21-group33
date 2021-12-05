@@ -1,0 +1,91 @@
+{
+  "title": "Grilled Salmon with Habanero-Lime Butter",
+  "id": "Ffv1IK",
+  "description": "Grilled salmon marinated in orange juice, lime juice, tequila, and habanero peppers, then served with a habanero-lime butter. Remove the seeds from the peppers to tame the heat. You may wish to wear rubber gloves while chopping peppers to protect your hands from the spicy oils.",
+  "image": "https://i.imgur.com/TyHG806.jpg",
+  "servingSize": 4,
+  "scoville": 200000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 25
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 16
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 41
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "vegetable oil",
+      "quantity": ".25",
+      "units": "cups"
+    },
+    {
+      "name": "orange juice",
+      "quantity": ".5",
+      "units": "cups"
+    },
+    {
+      "name": "lime juice",
+      "quantity": "4",
+      "units": "tbsp"
+    },
+    {
+      "name": "tequila",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "grated lime zest",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "minced habanero pepper",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "clove garlic, minced",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "salmon steaks",
+      "quantity": "20",
+      "units": "oz"
+    },
+    {
+      "name": "butter, softened",
+      "quantity": ".25",
+      "units": "cups"
+    },
+    {
+      "name": "garlic salt",
+      "quantity": ".25",
+      "units": "tsp"
+    },
+    {
+      "name": "",
+      "quantity": "",
+      "units": "N/A"
+    }
+  ],
+  "directions": [
+    "In a bowl, stir together vegetable oil, orange juice, 3 tablespoons lime juice, tequila, 1 tablespoon lime zest, 1 tablespoon habanero pepper, and garlic. Reserve a small amount to use as a basting sauce, and pour the remainder into a shallow baking dish. Place the salmon in the shallow dish, and turn to coat. Cover, and refrigerate for 2 to 4 hours, turning frequently.",
+    "In a small bowl, mix together softened butter, garlic salt, 1 tablespoon lime juice, 2 teaspoons habanero pepper, and 2 teaspoons lime zest. Cover, and refrigerate.",
+    "Preheat grill for medium heat.",
+    "Lightly oil grill grate, and place salmon on the grill. Cook salmon for 5 to 8 minutes per side, or until the fish can be easily flaked with a fork. Transfer to a serving dish, top with habanero butter, and serve."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 4
+}
