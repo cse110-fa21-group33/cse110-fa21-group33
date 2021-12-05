@@ -336,7 +336,6 @@ class RecipeDisplay extends HTMLElement {
       this.json.reactions = imgPreview.src;
       database.updateRecipe(this.json);
     });
-    console.log(data)
   }
 
   bindCompleteButton(data) {
