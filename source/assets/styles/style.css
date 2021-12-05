@@ -135,7 +135,8 @@ section:not(section.shown) {
 }
 */
 #websiteLogo{
-  height: 81px ;
+  height: 81px;
+  cursor: pointer;
 }
 
 .logo--wrapper{
