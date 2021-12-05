@@ -1,0 +1,100 @@
+{
+    "title": "Speedy Thai chilli jam chicken",
+    "id": "ubCf8v",
+    "description": "Made with cheap ingredients like mince, rice and vegies, this budget-friendly dinner is on the table in under 30 minutes and will cost you just under $3 per serve. Win win!",
+    "image": "https://i.imgur.com/gYlngBH.jpg",
+    "servingSize": 4,
+    "scoville": 100000,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 10
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 10
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 20
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "peanut oil",
+        "quantity": "2",
+        "units": "tbsp"
+      },
+      {
+        "name": "brown onion finely chopped",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "chicken mince",
+        "quantity": "500",
+        "units": "g"
+      },
+      {
+        "name": "red capsicum finely chopped",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "green beans trimmed cut into 3cm lengths",
+        "quantity": "125",
+        "units": "g"
+      },
+      {
+        "name": "garlic clove crushed",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "piece fresh ginger peeled finely grated",
+        "quantity": "1",
+        "units": "cm"
+      },
+      {
+        "name": "Thai chilli jam",
+        "quantity": "1",
+        "units": "tbsp"
+      },
+      {
+        "name": "lime juice",
+        "quantity": "2",
+        "units": "tbsp"
+      },
+      {
+        "name": "light soy sauce",
+        "quantity": "1.5",
+        "units": "tbsp"
+      },
+      {
+        "name": "fish sauce",
+        "quantity": "2",
+        "units": "tsp"
+      },
+      {
+        "name": "Thai basil leaves",
+        "quantity": "1.3",
+        "units": "cups"
+      },
+      {
+        "name": "long red chilli thinly sliced",
+        "quantity": "1",
+        "units": "N/A"
+      }
+    ],
+    "directions": [
+      "Heat a wok over medium-high heat. Add oil. Swirl to coat. Add onion. Stir-fry for 1 minute or until just softened. Add mince. Stir-fry, breaking up lumps with a wooden spoon, for 4 to 5 minutes or until browned.",
+      "Add capsicum, beans, garlic and ginger. Stir-fry for 2 minutes or until fragrant. Add chilli jam, lime juice, soy sauce and fish sauce. Stir-fry for 2 minutes or until vegetables are just tender.",
+      "Top stir-fry with Thai basil and chilli. "
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 4
+  }

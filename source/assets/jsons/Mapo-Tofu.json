@@ -1,0 +1,108 @@
+{
+    "title": "Mapo Tofu",
+    "id": "tnb8LD",
+    "description": "Tender tofu cooked in an aromatic and spicy sauce, accompanied by minced meat. This recipe shows you how to make Mapo tofu the authentic way.",
+    "image": "https://i.imgur.com/RywyiWm.jpg",
+    "servingSize": 2,
+    "scoville": 50000,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 8
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 12
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 20
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "soft tofu",
+        "quantity": "600",
+        "units": "g"
+      },
+      {
+        "name": "salt",
+        "quantity": "0.5",
+        "units": "tsp"
+      },
+      {
+        "name": "cooking oil",
+        "quantity": "2",
+        "units": "tbsp"
+      },
+      {
+        "name": "ginger, minced",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "minced beef or pork",
+        "quantity": "100",
+        "units": "g"
+      },
+      {
+        "name": "Shaoxing rice wine",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "Sichuan chilli bean paste",
+        "quantity": "2",
+        "units": "tbsp"
+      },
+      {
+        "name": "fermented black beans",
+        "quantity": "1",
+        "units": "tbsp"
+      },
+      {
+        "name": "chili powder",
+        "quantity": "1",
+        "units": "tbsp"
+      },
+      {
+        "name": "cloves garlic, crushed",
+        "quantity": "4",
+        "units": "N/A"
+      },
+      {
+        "name": "unsalted stock or water",
+        "quantity": "500",
+        "units": "mL"
+      },
+      {
+        "name": "corn starch",
+        "quantity": "2",
+        "units": "tbsp"
+      },
+      {
+        "name": "stalk scallions, chopped",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "ground Sichuan pepper",
+        "quantity": "0.5",
+        "units": "tsp"
+      }
+    ],
+    "directions": [
+      "Cut the tofu into 2.5cm / 1inch cubes. Gently slide the cubes into a pot filled with cold water. Add salt. Bring the water to a boil then simmer for a further 2-3 minutes. Drain and set aside.",
+      "Heat up the oil in a wok. Add ginger then leave to sizzle for 10 seconds. Add minced meat and rice wine. Stir fry until the meat becomes pale.",
+      "Stir in Sichuan chilli bean paste, fermented black beans, chilli powder and garlic. Fry until fragrant.",
+      "Pour in stock/water then bring to a boil. Gently slide in drained tofu. Leave to boil (uncovered) until the volume of the liquid reduces by one third.",
+      "Pour half of the starch & water mixture into the wok (stir well beforehand). Leave to boil for 10 seconds or so. Add the other half. Remove the wok from the heat when the sauce is thickened.",
+      "Sprinkle with spring onion and ground Sichuan pepper. Serve it hot with plain rice."
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 3
+  }

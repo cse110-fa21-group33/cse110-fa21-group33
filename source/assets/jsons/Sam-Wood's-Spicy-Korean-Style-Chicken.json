@@ -1,0 +1,135 @@
+{
+    "title": "Sam Wood's Spicy Korean-Style Chicken",
+    "id": "UdnWbY",
+    "description": "Inspired by the flavours of Korea, this spicy chicken bake will soon become a family favourite.",
+    "image": "https://i.imgur.com/sLsyN2W.jpg",
+    "servingSize": 4,
+    "scoville": 50000,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 15
+      },
+      {
+        "name": "cookTime",
+        "hours": 1,
+        "minutes": 10
+      },
+      {
+        "name": "totalTime",
+        "hours": 1,
+        "minutes": 25
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "extra virgin olive oil",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "chicken thighs",
+        "quantity": "500",
+        "units": "g"
+      },
+      {
+        "name": "brown onion roughly diced",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "garlic cloves minced",
+        "quantity": "2",
+        "units": "N/A"
+      },
+      {
+        "name": "ginger minced",
+        "quantity": "1",
+        "units": "tbsp"
+      },
+      {
+        "name": "white pepper",
+        "quantity": "0.5",
+        "units": "tsp"
+      },
+      {
+        "name": "paprika",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "red chillies finely chopped",
+        "quantity": "2",
+        "units": "N/A"
+      },
+      {
+        "name": "carrots peeled diced into 4cm pieces",
+        "quantity": "2",
+        "units": "N/A"
+      },
+      {
+        "name": "apple cider vinegar",
+        "quantity": "2",
+        "units": "tbsp"
+      },
+      {
+        "name": "oyster sauce",
+        "quantity": "2",
+        "units": "tbsp"
+      },
+      {
+        "name": "tomato paste",
+        "quantity": "1",
+        "units": "tbsp"
+      },
+      {
+        "name": "green cabbage roughly chopped",
+        "quantity": "2",
+        "units": "cups"
+      },
+      {
+        "name": "vegetable stock (liquid)",
+        "quantity": "600",
+        "units": "mL"
+      },
+      {
+        "name": "salt and pepper *to taste",
+        "quantity": "1",
+        "units": "pinch"
+      },
+      {
+        "name": "brown rice cooked",
+        "quantity": "1.5",
+        "units": "cups"
+      },
+      {
+        "name": "spring onions",
+        "quantity": "4",
+        "units": "N/A"
+      },
+      {
+        "name": "red chilli",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "sesame seeds toasted",
+        "quantity": "1",
+        "units": "tbsp"
+      }
+    ],
+    "directions": [
+      "Preheat oven 160C fan-forced.",
+      "Heat oil in large ovenproof cast iron or casserole dish to high heat. Add chicken and brown off on all sides. Set aside.",
+      "Reduce heat to medium and add onion, garlic, ginger, white pepper, paprika, red chilli, a pinch of salt and carrots to the same pan as chicken. Stir until starting to soften.",
+      "Stir through apple cider vinegar, oyster sauce and tomato paste. Cook through for 3-4 minutes.",
+      "Add cabbage, browned chicken and stock, and bring to a boil.",
+      "Remove from heat, cover with a lid or 1 layer of baking paper followed by foil.",
+      "Cook for 1 hour.",
+      "Serve chicken with brown rice, spring onions, extra chilli and toasted sesame seeds."
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 3
+  }

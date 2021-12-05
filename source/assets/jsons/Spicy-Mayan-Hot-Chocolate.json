@@ -1,0 +1,79 @@
+{
+    "title": "Spicy Mayan Hot Chocolate",
+    "id": "KRiAXH",
+    "description": "This Spicy Mayan Hot Chocolate recipe is made with red Savina Habanero peppers, and it's a super delicious balance of sweet and spicy.",
+    "image": "https://i.imgur.com/8CnpDRv.jpg",
+    "servingSize": 2,
+    "scoville": 577000,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 10
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 15
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 25
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "semisweet chocolate, finely chopped",
+        "quantity": "8",
+        "units": "oz"
+      },
+      {
+        "name": "low fat milk",
+        "quantity": "2.5",
+        "units": "cups"
+      },
+      {
+        "name": "Red Savina Habanero peppers",
+        "quantity": "2",
+        "units": "tsp"
+      },
+      {
+        "name": "approximately (4-inch) cinnamon stick",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "granulated sugar",
+        "quantity": "2",
+        "units": "tsp"
+      },
+      {
+        "name": "vanilla pod",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "whipping cream",
+        "quantity": "0.3",
+        "units": "cups"
+      },
+      {
+        "name": "powdered sugar",
+        "quantity": "2",
+        "units": "tsp"
+      }
+    ],
+    "directions": [
+      "Place the finely chopped chocolate in a large (approximately 4 cup), glass measuring beaker. Set aside.",
+      "In a small to medium-sized saucepan, combine the milk, peppers, cinnamon stick, and sugar.",
+      "Use a paring knife to slice open the vanilla bean horizontally. With the back of the knife, scrape the vanilla beans into the saucepan and add the emptied pod as well.",
+      "Bring the mixture to a strong simmer and turn the heat to the lowest setting. Continue to let it simmer gently for about 15 minutes.",
+      "Place a fine mesh strainer over the glass beaker with the chocolate and strain the milk mixture.",
+      "Whisk until the chocolate has completely melted into the milk, about 1 minute.",
+      "Add the powdered sugar to the whipping cream and whisk until it's thick. Pour the hot chocolate into two mugs and add a dollop of the cream on top of each one."
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 5
+  }

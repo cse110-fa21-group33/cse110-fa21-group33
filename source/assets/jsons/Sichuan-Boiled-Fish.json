@@ -1,0 +1,123 @@
+{
+    "title": "Sichuan Boiled Fish",
+    "id": "YlELm9",
+    "description": "Tendre fish fillet poached in seasoned water, then topped with spices, Sichuan boiled fish is tasty, pungent and super addictive. ",
+    "image": "https://i.imgur.com/5KWHK44.jpg",
+    "servingSize": 2,
+    "scoville": 75000,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 15
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 10
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 25
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "skinless, boneless fish fillet",
+        "quantity": "250",
+        "units": "g"
+      },
+      {
+        "name": "salt",
+        "quantity": "1",
+        "units": "pinch"
+      },
+      {
+        "name": "white pepper",
+        "quantity": "1",
+        "units": "pinch"
+      },
+      {
+        "name": "Shaoxing rice wine",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "corn starch",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "cooking oil",
+        "quantity": "1.5",
+        "units": "tsp"
+      },
+      {
+        "name": "dried chilli",
+        "quantity": "15",
+        "units": "N/A"
+      },
+      {
+        "name": "Sichuan peppercorn",
+        "quantity": "2",
+        "units": "tsp"
+      },
+      {
+        "name": "celery, cut into thin strips",
+        "quantity": "250",
+        "units": "g"
+      },
+      {
+        "name": "cooking oil",
+        "quantity": "4",
+        "units": "tbsp"
+      },
+      {
+        "name": "clove garlic, minced",
+        "quantity": "2",
+        "units": "N/A"
+      },
+      {
+        "name": "ginger, minced",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "stalk scallions, chopped",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "Sichuan chilli bean paste",
+        "quantity": "1.5",
+        "units": "tbsp"
+      },
+      {
+        "name": "chilli powder",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "hot water",
+        "quantity": "400",
+        "units": "mL"
+      },
+      {
+        "name": "coriander, chopped",
+        "quantity": "",
+        "units": "N/A"
+      }
+    ],
+    "directions": [
+      "Slice the fish fillet diagonally. Marinate with salt, white pepper, rice wine & corn starch.",
+      "In a wok (or a deep frying pan), fry dried chilli and Sichuan pepper in oil over a low heat until fragrant (do not burn them). Chop coarsely when cooled. Set aside.",
+      "In the same wok, heat up oil over a medium heat, stir in celery. Cook for 1.5 minutes or so (30 seconds if using bean sprouts instead). Transfer to a serving bowl. Set aside.",
+      "Heat up oil in the wok, fry garlic, ginger and spring onion. Add Sichuan chilli bean paste and chilli powder. Pour in water (or chicken stock). Bring it to a full boil.",
+      "Gently place the fish slices into the wok. When cooked, pour the fish and the soup onto the vegetable.",
+      "Top with fried spices and coriander. Heat up oil then pour over to sizzle the spices. Serve immediately with plain rice."
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 3
+  }
