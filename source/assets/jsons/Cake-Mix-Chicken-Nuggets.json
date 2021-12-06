@@ -1,0 +1,76 @@
+{
+  "title": "Cake Mix Chicken Nuggets",
+  "id": "TwNsyb",
+  "description": "When used in place of flour, cake mix adds a sweet touch to the base before the chicken is dunked in the eggs and panko. Along with everything you’d expect from chicken nuggets, like tender, juicy meat, crispy breading, and a savory, satisfying flavor, you also get a subtle, sweet twist from the cake mix. It’s definitely not overpowering — and in fact, you might even miss it — but as you eat on, you become more aware of its playful presence.",
+  "image": "https://i.imgur.com/pEYm5zR.jpg",
+  "servingSize": 3,
+  "scoville": 30000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 20
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 20
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 40
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "Large boneless skinless chicken breasts",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "box yellow or white cake mix",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "Large eggs, beaten",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "Panko breadcrumbs",
+      "quantity": "2",
+      "units": "cups"
+    },
+    {
+      "name": "Garlic powder",
+      "quantity": "0.5",
+      "units": "tsp"
+    },
+    {
+      "name": "Cayenne pepper",
+      "quantity": "0.5",
+      "units": "N/A"
+    },
+    {
+      "name": "Kosher salt",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "Fresh ground black pepper",
+      "quantity": "0.25",
+      "units": "tsp"
+    }
+  ],
+  "directions": [
+    "Preheat the oven to 425°F. Prepare a baking sheet with parchment paper and set aside.",
+    "Prepare the ingredients for breading in three separate wide, shallow bowls, and arrange in an assembly line. Place 1 cup of the cake mix in the first bowl; the eggs in the second bowl; and the panko, garlic powder, cayenne, salt, and pepper in the third bowl.",
+    "Bread the chicken pieces one at a time. Dredge in the cake mix, tossing to fully coat each piece and then shaking off any excess; dip in the beaten eggs; and finally toss in the panko mixture, fully coating each piece. Transfer the chicken to the prepared baking sheet, then repeat with the remainder of the pieces.",
+    "Bake until the chicken nuggets are golden-brown and cooked through, 10 to 12 minutes, flipping once halfway through. Remove from the oven and serve immediately."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 3
+}

@@ -1,0 +1,96 @@
+{
+  "title": "Sichuan Pepper Lamb and Mushroom Stirfry",
+  "id": "AFKNgn",
+  "description": "Super fast and no fuss - this dinner's stir-fry easy!",
+  "image": "https://i.imgur.com/PbuHPGV.jpg",
+  "servingSize": 4,
+  "scoville": 50000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 15
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 15
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 30
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "(1 sachet) Sichuan spicy stir fry sauce",
+      "quantity": "120",
+      "units": "g"
+    },
+    {
+      "name": "Soy sauce",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "Shao hsing (Chinese cooking wind)",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "cloves Garlic, finely chopped",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "Lamb rump steaks, thinly sliced",
+      "quantity": "500",
+      "units": "g"
+    },
+    {
+      "name": "packet dried rice noodles",
+      "quantity": "200",
+      "units": "N/A"
+    },
+    {
+      "name": "Rice bran oil",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "Brown onion, halved, cut into thin wedge",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "Small yellow capsicum, chopped",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "Small red capsicum, chopped",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "Mixed mushrooms",
+      "quantity": "150",
+      "units": "g"
+    },
+    {
+      "name": "bunch Soy chum, leaves separated",
+      "quantity": "1",
+      "units": "N/A"
+    }
+  ],
+  "directions": [
+    "Combine the stir-fry sauce, soy sauce, shao hsing and garlic in a bowl. Place the lamb in a glass or ceramic bowl. Add 1/2 the sauce mixture. Toss to coat. Reserve remaining sauce mixture. ",
+    "Cook rice noodles following the packet directions. ",
+    "Meanwhile, heat a wok over high heat. Add 2 teaspoons oil. Swirl to coat. Stir-fry lamb, in 2 batches, for 2 to 3 minutes or until browned and just cooked. Transfer to a bowl. Wipe wok clean. ",
+    "Separate enoki mushrooms into small portions. Add the remaining oil to wok over high heat. Add enoki mushrooms. Cook for 3 minutes or until golden. Using tongs, transfer to a plate lined with paper towel and set aside. Add onion and capsicum to wok. Stir-fry for 1 minute or until onion has softened. Add mixed mushrooms and choy sum. Stir-fry for 2 minutes or until mushrooms are tender. 5 Return lamb to wok. Add noodles and the remaining sauce mixture. Stir-fry for 1 minute or until heated throug"
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 3
+}

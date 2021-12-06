@@ -58,7 +58,11 @@ const recipesFromFile = [
   'assets/jsons/Spicy-Mayan-Hot-Chocolate.json',
   'assets/jsons/Spicy-Szechuan-Chicken.json',
   'assets/jsons/Chili-Crisp-Recipe.json',
-  'assets/jsons/Nashville-Style-Hot-Chicken.json'
+  'assets/jsons/Nashville-Style-Hot-Chicken.json',
+  'assets/jsons/Sichuan-Lamb-Mushroom-Stirfry.json',
+  'assets/jsons/Pretzel-Crsuted-Pickle-Chips.json',
+  'assets/jsons/Korean-Chili-Pork-Lettuce-Cups.json',
+  'assets/jsons/Cake-Mix-Chicken-Nuggets.json'
 ];
 
 let loaded = false;
