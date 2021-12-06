@@ -1,55 +1,55 @@
 {
-  "title": "Ghost Pepper Jelly",
-  "id": "O2DEeQ",
-  "description": "",
-  "image": "https://i.imgur.com/MfaUo1n.jpg",
-  "servingSize": 84,
-  "scoville": 1000000,
-  "time": [
+    "title": "Ghost Pepper Jelly",
+    "id": "O2DEeQ",
+    "description": "",
+    "image": "https://i.imgur.com/MfaUo1n.jpg",
+    "servingSize": 84,
+    "scoville": 1000000,
+    "time": [
       {
-          "name": "prepTime",
-          "hours": 0,
-          "minutes": 45
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 45
       },
       {
-          "name": "cookTime",
-          "hours": 0,
-          "minutes": 0
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 0
       },
       {
-          "name": "totalTime",
-          "hours": 1,
-          "minutes": 45
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 45
       }
-  ],
-  "ingredientList": [
+    ],
+    "ingredientList": [
       {
-          "name": "Naga jolokia ghost chili`s",
-          "quantity": "3",
-          "units": "N/A"
+        "name": "Naga jolokia ghost chili`s",
+        "quantity": "3",
+        "units": "N/A"
       },
       {
-          "name": "red bell peppers",
-          "quantity": "3",
-          "units": "N/A"
+        "name": "red bell peppers",
+        "quantity": "3",
+        "units": "N/A"
       },
       {
-          "name": "cider vinegar, divided",
-          "quantity": "2",
-          "units": "cups"
+        "name": "cider vinegar, divided",
+        "quantity": "2",
+        "units": "cups"
       },
       {
-          "name": "sugar",
-          "quantity": "6",
-          "units": "cups"
+        "name": "sugar",
+        "quantity": "6",
+        "units": "cups"
       },
       {
-          "name": "liquid pectin",
-          "quantity": "3",
-          "units": "fl oz"
+        "name": "liquid pectin",
+        "quantity": "3",
+        "units": "fl oz"
       }
-  ],
-  "directions": [
+    ],
+    "directions": [
       "Puree peppers and 1 cup vinegar in blender (be careful of your eyes HOT FUMES).",
       "Combine puree 1 cup vinegar and sugar in a large saucepan.",
       "Bring to a rolling boil and boil for 10 minutes stirring constantly.",
@@ -59,8 +59,8 @@
       "Adjust caps process 10 minutes in boiling water canner.",
       "Let set at room temperature for 24 hours out of drafts.",
       "Store for up to 1 year."
-  ],
-  "challenges": [],
-  "completed": false,
-  "spiceRating": 5
-}
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 5
+  }

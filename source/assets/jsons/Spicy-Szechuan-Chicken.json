@@ -1,0 +1,133 @@
+{
+    "title": "Spicy Szechuan Chicken",
+    "id": "ut9gBi",
+    "description": "",
+    "image": "https://i.imgur.com/gyOD4VT.jpg",
+    "servingSize": 2,
+    "scoville": 80000,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 20
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 20
+      },
+      {
+        "name": "totalTime",
+        "hours": 1,
+        "minutes": 40
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "corn starch",
+        "quantity": "3",
+        "units": "tsp"
+      },
+      {
+        "name": "salt",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "rice wine",
+        "quantity": "1",
+        "units": "tbsp"
+      },
+      {
+        "name": "white pepper",
+        "quantity": "0.5",
+        "units": "tsp"
+      },
+      {
+        "name": "soy sauce",
+        "quantity": "1",
+        "units": "tbsp"
+      },
+      {
+        "name": "stalk scallion, shredded",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "slices ginger",
+        "quantity": "2",
+        "units": "N/A"
+      },
+      {
+        "name": "chicken thighs, chopped into bite-sized ",
+        "quantity": "4",
+        "units": "N/A"
+      },
+      {
+        "name": "vegetable oil, as needed for frying",
+        "quantity": "",
+        "units": "N/A"
+      },
+      {
+        "name": "szechuan peppercorn",
+        "quantity": "2",
+        "units": "tbsp"
+      },
+      {
+        "name": "red chilis, chopped",
+        "quantity": "5",
+        "units": "N/A"
+      },
+      {
+        "name": "dried red chilis, whole",
+        "quantity": "50",
+        "units": "N/A"
+      },
+      {
+        "name": "slices ginger",
+        "quantity": "4",
+        "units": "N/A"
+      },
+      {
+        "name": "stalk scallion, chopped",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "peanuts",
+        "quantity": "0.3",
+        "units": "cups"
+      },
+      {
+        "name": "sugar",
+        "quantity": "0.5",
+        "units": "tsp"
+      },
+      {
+        "name": "rice wine",
+        "quantity": "0.5",
+        "units": "tbsp"
+      },
+      {
+        "name": "sesame oil",
+        "quantity": "1",
+        "units": "tbsp"
+      },
+      {
+        "name": "scallion, chopped for garnish",
+        "quantity": "",
+        "units": "N/A"
+      }
+    ],
+    "directions": [
+      "Combine marinade ingredients in a bowl, add the chopped chicken. Marinate for 10 minutes.",
+      "In about 1 ½ inch (4 cm) of oil, fry the chicken until browned and crispy. Remove and set aside.",
+      "Heat oil in a wok or a large pan. Add the Szechuan peppercorn and dried red chilies. Fry until fragrant.",
+      "Add the rest of the dried red chilies, ginger, scallion, and peanuts. Fry for a minute.",
+      "Add the fried chicken pieces, sugar, rice wine and sesame oil. Toss to coat.",
+      "Garnish with chopped scallions."
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 3
+  }

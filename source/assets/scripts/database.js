@@ -48,7 +48,17 @@ const recipesFromFile = [
   'assets/jsons/Trinidad-Scorpion-Pepper-Barbacoa.json',
   'assets/jsons/Scorpion-Mac-and-Cheese.json',
   'assets/jsons/Habanero-Hellfire-Chili.json',
-  'assets/jsons/Spicy-Thai-Basil-Chicken-Pad-Krapow-Gai.json'
+  'assets/jsons/Spicy-Thai-Basil-Chicken-Pad-Krapow-Gai.json',
+  'assets/jsons/Korean-Spicy-Marinated-Pork-With-Chilies.json',
+  'assets/jsons/Mapo-Tofu.json',
+  'assets/jsons/Peri-Peri-Sauce.json',
+  "assets/jsons/Sam-Wood's-Spicy-Korean-Style-Chicken.json",
+  'assets/jsons/Sichuan-Boiled-Fish.json',
+  'assets/jsons/Speedy-Thai-chilli-jam-chicken.json',
+  'assets/jsons/Spicy-Mayan-Hot-Chocolate.json',
+  'assets/jsons/Spicy-Szechuan-Chicken.json',
+  'assets/jsons/Chili-Crisp-Recipe.json',
+  'assets/jsons/Nashville-Style-Hot-Chicken.json'
 ];
 
 let loaded = false;
