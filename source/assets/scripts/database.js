@@ -59,6 +59,10 @@ const recipesFromFile = [
   'assets/jsons/Spicy-Szechuan-Chicken.json',
   'assets/jsons/Chili-Crisp-Recipe.json',
   'assets/jsons/Nashville-Style-Hot-Chicken.json',
+  'assets/jsons/Sichuan-Lamb-Mushroom-Stirfry.json',
+  'assets/jsons/Pretzel-Crusted-Pickle-Chips.json',
+  'assets/jsons/Korean-Chili-Pork-Lettuce-Cups.json',
+  'assets/jsons/Cake-Mix-Chicken-Nuggets.json',
   'assets/jsons/Balado-Sambal.json',
   'assets/jsons/Chili-Paneer.json',
   'assets/jsons/General-Tso.json',
@@ -68,7 +72,7 @@ const recipesFromFile = [
   'assets/jsons/Orange-Chicken-Sauce.json',
   'assets/jsons/Pepper-Prawns.json',
   'assets/jsons/Runaway-Bay-Chicken.json',
-  'assets/jsons/Thom-Kha-Gai.json',
+  'assets/jsons/Thom-Kha-Gai.json'
 ];
 
 let loaded = false;

@@ -1,0 +1,90 @@
+{
+  "title": "Pretzel-Crusted Pickle Chips w/Mustard",
+  "id": "7M4W2o",
+  "description": "Turn basic pickles into a snack with a kick. Coat them in pretzel crumbs and serve with a mustard, paprika and garlic powder mayo.",
+  "image": "https://i.imgur.com/Ib6QXOO.jpg",
+  "servingSize": 5,
+  "scoville": 1000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 10
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 10
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 20
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "1/4-inch-thick slice red onion, finely",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "Spicy brown mustard",
+      "quantity": "3",
+      "units": "tbsp"
+    },
+    {
+      "name": "Yellow mustard",
+      "quantity": "5.5",
+      "units": "tbsp"
+    },
+    {
+      "name": "Mayo",
+      "quantity": "3",
+      "units": "tbsp"
+    },
+    {
+      "name": "Garlic powder",
+      "quantity": "0.75",
+      "units": "tsp"
+    },
+    {
+      "name": "Paprika",
+      "quantity": "0.5",
+      "units": "tsp"
+    },
+    {
+      "name": "(of skillet height) Vegetable oil",
+      "quantity": "0.5",
+      "units": "in"
+    },
+    {
+      "name": "Large dill pickles, sliced diagonally ",
+      "quantity": "6",
+      "units": "N/A"
+    },
+    {
+      "name": "Salted mini pretzels",
+      "quantity": "2",
+      "units": "cups"
+    },
+    {
+      "name": "Large eggs",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "All-purpose flour",
+      "quantity": "0.5",
+      "units": "cups"
+    }
+  ],
+  "directions": [
+    "Make the sauce: Mix the onion, both mustards, the mayonnaise, paprika, garlic powder and salt to taste in a bowl. Set the sauce aside.",
+    "Make the chips: Heat 1/2 inch vegetable oil in a large skillet over medium heat. Gently pat the pickle slices dry with a paper towel.",
+    "Put the pretzels in a large resealable plastic bag and crush into coarse crumbs using a rolling pin or heavy pan; transfer to a plate. Whisk the eggs in a shallow bowl and put the flour in another bowl. Dredge the pickle slices in the flour, shaking off any excess; dip in the beaten eggs, then dip in the pretzel crumbs, turning to coat. Working in batches, fry the pickles until golden and crisp, about 1 minute per side. Drain on paper towels and sprinkle with celery salt, if desired. Serve warm."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 1
+}

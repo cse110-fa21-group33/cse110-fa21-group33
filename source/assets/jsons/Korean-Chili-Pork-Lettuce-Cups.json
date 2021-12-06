@@ -1,0 +1,97 @@
+{
+  "title": "Korean Chili Pork Lettuce Cups",
+  "id": "Kx50nB",
+  "description": "Twist up the weeknight barbecue with these sweet and spicy pork rib lettuce cups.",
+  "image": "https://i.imgur.com/LqwzVxE.jpg",
+  "servingSize": 4,
+  "scoville": 40000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 6,
+      "minutes": 15
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 15
+    },
+    {
+      "name": "totalTime",
+      "hours": 6,
+      "minutes": 30
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "cloves Garlic, crushed",
+      "quantity": "3",
+      "units": "N/A"
+    },
+    {
+      "name": "piece Fresh ginger, finely grates",
+      "quantity": "2",
+      "units": "cm"
+    },
+    {
+      "name": "Soy sauce",
+      "quantity": "0.33",
+      "units": "cups"
+    },
+    {
+      "name": "Hot chili sauce",
+      "quantity": "0.25",
+      "units": "cups"
+    },
+    {
+      "name": "Fish sauce",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "Sesame oil",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "Brown sugar",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "Green onions, thinly sliced",
+      "quantity": "5",
+      "units": "N/A"
+    },
+    {
+      "name": "Boneless pork spare ribs, rind removed",
+      "quantity": "600",
+      "units": "g"
+    },
+    {
+      "name": "Sweet packet noodles",
+      "quantity": "100",
+      "units": "g"
+    },
+    {
+      "name": "Large iceberg lettuce leaves",
+      "quantity": "8",
+      "units": "N/A"
+    },
+    {
+      "name": "Long red chili, thinly sliced",
+      "quantity": "1",
+      "units": "N/A"
+    }
+  ],
+  "directions": [
+    "Place garlic Unsure of the quantity needed? No need to flip back and forth!  OK, GOT IT , ginger, soy sauce, hot chilli sauce, fish sauce, mirin, sesame oil, sugar and 1/2 the onion in a small food processor. Process until combined and almost smooth. Transfer mixture to a large glass or ceramic bowl. Add ribs. Turn to coat. Cover. Refrigerate for 6 hours or overnight, if time permits.",
+    "Heat a greased barbecue hotplate or grill over medium-high heat. Drain ribs, reserving marinade. Cook ribs, turning occasionally, for 6 to 8 minutes or until browned and cooked through.",
+    "Meanwhile, cook noodles following packet directions. Drain. Refresh under cold water. Drain.",
+    "Transfer ribs to a board. Cut ribs into 1cm-thick slices. Place in a heatproof bowl. Cover to keep warm.",
+    "Place reserved marinade in a small saucepan over medium-high heat. Bring to the boil. Reduce heat to medium. Simmer, uncovered, for 2 to 3 minutes or until thickened slightly. Pour over ribs. Toss to coat. Place noodles and ribs in lettuce cups. Sprinkle with chilli and remaining onion."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 3
+}
