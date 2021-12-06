@@ -1,0 +1,96 @@
+{
+  "title": "Pepper Prawns",
+  "id": "2CAJE0",
+  "description": "These Fresh Australian King Prawns are Deliciously Pepper Hot!",
+  "image": "https://i.imgur.com/3gdyvVy.jpg",
+  "servingSize": 6,
+  "scoville": 300000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 20
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 25
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 45
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "fresh king prawns, deveined and detailed",
+      "quantity": "1",
+      "units": "kg"
+    },
+    {
+      "name": "big onions finely diced",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "cloves freshly crushed or sliced garlic",
+      "quantity": "6",
+      "units": "N/A"
+    },
+    {
+      "name": "cumin seeds",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "mustard seeds",
+      "quantity": ".5",
+      "units": "tbsp"
+    },
+    {
+      "name": "birds eye chilies diced",
+      "quantity": "4",
+      "units": "N/A"
+    },
+    {
+      "name": "crushed pepper corns",
+      "quantity": ".75",
+      "units": "cups"
+    },
+    {
+      "name": "white pepper powder",
+      "quantity": ".5",
+      "units": "tbsp"
+    },
+    {
+      "name": "turmeric",
+      "quantity": ".5",
+      "units": "tbsp"
+    },
+    {
+      "name": "oil",
+      "quantity": "",
+      "units": "N/A"
+    },
+    {
+      "name": "fresh coriander to garnish",
+      "quantity": "",
+      "units": "N/A"
+    }
+  ],
+  "directions": [
+    "Put some oil in a pan and heat up the pan, once the oil is hot, add the garlic and onions, diced chillies along the mustard seeds, cumins seeds with a little of coriander and salt to taste.",
+    "Keep sautéing until golden brown.",
+    "Once golden brown, add in the turmeric, crushed pepper and white pepper powders and mix them well. Put on the lid and let it cook for 5mins on a very low heat",
+    "Remove the lid and mix the cooking ingredients well.",
+    "Increase the heat to about medium heat and Add in the prawns and mix well",
+    "Put on a lid and cook for 10 mins or until the prawns change color",
+    "Taste the prawns and adjust the salt, pepper and add some fresh coriander leaves and cook for 2 mins",
+    "Remove from the stove and transfer the prawns to serving bowl.. ready to eat!",
+    "Serve with some fresh Rice"
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 4
+}
