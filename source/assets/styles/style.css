@@ -300,3 +300,7 @@ a:link {
   zoom: 1.25;
 }
 
+.challenge-title {
+  float: left;
+}
+
