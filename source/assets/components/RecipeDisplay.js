@@ -19,13 +19,13 @@ class RecipeDisplay extends HTMLElement {
     const article = document.createElement('article');
     styles.innerHTML = `
       .main-container {
-        max-width: 700px;
+        max-width: 900px;
         margin: auto;
       }
       .recipe-section {
         background-color: #ee6858;
         padding: 20px 40px;
-        margin: -20px -40px;
+        border-radius: 25px;
       }
       
       /* generic button */
@@ -39,6 +39,11 @@ class RecipeDisplay extends HTMLElement {
         border-radius: 20px;
         font-family: 'Mochiy Pop P One', sans-serif;
         border: 2px solid black;
+        cursor: pointer;
+      }
+
+      button:active {
+        background-color: rgb(187, 187, 187);
       }
       
       #recipe-media > img {
@@ -50,7 +55,8 @@ class RecipeDisplay extends HTMLElement {
         height: auto;
         border: 1px black
       }
-      .recipe-title{
+
+      .recipe-title {
         font-size: 50px;
         font-family: 'Mochiy Pop P One', sans-serif;
         padding: 0px;
@@ -92,7 +98,7 @@ class RecipeDisplay extends HTMLElement {
         padding: 10px;
         border: 2px solid black;
         border-radius: 20px;
-        background-color: white;
+        background: white;
       }
       
       #recipe-information > span {
@@ -106,12 +112,64 @@ class RecipeDisplay extends HTMLElement {
         margin-bottom: 20px;
         margin-top: 0px;
       }
+
+      #recipe-ingredients {
+        border: 2px solid black;
+        padding: 15px;
+        background: white;
+        max-width: 765px;
+        margin: auto;
+      }
       
+      .ingredient-list {
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        padding: 10px;
+      }
+
+      #recipe-directions {
+        border: 2px solid black;
+        padding: 15px;
+        background: white;
+        max-width: 765px;
+        margin: auto;
+      }
+
       .recipe-list {
         display: flex;
         flex-direction: column;
         row-gap: 10px;
+        padding: 10px;  
       }
+
+      li {
+        break-inside: avoid-column;
+        list-style: none;
+        margin-left: 8px;
+      }
+      
+      input[type="checkbox"] {
+        margin-left: -8px;
+      }
+
+      .challenge-header > li {
+        margin-left: 8px;
+        list-style: disc;
+      }  
+     
+      input[type="button"]  {
+        background-color: white;
+        border-radius: 20px;
+        font-family: 'Mochiy Pop P One', sans-serif;
+        border: 2px solid black;
+        cursor: pointer;
+      }
+
+      input[type="button"]:active {
+        background-color: rgb(187, 187, 187);
+      }
+
       hr {
         border-color: black;
       }
@@ -150,25 +208,25 @@ class RecipeDisplay extends HTMLElement {
             </div>
             <div id="recipe-ingredients">
               <h3 class="recipe-subtitle">Ingredients</h3>
-              <div class="recipe-list">
-              </div>
+              <ul class="ingredient-list">
+              </ul>
             </div>
             <hr>
             <div id="recipe-directions">
               <h3 class="recipe-subtitle">Directions</h3>
-              <div class="recipe-list">
-              </div>
+              <ul class="recipe-list">
+              </ul>
             </div>
             <hr>
             <div class="button-wrapper">
               <button class="recipe-button" id="made-this-button">I Made This!</button>
             </div>
             <br>
-            <img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
-            <br>
-            <input style="display:none;" type="file" id="imgUpload" accept="image/*"></input>
-            <br>
-            <input style="display:none;" id="submitButton" class="Submit" type="button" value="Submit">
+              <img style="display:none;" src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
+              <br>
+              <input style="display:none;" type="file" id="imgUpload" accept="image/*"></input>
+              <br>
+              <input style="display:none;" id="submitButton" class="Submit" type="button" value="Submit">
           </article>
         </main>
       </div>
@@ -196,11 +254,12 @@ class RecipeDisplay extends HTMLElement {
   }
 
   /**
-   * Sets the recipe that will be used insidet the <recipe-display> element.
+   * Sets the recipe that will be used inside the <recipe-display> element.
    * Overwrites the previous recipe displayed.
    */
   set data(data) {
     this.json = data;
+    console.log(JSON.stringify(data));
     // Reset HTML
     this.shadowRoot.querySelector('article').innerHTML = `
         <div class="main-container">
@@ -238,14 +297,14 @@ class RecipeDisplay extends HTMLElement {
               </div>
               <div id="recipe-ingredients">
                 <h3 class="recipe-subtitle">Ingredients</h3>
-                <div class="recipe-list">
-                </div>
+                <ul class="ingredient-list">
+                </ul>
               </div>
               <hr>
               <div id="recipe-directions">
                 <h3 class="recipe-subtitle">Directions</h3>
-                <div class="recipe-list">
-                </div>
+                <ul class="recipe-list">
+                </ul>
               </div>
               <hr>
               <div class="button-wrapper">
@@ -289,7 +348,7 @@ class RecipeDisplay extends HTMLElement {
     ingredientList.forEach((ingredient) => {
       const ingredientString = getIngredient(ingredient);
       const ingredientContainer = createCheckbox(ingredientString);
-      this.shadowRoot.querySelector('#recipe-ingredients > .recipe-list').appendChild(ingredientContainer);
+      this.shadowRoot.querySelector('#recipe-ingredients > .ingredient-list').appendChild(ingredientContainer);
     });
     const { directions } = data;
     directions.forEach((direction) => {
@@ -319,7 +378,7 @@ class RecipeDisplay extends HTMLElement {
       this.bindCompleteButton(data);
     }
     if(data.challenges.length != 0 ){
-      this.ShowChanllenge(data);
+      this.ShowChallenge(data);
     }
   }
 
@@ -356,14 +415,16 @@ class RecipeDisplay extends HTMLElement {
       }
     });
   }
-  ShowChanllenge(data) {
+  ShowChallenge(data) {
     const dummyChild = this.shadowRoot.getElementById('recipe-directions');
-    const challengeHeader = document.createElement('challengeHeader');
+    const challengeHeader = document.createElement('ol');
+    challengeHeader.classList.add('challenge-header');
     challengeHeader.innerHTML = '<br><br>Included in Challenges'; 
     data.challenges.forEach((childChallenge) => { 
       const li = document.createElement('li'); 
       li.innerHTML = childChallenge; 
-      challengeHeader.append(li); });
+      challengeHeader.append(li); 
+    });
     dummyChild.parentElement.appendChild(challengeHeader); 
   }
 }
@@ -410,11 +471,9 @@ function getIngredient(ingredient) {
  * @returns the checkbox container
  */
 function createCheckbox(checkboxString) {
-  const container = document.createElement('label');
-  container.style.marginLeft = "18px";
+  const container = document.createElement('li');
   const checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
-  checkbox.style.marginLeft = "-18px";
   container.appendChild(checkbox);
   container.appendChild(document.createTextNode(checkboxString));
   return container;
