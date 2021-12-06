@@ -1,0 +1,71 @@
+{
+  "title": "Sweet and Spicy Orange Chicken Sauce",
+  "id": "JjmqjM",
+  "description": "",
+  "image": "https://i.imgur.com/ZzVJAoH.jpg",
+  "servingSize": 4,
+  "scoville": 275000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 10
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 20
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 30
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "rice vinegar",
+      "quantity": "10",
+      "units": "tbsp"
+    },
+    {
+      "name": "white sugar",
+      "quantity": "10",
+      "units": "tbsp"
+    },
+    {
+      "name": "soy sauce",
+      "quantity": "4",
+      "units": "tbsp"
+    },
+    {
+      "name": "orange, zest and juice",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "Bird's Eye pepper seeds",
+      "quantity": "5",
+      "units": "N/A"
+    },
+    {
+      "name": "chicken broth, cold",
+      "quantity": ".5",
+      "units": "cups"
+    },
+    {
+      "name": "cornstarch",
+      "quantity": "2",
+      "units": "tsp"
+    }
+  ],
+  "directions": [
+    "Mix all ingredients except broth and cornstarch in a small saucepan and bring to a boil, stirring occasionally.",
+    "Mix cold broth and cornstarch in a cup until cornstarch is completely dissolved.",
+    "Remove sauce from heat and vigorously stir broth mixture into sauce.",
+    " If you used rice flour, bring back to a boil; if not, serve immediately over stir fry, deep fried chicken chunks, or as a dipping sauce for egg rolls."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 4
+}

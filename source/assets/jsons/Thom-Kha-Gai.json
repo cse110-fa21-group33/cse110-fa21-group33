@@ -1,0 +1,95 @@
+{
+  "title": "Tom Kha Gai",
+  "id": "r0Pjsw",
+  "description": "",
+  "image": "https://i.imgur.com/BZmfFVP.jpg",
+  "servingSize": 4,
+  "scoville": 225000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 30
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 10
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 40
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "cans coconut cream",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "chicken stock",
+      "quantity": "3",
+      "units": "cups"
+    },
+    {
+      "name": "stalk lemongrass, cut into 2-inch pieces",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "quarter-sized slices ginger",
+      "quantity": "6",
+      "units": "N/A"
+    },
+    {
+      "name": "bird's eye peppers, seeds removed",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "limes' juice",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "fish sauce",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "curry powder",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "white mushrooms, thinly sliced or minced",
+      "quantity": "8",
+      "units": "oz"
+    },
+    {
+      "name": "handful Thai basil cut into thin ribbons",
+      "quantity": "",
+      "units": "N/A"
+    },
+    {
+      "name": "handful cilantro roughly chopped",
+      "quantity": "",
+      "units": "N/A"
+    },
+    {
+      "name": "chopped chicken",
+      "quantity": "1",
+      "units": "lbs"
+    }
+  ],
+  "directions": [
+    "Mix chicken stock, coconut cream, lemongrass, ginger, chilies, lime juice, curry powder, and fish sauce and bring to near-boiling. ",
+    "Add chicken and simmer 10 minutes if you’re using it. Add mushrooms and basil ribbons and simmer 5 more minutes.",
+    "Remove lemongrass and ginger with a slotted spoon. Serve garnished with cilantro."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 4
+}
