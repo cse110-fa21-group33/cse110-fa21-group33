@@ -6,75 +6,75 @@
     "servingSize": 6,
     "scoville": 100000,
     "time": [
-        {
-            "name": "prepTime",
-            "hours": 0,
-            "minutes": 5
-        },
-        {
-            "name": "cookTime",
-            "hours": 0,
-            "minutes": 5
-        },
-        {
-            "name": "totalTime",
-            "hours": 0,
-            "minutes": 10
-        }
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 5
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 5
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 10
+      }
     ],
     "ingredientList": [
-        {
-            "name": "Can Diced Tomatoes",
-            "quantity": "28",
-            "units": "oz"
-        },
-        {
-            "name": "Red Onion",
-            "quantity": "0.5",
-            "units": "N/A"
-        },
-        {
-            "name": "Cilantro bunch",
-            "quantity": "1",
-            "units": "N/A"
-        },
-        {
-            "name": "Jalapeno peppers",
-            "quantity": "2",
-            "units": "N/A"
-        },
-        {
-            "name": "Habanero peppers",
-            "quantity": "2",
-            "units": "N/A"
-        },
-        {
-            "name": "Cumin",
-            "quantity": "1",
-            "units": "tsp"
-        },
-        {
-            "name": "Garlic Powder",
-            "quantity": "1",
-            "units": "tbsp"
-        },
-        {
-            "name": "Salt",
-            "quantity": "",
-            "units": "N/A"
-        },
-        {
-            "name": "Pepper",
-            "quantity": "",
-            "units": "N/A"
-        }
+      {
+        "name": "Can Diced Tomatoes",
+        "quantity": "28",
+        "units": "oz"
+      },
+      {
+        "name": "Red Onion",
+        "quantity": "0.5",
+        "units": "N/A"
+      },
+      {
+        "name": "Cilantro bunch",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "Jalapeno peppers",
+        "quantity": "2",
+        "units": "N/A"
+      },
+      {
+        "name": "Habanero peppers",
+        "quantity": "2",
+        "units": "N/A"
+      },
+      {
+        "name": "Cumin",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "Garlic Powder",
+        "quantity": "1",
+        "units": "tbsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "",
+        "units": "N/A"
+      },
+      {
+        "name": "Pepper",
+        "quantity": "",
+        "units": "N/A"
+      }
     ],
     "directions": [
-        "Add tomatoes, red onion, cilantro, 1 jalapeno, 1 habanero, cumin and garlic powder to a food processor. Pulse until ingredients are combined. Add salt and pepper. Taste salsa - if you want more heat add another jalapeno and habanero. Pulse again and taste to adjust salt.",
-        "Transfer to a bowl and refrigerate for 1 hour before serving.",
-        "Serve with tortilla chips."
+      "Add tomatoes, red onion, cilantro, 1 jalapeno, 1 habanero, cumin and garlic powder to a food processor. Pulse until ingredients are combined. Add salt and pepper. Taste salsa - if you want more heat add another jalapeno and habanero. Pulse again and taste to adjust salt.",
+      "Transfer to a bowl and refrigerate for 1 hour before serving.",
+      "Serve with tortilla chips."
     ],
     "challenges": ["Habanero Hottie"],
     "completed": false,
     "spiceRating": 4
-}
+  }
