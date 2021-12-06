@@ -1,0 +1,127 @@
+{
+  "title": "Korean Spicy Marinated Pork With Chilies",
+  "id": "Y2R21c",
+  "description": "There are too many great meat dishes in the Korean canon to pick a favorite, but this one of stir-fried marinated pork with kimchi is definitely in my top five. Easy to make, it features thin strips of pork shoulder in a spicy-sweet blend of Korean chili paste, garlic, ginger, soy sauce, and sesame oil—plus a bit of Asian pear for both flavor and its tenderizing effect.",
+  "image": "https://i.imgur.com/hEr4qKb.jpg",
+  "servingSize": 5,
+  "scoville": 1000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 2,
+      "minutes": 0
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 25
+    },
+    {
+      "name": "totalTime",
+      "hours": 2,
+      "minutes": 25
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "gochujang",
+      "quantity": "0.33",
+      "units": "cups"
+    },
+    {
+      "name": "chopped peeled Asian pear",
+      "quantity": "0.25",
+      "units": "cups"
+    },
+    {
+      "name": "minced garlic",
+      "quantity": "1.5",
+      "units": "tbsp"
+    },
+    {
+      "name": "minced peeled ginger",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "soy sauce",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "toastes sesame oil",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "sugar",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "Asian rice wine",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "gochugaru",
+      "quantity": "2",
+      "units": "tsp"
+    },
+    {
+      "name": "pork shoulder, cut into thin strips",
+      "quantity": "2",
+      "units": "lbs"
+    },
+    {
+      "name": "vegetable or canola oil, divided",
+      "quantity": "6",
+      "units": "tbsp"
+    },
+    {
+      "name": "medium yellow onion, thinly sliced",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "scallions, white and light green parts o",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "fresh Korean green chili pepper, stemmed",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "packed cup drained kimchi",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "Kosher salt",
+      "quantity": "",
+      "units": "N/A"
+    },
+    {
+      "name": "Sesame seeds, for garnish",
+      "quantity": "",
+      "units": "N/A"
+    },
+    {
+      "name": "Lettuce leaves and cooked medium-grain r",
+      "quantity": "",
+      "units": "N/A"
+    }
+  ],
+  "directions": [
+    "\nIn a food processor, combine gochujang, Asian pear, garlic, ginger, soy sauce, sesame oil, sugar, rice wine, and gochugaru and process until a smooth marinade forms.",
+    "In a large bowl, toss pork with marinade, cover with plastic, and refrigerate for at least 2 and up to 8 hours.",
+    "When ready to cook, heat 1 tablespoon oil in a wok over high heat until smoking. Add onion, scallion, and green chili pepper, and cook, stirring and tossing occasionally, until softened and starting to brown around the edges, about 3 minutes. Transfer to a platter.",
+    "Heat 1 more tablespoon oil in the wok until smoking. Add kimchi and cook, stirring and tossing occasionally, until heated through and excess liquid has evaporated, about 2 minutes. Transfer to the platter with the onions.",
+    "Working in 4 batches, heat remaining oil in wok until smoking. Add pork and stir-fry until just cooked-through and starting to brown in spots, then transfer to platter. Return all ingredients to wok and cook, tossing and stirring, until heated through. Season with salt, transfer to a serving platter, and sprinkle with sesame seeds. Serve right away with lettuce leaves and rice."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 1
+}

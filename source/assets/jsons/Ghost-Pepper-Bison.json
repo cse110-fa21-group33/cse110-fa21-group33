@@ -1,95 +1,95 @@
 {
-  "title": "Ghost Pepper Bison Chili with Quinoa",
-  "id": "S8kpMT",
-  "description": "Spicy bison and quinoa chili with the addition of black beans and corn for a hearty recipe to top with avocado, cheese and sour cream",
-  "image": "https://i.imgur.com/98h2Js3.jpg",
-  "servingSize": 6,
-  "scoville": 1000000,
-  "time": [
+    "title": "Ghost Pepper Bison Chili with Quinoa",
+    "id": "S8kpMT",
+    "description": "Spicy bison and quinoa chili with the addition of black beans and corn for a hearty recipe to top with avocado, cheese and sour cream",
+    "image": "https://i.imgur.com/98h2Js3.jpg",
+    "servingSize": 6,
+    "scoville": 1000000,
+    "time": [
       {
-          "name": "prepTime",
-          "hours": 0,
-          "minutes": 15
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 15
       },
       {
-          "name": "cookTime",
-          "hours": 0,
-          "minutes": 30
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 30
       },
       {
-          "name": "totalTime",
-          "hours": 1,
-          "minutes": 45
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 45
       }
-  ],
-  "ingredientList": [
+    ],
+    "ingredientList": [
       {
-          "name": "ground bison",
-          "quantity": "1",
-          "units": "lbs"
+        "name": "ground bison",
+        "quantity": "1",
+        "units": "lbs"
       },
       {
-          "name": "chopped green bell pepper",
-          "quantity": "0.5",
-          "units": "cups"
+        "name": "chopped green bell pepper",
+        "quantity": "0.5",
+        "units": "cups"
       },
       {
-          "name": "can (14 oz each) lower sodium beef broth",
-          "quantity": "1",
-          "units": "N/A"
+        "name": "can (14 oz each) lower sodium beef broth",
+        "quantity": "1",
+        "units": "N/A"
       },
       {
-          "name": "white quinoa, uncooked",
-          "quantity": "0.25",
-          "units": "cups"
+        "name": "white quinoa, uncooked",
+        "quantity": "0.25",
+        "units": "cups"
       },
       {
-          "name": "can (15 oz each) black beans, drained",
-          "quantity": "1",
-          "units": "N/A"
+        "name": "can (15 oz each) black beans, drained",
+        "quantity": "1",
+        "units": "N/A"
       },
       {
-          "name": "can (14.5 oz each) Hunt's® Diced Tomatos",
-          "quantity": "1",
-          "units": "N/A"
+        "name": "can (14.5 oz each) Hunt's® Diced Tomatos",
+        "quantity": "1",
+        "units": "N/A"
       },
       {
-          "name": "can (15 oz each) Hunt's® Tomato Sauce ",
-          "quantity": "1",
-          "units": "N/A"
+        "name": "can (15 oz each) Hunt's® Tomato Sauce ",
+        "quantity": "1",
+        "units": "N/A"
       },
       {
-          "name": "fresh corn kernels",
-          "quantity": "0.5",
-          "units": "cups"
+        "name": "fresh corn kernels",
+        "quantity": "0.5",
+        "units": "cups"
       },
       {
-          "name": "pepper chili seasoning mix",
-          "quantity": "2",
-          "units": "tbsp"
+        "name": "pepper chili seasoning mix",
+        "quantity": "2",
+        "units": "tbsp"
       },
       {
-          "name": "large avocado, pitted, peeled, diced",
-          "quantity": "1",
-          "units": "N/A"
+        "name": "large avocado, pitted, peeled, diced",
+        "quantity": "1",
+        "units": "N/A"
       },
       {
-          "name": "shredded Cheddar cheese",
-          "quantity": "0.33",
-          "units": "cups"
+        "name": "shredded Cheddar cheese",
+        "quantity": "0.33",
+        "units": "cups"
       },
       {
-          "name": "sour cream",
-          "quantity": "0.5",
-          "units": "cups"
+        "name": "sour cream",
+        "quantity": "0.5",
+        "units": "cups"
       }
-  ],
-  "directions": [
+    ],
+    "directions": [
       "Heat large saucepan over medium-high heat. Add bison, onion and bell pepper; cook 5 to 7 minutes or until bison is crumbled and no longer pink, stirring occasionally. Drain.",
       "Stir in broth and quinoa. Bring to a boil. Cover, reduce heat and simmer 15 minutes or until quinoa is tender.",
       "Stir in beans, undrained tomatoes, tomato sauce, corn and chili seasoning mix; simmer uncovered 15 minutes more, stirring occasionally. Top each serving evenly with avocado, cheese and sour cream."
-  ],
-  "challenges": [],
-  "completed": false,
-  "spiceRating": 5
-}
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 5
+  }

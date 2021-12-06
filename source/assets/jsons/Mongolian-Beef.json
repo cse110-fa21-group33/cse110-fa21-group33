@@ -1,79 +1,79 @@
 {
-  "title": "Super-Simple, Super-Spicy Mongolian Beef",
-  "id": "zcyspt",
-  "description": "This is a great-tasting recipe that is easy to prepare ahead and takes minutes to actually cook it! Serve with rice and veggie side for a nice family dinner!",
-  "image": "https://i.imgur.com/pxQpXjN.jpg",
-  "servingSize": 4,
-  "scoville": 5000,
-  "time": [
+    "title": "Super-Simple, Super-Spicy Mongolian Beef",
+    "id": "zcyspt",
+    "description": "This is a great-tasting recipe that is easy to prepare ahead and takes minutes to actually cook it! Serve with rice and veggie side for a nice family dinner!",
+    "image": "https://i.imgur.com/pxQpXjN.jpg",
+    "servingSize": 4,
+    "scoville": 5000,
+    "time": [
       {
-          "name": "prepTime",
-          "hours": 0,
-          "minutes": 15
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 15
       },
       {
-          "name": "cookTime",
-          "hours": 0,
-          "minutes": 6
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 6
       },
       {
-          "name": "totalTime",
-          "hours": 0,
-          "minutes": 21
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 21
       }
-  ],
-  "ingredientList": [
+    ],
+    "ingredientList": [
       {
-          "name": "soy sauce",
-          "quantity": "0.25",
-          "units": "cups"
+        "name": "soy sauce",
+        "quantity": "0.25",
+        "units": "cups"
       },
       {
-          "name": "hoisin sauce",
-          "quantity": "1",
-          "units": "tbsp"
+        "name": "hoisin sauce",
+        "quantity": "1",
+        "units": "tbsp"
       },
       {
-          "name": "sesame oil",
-          "quantity": "1",
-          "units": "tbsp"
+        "name": "sesame oil",
+        "quantity": "1",
+        "units": "tbsp"
       },
       {
-          "name": "white sugar",
-          "quantity": "2",
-          "units": "tsp"
+        "name": "white sugar",
+        "quantity": "2",
+        "units": "tsp"
       },
       {
-          "name": "minced garlic",
-          "quantity": "1",
-          "units": "tbsp"
+        "name": "minced garlic",
+        "quantity": "1",
+        "units": "tbsp"
       },
       {
-          "name": " red pepper flakes (Optional)",
-          "quantity": "1",
-          "units": "tbsp"
+        "name": " red pepper flakes (Optional)",
+        "quantity": "1",
+        "units": "tbsp"
       },
       {
-          "name": "beef flank steak, thinly sliced",
-          "quantity": "1",
-          "units": "lbs"
+        "name": "beef flank steak, thinly sliced",
+        "quantity": "1",
+        "units": "lbs"
       },
       {
-          "name": "peanut oil",
-          "quantity": "1",
-          "units": "tbsp"
+        "name": "peanut oil",
+        "quantity": "1",
+        "units": "tbsp"
       },
       {
-          "name": " large green onions, thinly sliced",
-          "quantity": "2",
-          "units": "N/A"
+        "name": " large green onions, thinly sliced",
+        "quantity": "2",
+        "units": "N/A"
       }
-  ],
-  "directions": [
+    ],
+    "directions": [
       "Whisk together soy sauce, hoisin sauce, sesame oil, sugar, garlic, and red pepper flakes in a bowl. Toss beef with marinade, cover, and refrigerate 1 hour to overnight.",
       "Heat peanut oil in a wok or large, nonstick skillet over high heat. Add the green onions, and cook for 5 to 10 seconds before stirring in the beef. Cook and stir until the beef is no longer pink and is beginning to brown, about 5 minutes."
   ],
-  "challenges": [],
+  "challenges": ["Two Spicy"],
   "completed": false,
   "spiceRating": 2
 }

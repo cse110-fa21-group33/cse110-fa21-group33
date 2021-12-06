@@ -1,0 +1,65 @@
+{
+  "title": "General Tso's Chicken Meat",
+  "id": "JdaO1F",
+  "description": "",
+  "image": "https://i.imgur.com/PcnMcpc.jpg",
+  "servingSize": 4,
+  "scoville": 200000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 40
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 30
+    },
+    {
+      "name": "totalTime",
+      "hours": 1,
+      "minutes": 10
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "boneless skinless chicken thighs",
+      "quantity": "3",
+      "units": "lbs"
+    },
+    {
+      "name": "soy sauce",
+      "quantity": ".25",
+      "units": "cups"
+    },
+    {
+      "name": "egg, well beaten",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "cornstarch",
+      "quantity": "1",
+      "units": "cups"
+    },
+    {
+      "name": "green onions, sliced thinly",
+      "quantity": "2",
+      "units": "cups"
+    },
+    {
+      "name": "bird's eye peppers, seeded and chopped",
+      "quantity": "10",
+      "units": "N/A"
+    }
+  ],
+  "directions": [
+    "Mix everything except onions and peppers together in a bowl until sloppy and chicken is coated. Deep fry in nonflavored or sweet oil — I use grapeseed, but the adventurous can try coconut oil, if you’re both awesome and can afford that much coconut oil. If you don’t have a deep fryer, you can deep fry in a few inches of oil in the bottom of a wok, though this takes a lot more attention and time. Drain on paper towels, and if you’re doing it the slow way, store in a warm oven to keep crisp.",
+    "Once the chicken is nearing done, put a teaspoon of oil in your wok — I use peanut, but coconut, palm, or even sesame are all good, and plain old vegetable will do in a pinch. Heat until the oil ripples, then throw in the peppers and green onions. Stir three times, then pour your sauce (above) in. Cook until it thickens (and have half a cup of chicken broth ready to thin it out if it gets too thick).",
+    "Spoon chicken onto plate and pour sauce over chicken; serve alongside steamed rice and veggies. For an extra special presentation, sprinkle toasted black sesame seeds over the top just before service."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 4
+}

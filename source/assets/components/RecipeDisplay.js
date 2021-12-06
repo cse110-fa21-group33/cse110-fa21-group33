@@ -92,6 +92,7 @@ class RecipeDisplay extends HTMLElement {
         padding: 10px;
         border: 2px solid black;
         border-radius: 20px;
+        background-color: white;
       }
       
       #recipe-information > span {
@@ -273,8 +274,11 @@ class RecipeDisplay extends HTMLElement {
       img.setAttribute('src', image);
     }
     img.setAttribute('alt', title);
-    const { scoville } = data;
-    this.shadowRoot.querySelector('#recipe-spice-level').innerHTML = scoville;
+    //const { scoville } = data;
+    //this.shadowRoot.querySelector('#recipe-spice-level').innerHTML = scoville;
+    for (let i = 0; i < data.spiceRating; i += 1) {
+      this.shadowRoot.querySelector('#recipe-spice-level').innerHTML += '🌶️';
+    }
     const prepTime = calculateTime(data.time[0]);
     this.shadowRoot.querySelector('#recipe-prep-time > .recipe-info-number').innerHTML = prepTime;
     const cookTime = calculateTime(data.time[1]);
@@ -355,7 +359,7 @@ class RecipeDisplay extends HTMLElement {
   ShowChanllenge(data) {
     const dummyChild = this.shadowRoot.getElementById('recipe-directions');
     const challengeHeader = document.createElement('challengeHeader');
-    challengeHeader.innerHTML = 'Included in Challenges'; 
+    challengeHeader.innerHTML = '<br><br>Included in Challenges'; 
     data.challenges.forEach((childChallenge) => { 
       const li = document.createElement('li'); 
       li.innerHTML = childChallenge; 
@@ -407,8 +411,10 @@ function getIngredient(ingredient) {
  */
 function createCheckbox(checkboxString) {
   const container = document.createElement('label');
+  container.style.marginLeft = "18px";
   const checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
+  checkbox.style.marginLeft = "-18px";
   container.appendChild(checkbox);
   container.appendChild(document.createTextNode(checkboxString));
   return container;

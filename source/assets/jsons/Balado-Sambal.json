@@ -1,0 +1,87 @@
+{
+  "title": "Eggplant with Balado Sambal",
+  "id": "MwF6oy",
+  "description": "A very simple recipe for lunch, easy to make and very delicious, perfect for breakfast, lunch or dinner, serve it with warm rice and you ready to go!",
+  "image": "https://i.imgur.com/sEgIea9.jpg",
+  "servingSize": 3,
+  "scoville": 200000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 25
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 20
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 45
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "eggplants",
+      "quantity": "3",
+      "units": "N/A"
+    },
+    {
+      "name": "chilies",
+      "quantity": "5",
+      "units": "N/A"
+    },
+    {
+      "name": "bird's eye chilies",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "shallots",
+      "quantity": "6",
+      "units": "N/A"
+    },
+    {
+      "name": "cloves of garlic",
+      "quantity": "5",
+      "units": "N/A"
+    },
+    {
+      "name": "salt",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "pepper",
+      "quantity": ".5",
+      "units": "tsp"
+    },
+    {
+      "name": "mushroom powder",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "keffir lime leaves",
+      "quantity": "4",
+      "units": "N/A"
+    },
+    {
+      "name": "tomato",
+      "quantity": "1",
+      "units": "N/A"
+    }
+  ],
+  "directions": [
+    "Cut the eggplant lengthwise, sear it with a little bit of oil until it's a bit tender. Set aside",
+    "While the eggplant is cooking, in a food processor add chilies, garlic, shallots, and tomato. Blitz few times, until you got a rough chop consistency.",
+    "Pre-heat pan, add oil, chili mixture, and keffir lime leaves to the pan, sauté few minutes until it fragrant.",
+    "Once it's fragrant, add mushroom powder, then do a taste check and then add cooked eggplant, cook it for 10 minutes in medium low heat.",
+    "Once it's done, serve it with warm rice!"
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 4
+}

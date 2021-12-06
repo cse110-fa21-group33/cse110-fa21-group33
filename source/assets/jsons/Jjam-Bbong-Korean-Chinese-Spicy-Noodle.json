@@ -5,8 +5,6 @@
   "image": "https://i.imgur.com/IhLWTp4.jpg",
   "servingSize": 2,
   "scoville": 8000,
-  "spiceRating": 2,
-  "calories": 403,
   "time": [
     {
       "name": "prepTime",
@@ -16,113 +14,113 @@
     {
       "name": "cookTime",
       "hours": 0,
-      "minutes": 10 
+      "minutes": 10
     },
     {
       "name": "totalTime",
       "hours": 0,
-      "minutes": 30      
+      "minutes": 30
     }
   ],
   "ingredientList": [
     {
       "name": "onion thinly sliced",
-      "quantity": 0.25,
+      "quantity": "0.25",
       "units": "N/A"
     },
     {
       "name": "small carrot about 2 ounces, thinly sliced into 2-inch lengths",
-      "quantity": 0.5,
+      "quantity": "0.5",
       "units": "N/A"
     },
     {
       "name": "zucchini about 3 ounces, thinly sliced into 2-inch lengths",
-      "quantity": 0.5,
+      "quantity": "0.5",
       "units": "N/A"
     },
     {
       "name": "green cabbage cut into 2-inch lengths (or napa cabbage or bok choy)",
-      "quantity": 3,
+      "quantity": "3",
       "units": "oz"
     },
     {
       "name": "fresh shiitake mushrooms or 2 shiitake mushrooms, soaked and thinly",
-      "quantity": 3,
+      "quantity": "3",
       "units": "N/A"
     },
     {
       "name": "scallions cut into 2 inch lengths",
-      "quantity": 2,
+      "quantity": "2",
       "units": "N/A"
     },
     {
       "name": "fatty pork thinly sliced",
-      "quantity": 3,
+      "quantity": "3",
       "units": "oz"
     },
     {
       "name": "littleneck clams",
-      "quantity": 5,
+      "quantity": "5",
       "units": "N/A"
     },
     {
       "name": "mussels",
-      "quantity": 5,
+      "quantity": "5",
       "units": "N/A"
     },
     {
       "name": "shrimps",
-      "quantity": 5,
+      "quantity": "5",
       "units": "N/A"
     },
     {
       "name": "squid cut into bite sizes (Do not cut squids too small as they shrink a lot when cooked.)",
-      "quantity": 3,
+      "quantity": "3",
       "units": "oz"
     },
     {
       "name": "julienned or minced ginger",
-      "quantity": 1,
+      "quantity": "1",
       "units": "tsp"
     },
     {
       "name": "minced garlic",
-      "quantity": 1,
+      "quantity": "1",
       "units": "tbsp"
     },
     {
       "name": "gochugaru (Korean chili pepper flakes) Adjust to taste (1 T for milder soup)",
-      "quantity": 2,
+      "quantity": "2",
       "units": "tbsp"
     },
     {
       "name": "oil vegetable or canola",
-      "quantity": 1,
+      "quantity": "1",
       "units": "tbsp"
     },
     {
       "name": "soy sauce",
-      "quantity": 1,
+      "quantity": "1",
       "units": "tbsp"
     },
     {
       "name": "salt and pepper",
-      "quantity": 0,
+      "quantity": "0",
       "units": "N/A"
     },
     {
       "name": "chicken stock or anchovy broth or water",
-      "quantity": 5,
+      "quantity": "5",
       "units": "cups"
     },
     {
       "name": "chicken stock or anchovy broth or water",
-      "quantity": 5,
+      "quantity": "5",
       "units": "cups"
     },
     {
       "name": "fresh jajangmyeon/udon noodles",
-      "quantity": 14,
+      "quantity": "14",
       "units": "oz"
     }
   ],
@@ -136,7 +134,9 @@
     "Pour in the chicken stock (or anchovy broth/water) and boil until the vegetables are completely cooked.",
     "Add the seafood starting with the clams, which require more time to cook, followed by the mussels, shrimps and squid. Bring everything to a boil again and cook until the shells have opened. Salt and pepper to taste.",
     "Cook the noodles, rinse in cold water, and drain.",
-    "Place a serving of the noodles in a large soup bowl and ladle the soup on top. Serve immediately while piping hot."],
-  "challenges": ["Two Spicy"],
-  "completed": false
+    "Place a serving of the noodles in a large soup bowl and ladle the soup on top. Serve immediately while piping hot."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 2
 }

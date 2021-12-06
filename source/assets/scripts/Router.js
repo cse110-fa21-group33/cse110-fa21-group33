@@ -1,7 +1,7 @@
 // Router.js
 // Taken from Lab 7
 
-// eslint-disable-next-line import/prefer-default-export
+
 export class Router {
   static routes = {};
 
@@ -34,7 +34,6 @@ export class Router {
    *                              'popstate' event instead of a normal card click
    */
   navigate(page, statePopped) {
-    console.log(`navigate() function called, requested page: ${page}`);
     if (typeof this[page] === 'function') {
       let hash;
       if (page === 'home') {
