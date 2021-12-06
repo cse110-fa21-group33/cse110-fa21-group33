@@ -62,7 +62,7 @@ const recipesFromFile = [
   'assets/jsons/Sichuan-Lamb-Mushroom-Stirfry.json',
   'assets/jsons/Pretzel-Crusted-Pickle-Chips.json',
   'assets/jsons/Korean-Chili-Pork-Lettuce-Cups.json',
-  'assets/jsons/Cake-Mix-Chicken-Nuggets.json'
+  'assets/jsons/Cake-Mix-Chicken-Nuggets.json',
   'assets/jsons/Balado-Sambal.json',
   'assets/jsons/Chili-Paneer.json',
   'assets/jsons/General-Tso.json',
