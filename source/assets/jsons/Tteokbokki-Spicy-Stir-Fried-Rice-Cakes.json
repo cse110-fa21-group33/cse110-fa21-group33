@@ -85,7 +85,9 @@
     "Add the rice cakes. Boil until the rice cakes become very soft and the sauce is thickened, about 8 - 10 minutes. Stir frequently so the rice cakes don't stick to the bottom of the pan.",
     "Add the vegetables and fish cakes. Continue to boil, stirring constantly, for an additional 4 - 6 minutes. Depending on rice cakes, you may need more time to reach a desired level of softness. Add more broth or water as necessary. Taste the sauce, and adjust the seasoning if needed. Serve immediately."
   ],
-  "challenges": [],
+  "challenges": [ 
+    "Two Spicy"
+  ],
   "completed": false,
   "spiceRating": 2
 }
