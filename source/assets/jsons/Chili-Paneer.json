@@ -1,0 +1,117 @@
+{
+  "title": "Chili Paneer",
+  "id": "XqBv0M",
+  "description": "Chili paneer is an Indian street food favourite! Golden, crispy nuggets of paneer are wrapped in a sticky chili garlic sauce – the ingredients are unusual but the final result is delicious!",
+  "image": "https://i.imgur.com/OSebkiP.jpg",
+  "servingSize": 4,
+  "scoville": 275000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 30
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 15
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 45
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "tomato ketchup",
+      "quantity": "4",
+      "units": "tbsp"
+    },
+    {
+      "name": "rice wine vinegar",
+      "quantity": "3",
+      "units": "tbsp"
+    },
+    {
+      "name": "soy sauce",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "honey",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "vegetable oil",
+      "quantity": "10",
+      "units": "tbsp"
+    },
+    {
+      "name": "plain flour",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "cornflour",
+      "quantity": "4",
+      "units": "tbsp"
+    },
+    {
+      "name": "Kashmiri chili powder",
+      "quantity": ".5",
+      "units": "tsp"
+    },
+    {
+      "name": "pinch of chili flakes",
+      "quantity": "",
+      "units": "N/A"
+    },
+    {
+      "name": "paneer, cut into bite-sized cubes",
+      "quantity": "300",
+      "units": "g"
+    },
+    {
+      "name": "spring onions, thinly sliced",
+      "quantity": "3",
+      "units": "N/A"
+    },
+    {
+      "name": "garlic cloves, finely chopped",
+      "quantity": "6",
+      "units": "N/A"
+    },
+    {
+      "name": "green bird's-eye chilies",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "red peppers, chopped into 2cm pieces",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "red onion, diced into 2cm cubes",
+      "quantity": "100",
+      "units": "g"
+    },
+    {
+      "name": "ground black pepper",
+      "quantity": ".5",
+      "units": "tsp"
+    }
+  ],
+  "directions": [
+    "Combine the sauce ingredients in a bowl with 100ml/3½fl oz water and set aside.",
+    "Pour the vegetable oil into a heavy-bottomed pan or a deep-fat fryer and heat to 180C, or until a cube of bread turns golden-brown in 15 seconds. (CAUTION: hot oil can be dangerous. Do not leave unattended.)",
+    "Combine the plain flour, cornflour, chilli powder, chilli flakes and salt in a large mixing bowl. Add 80ml/2½fl oz water a little at a time and whisk to make a sticky batter. You’ll need to keep stirring it to keep it loose! Coat a few paneer pieces in the batter and deep-fry for 3–4 minutes until crisp and golden. Drain on kitchen paper and batter then deep-fry the remaining paneer cubes in batches.",
+    "To make the chilli paneer, place a large wok over a medium flame and add the vegetable oil. When the oil is hot, add the spring onions and garlic, fry for a minute, then add the green chillies, peppers and red onion. Fry for 3 minutes, stirring well, then add the sauce mixture along with the salt and pepper. Simmer over a low heat for 1 minute.",
+    "Mix the cornflour with a tablespoon of cold water in a small bowl, and add this to the wok. Cook for 2 minutes until it thickens. Finally, add the crispy fried paneer and the spring onion greens and mix thoroughly to coat everything in the sauce. Serve immediately."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 4
+}

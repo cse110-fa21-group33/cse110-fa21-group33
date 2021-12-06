@@ -1,0 +1,65 @@
+{
+  "title": "Indonesian Fresh Cucumber Pickles",
+  "id": "LnClRt",
+  "description": "I made this cucumber pickles so often, because my husband likes it so much. Well, actually we both like it. Easy to make, not really need much ingredients. This pickles is so tasty and refreshing. Good for a side dish or just eat it like that.",
+  "image": "https://i.imgur.com/mqb5i2I.jpg",
+  "servingSize": 2,
+  "scoville": 230000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 20
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 0
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 20
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "cucumber, peeled and cubed",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "carrot, peeled and cubed",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "big shallot, peeled and cubed",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "Thai chilies",
+      "quantity": "5",
+      "units": "N/A"
+    },
+    {
+      "name": "white vinegar",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "white sugar",
+      "quantity": "1",
+      "units": "tbsp"
+    }
+  ],
+  "directions": [
+    "Mix all ingredients in the bowl, mix well and taste it.",
+    "Transfer to the container, cover with a lid and store it in the refrigerator until ready to use. Minimum I put it in the refrigerator for at least 30 minutes before consuming.",
+    "Then enjoy!"
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 4
+}
