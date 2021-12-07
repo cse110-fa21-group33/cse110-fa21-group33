@@ -1,0 +1,72 @@
+{
+    "title": "Spicy Margarita",
+    "id": "bt2ySF",
+    "description": "The classic Margarita is one of the most popular cocktails in the world. Despite having no clear provenance, it has charmed drinkers since its inception, circumnavigating its way around the globe to become one of the most ubiquitous drinks in circulation today. But perhaps nothing proves its dominance more than the countless variations the Margarita has spawned.\n\nThe Spicy Margarita is one variation that has taken hold and never released its grip. It succeeds where so many of its siblings fail. That is to say, it refocuses the classic recipe without losing what’s essential to its success: that timeless blend of sweet, sour and earthy flavors.\n\nBlanco tequila remains the star of this show, imbuing the drink with its vegetal agave notes. For the best results, choose one that is made with 100% blue agave. An equal split of orange liqueur and agave syrup add sweetness, while fresh lime juice provides balance and that characteristic acidity you can’t achieve with bottled sweet-and-sour.\n\nThe key to the Spicy Margarita’s heat is fresh jalapenos, which are muddled in the shaker before adding the other ingredients. Two jalapeno coins, with their seeds removed, will yield a conservatively spicy drink. For a more fiery Spicy Margarita, throw in a third coin, or as many as you can handle. The warm, savory drink is the perfect cocktail to set fire to your summer.",
+    "image": "https://i.imgur.com/I0dWswI.jpg",
+    "servingSize": 1,
+    "scoville": 2500,
+    "time": [
+        {
+            "name": "prepTime",
+            "hours": 0,
+            "minutes": 5
+        },
+        {
+            "name": "cookTime",
+            "hours": 0,
+            "minutes": 0
+        },
+        {
+            "name": "totalTime",
+            "hours": 0,
+            "minutes": 5
+        }
+    ],
+    "ingredientList": [
+        {
+            "name": "Lime wedge",
+            "quantity": "1",
+            "units": "N/A"
+        },
+        {
+            "name": "Jalapeno coins, seeds removed",
+            "quantity": "2",
+            "units": "N/A"
+        },
+        {
+            "name": "Blanco tequila",
+            "quantity": "2",
+            "units": "oz"
+        },
+        {
+            "name": "Orange liqueur",
+            "quantity": "0.5",
+            "units": "oz"
+        },
+        {
+            "name": "Lime Juice",
+            "quantity": "1",
+            "units": "oz"
+        },
+        {
+            "name": "Agave syrup",
+            "quantity": "0.5",
+            "units": "oz"
+        },
+        {
+            "name": "Salt",
+            "quantity": "",
+            "units": "N/A"
+        }
+    ],
+    "directions": [
+        "Rub the rim of a rocks glass with a lime wedge, dip the rim in salt to coat, and set aside.",
+        "Add the jalapeno coins to a shaker and gently muddle.",
+        "Add the blanco tequila, orange liqueur, lime juice and agave syrup, plus ice, and shake until well-chilled.",
+        "Strain into the prepared glass over fresh ice.",
+        "Garnish with a jalapeno coin."
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 1
+}

@@ -72,7 +72,12 @@ const recipesFromFile = [
   'assets/jsons/Orange-Chicken-Sauce.json',
   'assets/jsons/Pepper-Prawns.json',
   'assets/jsons/Runaway-Bay-Chicken.json',
-  'assets/jsons/Thom-Kha-Gai.json'
+  'assets/jsons/Thom-Kha-Gai.json',
+  'assets/jsons/Chicken-Gyro.json',
+  'assets/jsons/Spicy-Margarita.json',
+  'assets/jsons/Spicy-Vodka-Sunrise.json',
+  'assets/jsons/Mezcal-paloma.json',
+  'assets/jsons/Spicy-75.json',
 ];
 
 let loaded = false;

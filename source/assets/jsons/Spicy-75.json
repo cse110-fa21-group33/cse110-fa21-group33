@@ -1,0 +1,65 @@
+{
+    "title": "Spicy 75",
+    "id": "5jpIUr",
+    "description": "rapefruit juice, lime and bubbly combine in this refreshing summer cocktail. Use one jalapeño for a mild kick, or two if you’re feeling extra spicy. Bring this drink to life",
+    "image": "https://i.imgur.com/rmWHIx2.jpg",
+    "servingSize": 1,
+    "scoville": 2500,
+    "time": [
+        {
+            "name": "prepTime",
+            "hours": 0,
+            "minutes": 5
+        },
+        {
+            "name": "cookTime",
+            "hours": 0,
+            "minutes": 0
+        },
+        {
+            "name": "totalTime",
+            "hours": 0,
+            "minutes": 5
+        }
+    ],
+    "ingredientList": [
+        {
+            "name": "Jalapeno slices",
+            "quantity": "2",
+            "units": "N/A"
+        },
+        {
+            "name": "Vodka or gin",
+            "quantity": "2",
+            "units": "oz"
+        },
+        {
+            "name": "Grapefruit juice",
+            "quantity": "2",
+            "units": "oz"
+        },
+        {
+            "name": "Lime juice",
+            "quantity": "1",
+            "units": "oz"
+        },
+        {
+            "name": "Dry prosecco",
+            "quantity": "",
+            "units": "N/A"
+        },
+        {
+            "name": "Olives stuffed with pimiento",
+            "quantity": "",
+            "units": "N/A"
+        }
+    ],
+    "directions": [
+        "In a cocktail shaker, muddle the jalapenos with the lime juice.",
+        "Add grapefruit juice, gin or vodka, and ice to shaker. Shake until very cold, about 20 seconds. Strain into a coupe.",
+        "Top with Prosecco or Champagne. Garnish with a Jalapeno Party Pick."
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 1
+}

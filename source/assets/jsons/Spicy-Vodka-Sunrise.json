@@ -1,0 +1,64 @@
+{
+    "title": "Spicy Vodka Sunrise",
+    "id": "La3cr3",
+    "description": "This unassuming vodka sunrise gets a spicy twist with muddled fresh jalapenos.",
+    "image": "https://i.imgur.com/R0IJZUP.jpg",
+    "servingSize": 1,
+    "scoville": 2500,
+    "time": [
+        {
+            "name": "prepTime",
+            "hours": 0,
+            "minutes": 5
+        },
+        {
+            "name": "cookTime",
+            "hours": 0,
+            "minutes": 0
+        },
+        {
+            "name": "totalTime",
+            "hours": 0,
+            "minutes": 5
+        }
+    ],
+    "ingredientList": [
+        {
+            "name": "Black Salt",
+            "quantity": "",
+            "units": "N/A"
+        },
+        {
+            "name": "Orange juice",
+            "quantity": "4",
+            "units": "oz"
+        },
+        {
+            "name": "Svedka vodka",
+            "quantity": "2",
+            "units": "oz"
+        },
+        {
+            "name": "Jalapeno slices",
+            "quantity": "6",
+            "units": "N/A"
+        },
+        {
+            "name": "Ice Cubes",
+            "quantity": "0.25",
+            "units": "cups"
+        },
+        {
+            "name": "Grenadine",
+            "quantity": "0.5",
+            "units": "oz"
+        }
+    ],
+    "directions": [
+        "Dip rim of a 10-oz. cocktail glass into water and then immediately into black salt. Fill glass with ice; set aside.",
+        "Combine fresh orange juice, vodka, and jalapeno pepper slices in a cocktail shaker. Muddle mixture. Add ice cubes; cover and shake well. Strain into prepared glass. Slowly add grenadine. Garnish with an orange slice, if desired. "
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 1
+}
