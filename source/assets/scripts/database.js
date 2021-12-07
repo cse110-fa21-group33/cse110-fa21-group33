@@ -112,18 +112,7 @@ async function saveDB() {
     if (!loaded) {
       reject(new Error('Database not loaded yet! Call loadDB().'));
     } else {
-      exportDB(db)
-        .then((blob) => {
-          const reader = new FileReader();
-          reader.onload = (event) => {
-            localStorage.setItem('database', event.target.result);
-          };
-          reader.readAsDataURL(blob);
-          resolve(true);
-        })
-        .catch((error) => {
-          reject(error);
-        });
+      resolve(true);
     }
   });
 }
