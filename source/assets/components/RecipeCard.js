@@ -79,7 +79,8 @@ class RecipeCard extends HTMLElement {
       }
     }
     
-    @media only screen {
+    @media only screen
+    and (max-device-width: 812px) {
       .card-title {
         height: 3.3rem;
       }
