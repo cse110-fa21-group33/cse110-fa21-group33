@@ -1,0 +1,135 @@
+{
+    "title": "Habanero Hellfire Chili",
+    "id": "sx5QGg",
+    "description": "Tasty chili whose name says it all! Note: Whole Anaheim peppers are not widely available; this ingredient is optional, and you can use hot pepper sauce instead.",
+    "image": "https://i.imgur.com/zpZewRe.jpg",
+    "servingSize": 8,
+    "scoville": 400000,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 30
+      },
+      {
+        "name": "cookTime",
+        "hours": 1,
+        "minutes": 30
+      },
+      {
+        "name": "totalTime",
+        "hours": 2,
+        "minutes": 0
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "pound bacon",
+        "quantity": "0.5",
+        "units": "lbs"
+      },
+      {
+        "name": "ground round",
+        "quantity": "1",
+        "units": "lbs"
+      },
+      {
+        "name": "ground pork",
+        "quantity": "1",
+        "units": "lbs"
+      },
+      {
+        "name": "green bell pepper, diced",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "yellow onion, diced",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "jalapeno peppers, seeded and chopped",
+        "quantity": "6",
+        "units": "N/A"
+      },
+      {
+        "name": "habanero peppers, seeded and chopped",
+        "quantity": "6",
+        "units": "N/A"
+      },
+      {
+        "name": "Anaheim peppers, seeded and diced",
+        "quantity": "8",
+        "units": "N/A"
+      },
+      {
+        "name": "garlic cloves, minced",
+        "quantity": "2",
+        "units": "N/A"
+      },
+      {
+        "name": "ground cumin",
+        "quantity": "1.5",
+        "units": "tbsp"
+      },
+      {
+        "name": "crushed red pepper flakes",
+        "quantity": "1",
+        "units": "tbsp"
+      },
+      {
+        "name": "chili powder",
+        "quantity": "3",
+        "units": "tbsp"
+      },
+      {
+        "name": "beef bouillon granules",
+        "quantity": "2",
+        "units": "tbsp"
+      },
+      {
+        "name": "crushed tomatoes",
+        "quantity": "28",
+        "units": "oz"
+      },
+      {
+        "name": "whole peeled tomatoes, drained",
+        "quantity": "16",
+        "units": "oz"
+      },
+      {
+        "name": "chili beans, drained",
+        "quantity": "16",
+        "units": "oz"
+      },
+      {
+        "name": "beer",
+        "quantity": "12",
+        "units": "fl oz"
+      },
+      {
+        "name": "tomato paste",
+        "quantity": "3",
+        "units": "oz"
+      },
+      {
+        "name": "chile paste",
+        "quantity": "1",
+        "units": "oz"
+      },
+      {
+        "name": "water",
+        "quantity": "2",
+        "units": "cups"
+      }
+    ],
+    "directions": [
+      "Place bacon in a large soup pot. Cook over medium high heat until evenly brown. Drain excess grease, leaving enough to coat bottom of pot Remove bacon, drain on paper towels and chop.",
+      "Brown beef and pork in pot over medium high heat. When meat is browned, stir in the bell pepper, onion, jalapeno peppers, habanero peppers, Anaheim peppers, garlic, cumin, red pepper flakes, chili powder, bouillon, crushed tomatoes, whole tomatoes, beer, tomato paste, chile paste and water.",
+      "Reduce heat to low and simmer for 45 to 60 minutes, stirring occasionally. Add beans and bacon and continue simmering for another 30 minutes."
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 5
+  }

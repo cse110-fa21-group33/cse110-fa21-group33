@@ -136,7 +136,9 @@
     "Cook the noodles, rinse in cold water, and drain.",
     "Place a serving of the noodles in a large soup bowl and ladle the soup on top. Serve immediately while piping hot."
   ],
-  "challenges": [],
+  "challenges": [
+    "Two Spicy"
+  ],
   "completed": false,
   "spiceRating": 2
 }

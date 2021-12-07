@@ -1,0 +1,75 @@
+{
+    "title": "Mexican Hot Chocolate",
+    "id": "mMcHNR",
+    "description": "Instead of vanilla extract for this Mexican hot chocolate recipe, try almond extract if you’ve got it handy, which adds even more depth of flavor. Go one step further and pair it with this churros recipe.",
+    "image": "https://i.imgur.com/Nj7LB9g.jpg",
+    "servingSize": 4,
+    "scoville": 2900,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 5
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 15
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 20
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "whole milk",
+        "quantity": "3",
+        "units": "cups"
+      },
+      {
+        "name": "crushed cinnamon sticks",
+        "quantity": "3",
+        "units": "tbsp"
+      },
+      {
+        "name": "semisweet chocolate",
+        "quantity": "6",
+        "units": "oz"
+      },
+      {
+        "name": "granulated sugar/demerara",
+        "quantity": "3",
+        "units": "tbsp"
+      },
+      {
+        "name": "vanilla extract",
+        "quantity": "0.75",
+        "units": "tsp"
+      },
+      {
+        "name": "kosher salt",
+        "quantity": "1",
+        "units": "pinch"
+      },
+      {
+        "name": "ground chile de árbol / cayenne pepper",
+        "quantity": "0.25",
+        "units": "tsp"
+      },
+      {
+        "name": "lightly sweetened whipped cream",
+        "quantity": "",
+        "units": "N/A"
+      }
+    ],
+    "directions": [
+      "Bring milk and cinnamon to a simmer in a medium saucepan over medium-low heat, whisking occasionally and making sure milk doesn’t boil, until cinnamon is floral and fragrant, about 10 minutes.",
+      "Whisk in chocolate, sugar, vanilla, salt, and ¼ tsp. ground chile and cook, whisking frequently, until mixture is smooth and creamy and chocolate is melted, about 5 minutes.",
+      "Divide hot chocolate among mugs. Top with whipped cream and dust with cocoa powder."
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 1
+}

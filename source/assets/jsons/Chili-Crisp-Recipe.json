@@ -1,87 +1,87 @@
 {
-    "title": "Chili Crisp Recipe",
-    "id": "WMDOnT",
-    "description": "This homemade spicy chili crisp recipe is easy to make, the perfect condiment for spooning over anything from vegetables to eggs, meats and more. Learn how to make chili crisp at home.",
-    "image": "https://i.imgur.com/ZA8ELny.jpg",
-    "servingSize": 32,
-    "scoville": 50000,
-    "time": [
-      {
-        "name": "prepTime",
-        "hours": 0,
-        "minutes": 15
-      },
-      {
-        "name": "cookTime",
-        "hours": 0,
-        "minutes": 25
-      },
-      {
-        "name": "totalTime",
-        "hours": 1,
-        "minutes": 40
-      }
-    ],
-    "ingredientList": [
-      {
-        "name": "vegetable oil",
-        "quantity": "1.5",
-        "units": "N/A"
-      },
-      {
-        "name": "serrano peppers rough chopped",
-        "quantity": "2",
-        "units": "N/A"
-      },
-      {
-        "name": "shallot rough chopped",
-        "quantity": "1",
-        "units": "N/A"
-      },
-      {
-        "name": "cloves garlic rough chopped",
-        "quantity": "10",
-        "units": "N/A"
-      },
-      {
-        "name": "black peppercorns",
-        "quantity": "1",
-        "units": "tsp"
-      },
-      {
-        "name": "red chili flakes",
-        "quantity": "0.25",
-        "units": "cups"
-      },
-      {
-        "name": "smoked paprika",
-        "quantity": "1",
-        "units": "tbsp"
-      },
-      {
-        "name": "soy sauce adds umami",
-        "quantity": "1",
-        "units": "tbsp"
-      },
-      {
-        "name": "sugar",
-        "quantity": "1",
-        "units": "tsp"
-      },
-      {
-        "name": "msg",
-        "quantity": "0.5",
-        "units": "tsp"
-      }
-    ],
-    "directions": [
-      "Add the oil to a small pot along with the serrano peppers, shallot, garlic, peppercorns. Add the cinnamon stick and star anise pods, if using.",
-      "Heat the oil to medium-low and simmer for 20-30 minutes, or until the ingredients in the pot brown. It could take longer for the bits to brown and crisp depending on the size of your chopped peppers and oil temperature.",
-      "Remove from heat and allow to cool for 5 minutes. The flavors will infuse the oil even further.",
-      "In a separate heat-proof bowl, mix together the chili flakes, paprika (or Gochugaru), soy sauce, sugar and msg.",
-      "Strain the oil into the chili flake mixture. Reserve the crispy serrano-shallot-garlic bits in the strainer and set them aside for now to cool, which will allow them to fully crisp up."
-    ],
-    "challenges": [],
-    "completed": false,
-    "spiceRating": 3
-  }
+  "title": "Chili Crisp Recipe",
+  "id": "WMDOnT",
+  "description": "This homemade spicy chili crisp recipe is easy to make, the perfect condiment for spooning over anything from vegetables to eggs, meats and more. Learn how to make chili crisp at home.",
+  "image": "https://i.imgur.com/ZA8ELny.jpg",
+  "servingSize": 32,
+  "scoville": 50000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 15
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 25
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 40
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "vegetable oil",
+      "quantity": "1.5",
+      "units": "N/A"
+    },
+    {
+      "name": "serrano peppers rough chopped",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "shallot rough chopped",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "cloves garlic rough chopped",
+      "quantity": "10",
+      "units": "N/A"
+    },
+    {
+      "name": "black peppercorns",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "red chili flakes",
+      "quantity": "0.25",
+      "units": "cups"
+    },
+    {
+      "name": "smoked paprika",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "soy sauce adds umami",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "sugar",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "msg",
+      "quantity": "0.5",
+      "units": "tsp"
+    }
+  ],
+  "directions": [
+    "Add the oil to a small pot along with the serrano peppers, shallot, garlic, peppercorns. Add the cinnamon stick and star anise pods, if using.",
+    "Heat the oil to medium-low and simmer for 20-30 minutes, or until the ingredients in the pot brown. It could take longer for the bits to brown and crisp depending on the size of your chopped peppers and oil temperature.",
+    "Remove from heat and allow to cool for 5 minutes. The flavors will infuse the oil even further.",
+    "In a separate heat-proof bowl, mix together the chili flakes, paprika (or Gochugaru), soy sauce, sugar and msg.",
+    "Strain the oil into the chili flake mixture. Reserve the crispy serrano-shallot-garlic bits in the strainer and set them aside for now to cool, which will allow them to fully crisp up."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 3
+}
