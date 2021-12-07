@@ -157,6 +157,18 @@ class RecipeDisplay extends HTMLElement {
         margin-left: 8px;
         list-style: disc;
       }  
+     
+      input[type="button"]  {
+        background-color: white;
+        border-radius: 20px;
+        font-family: 'Mochiy Pop P One', sans-serif;
+        border: 2px solid black;
+        cursor: pointer;
+      }
+
+      input[type="button"]:active {
+        background-color: rgb(187, 187, 187);
+      }
 
       hr {
         border-color: black;

@@ -1,0 +1,110 @@
+{
+  "title": "Runaway Bay Jamaican Chicken",
+  "id": "NGUNUD",
+  "description": "I got this recipe from my sister, who searches for delicious and unusual dishes. This one lit up the family, and everyone loved it. As it got passed around to family and friends, slight changes occurred. For instance, you can omit the cilantro if you don't care for it or use less nutmeg and more cloves; the possibilities are endless. Just be sure you use caution when working with habaneros. Rubber gloves would be ideal.",
+  "image": "https://i.imgur.com/sYmBdjJ.jpg",
+  "servingSize": 6,
+  "scoville": 250000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 30
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 30
+    },
+    {
+      "name": "totalTime",
+      "hours": 1,
+      "minutes": 0
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "large red onion",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "cloves garlic",
+      "quantity": "3",
+      "units": "N/A"
+    },
+    {
+      "name": "habanero pepper, seeded",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "fresh ginger root",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "olive oil",
+      "quantity": ".25",
+      "units": "cups"
+    },
+    {
+      "name": "brown sugar",
+      "quantity": ".25",
+      "units": "cups"
+    },
+    {
+      "name": "red wine vinegar",
+      "quantity": "3",
+      "units": "tbsp"
+    },
+    {
+      "name": "orange juice concentrate, thawed",
+      "quantity": "3",
+      "units": "tbsp"
+    },
+    {
+      "name": "soy sauce",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "ground cinnamon",
+      "quantity": "2",
+      "units": "tsp"
+    },
+    {
+      "name": "ground nutmeg",
+      "quantity": ".5",
+      "units": "tsp"
+    },
+    {
+      "name": "ground cloves",
+      "quantity": ".25",
+      "units": "tsp"
+    },
+    {
+      "name": "chopped cilantro",
+      "quantity": ".5",
+      "units": "cups"
+    },
+    {
+      "name": "salt and pepper to taste",
+      "quantity": ".5",
+      "units": "tsp"
+    },
+    {
+      "name": "skinless, boneless chicken breast halves",
+      "quantity": "6",
+      "units": "N/A"
+    }
+  ],
+  "directions": [
+    "In a food processor, combine onion, garlic, habanero pepper, and ginger. Pulse until ingredients are minced. Blend in olive oil, brown sugar, vinegar, orange juice concentrate, soy sauce, cinnamon, nutmeg, cloves, cilantro, salt, and pepper. In a container, combine marinade with chicken. Cover, and refrigerate overnight.",
+    "Preheat an outdoor grill for medium heat and lightly oil grate.",
+    "Grill chicken for 10 minutes per side, or until no longer pink and juices run clear."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 4
+}
