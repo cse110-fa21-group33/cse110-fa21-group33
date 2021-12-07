@@ -1,0 +1,84 @@
+{
+    "title": "Carolina Reaper Pepper Stuffed Chicken",
+    "id": "J5XPC2",
+    "description": "Stuffed chicken with some creamy, but surprisingly hot stuffing",
+    "image": "https://i.imgur.com/NEhKJs4.jpg",
+    "servingSize": 4,
+    "scoville": 500000,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 10
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 45
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 55
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "ground chicken",
+        "quantity": "1",
+        "units": "lbs"
+      },
+      {
+        "name": "cream cheese softened",
+        "quantity": "8",
+        "units": "oz"
+      },
+      {
+        "name": "Carolina Reaper Pepper Flakes",
+        "quantity": "1",
+        "units": "tbsp"
+      },
+      {
+        "name": "Smoked Habanero Powder",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "Ancho Powder",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "egg",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "bread crumbs",
+        "quantity": "0.25",
+        "units": "cups"
+      },
+      {
+        "name": "Italian Seasonings",
+        "quantity": "1",
+        "units": "tbsp"
+      },
+      {
+        "name": "Catch a Fire Italian Garlic",
+        "quantity": "1",
+        "units": "tsp"
+      }
+    ],
+    "directions": [
+      "To a large mixing bowl, add chicken, egg, bread crumbs and Italian Seasonings. Mix well.",
+      "To a separate mixing bowl, add cream cheese, Catch a Fire Italian Garlic, Carolina Reaper Pepper Flakes, Smoked Habanero Powder, and Ancho Powder. Mix well.",
+      "Preheat oven to 350 degrees.",
+      "Separate the chicken in half and form completely around 4 ounces of the cream cheese mixture.",
+      "Set on top of a lightly oiled baking dish.",
+      "Top with bread crumbs and bake 25-30 minutes or until chicken is cooked thoroughly through.",
+      "Serve"
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 5
+  }

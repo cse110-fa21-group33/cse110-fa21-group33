@@ -1,0 +1,100 @@
+{
+    "title": "Bacon-wrapped stuffed Anaheim peppers",
+    "id": "wWGDsO",
+    "description": "The size of Anaheim peppers makes them really fun for stuffing and wrapping in bacon. Using a thinner sliced bacon works well for wrapping around the peppers and both wraps and cooks more easily than would thick-sliced bacon. Save the thick sliced bacon for breakfast.",
+    "image": "https://i.imgur.com/uFjDssg.jpg",
+    "servingSize": 8,
+    "scoville": 2500,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 25
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 25
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 50
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "Anaheim chile peppers",
+        "quantity": "8",
+        "units": "N/A"
+      },
+      {
+        "name": "cream cheese",
+        "quantity": "8",
+        "units": "oz"
+      },
+      {
+        "name": "weight grated sharp cheddar cheese",
+        "quantity": "4",
+        "units": "oz"
+      },
+      {
+        "name": "minced onion",
+        "quantity": "0.75",
+        "units": "cups"
+      },
+      {
+        "name": "minced sweet red pepper",
+        "quantity": "0.5",
+        "units": "cups"
+      },
+      {
+        "name": "jalapeno, seeded and minced",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "minced fresh garlic",
+        "quantity": "1",
+        "units": "tbsp"
+      },
+      {
+        "name": "salt",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "black pepper",
+        "quantity": "0.25",
+        "units": "tsp"
+      },
+      {
+        "name": "chile powder",
+        "quantity": "0.25",
+        "units": "tsp"
+      },
+      {
+        "name": "bacon slices",
+        "quantity": "16",
+        "units": "N/A"
+      },
+      {
+        "name": "hot sauce (optional)",
+        "quantity": "0.25",
+        "units": "tsp"
+      }
+    ],
+    "directions": [
+      "Preheat oven to 450 degrees F. Line a half sheet baking pan (approximately 13- x 18- x 1-inch) with aluminum foil. Place a cooling rack (such as is used for cookies, etc.) in the bottom of the of the pan. Set aside.",
+      "Wash Anaheim peppers. With a sharp knife, slice the peppers open on one side only--do not slice completely through the peppers. Carefully scrape out seeds. Set peppers aside.",
+      "In a medium-sized bowl, mix together the cream cheese, grated sharp cheddar cheese, onion, red pepper, jalapeno, garlic, salt, black pepper, chile powder, and hot sauce (optional)",
+      "Fill the hollowed out Anaheim peppers with the filling.",
+      "Using two pieces of bacon per pepper, wrap the bacon slices around each pepper. Scrunch the bacon close together as you wrap. Remember that it will shrink as it cooks. Secure with toothpicks.",
+      "Place peppers on the rack in the baking pan, leaving space between each pepper. Do not over-crowd the pan. If there is a concern about splatters while baking, lay a piece of aluminum foil lightly over the peppers. Do not fold it around the edges because steam from cooking needs a way to escape.",
+      "Bake for 20 minutes. Remove pan from oven. If a foil covering has been used, remove the foil at this time. Set oven to broil. Move oven rack 5-7 inches from broiler. Broil peppers 1-3 minutes until bacon is brown and crispy.",
+      "Remove toothpicks before serving. Be careful when removing the toothpicks because the peppers will be hot."
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 1
+  }

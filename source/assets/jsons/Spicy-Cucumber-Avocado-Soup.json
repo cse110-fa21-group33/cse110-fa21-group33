@@ -1,0 +1,75 @@
+{
+    "title": "Spicy Cucumber-Avocado Soup",
+    "id": "SGlQlb",
+    "description": "A creamy blend of ripe avocados, cucumbers, yogurt, lime juice—and a bit of jalapeño—make this soup bright, spicy, and satisfying. Have we mentioned it only takes ten minutes?",
+    "image": "https://i.imgur.com/xLSBTXF.jpg",
+    "servingSize": 3,
+    "scoville": 2950,
+    "time": [
+      {
+        "name": "prepTime",
+        "hours": 0,
+        "minutes": 0
+      },
+      {
+        "name": "cookTime",
+        "hours": 0,
+        "minutes": 10
+      },
+      {
+        "name": "totalTime",
+        "hours": 0,
+        "minutes": 10
+      }
+    ],
+    "ingredientList": [
+      {
+        "name": "firm-ripe California avocado",
+        "quantity": "1",
+        "units": "N/A"
+      },
+      {
+        "name": "English cucumbers",
+        "quantity": "1.5",
+        "units": "lbs"
+      },
+      {
+        "name": "plain low-fat yogurt",
+        "quantity": "1",
+        "units": "cups"
+      },
+      {
+        "name": "chopped fresh chives",
+        "quantity": "3",
+        "units": "tbsp"
+      },
+      {
+        "name": "fresh lime juice",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "salt",
+        "quantity": "1",
+        "units": "tsp"
+      },
+      {
+        "name": "chopped fresh jalapeño chile",
+        "quantity": "0.5",
+        "units": "tsp"
+      },
+      {
+        "name": "ice cubes",
+        "quantity": "1",
+        "units": "cups"
+      }
+    ],
+    "directions": [
+      "Peel and pit avocado",
+      "Blend all ingredients in a blender until very smooth, about 1 minute.",
+      "Done"
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 1
+  }
