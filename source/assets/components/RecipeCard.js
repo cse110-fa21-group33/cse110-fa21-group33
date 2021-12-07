@@ -79,10 +79,9 @@ class RecipeCard extends HTMLElement {
       }
     }
     
-    @media only screen
-    and (max-device-width: 812px) {
+    @media only screen {
       .card-title {
-        height: 3.3rem;
+        height: 6.5vw;
       }
     }
     `;
