@@ -1,0 +1,77 @@
+﻿{
+  "title": "Carolina Reaper Salsa",
+  "id": "CrMKPl",
+  "description": "Do you think you like super hot salsa? I dare...no I double dare you to try this one! It’s it’s not only super hot, it’s super delicious!!",
+  "image": "https://i.imgur.com/9iTkaL7.jpg",
+  "servingSize": 8,
+  "scoville": 1500000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 15
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 20
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 35
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "Tomatoes",
+      "quantity": "2",
+      "units": "cups"
+    },
+    {
+      "name": "White Onion",
+      "quantity": "0.25",
+      "units": "N/A"
+    },
+    {
+      "name": "Garlic Cloves",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "Fresh Cilantro",
+      "quantity": "5",
+      "units": "N/A"
+    },
+    {
+      "name": "Carolina Reaper Pepper",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "Tomato Paste",
+      "quantity": "1",
+      "units": "lbs"
+    },
+    {
+      "name": "Water",
+      "quantity": "4",
+      "units": "tbsp"
+    },
+    {
+      "name": "Salt",
+      "quantity": "1",
+      "units": "tsp"
+    }
+  ],
+  "directions": [
+    "Slice your tomatoes in half (through the center so you have a top half and a bottom half). Next, slice your onion into a couple chunks (not too thin). Then cut the ends off your garlic cloves but leave the husks on. And finally, take your Reaper and place all onto a baking sheet and set your oven to broil. (If you rehydrated your pepper, squeeze the water out first).",
+    "Broil on the top rack. Your pepper and garlic will blacken first so take those out when they are charred nicely but not burned. Confined to cook the tomato and onion until the tomato is mostly black.",
+    "While your veggies and peppers are cooking, add your cilantro sprigs, tomato paste and salt to a food processor.",
+    "When your tomatoes and onions are done, remove from oven and place them, along with all the tomato juices that are on the baking sheet, into the processor. Process well so that your pepper is dispersed enough in the salsa. (You DO NOT want to get a big chunk of that pepper all at once!)",
+    "Place in an airtight container and refrigerate for at least an hour before eating for best flavor."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 5
+}
