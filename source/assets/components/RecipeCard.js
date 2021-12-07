@@ -81,7 +81,7 @@ class RecipeCard extends HTMLElement {
     
     @media only screen {
       .recipe-title {
-        height: 3rem;
+        height: 2rem;
       }
     }
     `;
