@@ -7,7 +7,7 @@ describe('Basic user flow for Website', () => {
 
   it('Initial Home Page - Check for recipe cards', async () => {
     console.log('Checking for recipe cards');
-    await new Promise((r) => setTimeout(r, 4000));
+    await new Promise((r) => setTimeout(r, 4500));
     const numCards = await page.$$eval('recipe-card', (recipeCards) => recipeCards.length);
     console.log(numCards);
     expect(numCards).toBeGreaterThanOrEqual(1);
@@ -17,7 +17,7 @@ describe('Basic user flow for Website', () => {
     const spiceSlider = await page.$$eval('#myRange', (slider) => slider.length);
     expect(spiceSlider).toBe(1);
   });
-  /*
+
   it('Test spice filter for level 1', async () => {
     console.log('Checking if spice slider works correctly');
     await page.$eval('.slider', (slider) => {
@@ -51,7 +51,7 @@ describe('Basic user flow for Website', () => {
       slider.value = 2;
       const event = new Event('change');
       slider.dispatchEvent(event);
-  });
+    });
     await new Promise((r) => setTimeout(r, 3000));
     const card = await page.$$('recipe-card');
     const root = await card[0].getProperty('shadowRoot');
@@ -80,7 +80,7 @@ describe('Basic user flow for Website', () => {
       slider.value = 3;
       const event = new Event('change');
       slider.dispatchEvent(event);
-  });
+    });
     await new Promise((r) => setTimeout(r, 3000));
     const card = await page.$$('recipe-card');
     const root = await card[0].getProperty('shadowRoot');
@@ -88,7 +88,7 @@ describe('Basic user flow for Website', () => {
     const text = await spiceRating.getProperty('innerText');
     expect(text._remoteObject.value).toBe('Spice Rating: 🌶️🌶️🌶️');
   });
-  it('Test if the recipe display level 2', async () => {
+  it('Test if the recipe display level 3', async () => {
     console.log('Checking if clicking recipe card brings up recipe');
     const card = await page.$('recipe-card');
     card.click();
@@ -108,7 +108,7 @@ describe('Basic user flow for Website', () => {
       slider.value = 4;
       const event = new Event('change');
       slider.dispatchEvent(event);
-  });
+    });
     await new Promise((r) => setTimeout(r, 3000));
     const card = await page.$$('recipe-card');
     const root = await card[0].getProperty('shadowRoot');
@@ -136,7 +136,7 @@ describe('Basic user flow for Website', () => {
       slider.value = 5;
       const event = new Event('change');
       slider.dispatchEvent(event);
-  });
+    });
     await new Promise((r) => setTimeout(r, 3000));
     const card = await page.$$('recipe-card');
     const root = await card[0].getProperty('shadowRoot');
@@ -155,19 +155,7 @@ describe('Basic user flow for Website', () => {
     const text = await spice.getProperty('innerText');
     expect(text._remoteObject.value).toBe('🌶️🌶️🌶️🌶️🌶️');
   });
-  */
-  /*
-  it('Testing if clicking challenges brings up new recipes', async () => {
-    console.log('Testing if clicking challenges brings up new recipes');
-    const card = await page.$('challenge-bar');
-    card.click();
-    await new Promise((r) => setTimeout(r, 3000));
-    const challenge = await page.$('#middle-title');
-    //const challenge_name = challenge.getProperty('innerText');
-    console.log(challenge._remoteObject.value);
-    expect(challenge.innerHTML).toBe('Two Spicy');
-  });
-*/
+
   it('Test clicking challenge bar', async () => {
     console.log('Checking challenge title');
     const logo = await page.$('#websiteLogo');
@@ -207,15 +195,133 @@ describe('Basic user flow for Website', () => {
     await new Promise((r) => setTimeout(r, 2000));
     const submitButton = await root.$('#submitButton');
     submitButton.click();
-    await new Promise((r) => setTimeout(r, 8000));
+    await new Promise((r) => setTimeout(r, 5000));
 
-    // await page.type('#searchBar', 'Hello');
+    await page.type('#searchBar', 'He');
+    await new Promise((r) => setTimeout(r, 600));
+    await page.type('#searchBar', 'll');
+    await new Promise((r) => setTimeout(r, 600));
+    await page.type('#searchBar', 'o');
+    await new Promise((r) => setTimeout(r, 600));
+
     const numCards = await page.$$eval('recipe-card', (recipeCards) => recipeCards.length);
-    expect(numCards).toBe(17);
+    console.log(numCards);
+    expect(numCards).toBe(1);
   });
-/*
+
   it('Testing the searchbar feature', async () => {
     console.log('Searching for hello recipe');
+    const logo = await page.$('#websiteLogo');
+    logo.click();
+    await page.type('#searchBar', 'He');
+    await new Promise((r) => setTimeout(r, 600));
+    await page.type('#searchBar', 'll');
+    await new Promise((r) => setTimeout(r, 600));
+    await page.type('#searchBar', 'o');
+    await new Promise((r) => setTimeout(r, 600));
+    const recipeCard = await page.$('recipe-card');
+    const root = await recipeCard.getProperty('shadowRoot');
+    const title = await root.$('.card-title');
 
+    const value = await title.evaluate((el) => el.textContent);
+    expect(value).toBe('Hello');
+  });
+  it('Testing the edit feature', async () => {
+    console.log('Editing the hello recipe');
+    await page.$eval('recipe-card', (recipeCard) => {
+      const event = new Event('click');
+      recipeCard.dispatchEvent(event);
+    });
+    await new Promise((r) => setTimeout(r, 3000));
+    const recipe = await page.$('recipe-display');
+    const root = await recipe.getProperty('shadowRoot');
+
+    await root.$eval('#editButton', (editButton) => {
+      const event = new Event('click');
+      editButton.dispatchEvent(event);
+    });
+    await new Promise((r) => setTimeout(r, 1000));
+    const upload = await page.$('recipe-upload');
+    const upRoot = await upload.getProperty('shadowRoot');
+    const recipeTime = page.evaluateHandle(() => document.querySelector('recipe-upload').shadowRoot.querySelector('input#cookMins'));
+    const inputElement = await (await recipeTime).asElement();
+    await inputElement.type('50');
+    const submitButton = await upRoot.$('#submitButton');
+    submitButton.click();
+    await new Promise((r) => setTimeout(r, 3000));
+    await page.type('#searchBar', 'He');
+    await new Promise((r) => setTimeout(r, 600));
+    await page.type('#searchBar', 'll');
+    await new Promise((r) => setTimeout(r, 600));
+    await page.type('#searchBar', 'o');
+    await new Promise((r) => setTimeout(r, 600));
+    const card = await page.$('recipe-card');
+    const cardRoot = await card.getProperty('shadowRoot');
+    const time = await cardRoot.$('time');
+    const value = await time.evaluate((el) => el.textContent);
+    expect(value).toContain('0 hr 50 min');
+  });
+  it('Testing the delete feature', async () => {
+    console.log('Deleteing the hello recipe');
+    await page.$eval('recipe-card', (recipeCard) => {
+      const event = new Event('click');
+      recipeCard.dispatchEvent(event);
+    });
+    await new Promise((r) => setTimeout(r, 3000));
+    const recipe = await page.$('recipe-display');
+    const root = await recipe.getProperty('shadowRoot');
+
+    await root.$eval('#editButton', (editButton) => {
+      const event = new Event('click');
+      editButton.dispatchEvent(event);
+    });
+    await new Promise((r) => setTimeout(r, 1000));
+    const upload = await page.$('recipe-upload');
+    const upRoot = await upload.getProperty('shadowRoot');
+    const deleteButton = await upRoot.$('#deleteButton');
+    deleteButton.click();
+
+    await new Promise((r) => setTimeout(r, 1000));
+    await page.type('#searchBar', 'He');
+    await new Promise((r) => setTimeout(r, 600));
+    await page.type('#searchBar', 'll');
+    await new Promise((r) => setTimeout(r, 600));
+    await page.type('#searchBar', 'o');
+    await new Promise((r) => setTimeout(r, 600));
+
+    const numCards = await page.$$eval('recipe-card', (recipeCards) => recipeCards.length);
+    console.log(numCards);
+    expect(numCards).toBe(0);
+  });
+  /*
+  it('Test clicking challenge progress gets tracked', async () => {
+    console.log('Picking a challenge');
+    const logo = await page.$('#websiteLogo');
+    logo.click();
+    await new Promise((r) => setTimeout(r, 2000));
+    const bar = await page.$('challenge-bar');
+    await page.$eval('challenge-bar', (bar) => {
+      const event = new Event('click');
+      bar.dispatchEvent(event);
+    });
+    await new Promise((r) => setTimeout(r, 3000));
+    const card = await page.$('recipe-card');
+    card.click();
+    await new Promise((r) => setTimeout(r, 3000));
+    const recipe = await page.$('recipe-display');
+    const root = await recipe.getProperty('shadowRoot');
+    await root.$eval('#made-this-button', (madeThisButton) => {
+      const event = new Event('click');
+      madeThisButton.dispatchEvent(event);
+    });
+    await new Promise((r) => setTimeout(r, 4000));
+    const home_logo = await page.$('#websiteLogo');
+    home_logo.click();
+    await new Promise((r) => setTimeout(r, 7000));
+    const bar1 = await page.$('challenge-bar');
+    const bar_root = await bar1.getProperty('shadowRoot');
+    const my_progress = await bar_root.$('.my-bar');
+    const my_progress_value = await my_progress.evaluate((el) => el.style);
+    expect(my_progress_value).toBe('10%');
   }); */
 });
