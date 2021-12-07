@@ -28,6 +28,7 @@ class RecipeCard extends HTMLElement {
       margin: 0;
       background-color: #ffffff;
       cursor: pointer;
+      border: 1px solid #252525;
     }
    
      .recipe-card:hover {
@@ -47,7 +48,7 @@ class RecipeCard extends HTMLElement {
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
-      min-height: 4.13rem;
+      height: 3.9rem;
     }
     
     .card-rating {
@@ -65,8 +66,25 @@ class RecipeCard extends HTMLElement {
       font-size: 12px;
       padding: 0 0.6rem 0 1rem;
     }
-    `;
 
+    @media (prefers-color-scheme: dark) {
+      .recipe-card {
+        background-color: #252525;
+        color: #a0a0a0;
+      }
+
+      img {
+        opacity: .75;
+        transition: opacity .5s ease-in-out;
+      }
+    }
+    
+    @media only screen {
+      .card-title {
+        height: clamp(3.5rem, 5.2vw, 3.9rem);
+      }
+    }
+    `;
     const elem = document.createElement('div');
     elem.classList.add('recipe-card');
 

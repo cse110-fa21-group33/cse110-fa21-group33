@@ -173,6 +173,61 @@ class RecipeDisplay extends HTMLElement {
       hr {
         border-color: black;
       }
+
+      @media (prefers-color-scheme: dark) {
+        .recipe-section {
+          background-color: darkred;
+        }
+
+        h1 {
+          color: #252525;
+        }
+
+        .recipe-description {
+          color: #252525;
+          font-weight: bold;
+        }
+
+        #recipe-media > img {
+          border: 1px solid #252525;
+        }
+  
+        img {
+          opacity: .75;
+          transition: opacity .5s ease-in-out;
+          
+        }
+
+        button {
+          background-color: #252525;
+          color: #a0a0a0;
+          border: 1px solid #a0a0a0;
+        }
+
+        #recipe-information {
+          background-color: #252525;
+          color: #a0a0a0;
+          border: 2px solid #a0a0a0;
+        }
+
+        #recipe-ingredients {
+          background-color: #252525;
+          color: #a0a0a0;
+          border: 2px solid #a0a0a0;
+        }
+
+        #recipe-directions {
+          background-color: #252525;
+          color: #a0a0a0;
+          border: 2px solid #a0a0a0;
+        }
+
+        .button-wrapper {
+          display: flex;
+          justify-content: right;
+          align-items: right;
+        }
+      }
     `;
     article.innerHTML = `
       <div class="main-container">
@@ -211,13 +266,13 @@ class RecipeDisplay extends HTMLElement {
               <ul class="ingredient-list">
               </ul>
             </div>
-            <hr>
+            <br>
             <div id="recipe-directions">
               <h3 class="recipe-subtitle">Directions</h3>
               <ul class="recipe-list">
               </ul>
             </div>
-            <hr>
+            <br>
             <div class="button-wrapper">
               <button class="recipe-button" id="made-this-button">I Made This!</button>
             </div>
@@ -300,13 +355,13 @@ class RecipeDisplay extends HTMLElement {
                 <ul class="ingredient-list">
                 </ul>
               </div>
-              <hr>
+              <br>
               <div id="recipe-directions">
                 <h3 class="recipe-subtitle">Directions</h3>
                 <ul class="recipe-list">
                 </ul>
               </div>
-              <hr>
+              <br>
               <div class="button-wrapper">
                 <button class="recipe-button" id="made-this-button">I Made This!</button>
               </div>

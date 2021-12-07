@@ -35,6 +35,22 @@ class ChallengeBar extends HTMLElement {
         color: black;
         border-radius: 388px;
       }
+
+      @media (prefers-color-scheme: dark) {
+
+        h3 {
+          color: #252525;
+        }
+
+        .progress {
+          background-color: #a0a0a0;
+        }
+
+        .my-bar {
+          background-color: rgb(202, 85, 7);
+          color: darkred;
+        }
+      }
     `;
 
     const elem = document.createElement('div');

@@ -59,6 +59,56 @@ class RecipeUpload extends HTMLElement {
         cursor: pointer;
       }
 
+      @media (prefers-color-scheme: dark) {
+
+        article {
+          background-color: darkred;
+        }
+
+        h1, h2 {
+          color: #a0a0a0;
+        }
+
+        input:not([type='button']) {
+          background-color: #252525;
+          color: #a0a0a0;
+        }
+
+        input[type="file" i] {
+          background: transparent;
+        }
+
+        img {
+          opacity: .75;
+          transition: opacity .5s ease-in-out;
+        }
+
+        input[type='button']{
+          background-color: #252525;
+          border: 2px solid #A0A0A0;
+          color: #a0a0a0;
+        }
+
+        input[type="file" i]::-webkit-file-upload-button {
+          background-color: #252525;
+          color: #A0A0A0;
+        }
+
+        textarea {
+          background-color: #252525;
+          color: #A0A0A0;
+        }
+
+        select {
+          background-color: #252525;
+          color: #a0a0a0;
+        }
+
+        button {
+          color: #a0a0a0
+        }
+
+      }
       
       
     `;
