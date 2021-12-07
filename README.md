@@ -3,6 +3,8 @@ This is the repo for team 33's group project for CSE 110 Fall 2021. Our goal is 
 
 Our deployed site: https://exploding-kitchen.netlify.app/
 
+Function documentation can be found [here](https://cse110-fa21-group33.github.io/cse110-fa21-group33/).
+
 ## Team Members:
 - Lynn Dang
 - Lorenzo Mendes
