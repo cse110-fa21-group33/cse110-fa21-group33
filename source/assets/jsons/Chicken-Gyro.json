@@ -1,0 +1,130 @@
+{
+    "title": "Best Homemade Chicken Gyro Recipe",
+    "id": "N6l0rv",
+    "description": "Can't get enough of your favorite Greek restaurant's gyros? Try this quick and easy chicken gyro recipe for something just as delicious, but far better for you!  Yogurt-marinated chicken tenders, packed with flavor from warm spices, and loaded into a pita wrap with homemade tzatziki sauce and all the fixings you love!",
+    "image": "https://i.imgur.com/HtwXrWA.jpg",
+    "servingSize": 4,
+    "scoville": 0,
+    "time": [
+        {
+            "name": "prepTime",
+            "hours": 0,
+            "minutes": 10
+        },
+        {
+            "name": "cookTime",
+            "hours": 0,
+            "minutes": 10
+        },
+        {
+            "name": "totalTime",
+            "hours": 0,
+            "minutes": 20
+        }
+    ],
+    "ingredientList": [
+        {
+            "name": "Chicken tender",
+            "quantity": "1.5",
+            "units": "lbs"
+        },
+        {
+            "name": "Olive oil",
+            "quantity": "3.5",
+            "units": "tbsp"
+        },
+        {
+            "name": "Greek Yogurt",
+            "quantity": "1",
+            "units": "cups"
+        },
+        {
+            "name": "Lemon for juicing",
+            "quantity": "1",
+            "units": "N/A"
+        },
+        {
+            "name": "Red Wine vinegar",
+            "quantity": "2",
+            "units": "tbsp"
+        },
+        {
+            "name": "Garlic Cloves, minced",
+            "quantity": "3",
+            "units": "N/A"
+        },
+        {
+            "name": "Pinch of Salt",
+            "quantity": "",
+            "units": "N/A"
+        },
+        {
+            "name": "Pinch of Pepper",
+            "quantity": "",
+            "units": "N/A"
+        },
+        {
+            "name": "Oregano",
+            "quantity": "1",
+            "units": "tbsp"
+        },
+        {
+            "name": "Sweet paprika",
+            "quantity": "1",
+            "units": "tsp"
+        },
+        {
+            "name": "Ground cumin",
+            "quantity": "1",
+            "units": "tsp"
+        },
+        {
+            "name": "Ground coriander",
+            "quantity": "1",
+            "units": "tsp"
+        },
+        {
+            "name": "Pita Bread",
+            "quantity": "4",
+            "units": "N/A"
+        },
+        {
+            "name": "Tztaziki Sauce",
+            "quantity": "",
+            "units": "N/A"
+        },
+        {
+            "name": "Large Tomato, sliced",
+            "quantity": "1",
+            "units": "N/A"
+        },
+        {
+            "name": "Cucumber, sliced",
+            "quantity": "1",
+            "units": "N/A"
+        },
+        {
+            "name": "Green pepper, sliced",
+            "quantity": "1",
+            "units": "N/A"
+        },
+        {
+            "name": "Small Red onion, sliced",
+            "quantity": "1",
+            "units": "N/A"
+        },
+        {
+            "name": "Pitted kalamata olives",
+            "quantity": "",
+            "units": "N/A"
+        }
+    ],
+    "directions": [
+        "Marinate chicken and prepare gyro fixings. In a larger mixing bowl, combine the marinade ingredients, mix well. Add the chicken tenders and mix to make sure chicken is well coated with the marinade. Cover and refrigerate for 30 minutes (or refrigerate overnight.) Meanwhile, make Tztaziki sauce according to this recipe, and prepare the pita and other gyro fixings.",
+        "Cook chicken. Heat 1 tablespoon extra virgin olive oil in a non-stick skillet over medium-high until shimmering but not smoking. Add chicken tenders to the pan (make sure to shake off any excess marinade before adding chicken to the pan.) Cook on one side undisturbed for 5 minutes until browned. Using a pair of tongs, turn chicken over and cook on other side for another 5 minutes or until chicken is done. (See notes for outdoor grilling)",
+        "Assemble the chicken gyros. Warm up some pita. Spread Tztaziki sauce on top, then add chicken (about 2 to 3 tenders) and top with tomato, cucumber, green pepper, red onion and olives as you like. Wrap the pita up and enjoy!"
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 1
+}

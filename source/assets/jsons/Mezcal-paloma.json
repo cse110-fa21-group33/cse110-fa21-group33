@@ -1,0 +1,79 @@
+{
+    "title": "Mezcal paloma",
+    "id": "WZ2lAK",
+    "description": "Check out this quick and easy summer cocktail recipe with mezcal, zesty limes and sweet yet slightly bitter grapefruit juice. A paloma is usually made with tequila but using mezcal instead adds a lovely smoky edge to the drink.",
+    "image": "https://i.imgur.com/9AjHMy0.jpg",
+    "servingSize": 2,
+    "scoville": 500,
+    "time": [
+        {
+            "name": "prepTime",
+            "hours": 0,
+            "minutes": 10
+        },
+        {
+            "name": "cookTime",
+            "hours": 0,
+            "minutes": 0
+        },
+        {
+            "name": "totalTime",
+            "hours": 0,
+            "minutes": 10
+        }
+    ],
+    "ingredientList": [
+        {
+            "name": "Mezcal",
+            "quantity": "3",
+            "units": "tbsp"
+        },
+        {
+            "name": "Ruby grapefruit juice",
+            "quantity": "3",
+            "units": "tbsp"
+        },
+        {
+            "name": "Lime Juice",
+            "quantity": "2",
+            "units": "tbsp"
+        },
+        {
+            "name": "Honey syrup",
+            "quantity": "2",
+            "units": "tbsp"
+        },
+        {
+            "name": "Soda water",
+            "quantity": "",
+            "units": "N/A"
+        },
+        {
+            "name": "Grapefruit peel twist",
+            "quantity": "",
+            "units": "N/A"
+        },
+        {
+            "name": "Mild Chili powder",
+            "quantity": "1",
+            "units": "tsp"
+        },
+        {
+            "name": "Sea salt flakes",
+            "quantity": "2",
+            "units": "tsp"
+        },
+        {
+            "name": "Lime, zested",
+            "quantity": "1",
+            "units": "N/A"
+        }
+    ],
+    "directions": [
+        "For the citrus-chilli salt, mix together all of the ingredients on a plate. Rub a lime or grapefruit wedge around the rims of 2 coupe glasses then press into the salt mixture.",
+        "Pour the mezcal, grapefruit juice, lime juice and honey syrup into a cocktail shaker, top up with ice and shake really well. Pour through a fine sieve into the glasses, adding a splash of soda water, if you like, to give the cocktail a little fizz. Garnish with a twist of grapefruit peel or a grapefruit wedge."
+    ],
+    "challenges": [],
+    "completed": false,
+    "spiceRating": 1
+}
