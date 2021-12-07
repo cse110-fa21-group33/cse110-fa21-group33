@@ -78,6 +78,12 @@ class RecipeCard extends HTMLElement {
         transition: opacity .5s ease-in-out;
       }
     }
+    
+    @media only screen {
+      .recipe-card {
+        height: 3.5rem;
+      }
+    }
     `;
     const elem = document.createElement('div');
     elem.classList.add('recipe-card');
