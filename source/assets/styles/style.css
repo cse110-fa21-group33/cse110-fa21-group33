@@ -331,7 +331,7 @@ a:link {
       background-color: #a0a0a0;
     }
 
-    img {
+    img:not(#websiteLogo){
       opacity: .75;
       transition: opacity .5s ease-in-out;
     }
@@ -347,8 +347,8 @@ a:link {
 
     button {
       background-color: #252525;
-      border: 2px solid #A0A0A0;
-      color: #A0A0A0;
+      border: 2px solid #a0a0a0;
+      color: #a0a0a0;
     }
     
     button:active {
