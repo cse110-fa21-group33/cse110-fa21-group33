@@ -6,4 +6,20 @@
     --ec-spicy3: #EE6858;
     --ec-spicy4: #EE402B;
     --ec-spicy5: #CB0003;
+
+    --font-color: white;
+    --border-color: black;
+    --bg-color: white;
+    --bg-color-alt: black;
+    --bg-color-red: #ee7869;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --font-color: #a0a0a0;
+        --border-color: #a0a0a0;
+        --bg-color: #252525;
+        --bg-color-alt: #252525;
+        --bg-color-red: #300002;
+    }
 }

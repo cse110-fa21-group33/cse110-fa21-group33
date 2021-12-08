@@ -20,11 +20,12 @@
     {
       "title": "Habanero Hottie",
       "numberCompleted": 0,
-      "total": 3,
+      "total": 4,
       "recipes": [
         "ccth8j",
         "T7yP2R",
-        "i43eYV"
+        "i43eYV",
+        "Ffv1IK"
       ]
     },
     {
@@ -38,6 +39,18 @@
         "S8kpMT",
         "ez7Z7Y"
       ]
+    },
+    {
+      "title": "I Got the Sauce",
+      "numberCompleted": 0,
+      "total": 4,
+      "recipes": [
+        "i43eYV",
+        "JjmqjM",
+        "eDAFaB",
+        "BQPtmQ"
+      ]
     }
+
   ]
 }
