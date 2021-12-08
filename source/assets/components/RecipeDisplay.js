@@ -209,7 +209,7 @@ class RecipeDisplay extends HTMLElement {
 
       @media (prefers-color-scheme: dark) {
         .recipe-section {
-          background-color: darkred;
+          background-color: var(--bg-color-red);
         }
 
         h1 {
@@ -246,9 +246,9 @@ class RecipeDisplay extends HTMLElement {
         }
 
         input[type='button']{
-          background-color: #252525;
-          border: 2px solid #A0A0A0;
-          color: #a0a0a0;
+          background-color: var(--bg-color);
+          border: 2px solid var(--border-color);
+          color: var(--font-color);
         }
       }
     `;
