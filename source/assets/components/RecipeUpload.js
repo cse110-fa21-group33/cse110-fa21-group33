@@ -45,7 +45,7 @@ class RecipeUpload extends HTMLElement {
         cursor: pointer;
       }
 
-      input[type="number"], #ingredientUnits {
+      input[type="number"], .ingredientUnits {
         width: 20%;
         height: 2rem;
       }
@@ -111,6 +111,7 @@ class RecipeUpload extends HTMLElement {
         h1,
         h2,
         h4,
+        p,
         button {
           color: var(--font-color);
         }
@@ -191,7 +192,7 @@ class RecipeUpload extends HTMLElement {
         <h2>Ingredients</h2>
             <input type="text" id="ingredientDescription" class="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
             <input type="number" id="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
-            <select id="ingredientUnits">
+            <select id="ingredientUnits" class="ingredientUnits">
               <option>N/A</option>
               <option>cups</option>
               <option>pt</option>
@@ -317,7 +318,7 @@ class RecipeUpload extends HTMLElement {
     <h2>Ingredients</h2>
         <input type="text" id="ingredientDescription" class="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
         <input type="number" id="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
-        <select id="ingredientUnits">
+        <select id="ingredientUnits" class="ingredientUnits">
             <option>N/A</option>
             <option>cups</option>
             <option>pt</option>
@@ -864,6 +865,7 @@ class RecipeUpload extends HTMLElement {
         const option = document.createElement('option');
         option.setAttribute('value', selectOptions[i]);
         option.innerText = selectOptions[i];
+        option.classlist.add("ingredientUnits");
         select.appendChild(option);
       }
       const lineBreak = document.createElement('br');
