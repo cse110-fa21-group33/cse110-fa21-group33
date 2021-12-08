@@ -1,0 +1,115 @@
+﻿{
+  "title": "Sriracha Ramen Noodle Soup",
+  "id": "qfhvBq",
+  "description": "A spicy ramen noodle soup spiked with sriracha hot sauce and ready in just 20 minutes!",
+  "image": "https://i.imgur.com/6Kg0Bqh.jpg",
+  "servingSize": 4,
+  "scoville": 2000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 0,
+      "minutes": 10
+    },
+    {
+      "name": "cookTime",
+      "hours": 0,
+      "minutes": 10
+    },
+    {
+      "name": "totalTime",
+      "hours": 0,
+      "minutes": 20
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "Sesame Oil",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "Sriracha Hot Sauce",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "Small Onion, diced",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "Small Roma Tomato, diced",
+      "quantity": "1",
+      "units": "N/A"
+    },
+    {
+      "name": "Grated Ginger",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "Minced Garlic Cloves",
+      "quantity": "5",
+      "units": "N/A"
+    },
+    {
+      "name": "Garlic Powder",
+      "quantity": "0.5",
+      "units": "tsp"
+    },
+    {
+      "name": "Celery Salt",
+      "quantity": "0.5",
+      "units": "tsp"
+    },
+    {
+      "name": "Water",
+      "quantity": "2",
+      "units": "cups"
+    },
+    {
+      "name": "Vegetable Broth",
+      "quantity": "4",
+      "units": "cups"
+    },
+    {
+      "name": "Soy Sauce",
+      "quantity": "1",
+      "units": "tbsp"
+    },
+    {
+      "name": "Rice Vinegar",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "Ramen Noodle Packs",
+      "quantity": "3",
+      "units": "N/A"
+    },
+    {
+      "name": "Chopped Scallions",
+      "quantity": "0.5",
+      "units": "cups"
+    },
+    {
+      "name": "Chopped Cilantro",
+      "quantity": "0.5",
+      "units": "cups"
+    },
+    {
+      "name": "Poached Eggs (Optional)",
+      "quantity": "4",
+      "units": "N/A"
+    }
+  ],
+  "directions": [
+    "Add the sesame oil and sriracha to a large stockpot and bring to a simmer over medium-heat. Add the onion and tomato and cook for 4 minutes, stirring occasionally. Add the ginger, garlic, and seasonings; cook for 2 minutes or until fragrant. Add 2 cups of water and transfer mixture to a blender or food processor and pulse until smooth. Return mixture to the pot and add the broth.",
+    "Bring to a simmer; add soy sauce and vinegar, and simmer for 8-10 minutes. Taste and adjust seasonings as needed.",
+    "Add the ramen noodles to the broth and simmer for an additional 2-3 minutes, or until the noodles have softened. Remove pan from heat, ladle soup into bowls, and top with scallions, cilantro, and eggs (if using). Enjoy!\n"
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 1
+}

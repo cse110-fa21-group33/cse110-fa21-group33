@@ -1,0 +1,112 @@
+﻿{
+  "title": "Jamaican Jerk Chicken",
+  "id": "C60yYR",
+  "description": "Hot, succulent Jamaican Jerk Chicken is a tropical treat. You'll love the heat and flavor of this fiery marinade.",
+  "image": "https://i.imgur.com/7zDBfJY.jpg",
+  "servingSize": 6,
+  "scoville": 150000,
+  "time": [
+    {
+      "name": "prepTime",
+      "hours": 2,
+      "minutes": 20
+    },
+    {
+      "name": "cookTime",
+      "hours": 1,
+      "minutes": 0
+    },
+    {
+      "name": "totalTime",
+      "hours": 3,
+      "minutes": 20
+    }
+  ],
+  "ingredientList": [
+    {
+      "name": "Chicken Breasts - cut into chunks",
+      "quantity": "6",
+      "units": "N/A"
+    },
+    {
+      "name": "Juiced Limes",
+      "quantity": "4",
+      "units": "N/A"
+    },
+    {
+      "name": "Water",
+      "quantity": "1",
+      "units": "cups"
+    },
+    {
+      "name": "Ground Allspice",
+      "quantity": "2",
+      "units": "tsp"
+    },
+    {
+      "name": "Ground Nutmeg",
+      "quantity": "0.5",
+      "units": "tsp"
+    },
+    {
+      "name": "Salt",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "Brown Sugar",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "Dried Thyme",
+      "quantity": "2",
+      "units": "tsp"
+    },
+    {
+      "name": "Ground Ginger",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "Ground Black Pepper",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "Vegetable Oil",
+      "quantity": "2",
+      "units": "tbsp"
+    },
+    {
+      "name": "Chopped Onions",
+      "quantity": "2",
+      "units": "N/A"
+    },
+    {
+      "name": "Chopped Green Onions",
+      "quantity": "1",
+      "units": "cups"
+    },
+    {
+      "name": "Chopped Garlic Cloves",
+      "quantity": "6",
+      "units": "N/A"
+    },
+    {
+      "name": "Chopped Habanero Peppers",
+      "quantity": "2",
+      "units": "N/A"
+    }
+  ],
+  "directions": [
+    "Place chicken in a medium bowl. Cover with lime juice and water. Set aside.",
+    "In a blender or food processor, place allspice, nutmeg, salt, brown sugar, thyme, ginger, black pepper and vegetable oil. Blend well, then mix in onions, green onions, garlic and habanero peppers until almost smooth.",
+    "Pour most of the blended marinade mixture into bowl with chicken, reserving a small amount to use as a basting sauce while cooking. Cover, and marinate in the refrigerator for at least 2 hours.",
+    "Preheat a grill for medium heat.",
+    "Brush grill grate with oil. Cook chicken slowly on the preheated grill. Turn frequently, basting often with remaining marinade mixture. Cook to desired doneness."
+  ],
+  "challenges": [],
+  "completed": false,
+  "spiceRating": 4
+}

@@ -78,6 +78,11 @@ const recipesFromFile = [
   'assets/jsons/Spicy-Vodka-Sunrise.json',
   'assets/jsons/Mezcal-paloma.json',
   'assets/jsons/Spicy-75.json',
+  'assets/jsons/Carolina-Reaper-Salsa.json',
+  'assets/jsons/Jalapeno-Poppers.json',
+  'assets/jsons/Honey-Fried-Chicken.json',
+  'assets/jsons/Jerk-Chicken.json',
+  'assets/jsons/Sriracha-Ramen.json',
 ];
 
 let loaded = false;
