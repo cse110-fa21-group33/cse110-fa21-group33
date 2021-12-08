@@ -43,12 +43,12 @@ class ChallengeBar extends HTMLElement {
         }
 
         .progress {
-          background-color: #a0a0a0;
+          background-color: var(--border-color);
         }
 
         .my-bar {
           background-color: rgb(202, 85, 7);
-          color: darkred;
+          color: var(--bg-color-red);
         }
       }
     `;

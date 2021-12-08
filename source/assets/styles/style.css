@@ -5,7 +5,7 @@
 
 body {
   overflow: auto;
-  background-image: url('../images/background-5.png');
+  background-image: url('../images/background-draft.png');
   background-repeat: repeat;
   background-size: 400px;
   -ms-overflow-style: none;  /* IE and Edge */
@@ -316,24 +316,24 @@ a:link {
 
 @media (prefers-color-scheme: dark) {
     body {
-      background-color: #252525;
+      background-image: url('../images/background-5.png');
+      background-color: var(--bg-color);
     }
 
     .nav--header {
       background: #252525; /* Black background */
-      border-bottom: 3px solid #9b0b0d;
-    
+      border-bottom: 3px solid var(--bg-color-red);
     }
 
     input {
-      background-color: #a0a0a0;
+      background-color: var(--font-color);
       opacity: 1;
       border: 2px solid black;
     }
 
 
     ::placeholder {
-      background-color: #a0a0a0;
+      background-color: var(--font-color);
     }
 
     img:not(#websiteLogo){
@@ -342,22 +342,18 @@ a:link {
     }
 
     h1 {
-      color: #252525;
+      color: var(--bg-color-alt);
     }
 
     .section--main-page > .main--div {
-      background: darkred;
-      border: 2px solid #252525;
+      background: var(--bg-color-red);
+      border: 2px solid var(--bg-color);
     }  
 
     button {
-      background-color: #252525;
-      border: 2px solid #a0a0a0;
-      color: #a0a0a0;
-    }
-    
-    button:active {
-      background-color: rgb(187, 187, 187);
+      background-color: var(--bg-color);
+      border: 2px solid var(--border-color);
+      color: var(--font-color);
     }
 
     .logo--wrapper > img {
@@ -365,6 +361,4 @@ a:link {
       background-size: cover;
     }
 
-
- 
-
+  }
