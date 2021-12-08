@@ -865,7 +865,7 @@ class RecipeUpload extends HTMLElement {
         const option = document.createElement('option');
         option.setAttribute('value', selectOptions[i]);
         option.innerText = selectOptions[i];
-        option.classlist.add("ingredientUnits");
+        option.classList.add("ingredientUnits");
         select.appendChild(option);
       }
       const lineBreak = document.createElement('br');
