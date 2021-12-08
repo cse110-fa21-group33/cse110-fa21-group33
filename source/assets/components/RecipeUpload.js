@@ -850,6 +850,7 @@ class RecipeUpload extends HTMLElement {
       inputName.setAttribute('maxlength', '40');
       inputName.setAttribute('placeholder', 'Ingredient Description');
       inputName.value = this.shadowRoot.getElementById('ingredientDescription').value = data.name;
+      inputName.classList.add("ingredientDescription");
       // console.log(data.name);
       const inputQuantity = document.createElement('input');
       inputQuantity.setAttribute('type', 'number');
