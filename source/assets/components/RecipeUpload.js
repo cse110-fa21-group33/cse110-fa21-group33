@@ -861,11 +861,11 @@ class RecipeUpload extends HTMLElement {
       inputQuantity.value = this.shadowRoot.getElementById('ingredientDescription').value = data.quantity;
       // console.log(data.quantity);
       const select = document.createElement('select');
+      select.classList.add("ingredientUnits");
       for (let i = 0; i < selectOptions.length; i += 1) {
         const option = document.createElement('option');
         option.setAttribute('value', selectOptions[i]);
         option.innerText = selectOptions[i];
-        option.classList.add("ingredientUnits");
         select.appendChild(option);
       }
       const lineBreak = document.createElement('br');
