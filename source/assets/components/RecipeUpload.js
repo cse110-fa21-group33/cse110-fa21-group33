@@ -189,7 +189,7 @@ class RecipeUpload extends HTMLElement {
 
         <div id="ingredients" value="1">
         <h2>Ingredients</h2>
-            <input type="text" class="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
+            <input type="text" id="ingredientDescription" class="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
             <input type="number" id="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
             <select id="ingredientUnits">
               <option>N/A</option>
@@ -315,7 +315,7 @@ class RecipeUpload extends HTMLElement {
 
     <div id="ingredients" value="1">
     <h2>Ingredients</h2>
-        <input type="text" class="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
+        <input type="text" id="ingredientDescription" class="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
         <input type="number" id="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
         <select id="ingredientUnits">
             <option>N/A</option>
