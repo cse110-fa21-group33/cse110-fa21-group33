@@ -213,11 +213,11 @@ class RecipeDisplay extends HTMLElement {
         }
 
         h1 {
-          color: #252525;
+          color: var(--font-color);
         }
 
         .recipe-description {
-          color: var(--bg-color-alt);
+          color: var(--font-color);
           font-weight: bold;
         }
 
