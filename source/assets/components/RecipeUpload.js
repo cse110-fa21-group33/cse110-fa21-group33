@@ -50,12 +50,12 @@ class RecipeUpload extends HTMLElement {
         height: 2rem;
       }
 
-      input[type="text"]:not(#ingredientDescription) {
+      input[type="text"]:not(.ingredientDescription) {
         width: 100%;
         height: 2rem;
       }
 
-      #ingredientDescription {
+      .ingredientDescription {
         width: 40%;
         height: 2rem;
       }
@@ -189,7 +189,7 @@ class RecipeUpload extends HTMLElement {
 
         <div id="ingredients" value="1">
         <h2>Ingredients</h2>
-            <input type="text" id="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
+            <input type="text" class="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
             <input type="number" id="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
             <select id="ingredientUnits">
               <option>N/A</option>
@@ -315,7 +315,7 @@ class RecipeUpload extends HTMLElement {
 
     <div id="ingredients" value="1">
     <h2>Ingredients</h2>
-        <input type="text" id="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
+        <input type="text" class="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
         <input type="number" id="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
         <select id="ingredientUnits">
             <option>N/A</option>
@@ -607,7 +607,7 @@ class RecipeUpload extends HTMLElement {
         inputName.setAttribute('minlength', '2');
         inputName.setAttribute('maxlength', '40');
         inputName.setAttribute('placeholder', 'Ingredient Description');
-        inputName.id = "ingredientDescription";
+        inputName.classList.add("ingredientDescription");
         const inputQuantity = document.createElement('input');
         inputQuantity.setAttribute('type', 'number');
         inputQuantity.setAttribute('min', '0');
