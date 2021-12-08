@@ -342,7 +342,7 @@ a:link {
     }
 
     h1 {
-      color: var(--bg-color-alt);
+      color: var(--font-color);
     }
 
     .section--main-page > .main--div {
