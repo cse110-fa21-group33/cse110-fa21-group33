@@ -30,12 +30,6 @@ class RecipeUpload extends HTMLElement {
         text-align: center;
       }
 
-      img {
-        width: 55%;
-        margin-left: 22.5%;
-        height: auto;
-      }
-
       input[type="button"] {
         background-color: white;
         border-radius: 20px;
@@ -45,38 +39,8 @@ class RecipeUpload extends HTMLElement {
         cursor: pointer;
       }
 
-      input[type="number"], #ingredientUnits {
-        width: 20%;
-        height: 2rem;
-      }
-
-      input[type="text"]:not(#ingredientDescription) {
-        width: 100%;
-        height: 2rem;
-      }
-
-      #ingredientDescription {
-        width: 40%;
-        height: 2rem;
-      }
-
-      #instructions > textarea {
-        width: 90%;
-        
-      }
-
-      textarea {
-        width: 100%;
-      }
-
       input[type="button"]:active {
         background-color: rgb(187, 187, 187);
-      }
-
-      .scale {
-        float: right;
-        width: 50%;
-        height: 30%;
       }
 
       button {
@@ -95,29 +59,19 @@ class RecipeUpload extends HTMLElement {
         cursor: pointer;
       }
 
-      input[type="file" i] {
-        margin-right: auto;
-        margin-left: 40%;
-        width: 50%;
-      }
-
-
       @media (prefers-color-scheme: dark) {
 
         article {
-          background-color: var(--bg-color-red);
+          background-color: darkred;
         }
 
-        h1,
-        h2,
-        h4,
-        button {
-          color: var(--font-color);
+        h1, h2 {
+          color: #a0a0a0;
         }
 
         input:not([type='button']) {
-          background-color: var(--bg-color);
-          color: var(--font-color);
+          background-color: #252525;
+          color: #a0a0a0;
         }
 
         input[type="file" i] {
@@ -130,21 +84,29 @@ class RecipeUpload extends HTMLElement {
         }
 
         input[type='button']{
-          background-color: var(--bg-color);
-          border: 2px solid var(--font-color);
-          color: var(--font-color);
+          background-color: #252525;
+          border: 2px solid #A0A0A0;
+          color: #a0a0a0;
         }
 
         input[type="file" i]::-webkit-file-upload-button {
-          background-color: var(--bg-color);
-          color: var(--font-color);
+          background-color: #252525;
+          color: #A0A0A0;
         }
 
-        textarea, select {
-          background-color: var(--bg-color);
-          color: var(--font-color);
+        textarea {
+          background-color: #252525;
+          color: #A0A0A0;
         }
 
+        select {
+          background-color: #252525;
+          color: #a0a0a0;
+        }
+
+        button {
+          color: #a0a0a0
+        }
 
       }
       
@@ -168,18 +130,13 @@ class RecipeUpload extends HTMLElement {
         <input type="file" id="imgUpload" accept="image/*">
         <p id="url"></p>
 
-        <img src="assets/images/scoville-scale.png" class="scale">
-
         <h2>Serving Size</h2>
-        <h4>How many people can this dish feed or how many portions can it make?</h4>
         <input type="number" id="servingSize" min="0" max="59" size = "50" value="0" required>
 
-        <h2>Scoville Heat Units /h2>
-        <h4>How many Scoville Heat Units is the hottest pepper is your dish? (refer to scale on right)</h4>
+        <h2>Scoville Heat Units</h2>
         <input type="number" id="scoville" min="0" max="3000000" value="0" required>
 
         <h2>Prep Time</h2>
-        <h4>How much time is needed to prepare the ingredients?</h4>
         <input type="number" id="prepHrs" min="0" max="20"  placeholder="Hours" required>
         <input type="number" id="prepMins" min="0" max="59" placeholder="Minutes" required>
 
@@ -294,18 +251,13 @@ class RecipeUpload extends HTMLElement {
     <input type="file" id="imgUpload" accept="image/*">
     <p id="url"></p>
 
-    <img src="assets/images/scoville-scale.png" class="scale">
-
     <h2>Serving Size</h2>
-    <h4>How many people can this dish feed or how many portions can it make?</h4>
     <input type="number" id="servingSize" min="0" max="59" size = "50" value="0" required>
 
     <h2>Scoville Heat Units</h2>
-    <h4>How many Scoville Heat Units is the hottest pepper is your dish? (refer to scale on right)</h4>
     <input type="number" id="scoville" min="0" max="3000000" value="0" required>
 
     <h2>Prep Time</h2>
-    <h4>How much time is needed to prepare the ingredients?</h4>
     <input type="number" id="prepHrs" min="0" max="20"  placeholder="Hours" required>
     <input type="number" id="prepMins" min="0" max="59" placeholder="Minutes" required>
 
@@ -607,7 +559,6 @@ class RecipeUpload extends HTMLElement {
         inputName.setAttribute('minlength', '2');
         inputName.setAttribute('maxlength', '40');
         inputName.setAttribute('placeholder', 'Ingredient Description');
-        inputName.id = "ingredientDescription";
         const inputQuantity = document.createElement('input');
         inputQuantity.setAttribute('type', 'number');
         inputQuantity.setAttribute('min', '0');
@@ -760,6 +711,8 @@ class RecipeUpload extends HTMLElement {
   FillExistingData() {
     this.shadowRoot.getElementById('recipeName').value = this.json.title;
     this.shadowRoot.getElementById('recipeDescription').value = this.json.description;
+    this.shadowRoot.getElementById('recipeDescription').style = 'width: 70%;';
+    // console.log(this.json);
     if (this.json.image == '') {
       this.shadowRoot.getElementById('url').innerText = '';
       this.shadowRoot.getElementById('imgPreview').src = 'assets/images/placeholder.png';

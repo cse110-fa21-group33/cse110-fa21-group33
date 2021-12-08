@@ -69,8 +69,8 @@ class RecipeCard extends HTMLElement {
 
     @media (prefers-color-scheme: dark) {
       .recipe-card {
-        background-color: var(--bg-color);
-        color: var(--font-color);
+        background-color: #252525;
+        color: #a0a0a0;
       }
 
       img {
@@ -78,7 +78,7 @@ class RecipeCard extends HTMLElement {
         transition: opacity .5s ease-in-out;
       }
     }
-
+    
     @media only screen {
       .card-title {
         height: clamp(3.5rem, 5.2vw, 3.9rem);

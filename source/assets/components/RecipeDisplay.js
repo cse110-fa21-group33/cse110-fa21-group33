@@ -166,41 +166,8 @@ class RecipeDisplay extends HTMLElement {
         cursor: pointer;
       }
 
-      .reaction-wrapper-img {
-        display: block;
-        justify-content: center;
-        align-items: right;
-        margin-right: auto;
-        margin-left: auto;
-        width: 50%;
-      }
-
-      .reaction-wrapper > :not(input[type="button"]) {
-        display: block;
-        justify-content: center;
-        align-items: right;
-        margin-right: auto;
-        margin-left: auto;
-        width: 23%;
-      }
-
-      .reaction-wrapper > input[type="button"] {
-        display: block;
-        justify-content: center;
-        align-items: right;
-        margin-right: auto;
-        margin-left: auto;
-        width: 80px;
-      }
-
       input[type="button"]:active {
         background-color: rgb(187, 187, 187);
-      }
-
-      .button-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
 
       hr {
@@ -217,12 +184,12 @@ class RecipeDisplay extends HTMLElement {
         }
 
         .recipe-description {
-          color: var(--bg-color-alt);
+          color: #252525;
           font-weight: bold;
         }
 
         #recipe-media > img {
-          border: 1px solid var(--border-color);
+          border: 1px solid #252525;
         }
   
         img {
@@ -232,23 +199,33 @@ class RecipeDisplay extends HTMLElement {
         }
 
         button {
-          background-color: var(--bg-color);
-          color: var(--font-color);
-          border: 1px solid var(--border-color);
-        }
-
-        #recipe-information, 
-        #recipe-ingredients, 
-        #recipe-directions {
-          background-color: var(--bg-color);
-          color: var(--font-color);
-          border: 2px solid var(--border-color);
-        }
-
-        input[type='button']{
           background-color: #252525;
-          border: 2px solid #A0A0A0;
           color: #a0a0a0;
+          border: 1px solid #a0a0a0;
+        }
+
+        #recipe-information {
+          background-color: #252525;
+          color: #a0a0a0;
+          border: 2px solid #a0a0a0;
+        }
+
+        #recipe-ingredients {
+          background-color: #252525;
+          color: #a0a0a0;
+          border: 2px solid #a0a0a0;
+        }
+
+        #recipe-directions {
+          background-color: #252525;
+          color: #a0a0a0;
+          border: 2px solid #a0a0a0;
+        }
+
+        .button-wrapper {
+          display: flex;
+          justify-content: right;
+          align-items: right;
         }
       }
     `;
@@ -300,17 +277,11 @@ class RecipeDisplay extends HTMLElement {
               <button class="recipe-button" id="made-this-button">I Made This!</button>
             </div>
             <br>
-            <div class="reaction-wrapper-img">
               <img style="display:none;" src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
               <br>
-            </div>
-            <div class="reaction-wrapper">
-                <input style="display:none;" type="file" id="imgUpload" accept="image/*"></input>
-                <br>
-            </div>
-            <div class="reaction-wrapper">
-                <input style="display:none;" id="submitButton" class="Submit" type="button" value="Submit">
-            </div>
+              <input style="display:none;" type="file" id="imgUpload" accept="image/*"></input>
+              <br>
+              <input style="display:none;" id="submitButton" class="Submit" type="button" value="Submit">
           </article>
         </main>
       </div>
@@ -395,17 +366,11 @@ class RecipeDisplay extends HTMLElement {
                 <button class="recipe-button" id="made-this-button">I Made This!</button>
               </div>
               <br>
-              <div class="reaction-wrapper-img">
-                <img style="display:none;" src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
-                <br>
-              </div>
-              <div class="reaction-wrapper">
-                <input style="display:none;" type="file" id="imgUpload" accept="image/*"></input>
-                <br>
-              </div>
-              <div class="reaction-wrapper">
-                <input style="display:none;" id="submitButton" class="Submit" type="button" value="Submit">
-              </div>
+              <img style="display:none;" src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
+              <br>
+              <input style="display:none;" type="file" id="imgUpload" accept="image/*"></input>
+              <br>
+              <input style="display:none;" id="submitButton" class="Submit" type="button" value="Submit">
             </article>
           </main>
         </div>
