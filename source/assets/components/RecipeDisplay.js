@@ -212,7 +212,7 @@ class RecipeDisplay extends HTMLElement {
           background-color: var(--bg-color-red);
         }
 
-        h1 {
+        h1, span, completed {
           color: var(--font-color);
         }
 
