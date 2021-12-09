@@ -74,6 +74,10 @@ class RecipeDisplay extends HTMLElement {
         grid-row: 1 / 3
       }
       
+      completed {
+        text-align: center;
+      }
+      
       .recipe-spice-info {
         display: flex;
         justify-content: flex-end;
@@ -209,15 +213,15 @@ class RecipeDisplay extends HTMLElement {
 
       @media (prefers-color-scheme: dark) {
         .recipe-section {
-          background-color: darkred;
+          background-color: var(--bg-color-red);
         }
 
-        h1 {
-          color: #252525;
+        h1, input[type="file" i], completed {
+          color: var(--font-color);
         }
 
         .recipe-description {
-          color: var(--bg-color-alt);
+          color: var(--font-color);
           font-weight: bold;
         }
 
@@ -231,7 +235,7 @@ class RecipeDisplay extends HTMLElement {
           
         }
 
-        button {
+        button, input[type="file" i]::-webkit-file-upload-button {
           background-color: var(--bg-color);
           color: var(--font-color);
           border: 1px solid var(--border-color);
@@ -246,9 +250,9 @@ class RecipeDisplay extends HTMLElement {
         }
 
         input[type='button']{
-          background-color: #252525;
-          border: 2px solid #A0A0A0;
-          color: #a0a0a0;
+          background-color: var(--bg-color);
+          border: 2px solid var(--border-color);
+          color: var(--font-color);
         }
       }
     `;

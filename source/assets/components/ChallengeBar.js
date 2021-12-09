@@ -39,7 +39,7 @@ class ChallengeBar extends HTMLElement {
       @media (prefers-color-scheme: dark) {
 
         h3 {
-          color: #252525;
+          color: var(--font-color);
         }
 
         .progress {
