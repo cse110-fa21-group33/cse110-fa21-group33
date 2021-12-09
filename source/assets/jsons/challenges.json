@@ -15,10 +15,11 @@
         "xGe5rI",
         "zcyspt",
         "6go5aY"
-      ]
+      ], 
+      "icon": "assets/images/two-spicy-icon.png"
     },
     {
-      "title": "Habanero Hottie",
+      "title": "Habanero Hero",
       "numberCompleted": 0,
       "total": 4,
       "recipes": [
@@ -26,19 +27,22 @@
         "T7yP2R",
         "i43eYV",
         "Ffv1IK"
-      ]
+      ], 
+      "icon": "assets/images/habanero-hottie-icon.png"
     },
     {
       "title": "Haunted Bowels",
       "numberCompleted": 0,
-      "total": 5,
+      "total": 6,
       "recipes": [
         "97DXtg",
         "EEv8g4",
         "O2DEeQ",
         "S8kpMT",
-        "ez7Z7Y"
-      ]
+        "ez7Z7Y",
+        "CrMKPl"
+      ], 
+      "icon": "assets/images/haunted-icon.png"
     },
     {
       "title": "I Got the Sauce",
@@ -49,7 +53,21 @@
         "JjmqjM",
         "eDAFaB",
         "BQPtmQ"
-      ]
+      ], 
+      "icon": "assets/images/hotsauce-icon.png"
+    }, 
+    {
+      "title": "Spicy Sips",
+      "numberCompleted": 0,
+      "total": 5,
+      "recipes": [
+        "KRiAXH",
+        "5jpIUr",
+        "bt2ySF",
+        "La3cr3",
+        "WZ2lAK"
+      ], 
+      "icon": "assets/images/spicy-sips-icon.png"
     }
 
   ]
