@@ -64,6 +64,10 @@ class RecipeUpload extends HTMLElement {
         height: auto;
       }
 
+      img.scale{
+        margin-top: 10%;
+      }
+
       input[type="button"] {
         background-color: white;
         border-radius: 20px;
@@ -71,6 +75,22 @@ class RecipeUpload extends HTMLElement {
         border: 2px solid black;
         margin: 1px;
         cursor: pointer;
+      }
+
+      .ingredientDescription {
+        margin: 5px;
+      }
+
+      .ingredientQuantity {
+        margin: 5px;
+      }
+
+      .ingredientUnits {
+        margin: 5px;
+      }
+
+      .specificInstructionRemove{
+    
       }
 
       input[type="number"], .ingredientUnits {
@@ -95,6 +115,7 @@ class RecipeUpload extends HTMLElement {
 
       textarea {
         width: 100%;
+        margin: 5px;
       }
 
       input[type="button"]:active {
@@ -129,6 +150,10 @@ class RecipeUpload extends HTMLElement {
         width: 50%;
       }
 
+      #formButtons {
+        display: flex;
+        justify-content: center;
+      }
 
       @media (prefers-color-scheme: dark) {
 
@@ -181,86 +206,94 @@ class RecipeUpload extends HTMLElement {
     `;
     // background: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Red_X.svg') no-repeat scroll 0 0 white;
     article.innerHTML = `
-        &lt;h1 id="recipe-title">Upload Recipe&lt;/h1>
+    &lt;h1 id="recipe-title">Upload Recipe&lt;/h1>
 
-        &lt;h2>Recipe Name&lt;/h2>
-        &lt;input type="text" id="recipeName" required minlength="2" maxlength="40" size="30">
-        
-        &lt;h2>Description&lt;/h2>
-        &lt;textarea id="recipeDescription" rows="7" cols="50">&lt;/textarea>
-
-        &lt;h2>Upload Photo&lt;/h2>
-        &lt;p>Please upload a picture of your completed dish!&lt;/p>
-
-        &lt;img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
-        &lt;br>
-        &lt;input type="file" id="imgUpload" accept="image/*">
-        &lt;p id="url">&lt;/p>
-
-        &lt;img src="assets/images/scoville-scale.png" class="scale">
-
-        &lt;h2>Serving Size&lt;/h2>
-        &lt;h4>How many people can this dish feed or how many portions can it make?&lt;/h4>
-        &lt;input type="number" id="servingSize" min="0" max="59" size = "50" value="0" required>
-
-        &lt;h2>Scoville Heat Units /h2>
-        &lt;h4>How many Scoville Heat Units is the hottest pepper is your dish? (refer to scale on right)&lt;/h4>
-        &lt;input type="number" id="scoville" min="0" max="3000000" value="0" required>
-
+    &lt;h2>Recipe Name&lt;/h2>
+    &lt;input type="text" id="recipeName" required minlength="2" maxlength="40" size="30">
+    
+    &lt;h2>Description&lt;/h2>
+    &lt;textarea id="recipeDescription" rows="7" cols="50">&lt;/textarea>
+    
+    &lt;h2>Upload Photo&lt;/h2>
+    &lt;p>Please upload a picture of your completed dish!&lt;/p>
+    
+    &lt;img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
+    &lt;br>
+    &lt;input type="file" id="imgUpload" accept="image/*">
+    &lt;p id="url" hidden>&lt;/p>
+    
+    &lt;img src="assets/images/scoville-scale.png" class="scale">
+    
+    &lt;h2>Serving Size&lt;/h2>
+    &lt;h4>How many people can this dish feed or how many portions can it make?&lt;/h4>
+    &lt;input type="number" id="servingSize" min="0" max="59" size = "50" value="0" required>
+    
+    &lt;h2>Scoville Heat Units&lt;/h2>
+    &lt;h4>How many Scoville Heat Units is the hottest pepper is your dish? (refer to scale on right)&lt;/h4>
+    &lt;input type="number" id="scoville" min="0" max="3000000" value="0" required>
+    
+    &lt;div id="prepTime">
         &lt;h2>Prep Time&lt;/h2>
         &lt;h4>How much time is needed to prepare the ingredients?&lt;/h4>
-        &lt;input type="number" id="prepHrs" min="0" max="20"  placeholder="Hours" required>
-        &lt;input type="number" id="prepMins" min="0" max="59" placeholder="Minutes" required>
-
+        &lt;div id="cookTimeInput">
+            &lt;input type="number" id="prepHrs" min="0" max="20"  placeholder="Hours" required>
+            &lt;input type="number" id="prepMins" min="0" max="59" placeholder="Minutes" required>
+        &lt;/div>
+    &lt;/div>
+    
+    &lt;div id="cookTime">
         &lt;h2>Cooking Time&lt;/h2>
-        &lt;input type="number" id="cookHrs" min="0" max="20"  placeholder="Hours" required>
-        &lt;input type="number" id="cookMins" min="0" max="59" placeholder="Minutes" required>
-
-        &lt;div id="ingredients" value="1">
-        &lt;h2>Ingredients&lt;/h2>
-            &lt;input type="text" id="ingredientDescription" class="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
-            &lt;input type="number" id="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
-            &lt;select id="ingredientUnits" class="ingredientUnits">
-              &lt;option>N/A&lt;/option>
-              &lt;option>cups&lt;/option>
-              &lt;option>pt&lt;/option>
-              &lt;option>qt&lt;/option>
-              &lt;option>gal&lt;/option>
-              &lt;option>tsp&lt;/option>
-              &lt;option>tbsp&lt;/option>
-              &lt;option>fl oz&lt;/option>
-              &lt;option>mL&lt;/option>
-              &lt;option>L&lt;/option>
-              &lt;option>g&lt;/option>
-              &lt;option>kg&lt;/option>
-              &lt;option>oz&lt;/option>
-              &lt;option>lbs&lt;/option>
-              &lt;option>mm&lt;/option>
-              &lt;option>cm&lt;/option>
-              &lt;option>m&lt;/option>
-              &lt;option>in&lt;/option>
-              &lt;option>pinch&lt;/option>
-              &lt;option>drop&lt;/option>
-            &lt;/select>
-            &lt;button class="specificIngredientRemove" id="specificIngredientRemove" type="button" value="0">X&lt;/button>
-            &lt;br>
+        &lt;div id="prepTimeInput">
+            &lt;input type="number" id="cookHrs" min="0" max="20"  placeholder="Hours" required>
+            &lt;input type="number" id="cookMins" min="0" max="59" placeholder="Minutes" required>
         &lt;/div>
-        &lt;input type="button" id="addIngredientButton" value="Add Ingredient">
-        &lt;input type="button" id="removeIngredientButton" value="Remove Ingredient">
-
-        &lt;div id="instructions" value="1">
-            &lt;h2>Instructions&lt;/h2>
-            &lt;textarea cols='60' rows='2' placeholder="Step 1">&lt;/textarea>
-            &lt;button class="specificInstructionRemove" id="specificInstructionRemove" type="button" value="0">X&lt;/button>
-            &lt;br>
-        &lt;/div>
-        &lt;input id="addStepButton" type="button" value="Add Step">
-        &lt;input id="removeStepButton" type="button" value="Remove Step">
-
-        &lt;div id="formButtons">
-            &lt;input id="submitButton" class="Submit" type="button" value="Submit">
-            &lt;input id="cancelButton" class="Cancel" type="button" value="Cancel">
-        &lt;/div>`;
+    &lt;/div>
+    
+    &lt;div id="ingredients" value="1">
+    &lt;h2>Ingredients&lt;/h2>
+        &lt;input type="text" id="ingredientDescription" class="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
+        &lt;input type="number" id="ingredientQuantity" class="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
+        &lt;select id="ingredientUnits" class="ingredientUnits">
+          &lt;option>N/A&lt;/option>
+          &lt;option>cups&lt;/option>
+          &lt;option>pt&lt;/option>
+          &lt;option>qt&lt;/option>
+          &lt;option>gal&lt;/option>
+          &lt;option>tsp&lt;/option>
+          &lt;option>tbsp&lt;/option>
+          &lt;option>fl oz&lt;/option>
+          &lt;option>mL&lt;/option>
+          &lt;option>L&lt;/option>
+          &lt;option>g&lt;/option>
+          &lt;option>kg&lt;/option>
+          &lt;option>oz&lt;/option>
+          &lt;option>lbs&lt;/option>
+          &lt;option>mm&lt;/option>
+          &lt;option>cm&lt;/option>
+          &lt;option>m&lt;/option>
+          &lt;option>in&lt;/option>
+          &lt;option>pinch&lt;/option>
+          &lt;option>drop&lt;/option>
+        &lt;/select>
+        &lt;button class="specificIngredientRemove" id="specificIngredientRemove" type="button" value="0">X&lt;/button>
+        &lt;br>
+    &lt;/div>
+    &lt;input type="button" id="addIngredientButton" value="Add Ingredient">
+    &lt;input type="button" id="removeIngredientButton" value="Remove Ingredient">
+    
+    &lt;div id="instructions" value="1">
+        &lt;h2>Instructions&lt;/h2>
+        &lt;textarea cols='60' rows='2' placeholder="Step 1">&lt;/textarea>
+        &lt;button class="specificInstructionRemove" id="specificInstructionRemove" type="button" value="0">X&lt;/button>
+        &lt;br>
+    &lt;/div>
+    &lt;input id="addStepButton" type="button" value="Add Step">
+    &lt;input id="removeStepButton" type="button" value="Remove Step">
+    
+    &lt;div id="formButtons">
+        &lt;input id="cancelButton" class="Cancel" type="button" value="Cancel">
+        &lt;input id="submitButton" class="Submit" type="button" value="Submit">
+    &lt;/div>`;
 
     this.shadowRoot.append(styles, article);
 
@@ -314,59 +347,67 @@ class RecipeUpload extends HTMLElement {
     
     &lt;h2>Description&lt;/h2>
     &lt;textarea id="recipeDescription" rows="7" cols="50">&lt;/textarea>
-
-    &lt;h2 id="header-upload-photo">Upload Photo&lt;/h2>
-    &lt;p id="p-upload-photo">Please upload a picture of your completed dish!&lt;/p>
-
+    
+    &lt;h2>Upload Photo&lt;/h2>
+    &lt;p>Please upload a picture of your completed dish!&lt;/p>
+    
     &lt;img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
     &lt;br>
     &lt;input type="file" id="imgUpload" accept="image/*">
-    &lt;p id="url">&lt;/p>
-
+    &lt;p id="url" hidden>&lt;/p>
+    
     &lt;img src="assets/images/scoville-scale.png" class="scale">
-
+    
     &lt;h2>Serving Size&lt;/h2>
     &lt;h4>How many people can this dish feed or how many portions can it make?&lt;/h4>
     &lt;input type="number" id="servingSize" min="0" max="59" size = "50" value="0" required>
-
+    
     &lt;h2>Scoville Heat Units&lt;/h2>
     &lt;h4>How many Scoville Heat Units is the hottest pepper is your dish? (refer to scale on right)&lt;/h4>
     &lt;input type="number" id="scoville" min="0" max="3000000" value="0" required>
-
-    &lt;h2>Prep Time&lt;/h2>
-    &lt;h4>How much time is needed to prepare the ingredients?&lt;/h4>
-    &lt;input type="number" id="prepHrs" min="0" max="20"  placeholder="Hours" required>
-    &lt;input type="number" id="prepMins" min="0" max="59" placeholder="Minutes" required>
-
-    &lt;h2>Cooking Time&lt;/h2>
-    &lt;input type="number" id="cookHrs" min="0" max="20"  placeholder="Hours" required>
-    &lt;input type="number" id="cookMins" min="0" max="59" placeholder="Minutes" required>
-
+    
+    &lt;div id="prepTime">
+        &lt;h2>Prep Time&lt;/h2>
+        &lt;h4>How much time is needed to prepare the ingredients?&lt;/h4>
+        &lt;div id="cookTimeInput">
+            &lt;input type="number" id="prepHrs" min="0" max="20"  placeholder="Hours" required>
+            &lt;input type="number" id="prepMins" min="0" max="59" placeholder="Minutes" required>
+        &lt;/div>
+    &lt;/div>
+    
+    &lt;div id="cookTime">
+        &lt;h2>Cooking Time&lt;/h2>
+        &lt;div id="prepTimeInput">
+            &lt;input type="number" id="cookHrs" min="0" max="20"  placeholder="Hours" required>
+            &lt;input type="number" id="cookMins" min="0" max="59" placeholder="Minutes" required>
+        &lt;/div>
+    &lt;/div>
+    
     &lt;div id="ingredients" value="1">
     &lt;h2>Ingredients&lt;/h2>
         &lt;input type="text" id="ingredientDescription" class="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
-        &lt;input type="number" id="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
+        &lt;input type="number" id="ingredientQuantity" class="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
         &lt;select id="ingredientUnits" class="ingredientUnits">
-            &lt;option>N/A&lt;/option>
-            &lt;option>cups&lt;/option>
-            &lt;option>pt&lt;/option>
-            &lt;option>qt&lt;/option>
-            &lt;option>gal&lt;/option>
-            &lt;option>tsp&lt;/option>
-            &lt;option>tbsp&lt;/option>
-            &lt;option>fl oz&lt;/option>
-            &lt;option>mL&lt;/option>
-            &lt;option>L&lt;/option>
-            &lt;option>g&lt;/option>
-            &lt;option>kg&lt;/option>
-            &lt;option>oz&lt;/option>
-            &lt;option>lbs&lt;/option>
-            &lt;option>mm&lt;/option>
-            &lt;option>cm&lt;/option>
-            &lt;option>m&lt;/option>
-            &lt;option>in&lt;/option>
-            &lt;option>pinch&lt;/option>
-            &lt;option>drop&lt;/option>
+          &lt;option>N/A&lt;/option>
+          &lt;option>cups&lt;/option>
+          &lt;option>pt&lt;/option>
+          &lt;option>qt&lt;/option>
+          &lt;option>gal&lt;/option>
+          &lt;option>tsp&lt;/option>
+          &lt;option>tbsp&lt;/option>
+          &lt;option>fl oz&lt;/option>
+          &lt;option>mL&lt;/option>
+          &lt;option>L&lt;/option>
+          &lt;option>g&lt;/option>
+          &lt;option>kg&lt;/option>
+          &lt;option>oz&lt;/option>
+          &lt;option>lbs&lt;/option>
+          &lt;option>mm&lt;/option>
+          &lt;option>cm&lt;/option>
+          &lt;option>m&lt;/option>
+          &lt;option>in&lt;/option>
+          &lt;option>pinch&lt;/option>
+          &lt;option>drop&lt;/option>
         &lt;/select>
         &lt;button class="specificIngredientRemove" id="specificIngredientRemove" type="button" value="0">X&lt;/button>
         &lt;br>
@@ -382,10 +423,10 @@ class RecipeUpload extends HTMLElement {
     &lt;/div>
     &lt;input id="addStepButton" type="button" value="Add Step">
     &lt;input id="removeStepButton" type="button" value="Remove Step">
-
+    
     &lt;div id="formButtons">
-        &lt;input id="submitButton" class="Submit" type="button" value="Submit">
         &lt;input id="cancelButton" class="Cancel" type="button" value="Cancel">
+        &lt;input id="submitButton" class="Submit" type="button" value="Submit">
     &lt;/div>`;
     this.AddInstruction();
     this.RemoveInstruction();
@@ -642,6 +683,7 @@ class RecipeUpload extends HTMLElement {
         inputQuantity.setAttribute('min', '0');
         inputQuantity.setAttribute('max', '999999');
         inputQuantity.setAttribute('placeholder', 'Quantity');
+        inputQuantity.classList.add("ingredientQuantity");
         const select = document.createElement('select');
         select.classList.add("ingredientUnits");
         for (let i = 0; i &lt; selectOptions.length; i += 1) {
@@ -939,7 +981,7 @@ customElements.define('recipe-upload', RecipeUpload);
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Dec 09 2021 08:01:59 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Dec 09 2021 23:24:25 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
