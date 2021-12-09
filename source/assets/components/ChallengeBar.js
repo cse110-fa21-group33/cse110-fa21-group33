@@ -25,7 +25,7 @@ class ChallengeBar extends HTMLElement {
 
       .progress {
         width: 100%;
-        background-color: var(--ec-white);
+        background-color: #a0a0a0;
         border-radius: 20px
       }
 
