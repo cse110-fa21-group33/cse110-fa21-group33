@@ -231,7 +231,7 @@ class RecipeDisplay extends HTMLElement {
           
         }
 
-        button {
+        button, input[type="file" i]::-webkit-file-upload-button {
           background-color: var(--bg-color);
           color: var(--font-color);
           border: 1px solid var(--border-color);
