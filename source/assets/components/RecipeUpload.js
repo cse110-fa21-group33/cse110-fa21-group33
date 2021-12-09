@@ -36,6 +36,10 @@ class RecipeUpload extends HTMLElement {
         height: auto;
       }
 
+      img.scale{
+        margin-top: 10%;
+      }
+
       input[type="button"] {
         background-color: white;
         border-radius: 20px;
@@ -43,6 +47,22 @@ class RecipeUpload extends HTMLElement {
         border: 2px solid black;
         margin: 1px;
         cursor: pointer;
+      }
+
+      .ingredientDescription {
+        margin: 5px;
+      }
+
+      .ingredientQuantity {
+        margin: 5px;
+      }
+
+      .ingredientUnits {
+        margin: 5px;
+      }
+
+      .specificInstructionRemove{
+    
       }
 
       input[type="number"], .ingredientUnits {
@@ -67,6 +87,7 @@ class RecipeUpload extends HTMLElement {
 
       textarea {
         width: 100%;
+        margin: 5px;
       }
 
       input[type="button"]:active {
@@ -101,6 +122,10 @@ class RecipeUpload extends HTMLElement {
         width: 50%;
       }
 
+      #formButtons {
+        display: flex;
+        justify-content: center;
+      }
 
       @media (prefers-color-scheme: dark) {
 
@@ -153,86 +178,94 @@ class RecipeUpload extends HTMLElement {
     `;
     // background: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Red_X.svg') no-repeat scroll 0 0 white;
     article.innerHTML = `
-        <h1 id="recipe-title">Upload Recipe</h1>
+    <h1 id="recipe-title">Upload Recipe</h1>
 
-        <h2>Recipe Name</h2>
-        <input type="text" id="recipeName" required minlength="2" maxlength="40" size="30">
-        
-        <h2>Description</h2>
-        <textarea id="recipeDescription" rows="7" cols="50"></textarea>
-
-        <h2>Upload Photo</h2>
-        <p>Please upload a picture of your completed dish!</p>
-
-        <img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
-        <br>
-        <input type="file" id="imgUpload" accept="image/*">
-        <p id="url"></p>
-
-        <img src="assets/images/scoville-scale.png" class="scale">
-
-        <h2>Serving Size</h2>
-        <h4>How many people can this dish feed or how many portions can it make?</h4>
-        <input type="number" id="servingSize" min="0" max="59" size = "50" value="0" required>
-
-        <h2>Scoville Heat Units /h2>
-        <h4>How many Scoville Heat Units is the hottest pepper is your dish? (refer to scale on right)</h4>
-        <input type="number" id="scoville" min="0" max="3000000" value="0" required>
-
+    <h2>Recipe Name</h2>
+    <input type="text" id="recipeName" required minlength="2" maxlength="40" size="30">
+    
+    <h2>Description</h2>
+    <textarea id="recipeDescription" rows="7" cols="50"></textarea>
+    
+    <h2>Upload Photo</h2>
+    <p>Please upload a picture of your completed dish!</p>
+    
+    <img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
+    <br>
+    <input type="file" id="imgUpload" accept="image/*">
+    <p id="url" hidden></p>
+    
+    <img src="assets/images/scoville-scale.png" class="scale">
+    
+    <h2>Serving Size</h2>
+    <h4>How many people can this dish feed or how many portions can it make?</h4>
+    <input type="number" id="servingSize" min="0" max="59" size = "50" value="0" required>
+    
+    <h2>Scoville Heat Units</h2>
+    <h4>How many Scoville Heat Units is the hottest pepper is your dish? (refer to scale on right)</h4>
+    <input type="number" id="scoville" min="0" max="3000000" value="0" required>
+    
+    <div id="prepTime">
         <h2>Prep Time</h2>
         <h4>How much time is needed to prepare the ingredients?</h4>
-        <input type="number" id="prepHrs" min="0" max="20"  placeholder="Hours" required>
-        <input type="number" id="prepMins" min="0" max="59" placeholder="Minutes" required>
-
+        <div id="cookTimeInput">
+            <input type="number" id="prepHrs" min="0" max="20"  placeholder="Hours" required>
+            <input type="number" id="prepMins" min="0" max="59" placeholder="Minutes" required>
+        </div>
+    </div>
+    
+    <div id="cookTime">
         <h2>Cooking Time</h2>
-        <input type="number" id="cookHrs" min="0" max="20"  placeholder="Hours" required>
-        <input type="number" id="cookMins" min="0" max="59" placeholder="Minutes" required>
-
-        <div id="ingredients" value="1">
-        <h2>Ingredients</h2>
-            <input type="text" id="ingredientDescription" class="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
-            <input type="number" id="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
-            <select id="ingredientUnits" class="ingredientUnits">
-              <option>N/A</option>
-              <option>cups</option>
-              <option>pt</option>
-              <option>qt</option>
-              <option>gal</option>
-              <option>tsp</option>
-              <option>tbsp</option>
-              <option>fl oz</option>
-              <option>mL</option>
-              <option>L</option>
-              <option>g</option>
-              <option>kg</option>
-              <option>oz</option>
-              <option>lbs</option>
-              <option>mm</option>
-              <option>cm</option>
-              <option>m</option>
-              <option>in</option>
-              <option>pinch</option>
-              <option>drop</option>
-            </select>
-            <button class="specificIngredientRemove" id="specificIngredientRemove" type="button" value="0">X</button>
-            <br>
+        <div id="prepTimeInput">
+            <input type="number" id="cookHrs" min="0" max="20"  placeholder="Hours" required>
+            <input type="number" id="cookMins" min="0" max="59" placeholder="Minutes" required>
         </div>
-        <input type="button" id="addIngredientButton" value="Add Ingredient">
-        <input type="button" id="removeIngredientButton" value="Remove Ingredient">
-
-        <div id="instructions" value="1">
-            <h2>Instructions</h2>
-            <textarea cols='60' rows='2' placeholder="Step 1"></textarea>
-            <button class="specificInstructionRemove" id="specificInstructionRemove" type="button" value="0">X</button>
-            <br>
-        </div>
-        <input id="addStepButton" type="button" value="Add Step">
-        <input id="removeStepButton" type="button" value="Remove Step">
-
-        <div id="formButtons">
-            <input id="submitButton" class="Submit" type="button" value="Submit">
-            <input id="cancelButton" class="Cancel" type="button" value="Cancel">
-        </div>`;
+    </div>
+    
+    <div id="ingredients" value="1">
+    <h2>Ingredients</h2>
+        <input type="text" id="ingredientDescription" class="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
+        <input type="number" id="ingredientQuantity" class="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
+        <select id="ingredientUnits" class="ingredientUnits">
+          <option>N/A</option>
+          <option>cups</option>
+          <option>pt</option>
+          <option>qt</option>
+          <option>gal</option>
+          <option>tsp</option>
+          <option>tbsp</option>
+          <option>fl oz</option>
+          <option>mL</option>
+          <option>L</option>
+          <option>g</option>
+          <option>kg</option>
+          <option>oz</option>
+          <option>lbs</option>
+          <option>mm</option>
+          <option>cm</option>
+          <option>m</option>
+          <option>in</option>
+          <option>pinch</option>
+          <option>drop</option>
+        </select>
+        <button class="specificIngredientRemove" id="specificIngredientRemove" type="button" value="0">X</button>
+        <br>
+    </div>
+    <input type="button" id="addIngredientButton" value="Add Ingredient">
+    <input type="button" id="removeIngredientButton" value="Remove Ingredient">
+    
+    <div id="instructions" value="1">
+        <h2>Instructions</h2>
+        <textarea cols='60' rows='2' placeholder="Step 1"></textarea>
+        <button class="specificInstructionRemove" id="specificInstructionRemove" type="button" value="0">X</button>
+        <br>
+    </div>
+    <input id="addStepButton" type="button" value="Add Step">
+    <input id="removeStepButton" type="button" value="Remove Step">
+    
+    <div id="formButtons">
+        <input id="cancelButton" class="Cancel" type="button" value="Cancel">
+        <input id="submitButton" class="Submit" type="button" value="Submit">
+    </div>`;
 
     this.shadowRoot.append(styles, article);
 
@@ -286,59 +319,67 @@ class RecipeUpload extends HTMLElement {
     
     <h2>Description</h2>
     <textarea id="recipeDescription" rows="7" cols="50"></textarea>
-
-    <h2 id="header-upload-photo">Upload Photo</h2>
-    <p id="p-upload-photo">Please upload a picture of your completed dish!</p>
-
+    
+    <h2>Upload Photo</h2>
+    <p>Please upload a picture of your completed dish!</p>
+    
     <img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
     <br>
     <input type="file" id="imgUpload" accept="image/*">
-    <p id="url"></p>
-
+    <p id="url" hidden></p>
+    
     <img src="assets/images/scoville-scale.png" class="scale">
-
+    
     <h2>Serving Size</h2>
     <h4>How many people can this dish feed or how many portions can it make?</h4>
     <input type="number" id="servingSize" min="0" max="59" size = "50" value="0" required>
-
+    
     <h2>Scoville Heat Units</h2>
     <h4>How many Scoville Heat Units is the hottest pepper is your dish? (refer to scale on right)</h4>
     <input type="number" id="scoville" min="0" max="3000000" value="0" required>
-
-    <h2>Prep Time</h2>
-    <h4>How much time is needed to prepare the ingredients?</h4>
-    <input type="number" id="prepHrs" min="0" max="20"  placeholder="Hours" required>
-    <input type="number" id="prepMins" min="0" max="59" placeholder="Minutes" required>
-
-    <h2>Cooking Time</h2>
-    <input type="number" id="cookHrs" min="0" max="20"  placeholder="Hours" required>
-    <input type="number" id="cookMins" min="0" max="59" placeholder="Minutes" required>
-
+    
+    <div id="prepTime">
+        <h2>Prep Time</h2>
+        <h4>How much time is needed to prepare the ingredients?</h4>
+        <div id="cookTimeInput">
+            <input type="number" id="prepHrs" min="0" max="20"  placeholder="Hours" required>
+            <input type="number" id="prepMins" min="0" max="59" placeholder="Minutes" required>
+        </div>
+    </div>
+    
+    <div id="cookTime">
+        <h2>Cooking Time</h2>
+        <div id="prepTimeInput">
+            <input type="number" id="cookHrs" min="0" max="20"  placeholder="Hours" required>
+            <input type="number" id="cookMins" min="0" max="59" placeholder="Minutes" required>
+        </div>
+    </div>
+    
     <div id="ingredients" value="1">
     <h2>Ingredients</h2>
         <input type="text" id="ingredientDescription" class="ingredientDescription" required minlength="2" maxlength="40" placeholder="Ingredient Description">
-        <input type="number" id="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
+        <input type="number" id="ingredientQuantity" class="ingredientQuantity" min="0" max="999999" placeholder="Quantity" required>
         <select id="ingredientUnits" class="ingredientUnits">
-            <option>N/A</option>
-            <option>cups</option>
-            <option>pt</option>
-            <option>qt</option>
-            <option>gal</option>
-            <option>tsp</option>
-            <option>tbsp</option>
-            <option>fl oz</option>
-            <option>mL</option>
-            <option>L</option>
-            <option>g</option>
-            <option>kg</option>
-            <option>oz</option>
-            <option>lbs</option>
-            <option>mm</option>
-            <option>cm</option>
-            <option>m</option>
-            <option>in</option>
-            <option>pinch</option>
-            <option>drop</option>
+          <option>N/A</option>
+          <option>cups</option>
+          <option>pt</option>
+          <option>qt</option>
+          <option>gal</option>
+          <option>tsp</option>
+          <option>tbsp</option>
+          <option>fl oz</option>
+          <option>mL</option>
+          <option>L</option>
+          <option>g</option>
+          <option>kg</option>
+          <option>oz</option>
+          <option>lbs</option>
+          <option>mm</option>
+          <option>cm</option>
+          <option>m</option>
+          <option>in</option>
+          <option>pinch</option>
+          <option>drop</option>
         </select>
         <button class="specificIngredientRemove" id="specificIngredientRemove" type="button" value="0">X</button>
         <br>
@@ -354,10 +395,10 @@ class RecipeUpload extends HTMLElement {
     </div>
     <input id="addStepButton" type="button" value="Add Step">
     <input id="removeStepButton" type="button" value="Remove Step">
-
+    
     <div id="formButtons">
-        <input id="submitButton" class="Submit" type="button" value="Submit">
         <input id="cancelButton" class="Cancel" type="button" value="Cancel">
+        <input id="submitButton" class="Submit" type="button" value="Submit">
     </div>`;
     this.AddInstruction();
     this.RemoveInstruction();
@@ -614,6 +655,7 @@ class RecipeUpload extends HTMLElement {
         inputQuantity.setAttribute('min', '0');
         inputQuantity.setAttribute('max', '999999');
         inputQuantity.setAttribute('placeholder', 'Quantity');
+        inputQuantity.classList.add("ingredientQuantity");
         const select = document.createElement('select');
         select.classList.add("ingredientUnits");
         for (let i = 0; i < selectOptions.length; i += 1) {
