@@ -74,6 +74,10 @@ class RecipeDisplay extends HTMLElement {
         grid-row: 1 / 3
       }
       
+      completed {
+        text-align: center;
+      }
+      
       .recipe-spice-info {
         display: flex;
         justify-content: flex-end;
