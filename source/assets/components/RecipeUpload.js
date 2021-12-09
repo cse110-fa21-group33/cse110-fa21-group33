@@ -615,6 +615,7 @@ class RecipeUpload extends HTMLElement {
         inputQuantity.setAttribute('max', '999999');
         inputQuantity.setAttribute('placeholder', 'Quantity');
         const select = document.createElement('select');
+        select.classList.add("ingredientUnits");
         for (let i = 0; i < selectOptions.length; i += 1) {
           const option = document.createElement('option');
           option.setAttribute('value', selectOptions[i]);
