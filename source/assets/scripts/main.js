@@ -302,7 +302,7 @@ function sliderSpiceLevel() {
     }
     spiceLevel.innerHTML = emojiString;
 
-    style.innerHTML = `.slider::-webkit-slider-thumb{ background-image: url('assets/images/fireGif${spiceSlider.value}.gif'); }`;
+    style.innerHTML = `.slider::-webkit-slider-thumb{ background-image: url('assets/images/slider-${spiceSlider.value}.gif'); }`;
   };
 }
 

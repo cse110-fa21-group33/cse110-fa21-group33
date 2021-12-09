@@ -71,15 +71,15 @@ section:not(section.shown) {
   appearance: none;
   width: 40px; /* Set a specific slider handle width */
   height: 40px; /* Slider handle height */
-  background-image: url('../images/fireGif3.gif');
+  background-image: url('../images/slider-3.gif');
   background-color: var(--ec-spicy5);
   background-repeat: no-repeat;
-  background-size: 30px 30px; 
+  background-size: 28px 28px; 
   background-position: center;
   cursor: pointer; /* Cursor on hover */
   /* box-shadow: -400px 0 0 400px #ca5507;*/
   border-radius: 50%;
-  border: 2px solid black;
+  border: 1px solid black;
 }
 
 .slider::-moz-range-progress {

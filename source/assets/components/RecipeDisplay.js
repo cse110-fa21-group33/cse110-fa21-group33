@@ -77,6 +77,7 @@ class RecipeDisplay extends HTMLElement {
       completed {
         text-align: center;
       }
+
       
       .recipe-spice-info {
         display: flex;
@@ -239,6 +240,7 @@ class RecipeDisplay extends HTMLElement {
           background-color: var(--bg-color);
           color: var(--font-color);
           border: 1px solid var(--border-color);
+          cursor: pointer;
         }
 
         #recipe-information, 
@@ -252,6 +254,10 @@ class RecipeDisplay extends HTMLElement {
         input[type='button']{
           background-color: var(--bg-color);
           border: 2px solid var(--border-color);
+          color: var(--font-color);
+        }
+
+        ol {
           color: var(--font-color);
         }
       }

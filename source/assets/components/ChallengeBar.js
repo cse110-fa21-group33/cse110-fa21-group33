@@ -20,20 +20,33 @@ class ChallengeBar extends HTMLElement {
     style.innerHTML = `
       h3 {
         font-family: 'Mochiy Pop P One', sans-serif;
+        cursor: pointer;
       }
+
       .progress {
         width: 100%;
         background-color: var(--ec-white);
         border-radius: 20px
       }
+
       .my-bar {
         width: 0%;
         height: 30px;
-        background-color: var(--ec-spicy5);
+        background-color: rgb(202, 85, 7);
         text-align: center;
         line-height: 30px;
         color: black;
         border-radius: 388px;
+      }
+
+      .challenge-badge {
+        height: 45px;
+        width: 45px;
+        display: inline;
+        position: relative;
+        margin-left: 10px;
+        margin-bottom: -10px;
+         
       }
 
       @media (prefers-color-scheme: dark) {
@@ -60,6 +73,11 @@ class ChallengeBar extends HTMLElement {
     title.classList.add('challenge-title');
     title.innerText = data.title;
     elem.appendChild(title);
+
+    const badge = document.createElement('img');
+    badge.classList.add('challenge-badge')
+    badge.src = data.icon;
+    title.appendChild(badge);
 
     const progress = document.createElement('div');
     progress.classList.add('progress');
