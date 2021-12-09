@@ -32,7 +32,7 @@ class ChallengeBar extends HTMLElement {
       .my-bar {
         width: 0%;
         height: 30px;
-        background-color: var(--ec-spicy5);
+        background-color: rgb(202, 85, 7);
         text-align: center;
         line-height: 30px;
         color: black;
