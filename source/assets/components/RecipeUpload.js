@@ -509,6 +509,10 @@ class RecipeUpload extends HTMLElement {
         jsonText.directions[i] = currInstruction;
       }
 
+      if (this.json != null) {
+        jsonText.challenges = this.json.challenges;
+      }
+
       // Determine spice level
       if (scoville < 3000) {
         jsonText.spiceRating = 1;
