@@ -12,6 +12,10 @@ export const database = {};
 // TODO: Instead of adding each recipe to this array, find a way to automate
 // reading files from directory.
 const recipesFromFile = [
+  'assets/jsons/Bacon-wrapped-stuffed-Anaheim-peppers.json',
+  'assets/jsons/Carolina-Reaper-Pepper-Stuffed-Chicken.json',
+  'source/assets/jsons/Carolina-Reaper-Pepper-Stuffed-Chicken.json',
+  'source/assets/jsons/Mexican-Hot-Chocolate.json',
   'assets/jsons/Ghost-Pepper-Wings.json',
   'assets/jsons/Jalapeno-Garlic-Onion-Cheeseburger.json',
   'assets/jsons/Sichuan-Style-Bird-Eye-Chili-Sauce.json',
