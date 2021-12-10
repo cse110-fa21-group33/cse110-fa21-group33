@@ -21,3 +21,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upon completion of recipe, the user can upload a reaction image that is saved with the recipe
 - Styling changes to the pages for UI
 - Slider moved to the nav bar and stylized
+
+## [1.0.0] - 2021-09-21
+### Added
+- Dark mode for devices
+- Graphics for the badges
+- Improved UI for all pages
+- New graphics for the slider and upload page
+- Added e2e testing that works
