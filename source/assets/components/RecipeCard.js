@@ -1,4 +1,4 @@
-// recipeCard.js
+// RecipeCard.js
 // Taken from Lab 7
 
 /**
