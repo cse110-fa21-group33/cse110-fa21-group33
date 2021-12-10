@@ -285,13 +285,13 @@ function sliderSpiceLevel() {
   const spiceLevel = document.getElementById('spiceLevel');
   const style = document.querySelector('[data="test"]');
   if (spiceSlider.value == 1) {
-    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy1) 0%, var(--ec-spicy1) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
   } else if (spiceSlider.value == 2) {
-    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy2) 0%, var(--ec-spicy2) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
   } else if (spiceSlider.value == 3) {
-    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy3) 0%, var(--ec-spicy3) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
   } else if (spiceSlider.value == 4) {
-    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy4) 0%, var(--ec-spicy4) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
   } else if (spiceSlider.value == 5) {
     spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
   }
@@ -304,13 +304,13 @@ function sliderSpiceLevel() {
   spiceSlider.oninput = function () {
     emojiString = '';
     if (this.value == 1) {
-      this.style.background = `linear-gradient(to right, var(--ec-spicy1) 0%, var(--ec-spicy1) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+      this.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
     } else if (this.value == 2) {
-      this.style.background = `linear-gradient(to right, var(--ec-spicy2) 0%, var(--ec-spicy2) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+      this.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
     } else if (this.value == 3) {
-      this.style.background = `linear-gradient(to right, var(--ec-spicy3) 0%, var(--ec-spicy3) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+      this.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
     } else if (this.value == 4) {
-      this.style.background = `linear-gradient(to right, var(--ec-spicy4) 0%, var(--ec-spicy4) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+      this.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
     } else if (this.value == 5) {
       this.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
     }
