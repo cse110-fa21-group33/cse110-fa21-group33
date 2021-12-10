@@ -186,8 +186,8 @@ class RecipeUpload extends HTMLElement {
     <h2>Description</h2>
     <textarea id="recipeDescription" rows="7" cols="50"></textarea>
     
-    <h2>Upload Photo</h2>
-    <p>Please upload a picture of your completed dish!</p>
+    <h2 id="header-upload-photo">Upload Photo</h2>
+    <p id="p-upload-photo">Please upload a picture of your completed dish!</p>
     
     <img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
     <br>
@@ -320,8 +320,8 @@ class RecipeUpload extends HTMLElement {
     <h2>Description</h2>
     <textarea id="recipeDescription" rows="7" cols="50"></textarea>
     
-    <h2>Upload Photo</h2>
-    <p>Please upload a picture of your completed dish!</p>
+    <h2 id="header-upload-photo">Upload Photo</h2>
+    <p id="p-upload-photo">Please upload a picture of your completed dish!</p>
     
     <img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
     <br>
@@ -649,15 +649,15 @@ class RecipeUpload extends HTMLElement {
         inputName.setAttribute('minlength', '2');
         inputName.setAttribute('maxlength', '40');
         inputName.setAttribute('placeholder', 'Ingredient Description');
-        inputName.classList.add("ingredientDescription");
+        inputName.classList.add('ingredientDescription');
         const inputQuantity = document.createElement('input');
         inputQuantity.setAttribute('type', 'number');
         inputQuantity.setAttribute('min', '0');
         inputQuantity.setAttribute('max', '999999');
         inputQuantity.setAttribute('placeholder', 'Quantity');
-        inputQuantity.classList.add("ingredientQuantity");
+        inputQuantity.classList.add('ingredientQuantity');
         const select = document.createElement('select');
-        select.classList.add("ingredientUnits");
+        select.classList.add('ingredientUnits');
         for (let i = 0; i < selectOptions.length; i += 1) {
           const option = document.createElement('option');
           option.setAttribute('value', selectOptions[i]);
@@ -894,7 +894,7 @@ class RecipeUpload extends HTMLElement {
       inputName.setAttribute('maxlength', '40');
       inputName.setAttribute('placeholder', 'Ingredient Description');
       inputName.value = this.shadowRoot.getElementById('ingredientDescription').value = data.name;
-      inputName.classList.add("ingredientDescription");
+      inputName.classList.add('ingredientDescription');
       // console.log(data.name);
       const inputQuantity = document.createElement('input');
       inputQuantity.setAttribute('type', 'number');
@@ -904,7 +904,7 @@ class RecipeUpload extends HTMLElement {
       inputQuantity.value = this.shadowRoot.getElementById('ingredientDescription').value = data.quantity;
       // console.log(data.quantity);
       const select = document.createElement('select');
-      select.classList.add("ingredientUnits");
+      select.classList.add('ingredientUnits');
       for (let i = 0; i < selectOptions.length; i += 1) {
         const option = document.createElement('option');
         option.setAttribute('value', selectOptions[i]);
