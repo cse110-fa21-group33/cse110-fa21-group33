@@ -353,7 +353,6 @@ class RecipeDisplay extends HTMLElement {
    */
   set data(data) {
     this.json = data;
-    console.log(JSON.stringify(data));
     // Reset HTML
     this.shadowRoot.querySelector('article').innerHTML = `
         <div class="main-container">
@@ -426,14 +425,12 @@ class RecipeDisplay extends HTMLElement {
     this.shadowRoot.querySelector('.recipe-description').innerHTML = description;
     const { image } = data;
     const img = this.shadowRoot.querySelector('#recipe-media > img');
-    if (image == '') {
+    if (image === '') {
       img.setAttribute('src', 'assets/images/placeholder.png');
     } else {
       img.setAttribute('src', image);
     }
     img.setAttribute('alt', title);
-    // const { scoville } = data;
-    // this.shadowRoot.querySelector('#recipe-spice-level').innerHTML = scoville;
     for (let i = 0; i < data.spiceRating; i += 1) {
       this.shadowRoot.querySelector('#recipe-spice-level').innerHTML += '🌶️';
     }
@@ -460,7 +457,6 @@ class RecipeDisplay extends HTMLElement {
       newBox.innerHTML = 'Completed!';
       newBox.innerHTML += '<br><br>Upload a picture of your reaction!';
       btn.parentElement.appendChild(newBox);
-      const box = btn.parentElement;
       btn.parentElement.removeChild(btn);
       const uploadImg = this.shadowRoot.getElementById('imgUpload');
       const submitBtn = this.shadowRoot.getElementById('submitButton');
@@ -476,7 +472,7 @@ class RecipeDisplay extends HTMLElement {
     } else {
       this.bindCompleteButton(data);
     }
-    if (data.challenges.length != 0) {
+    if (data.challenges.length !== 0) {
       this.ShowChallenge(data);
     }
   }
@@ -486,8 +482,6 @@ class RecipeDisplay extends HTMLElement {
    */
   SubmitReaction() {
     const button = this.shadowRoot.getElementById('submitButton');
-    const uploadImg = this.shadowRoot.getElementById('imgUpload');
-    const submitBtn = this.shadowRoot.getElementById('submitButton');
     button.addEventListener('click', () => {
       const imgPreview = this.shadowRoot.getElementById('imgPreview');
       this.json.reactions = imgPreview.src;
@@ -524,7 +518,7 @@ class RecipeDisplay extends HTMLElement {
   }
 
   /**
-   * Dispalys the challenges the recipe is a part of
+   * Displays the challenges the recipe is a part of
    * @param {*} data
    */
   ShowChallenge(data) {

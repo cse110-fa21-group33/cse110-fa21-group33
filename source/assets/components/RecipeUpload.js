@@ -721,8 +721,8 @@ class RecipeUpload extends HTMLElement {
         let stepNum = Number(div.getAttribute('value'));
 
         if (stepNum > 1) {
-          const one = parseInt(instrNumber) * 2;
-          const two = parseInt(instrNumber) * 2 + 1;
+          const one = parseInt(instrNumber, 10) * 2;
+          const two = parseInt(instrNumber, 10) * 2 + 1;
           const lineBreak = div.getElementsByTagName('br')[instrNumber];
           const inputName = div.getElementsByTagName('input')[one];
           const inputQuantity = div.getElementsByTagName('input')[two];
@@ -844,7 +844,6 @@ class RecipeUpload extends HTMLElement {
    * The text boxes then will be filled with the proper information accordingly
    */
   MakeExtraIngredientsSlots(data) {
-    const button = this.shadowRoot.getElementById('addIngredientButton');
     const div = this.shadowRoot.getElementById('ingredients');
     const selectOptions = ['N/A', 'cups', 'pt', 'qt', 'gal', 'tsp', 'tbsp', 'fl oz', 'mL', 'L', 'g',
       'kg', 'oz', 'lbs', 'mm', 'cm', 'm', 'in', 'pinch', 'drop'];
