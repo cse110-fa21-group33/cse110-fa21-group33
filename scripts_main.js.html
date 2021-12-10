@@ -77,8 +77,6 @@ async function init() {
  * Populates with recommended page with recipe cards
  */
 function createRecipeCards(recipes) {
-  // console.log(recipes);
-  const i = 0;
   recipes.forEach((recipe) => {
     // Makes a new recipe card
     const recipeCard = document.createElement('recipe-card');
@@ -258,7 +256,6 @@ function addCreateRecipe() {
     document.querySelector('.section--recipe-display').classList.remove('shown');
     document.querySelector('.section--recipe-upload').classList.add('shown');
     document.querySelector('recipe-upload').data = null;
-    console.log('successfully bound stuff');
     bindSubmitButton(document.querySelector('recipe-upload').shadowRoot.getElementById('submitButton'), 'create');
     bindCancelButton(document.querySelector('recipe-upload').shadowRoot.getElementById('cancelButton'), 'create');
   });
@@ -316,22 +313,16 @@ function sliderSpiceLevel() {
   const spiceLevel = document.getElementById('spiceLevel');
   const style = document.querySelector('[data="test"]');
   if (spiceSlider.value == 1) {
-    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy1) 0%, var(--ec-spicy1) ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 100%)`;
+    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+  } else if (spiceSlider.value == 2) {
+    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+  } else if (spiceSlider.value == 3) {
+    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+  } else if (spiceSlider.value == 4) {
+    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+  } else if (spiceSlider.value == 5) {
+    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
   }
-  else if (spiceSlider.value == 2) {
-    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy2) 0%, var(--ec-spicy2) ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 100%)`;
-  }
-  else if (spiceSlider.value == 3) {
-    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy3) 0%, var(--ec-spicy3) ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 100%)`;
-  }
-  else if (spiceSlider.value == 4) {
-    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy4) 0%, var(--ec-spicy4) ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 100%)`;
-  }
-  else if (spiceSlider.value == 5) {
-    spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 100%)`;
-  }
-  // spiceSlider.style.background = `linear-gradient(to right, var(--ec-spicy4) 0%, var(--ec-spicy4) ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 100%)`;
-  // spiceSlider.style.background = `linear-gradient(to right, #ca5507 0%, #ca5507 ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 100%)`;
   let emojiString = '';
   for (let i = 0; i &lt; spiceSlider.value; i += 1) {
     emojiString += '🌶️';
@@ -341,21 +332,16 @@ function sliderSpiceLevel() {
   spiceSlider.oninput = function () {
     emojiString = '';
     if (this.value == 1) {
-      this.style.background = `linear-gradient(to right, var(--ec-spicy1) 0%, var(--ec-spicy1) ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 100%)`;
+      this.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+    } else if (this.value == 2) {
+      this.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+    } else if (this.value == 3) {
+      this.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+    } else if (this.value == 4) {
+      this.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
+    } else if (this.value == 5) {
+      this.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 ${(spiceSlider.value - spiceSlider.min) / (spiceSlider.max - spiceSlider.min) * 100}%, #a0a0a0 100%)`;
     }
-    else if (this.value == 2) {
-      this.style.background = `linear-gradient(to right, var(--ec-spicy2) 0%, var(--ec-spicy2) ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 100%)`;
-    }
-    else if (this.value == 3) {
-      this.style.background = `linear-gradient(to right, var(--ec-spicy3) 0%, var(--ec-spicy3) ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 100%)`;
-    }
-    else if (this.value == 4) {
-      this.style.background = `linear-gradient(to right, var(--ec-spicy4) 0%, var(--ec-spicy4) ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 100%)`;
-    }
-    else if (this.value == 5) {
-      this.style.background = `linear-gradient(to right, var(--ec-spicy5) 0%, var(--ec-spicy5) ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 ${(spiceSlider.value-spiceSlider.min)/(spiceSlider.max-spiceSlider.min)*100}%, #a0a0a0 100%)`;
-    } 
-    // this.style.background = `linear-gradient(to right, #ca5507 0%, #ca5507 ${(this.value-this.min)/(this.max-this.min)*100}%, #a0a0a0 ${(this.value-this.min)/(this.max-this.min)*100}%, #a0a0a0 100%)`;
     for (let i = 0; i &lt; this.value; i += 1) {
       emojiString += '🌶️';
     }
@@ -464,7 +450,7 @@ async function bindProgressBar(challengeBar, challenge) {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Dec 10 2021 07:09:53 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Dec 10 2021 20:43:09 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
