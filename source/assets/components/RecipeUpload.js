@@ -553,7 +553,7 @@ class RecipeUpload extends HTMLElement {
    * Removes last textarea for recipe instruction/steps when remove step button is pressed
    */
   RemoveInstruction() {
-    const button = this.shadowRoot.getElementById('removeStepButton');
+    let button = this.shadowRoot.getElementById('removeStepButton');
     const div = this.shadowRoot.getElementById('instructions');
 
     button.addEventListener('click', () => {
@@ -563,10 +563,10 @@ class RecipeUpload extends HTMLElement {
         div.setAttribute('value', stepNum);
         const textArea = div.getElementsByTagName('textarea')[div.getElementsByTagName('textarea').length - 1];
         const lineBreak = div.getElementsByTagName('br')[div.getElementsByTagName('br').length - 1];
-        const buttonElement = div.getElementsByTagName('button')[div.getElementsByTagName('button').length - 1];
+        button = div.getElementsByTagName('button')[div.getElementsByTagName('button').length - 1];
         div.removeChild(textArea);
         div.removeChild(lineBreak);
-        div.removeChild(buttonElement);
+        div.removeChild(button);
       }
     });
   }
@@ -688,7 +688,7 @@ class RecipeUpload extends HTMLElement {
    * Removes last textarea for recipe instruction/steps when remove step button is pressed
    */
   RemoveIngredient() {
-    const button = this.shadowRoot.getElementById('removeIngredientButton');
+    let button = this.shadowRoot.getElementById('removeIngredientButton');
     const div = this.shadowRoot.getElementById('ingredients');
 
     button.addEventListener('click', () => {
@@ -700,12 +700,12 @@ class RecipeUpload extends HTMLElement {
         const inputName = div.getElementsByTagName('input')[div.getElementsByTagName('input').length - 2];
         const inputQuantity = div.getElementsByTagName('input')[div.getElementsByTagName('input').length - 1];
         const select = div.getElementsByTagName('select')[div.getElementsByTagName('select').length - 1];
-        const buttonElement = div.getElementsByTagName('button')[div.getElementsByTagName('button').length - 1];
+        button = div.getElementsByTagName('button')[div.getElementsByTagName('button').length - 1];
         div.removeChild(lineBreak);
         div.removeChild(inputName);
         div.removeChild(inputQuantity);
         div.removeChild(select);
-        div.removeChild(buttonElement);
+        div.removeChild(button);
       }
     });
   }
