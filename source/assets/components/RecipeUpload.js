@@ -788,26 +788,24 @@ class RecipeUpload extends HTMLElement {
     this.shadowRoot.getElementById('cookMins').value = this.json.time[1].minutes;
     this.shadowRoot.getElementById('cookHrs').value = this.json.time[1].hours;
 
-    const ingredients_div = this.shadowRoot.getElementById('ingredients');
     for (let i = 1; i < (this.json.ingredientList.length); i += 1) {
       this.MakeExtraIngredientsSlots(this.json.ingredientList[i]);
       // console.log(optionIndex[data.ingredientList[i].units]);
       this.shadowRoot.getElementById('ingredientUnits').selectedIndex = this.optionIndex[this.json.ingredientList[i].units];
     }
-    const div1 = this.shadowRoot.getElementById('ingredients');
-    const inputName = div1.getElementsByTagName('input')[0];
-    const inputQuantity = div1.getElementsByTagName('input')[1];
-    const select = div1.getElementsByTagName('select')[0];
+    const ingredientsDiv = this.shadowRoot.getElementById('ingredients');
+    const inputName = ingredientsDiv.getElementsByTagName('input')[0];
+    const inputQuantity = ingredientsDiv.getElementsByTagName('input')[1];
+    const select = ingredientsDiv.getElementsByTagName('select')[0];
     inputName.value = this.json.ingredientList[0].name;
     inputQuantity.value = this.json.ingredientList[0].quantity;
     select.options[this.optionIndex[this.json.ingredientList[0].units]].selected = true;
-    const instructions_div = this.shadowRoot.getElementById('instructions');
     const { directions } = this.json;
     for (let i = 1; i < (directions.length); i += 1) {
       this.MakeExtraInstructionSlots(directions[i]);
     }
-    const div2 = this.shadowRoot.getElementById('instructions');
-    const textArea = div2.getElementsByTagName('textarea')[0];
+    const instructionsDiv = this.shadowRoot.getElementById('instructions');
+    const textArea = instructionsDiv.getElementsByTagName('textarea')[0];
     textArea.setAttribute('style', 'width: 90%;');
     textArea.value = this.json.directions[0];
   }
