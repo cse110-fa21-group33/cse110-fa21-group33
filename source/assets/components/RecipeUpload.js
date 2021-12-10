@@ -186,8 +186,8 @@ class RecipeUpload extends HTMLElement {
     <h2>Description</h2>
     <textarea id="recipeDescription" rows="7" cols="50"></textarea>
     
-    <h2>Upload Photo</h2>
-    <p>Please upload a picture of your completed dish!</p>
+    <h2 id="header-upload-photo">Upload Photo</h2>
+    <p id="p-upload-photo">Please upload a picture of your completed dish!</p>
     
     <img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
     <br>
@@ -323,8 +323,8 @@ class RecipeUpload extends HTMLElement {
     <h2>Description</h2>
     <textarea id="recipeDescription" rows="7" cols="50"></textarea>
     
-    <h2>Upload Photo</h2>
-    <p>Please upload a picture of your completed dish!</p>
+    <h2 id="header-upload-photo">Upload Photo</h2>
+    <p id="p-upload-photo">Please upload a picture of your completed dish!</p>
     
     <img src="assets/images/placeholder.png" id="imgPreview" alt="temp" width="400" height="400" referrerpolicy="no-referrer">
     <br>
