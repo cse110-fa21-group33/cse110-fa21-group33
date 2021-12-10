@@ -1,13 +1,13 @@
 import { database } from '../scripts/database.js';
 
 /**
- * recipe-display.js
+ * RecipeDisplay.js
  *
- * @author Lynn Dang
  * Taken from Lab 7
  */
 class RecipeDisplay extends HTMLElement {
   static jSConfetti = new JSConfetti();
+
   /**
    * Constructor builds the layout for the recipe page
    */
@@ -426,15 +426,14 @@ class RecipeDisplay extends HTMLElement {
     this.shadowRoot.querySelector('.recipe-description').innerHTML = description;
     const { image } = data;
     const img = this.shadowRoot.querySelector('#recipe-media > img');
-    if (image == "") {
-      img.setAttribute('src', "assets/images/placeholder.png");
-    }
-    else {
+    if (image == '') {
+      img.setAttribute('src', 'assets/images/placeholder.png');
+    } else {
       img.setAttribute('src', image);
     }
     img.setAttribute('alt', title);
-    //const { scoville } = data;
-    //this.shadowRoot.querySelector('#recipe-spice-level').innerHTML = scoville;
+    // const { scoville } = data;
+    // this.shadowRoot.querySelector('#recipe-spice-level').innerHTML = scoville;
     for (let i = 0; i < data.spiceRating; i += 1) {
       this.shadowRoot.querySelector('#recipe-spice-level').innerHTML += '🌶️';
     }
@@ -459,7 +458,7 @@ class RecipeDisplay extends HTMLElement {
     if (data.completed === true) {
       const newBox = document.createElement('completed');
       newBox.innerHTML = 'Completed!';
-      newBox.innerHTML += "<br><br>Upload a picture of your reaction!";
+      newBox.innerHTML += '<br><br>Upload a picture of your reaction!';
       btn.parentElement.appendChild(newBox);
       const box = btn.parentElement;
       btn.parentElement.removeChild(btn);
@@ -477,11 +476,14 @@ class RecipeDisplay extends HTMLElement {
     } else {
       this.bindCompleteButton(data);
     }
-    if(data.challenges.length != 0 ){
+    if (data.challenges.length != 0) {
       this.ShowChallenge(data);
     }
   }
 
+  /**
+   * Creates the reaction section if the recipe was completed
+   */
   SubmitReaction() {
     const button = this.shadowRoot.getElementById('submitButton');
     const uploadImg = this.shadowRoot.getElementById('imgUpload');
@@ -493,15 +495,20 @@ class RecipeDisplay extends HTMLElement {
     });
   }
 
+  /**
+   * When completing a recipe, it will make the appropriate changes to the challenges it
+   * is a part of, throw confetti, and display the reaction section.
+   * @param {*} data
+   */
   bindCompleteButton(data) {
     const btn = this.shadowRoot.getElementById('made-this-button');
     btn.addEventListener('click', () => {
-      RecipeDisplay.jSConfetti.addConfetti( {emojis: ['🥵', '🔥', '🌶️']} );
+      RecipeDisplay.jSConfetti.addConfetti({ emojis: ['🥵', '🔥', '🌶️'] });
       if (data.completed === false) {
         database.completeRecipe(data);
         const newBox = document.createElement('completed');
         newBox.innerHTML = 'Completed!';
-        newBox.innerHTML += "<br><br>Upload a picture of your reaction!";
+        newBox.innerHTML += '<br><br>Upload a picture of your reaction!';
         btn.parentElement.appendChild(newBox);
         btn.parentElement.removeChild(btn);
         const imgPreview = this.shadowRoot.getElementById('imgPreview');
@@ -515,19 +522,25 @@ class RecipeDisplay extends HTMLElement {
       }
     });
   }
+
+  /**
+   * Dispalys the challenges the recipe is a part of
+   * @param {*} data
+   */
   ShowChallenge(data) {
     const dummyChild = this.shadowRoot.getElementById('recipe-directions');
     const challengeHeader = document.createElement('ol');
     challengeHeader.classList.add('challenge-header');
-    challengeHeader.innerHTML = '<br><br>Included in Challenges'; 
-    data.challenges.forEach((childChallenge) => { 
-      const li = document.createElement('li'); 
-      li.innerHTML = childChallenge; 
-      challengeHeader.append(li); 
+    challengeHeader.innerHTML = '<br><br>Included in Challenges';
+    data.challenges.forEach((childChallenge) => {
+      const li = document.createElement('li');
+      li.innerHTML = childChallenge;
+      challengeHeader.append(li);
     });
-    dummyChild.parentElement.appendChild(challengeHeader); 
+    dummyChild.parentElement.appendChild(challengeHeader);
   }
 }
+
 /**
  * Calculates the time string to display
  * @param {*} time
@@ -545,6 +558,7 @@ function calculateTime(time) {
   }
   return timeString;
 }
+
 /**
  * Parses the ingredient JSON to make it into a readable string to
  * display the ingredient
@@ -565,6 +579,7 @@ function getIngredient(ingredient) {
   ingredientString += name;
   return ingredientString;
 }
+
 /**
  * Creates a checkbox given the string
  * @param {*} checkboxString

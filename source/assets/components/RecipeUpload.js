@@ -1,9 +1,10 @@
 import { database } from '../scripts/database.js';
 
+// RecipeUpload.js
 class RecipeUpload extends HTMLElement {
   /**
-     * Constructor builds the layout for the recipe page
-     */
+   * Constructor builds the layout for the recipe page
+   */
   constructor() {
     super();
     // Create Shadow DOM
@@ -14,7 +15,6 @@ class RecipeUpload extends HTMLElement {
 
     this.isCreate = true;
 
-    // TODO add CSS to upload page
     styles.innerHTML = `
       article {
         display: block;
@@ -176,7 +176,7 @@ class RecipeUpload extends HTMLElement {
       
       
     `;
-    // background: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Red_X.svg') no-repeat scroll 0 0 white;
+
     article.innerHTML = `
     <h1 id="recipe-title">Upload Recipe</h1>
 
@@ -279,6 +279,9 @@ class RecipeUpload extends HTMLElement {
     this.SubmitRecipe();
   }
 
+  /**
+   * All the ingredient measurement options
+   */
   optionIndex = {
     'N/A': 0,
     cups: 1,
@@ -434,7 +437,10 @@ class RecipeUpload extends HTMLElement {
     this.FillExistingData();
   }
 
-  // attempt to take user input and convert to .json file
+  /**
+   * Attempt to take user input and convert to .json file
+   * @param {*} event
+   */
   SubmitRecipe(event) {
     // TODO: Check if all boxes have been filled
 
@@ -509,12 +515,7 @@ class RecipeUpload extends HTMLElement {
         jsonText.directions[i] = currInstruction;
       }
 
-      // TODO (Lorenzo)
-      // if isCreateRecipe - add the recipe to dexie
-      // if !isCreateRecipe - update the recipe on dexie
-
-      // determine spice level
-
+      // Determine spice level
       if (scoville < 3000) {
         jsonText.spiceRating = 1;
       } else if (scoville < 25000) {
@@ -533,17 +534,14 @@ class RecipeUpload extends HTMLElement {
         jsonText.id = this.json.id;
         database.updateRecipe(jsonText);
       }
-
-      /** try {
-        localStorage.setItem(jsonName, JSON.stringify(jsonText));
-      } catch (e) {
-        console.log(`Storage failed: ${e}`);
-      }
-      * */
     });
   }
 
-  // Takes in recipe name and generates .json name
+  /**
+   * Takes in recipe name and generates .json name
+   * @param {*} name
+   * @returns name of the recipe json
+   */
   RecipeNameGenerator(name) {
     let recipeName = '';
 
@@ -561,7 +559,14 @@ class RecipeUpload extends HTMLElement {
     return recipeName;
   }
 
-  // Calculates total cook time, accounting for overflow
+  /**
+   * Calculates total cook time, accounting for overflow
+   * @param {*} prepHrs
+   * @param {*} prepMins
+   * @param {*} cookHrs
+   * @param {*} cookMins
+   * @returns total cook time
+   */
   CalculateTotalTime(prepHrs, prepMins, cookHrs, cookMins) {
     let totalMins = prepMins + cookMins;
     const carryHrs = Math.floor(totalMins / 60);
@@ -649,15 +654,15 @@ class RecipeUpload extends HTMLElement {
         inputName.setAttribute('minlength', '2');
         inputName.setAttribute('maxlength', '40');
         inputName.setAttribute('placeholder', 'Ingredient Description');
-        inputName.classList.add("ingredientDescription");
+        inputName.classList.add('ingredientDescription');
         const inputQuantity = document.createElement('input');
         inputQuantity.setAttribute('type', 'number');
         inputQuantity.setAttribute('min', '0');
         inputQuantity.setAttribute('max', '999999');
         inputQuantity.setAttribute('placeholder', 'Quantity');
-        inputQuantity.classList.add("ingredientQuantity");
+        inputQuantity.classList.add('ingredientQuantity');
         const select = document.createElement('select');
-        select.classList.add("ingredientUnits");
+        select.classList.add('ingredientUnits');
         for (let i = 0; i < selectOptions.length; i += 1) {
           const option = document.createElement('option');
           option.setAttribute('value', selectOptions[i]);
@@ -894,7 +899,7 @@ class RecipeUpload extends HTMLElement {
       inputName.setAttribute('maxlength', '40');
       inputName.setAttribute('placeholder', 'Ingredient Description');
       inputName.value = this.shadowRoot.getElementById('ingredientDescription').value = data.name;
-      inputName.classList.add("ingredientDescription");
+      inputName.classList.add('ingredientDescription');
       // console.log(data.name);
       const inputQuantity = document.createElement('input');
       inputQuantity.setAttribute('type', 'number');
@@ -904,7 +909,7 @@ class RecipeUpload extends HTMLElement {
       inputQuantity.value = this.shadowRoot.getElementById('ingredientDescription').value = data.quantity;
       // console.log(data.quantity);
       const select = document.createElement('select');
-      select.classList.add("ingredientUnits");
+      select.classList.add('ingredientUnits');
       for (let i = 0; i < selectOptions.length; i += 1) {
         const option = document.createElement('option');
         option.setAttribute('value', selectOptions[i]);

@@ -1,8 +1,8 @@
 // ChallengeBar.js
-// Taken from Lab 7
 
 /**
- * Creates recipe card and appends it to the main page.
+ * Creates the challenge data to display the progress bar and appends it to eft side
+ * of the main page.
  * @param {json} data The json containing the data to create the card.
  */
 class ChallengeBar extends HTMLElement {
@@ -75,7 +75,7 @@ class ChallengeBar extends HTMLElement {
     elem.appendChild(title);
 
     const badge = document.createElement('img');
-    badge.classList.add('challenge-badge')
+    badge.classList.add('challenge-badge');
     badge.src = data.icon;
     title.appendChild(badge);
 
