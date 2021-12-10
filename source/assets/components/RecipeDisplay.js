@@ -512,6 +512,7 @@ class RecipeDisplay extends HTMLElement {
         const submitBtn = this.shadowRoot.getElementById('submitButton');
         submitBtn.style.display = '';
         this.GetImgurImage();
+        this.json.reactions = 'assets/images/placeholder.png';
         this.SubmitReaction();
       }
     });

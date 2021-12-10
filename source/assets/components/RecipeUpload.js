@@ -511,6 +511,10 @@ class RecipeUpload extends HTMLElement {
 
       if (this.json != null) {
         jsonText.challenges = this.json.challenges;
+        jsonText.completed = this.json.completed;
+        if (jsonText.completed === true) {
+          jsonText.reactions = this.json.reactions;
+        }
       }
 
       // Determine spice level
@@ -721,25 +725,25 @@ class RecipeUpload extends HTMLElement {
     const div = this.shadowRoot.getElementById('ingredients');
     div.addEventListener('click', (e) => {
       if (e.target && e.target.id == 'specificIngredientRemove') {
-        const instr_number = e.target.value;
+        const instrNumber = e.target.value;
         let stepNum = Number(div.getAttribute('value'));
         // console.log(instr_number);
         if (stepNum > 1) {
-          const one = parseInt(instr_number) * 2;
-          const two = parseInt(instr_number) * 2 + 1;
+          const one = parseInt(instrNumber) * 2;
+          const two = parseInt(instrNumber) * 2 + 1;
           // console.log(one);
           // console.log(two);
-          const lineBreak = div.getElementsByTagName('br')[instr_number];
+          const lineBreak = div.getElementsByTagName('br')[instrNumber];
           const inputName = div.getElementsByTagName('input')[one];
           const inputQuantity = div.getElementsByTagName('input')[two];
-          const select = div.getElementsByTagName('select')[instr_number];
-          const button = div.getElementsByTagName('button')[instr_number];
+          const select = div.getElementsByTagName('select')[instrNumber];
+          const button = div.getElementsByTagName('button')[instrNumber];
           div.removeChild(lineBreak);
           div.removeChild(inputName);
           div.removeChild(inputQuantity);
           div.removeChild(select);
           div.removeChild(button);
-          for (let i = instr_number; i < div.getElementsByTagName('button').length; i++) {
+          for (let i = instrNumber; i < div.getElementsByTagName('button').length; i++) {
             div.getElementsByTagName('button')[i].value--;
           }
           stepNum -= 1;
