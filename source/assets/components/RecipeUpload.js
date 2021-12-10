@@ -312,8 +312,6 @@ class RecipeUpload extends HTMLElement {
   set data(data) {
     this.json = data;
     // Reset HTML
-    const styles = document.createElement('style');
-
     this.shadowRoot.querySelector('article').innerHTML = `
     <h1 id="recipe-title">Upload Recipe</h1>
 
@@ -439,11 +437,8 @@ class RecipeUpload extends HTMLElement {
 
   /**
    * Attempt to take user input and convert to .json file
-   * @param {*} event
    */
-  SubmitRecipe(event) {
-    // TODO: Check if all boxes have been filled
-
+  SubmitRecipe() {
     const button = this.shadowRoot.getElementById('submitButton');
 
     button.addEventListener('click', () => {
@@ -457,7 +452,6 @@ class RecipeUpload extends HTMLElement {
       const cookHrs = Number(this.shadowRoot.getElementById('cookHrs').value);
       const servingSize = Number(this.shadowRoot.getElementById('servingSize').value);
 
-      const jsonName = this.RecipeNameGenerator(recipeName);
       const totalTimeArr = this.CalculateTotalTime(prepHrs, prepMins, cookHrs, cookMins);
 
       const jsonText = {
@@ -515,6 +509,14 @@ class RecipeUpload extends HTMLElement {
         jsonText.directions[i] = currInstruction;
       }
 
+      if (this.json != null) {
+        jsonText.challenges = this.json.challenges;
+        jsonText.completed = this.json.completed;
+        if (jsonText.completed === true) {
+          jsonText.reactions = this.json.reactions;
+        }
+      }
+
       // Determine spice level
       if (scoville < 3000) {
         jsonText.spiceRating = 1;
@@ -538,28 +540,6 @@ class RecipeUpload extends HTMLElement {
   }
 
   /**
-   * Takes in recipe name and generates .json name
-   * @param {*} name
-   * @returns name of the recipe json
-   */
-  RecipeNameGenerator(name) {
-    let recipeName = '';
-
-    // replace all spaces
-    for (let i = 0; i < name.length; i += 1) {
-      const curr = name.charAt(i);
-      if (curr === ' ') {
-        recipeName += '-';
-      } else {
-        recipeName += curr;
-      }
-    }
-    // append file extension
-    recipeName += '.json';
-    return recipeName;
-  }
-
-  /**
    * Calculates total cook time, accounting for overflow
    * @param {*} prepHrs
    * @param {*} prepMins
@@ -575,13 +555,6 @@ class RecipeUpload extends HTMLElement {
     const totalHrs = prepHrs + cookHrs + carryHrs;
 
     return new Array(totalHrs, totalMins);
-  }
-
-  /**
-   * Check to see if the user input is valid and let user know what inputs to change to fix input
-   */
-  RecipeInputsGood(event) {
-    // TODO
   }
 
   /**
@@ -613,19 +586,19 @@ class RecipeUpload extends HTMLElement {
     const div = this.shadowRoot.getElementById('instructions');
     div.addEventListener('click', (e) => {
       if (e.target && e.target.id == 'specificInstructionRemove') {
-        const instr_number = e.target.value;
+        const instrNumber = e.target.value;
         let stepNum = Number(div.getAttribute('value'));
         if (stepNum > 1) {
-          const textArea = div.getElementsByTagName('textarea')[instr_number];
-          const lineBreak = div.getElementsByTagName('br')[instr_number];
-          const button = div.getElementsByTagName('button')[instr_number];
+          const textArea = div.getElementsByTagName('textarea')[instrNumber];
+          const lineBreak = div.getElementsByTagName('br')[instrNumber];
+          const button = div.getElementsByTagName('button')[instrNumber];
           div.removeChild(textArea);
           div.removeChild(button);
           div.removeChild(lineBreak);
 
-          for (let i = instr_number; i < div.getElementsByTagName('button').length; i++) {
-            const new_index = +i + +1;
-            div.getElementsByTagName('textarea')[i].placeholder = `Step ${new_index}`;
+          for (let i = instrNumber; i < div.getElementsByTagName('button').length; i++) {
+            const newIndex = +i + +1;
+            div.getElementsByTagName('textarea')[i].placeholder = `Step ${newIndex}`;
             div.getElementsByTagName('button')[i].value--;
           }
           stepNum -= 1;
@@ -752,25 +725,25 @@ class RecipeUpload extends HTMLElement {
     const div = this.shadowRoot.getElementById('ingredients');
     div.addEventListener('click', (e) => {
       if (e.target && e.target.id == 'specificIngredientRemove') {
-        const instr_number = e.target.value;
+        const instrNumber = e.target.value;
         let stepNum = Number(div.getAttribute('value'));
         // console.log(instr_number);
         if (stepNum > 1) {
-          const one = parseInt(instr_number) * 2;
-          const two = parseInt(instr_number) * 2 + 1;
+          const one = parseInt(instrNumber) * 2;
+          const two = parseInt(instrNumber) * 2 + 1;
           // console.log(one);
           // console.log(two);
-          const lineBreak = div.getElementsByTagName('br')[instr_number];
+          const lineBreak = div.getElementsByTagName('br')[instrNumber];
           const inputName = div.getElementsByTagName('input')[one];
           const inputQuantity = div.getElementsByTagName('input')[two];
-          const select = div.getElementsByTagName('select')[instr_number];
-          const button = div.getElementsByTagName('button')[instr_number];
+          const select = div.getElementsByTagName('select')[instrNumber];
+          const button = div.getElementsByTagName('button')[instrNumber];
           div.removeChild(lineBreak);
           div.removeChild(inputName);
           div.removeChild(inputQuantity);
           div.removeChild(select);
           div.removeChild(button);
-          for (let i = instr_number; i < div.getElementsByTagName('button').length; i++) {
+          for (let i = instrNumber; i < div.getElementsByTagName('button').length; i++) {
             div.getElementsByTagName('button')[i].value--;
           }
           stepNum -= 1;
@@ -809,7 +782,7 @@ class RecipeUpload extends HTMLElement {
   FillExistingData() {
     this.shadowRoot.getElementById('recipeName').value = this.json.title;
     this.shadowRoot.getElementById('recipeDescription').value = this.json.description;
-    if (this.json.image == '') {
+    if (this.json.image === '') {
       this.shadowRoot.getElementById('url').innerText = '';
       this.shadowRoot.getElementById('imgPreview').src = 'assets/images/placeholder.png';
     } else {
@@ -823,26 +796,24 @@ class RecipeUpload extends HTMLElement {
     this.shadowRoot.getElementById('cookMins').value = this.json.time[1].minutes;
     this.shadowRoot.getElementById('cookHrs').value = this.json.time[1].hours;
 
-    const ingredients_div = this.shadowRoot.getElementById('ingredients');
     for (let i = 1; i < (this.json.ingredientList.length); i += 1) {
       this.MakeExtraIngredientsSlots(this.json.ingredientList[i]);
       // console.log(optionIndex[data.ingredientList[i].units]);
       this.shadowRoot.getElementById('ingredientUnits').selectedIndex = this.optionIndex[this.json.ingredientList[i].units];
     }
-    const div1 = this.shadowRoot.getElementById('ingredients');
-    const inputName = div1.getElementsByTagName('input')[0];
-    const inputQuantity = div1.getElementsByTagName('input')[1];
-    const select = div1.getElementsByTagName('select')[0];
+    const ingredientsDiv = this.shadowRoot.getElementById('ingredients');
+    const inputName = ingredientsDiv.getElementsByTagName('input')[0];
+    const inputQuantity = ingredientsDiv.getElementsByTagName('input')[1];
+    const select = ingredientsDiv.getElementsByTagName('select')[0];
     inputName.value = this.json.ingredientList[0].name;
     inputQuantity.value = this.json.ingredientList[0].quantity;
     select.options[this.optionIndex[this.json.ingredientList[0].units]].selected = true;
-    const instructions_div = this.shadowRoot.getElementById('instructions');
     const { directions } = this.json;
     for (let i = 1; i < (directions.length); i += 1) {
       this.MakeExtraInstructionSlots(directions[i]);
     }
-    const div2 = this.shadowRoot.getElementById('instructions');
-    const textArea = div2.getElementsByTagName('textarea')[0];
+    const instructionsDiv = this.shadowRoot.getElementById('instructions');
+    const textArea = instructionsDiv.getElementsByTagName('textarea')[0];
     textArea.setAttribute('style', 'width: 90%;');
     textArea.value = this.json.directions[0];
   }

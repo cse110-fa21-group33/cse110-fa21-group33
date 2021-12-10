@@ -90,7 +90,7 @@ class RecipeCard extends HTMLElement {
 
     const image = document.createElement('img');
     image.classList.add('card-img');
-    if (data.image == '') {
+    if (data.image === '') {
       image.setAttribute('src', 'assets/images/placeholder.png');
     } else {
       image.setAttribute('src', data.image);
