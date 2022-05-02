@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const localSQLConnection = {
+const SQLConnection = {
   host: process.env.HOST,
   port: process.env.DATAPORT,
   user: process.env.DATAUSER,
@@ -8,8 +8,6 @@ const localSQLConnection = {
   database: process.env.DATABASE,
   timezone: 'UTC',
 };
-
-const SQLConnection = localSQLConnection;
 
 module.exports = {
   development: {
