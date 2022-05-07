@@ -5,7 +5,8 @@
 
 | Property      | Type     | Description |
 | ------------- | -------- | ------------|
-| recipeID | Integer |  Primary key (auto-increments)
+| recipeID | Integer |  Primary key (auto-increments)|
+| userID| Integer | Id of the user that created recipe (default -1) |
 |    title    |  String  |    Recipe name     |
 |   description    | String   |  Recipe description   |
 |    image    |  String   |  Link to recipe image  |
