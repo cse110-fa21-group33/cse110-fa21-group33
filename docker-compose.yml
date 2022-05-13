@@ -6,10 +6,10 @@ services:
     build: ./source/backend
     ports:
       - '3000:3000'
-#
-#  app:
-#    container_name: exploding-kitchen
-#    restart: always
-#    build: ./source
-#    ports:
-#      - '80:80'
+
+  app:
+    container_name: exploding-kitchen
+    restart: always
+    build: ./source
+    ports:
+      - '80:80'
