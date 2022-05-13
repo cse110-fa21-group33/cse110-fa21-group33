@@ -1,15 +1,14 @@
 version: '3'
 services:
+  rest-api:
+    container_name: exploding-kitchen-rest-api
+    restart: always
+    build: ./source/backend
+    ports:
+      - '3000:3000'
   app:
     container_name: exploding-kitchen
     restart: always
     build: ./source
     ports:
       - '80:80'
-
-  rest-api:
-    container_name: exploding-kitchen-rest-api
-    restart: always
-    build: ./source/backend
-    ports:
-        - '3000:3000'
