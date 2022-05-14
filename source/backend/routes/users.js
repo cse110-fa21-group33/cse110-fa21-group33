@@ -3,6 +3,36 @@ const usersModel = require('../database/models/usersModel');
 
 const router = express.Router();
 
+/* GET users/completedRecipes */
+router.get('/completedRecipes', async (req, res) => {
+  try {
+    const { userId } = req.userInfo;
+    const completedRecipesList = await usersModel.getCompletedRecipes(userId);
+    res.send(completedRecipesList);
+  } catch (err) {
+    console.log(err);
+    return res.status(503).json({
+      message: 'Failed to get completed recipes',
+      err
+    });
+  }
+});
+
+/* GET users/savedRecipes */
+router.get('/savedRecipes', async (req, res) => {
+  try {
+    const { userId }  = req.userInfo;
+    const savedRecipesList = await usersModel.getSavedRecipes(userId);
+    return res.status(200).json(savedRecipesList);
+  } catch (err) {
+    console.log(err);
+    return res.status(503).json({
+      message: 'Failed to get saved recipes',
+      err
+    });
+  }
+});
+
 /* GET /users */
 router.get('/:id', async (req, res) => {
   try {

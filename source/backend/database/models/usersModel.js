@@ -12,4 +12,34 @@ async function getByUserId(userId) {
   return result;
 }
 
-module.exports = { getByUserId };
+/**
+ * Searches all completed recipes by userId
+ * @param userId
+ * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
+ */
+async function getCompletedRecipes(userId){
+  const completedRecipes = await db('completedRecipes')
+    .innerJoin('recipes', function() {
+      this.on('completedRecipes.userId', '=', userId);
+      this.andOn('recipes.recipeId', '=', 'completedRecipes.recipeId');
+    })
+    .select('recipes.*');
+  return completedRecipes;
+}
+
+/**
+ * Searches all saved recipes by userId
+ * @param userId
+ * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
+ */
+async function getSavedRecipes(userId){
+  const savedRecipes = await db('savedRecipes')
+    .innerJoin('recipes', function() {
+      this.on('savedRecipes.userId', '=', userId);
+      this.andOn('recipes.recipeId', '=', 'savedRecipes.recipeId');
+    })
+    .select('recipes.*');
+  return savedRecipes;
+}
+
+module.exports = { getByUserId, getCompletedRecipes, getSavedRecipes };
