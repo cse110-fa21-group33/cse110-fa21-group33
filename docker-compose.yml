@@ -12,4 +12,4 @@ services:
     restart: always
     build: ./source/frontend
     ports:
-      - '3001:80'
+      - '80:80'
