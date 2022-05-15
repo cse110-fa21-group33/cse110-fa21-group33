@@ -14,7 +14,12 @@ async function getByRecipeId(recipeId) {
 
 /**
  * create a recipe
- * @param 
+ * @param payload 
+ * @param userId
  * @returns 
  */
+async function createRecipe(payload, userId) {
+  const result = await db('recipes')
+    .insert(payload);
+}
 module.exports = { getByRecipeId };
