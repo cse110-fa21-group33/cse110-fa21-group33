@@ -12,8 +12,6 @@ async function getByRecipeId(recipeId) {
   return result;
 }
 
-module.exports = { getByRecipeId };
-
 /**
  * get recipes by challenge
  * @param challenge
@@ -25,8 +23,6 @@ module.exports = { getByRecipeId };
     .where({ challenge });
   return result;
 }
-
-module.exports = { getByChallenge };
 
 /**
  * get recipes by spiceRating
@@ -40,4 +36,4 @@ module.exports = { getByChallenge };
   return result;
 }
 
-module.exports = { getBySpiceRating };
+module.exports = { getByRecipeId, getByChallenge, getBySpiceRating };
