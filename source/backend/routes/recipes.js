@@ -24,5 +24,19 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+/* POST /recipes */
+router.post('/', async(req, res) => {
+  try {
+    
+  } catch (err) {
+    console.error(err);
+    return res.status(503).json({
+      message: 'Failed to get recipe information due to'
+        + 'internal server error',
+      err,
+    });
+  }
+});
+
 module.exports = router;
 

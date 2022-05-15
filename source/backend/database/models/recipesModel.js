@@ -1,7 +1,7 @@
 const db = require('../dbConfig');
 
 /**
- * get user information by recipeId
+ * get recipe information by recipeId
  * @param recipeId
  * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
  */
@@ -12,4 +12,9 @@ async function getByRecipeId(recipeId) {
   return result;
 }
 
+/**
+ * create a recipe
+ * @param 
+ * @returns 
+ */
 module.exports = { getByRecipeId };
