@@ -10,6 +10,6 @@ services:
   app:
     container_name: exploding-kitchen
     restart: always
-    build: ./source
+    build: ./source/frontend
     ports:
       - '80:80'

@@ -4,7 +4,7 @@ const router = express.Router();
 
 /* GET /auth */
 router.get('/', (req, res) => {
-  res.send('auth');
+  return res.status(200).json({msg: 'passed'});
 });
 
 module.exports = router;
