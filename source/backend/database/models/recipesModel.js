@@ -12,4 +12,16 @@ async function getByRecipeId(recipeId) {
   return result;
 }
 
-module.exports = { getByRecipeId };
+/**
+ * update recipe information by recipeId
+ * @param recipeId
+ * @param payload
+ * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
+ */
+ async function updateByRecipeId(recipeId, payload) {
+  await db('recipes')
+    .update(payload)
+    .where({ recipeId });
+}
+
+module.exports = { getByRecipeId, updateByRecipeId };
