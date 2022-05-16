@@ -7,14 +7,16 @@ const db = require('../dbConfig');
  * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
  */
  async function getByUserIdAndRecipeId (userId, recipeId) {
-    const result = await db('users')
-      .select('userId', 'recipeId', 'email', 'username')
-      .where({ userId, recipeId });
-    return result;
+    const result = await db('savedRecipes')
+    .join('users', 'users.userId', 'savedRecipes.userId')
+    .join('recipes', 'recipes.recipeId', 'savedRecipes.recipeId')
+    .select('userId', 'recipeId', 'email', 'username')
+    .where({ userId, recipeId });
+    return result
 }
     
 /**
- * delete user information by recipeId
+ * delete savedRecipe record by recipeId
  * @param savedRecipeId
  */
  async function removeById(savedRecipeId) {
