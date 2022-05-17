@@ -25,16 +25,29 @@ router.get('/:id', async (req, res) => {
 });
 
 /* POST /recipes */
-router.post('/', async(req, res) => {
+router.post('/', async (req, res) => {
   try {
-    
+      const new_rec = req.body;
+      const {userId} = req.userInfo;
+      await recipesModel.createRecipe(new_rec, userId);
+      return res.redirect('/');
+  } catch (err) {
+      console.error(err);
+      return res.status(500)
+          .json({err, data: 'Unable to add recipe'});
+  }
+});
+
+router.delete('/recipes/:recipeId', async (req, res) => {
+  try {
+    const {userId} = req.userInfo;
+    const recipeId = req.params.id;
+    await recipesModel.deleteRecipe(userId, recipeId);
+    return res.redirect('/');
   } catch (err) {
     console.error(err);
-    return res.status(503).json({
-      message: 'Failed to get recipe information due to'
-        + 'internal server error',
-      err,
-    });
+    return res.status(500)
+          .json({err, data: 'Unable to delete recipe'});
   }
 });
 

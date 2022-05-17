@@ -19,7 +19,26 @@ async function getByRecipeId(recipeId) {
  * @returns 
  */
 async function createRecipe(payload, userId) {
+  payload.userId = userId;
   const result = await db('recipes')
     .insert(payload);
 }
-module.exports = { getByRecipeId };
+
+/**
+ * remove by user id and recipe id
+ * @param userId
+ * @param recipeId
+ * @return {Promise<void>}
+ */
+ async function deleteRecipe(userId, recipeId) {
+  try {
+      await db('recipes')
+          .del()
+          .where({userId, recipeId});
+  } catch (err) {
+      console.error(err);
+  }
+}
+
+
+module.exports = { getByRecipeId, createRecipe, deleteRecipe };
