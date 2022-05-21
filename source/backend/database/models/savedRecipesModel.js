@@ -21,7 +21,6 @@ const db = require('../dbConfig');
  */
  async function removeById(savedRecipeId) {
     const result = await db('recipes') 
-      .select('userId', 'recipeId', 'email', 'username')
       .where({ savedRecipeId })
       .del();
  }
