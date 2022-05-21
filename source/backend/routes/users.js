@@ -42,7 +42,7 @@ router.delete('/:savedRecipeId', async (req, res) => {
       return res.status(404).json({ message: 'User information not found' });
     }
 
-    await savedRecipesModel.removeById(rowResult[0]); 
+    await savedRecipesModel.removeById(row[0].savedRecipeId); 
     return res.status(200).json("Removed successfully");
     
   } catch (err) {
