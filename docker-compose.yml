@@ -6,7 +6,6 @@ services:
     build: ./source/backend
     ports:
       - '3000:3000'
-
   app:
     container_name: exploding-kitchen
     restart: always
@@ -14,4 +13,4 @@ services:
     ports:
       - '80:80'
     depends_on:
-      - rest_api
+      - rest-api
