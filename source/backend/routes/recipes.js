@@ -4,9 +4,12 @@ const recipesModel = require('../database/models/recipesModel');
 const router = express.Router();
 
 /* GET /recipes */
-router.get('/:id', async (req, res) => {
+/*
+  Get Recipe by id
+*/
+router.get('/recipeId/:recipeId', async (req, res) => {
   try {
-    const { recipeId } = req.params.getByRecipeId;
+    const { recipeId } = req.params;
     const rows = await recipesModel.getByRecipeId(recipeId);
     if (rows.length === 0) {
       return res.status(404).json({ message: 'Recipe information not found' });
@@ -18,7 +21,53 @@ router.get('/:id', async (req, res) => {
     console.error(err);
     return res.status(503).json({
       message: 'Failed to get recipe information due to'
-        + 'internal server error',
+        + ' internal server error',
+      err,
+    });
+  }
+});
+
+/*
+  Get Recipes by challenge
+*/
+router.get('/challenge/:challenge', async (req, res) => {
+  try {
+    const { challenge } = req.params;
+    const rows = await recipesModel.getByChallenge(challenge);
+    if (rows.length === 0) {
+      return res.status(404).json({ message: 'Challenge information not found' });
+    }
+
+    const recipes = rows;
+    return res.status(200).json(recipes);
+  } catch (err) {
+    console.error(err);
+    return res.status(503).json({
+      message: 'Failed to get challenge information due to'
+        + ' internal server error',
+      err,
+    });
+  }
+});
+
+/*
+  Get Recipes by spiceRating
+*/
+router.get('/spiceRating/:spiceRating', async (req, res) => {
+  try {
+    const { spiceRating } = req.params;
+    const rows = await recipesModel.getBySpiceRating(spiceRating);
+    if (rows.length === 0) {
+      return res.status(404).json({ message: 'SpiceRating information not found' });
+    }
+
+    const recipes = rows;
+    return res.status(200).json(recipes);
+  } catch (err) {
+    console.error(err);
+    return res.status(503).json({
+      message: 'Failed to get spiceRating information due to'
+        + ' internal server error',
       err,
     });
   }
