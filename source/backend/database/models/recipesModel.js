@@ -18,8 +18,7 @@ async function getByRecipeId(recipeId) {
  * @param userId
  * @returns 
  */
-async function createRecipe(payload, userId) {
-  payload.userId = userId;
+async function createRecipe(payload) {
   const result = await db('recipes')
     .insert(payload);
 }

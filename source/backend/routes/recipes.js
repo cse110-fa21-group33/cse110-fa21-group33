@@ -1,5 +1,6 @@
 const express = require('express');
 const recipesModel = require('../database/models/recipesModel');
+const verifyUserToken = require('../middleware/verifyUserToken');
 
 const router = express.Router();
 
@@ -25,12 +26,15 @@ router.get('/:id', async (req, res) => {
 });
 
 /* POST /recipes */
-router.post('/', async (req, res) => {
+router.post('/', verifyUserToken, async (req, res) => {
   try {
-      const new_rec = req.body;
-      const {userId} = req.userInfo;
-      await recipesModel.createRecipe(new_rec, userId);
-      return res.redirect('/');
+      const newRecipe = req.body; // might have an array of ingredients req.body.ingredients
+      // save the req.body.ingredients into another variable : ingredients
+
+      const { userId } = req.userInfo;
+      newRecipe.userId = userId;
+      await recipesModel.createRecipe(newRecipe);
+      return res.status(200).json({newRecipe, msg: "Successfully created a new recipe"});
   } catch (err) {
       console.error(err);
       return res.status(500)
@@ -38,12 +42,12 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.delete('/recipes/:recipeId', async (req, res) => {
+router.delete('/recipes/:recipeId', verifyUserToken, async (req, res) => {
   try {
-    const {userId} = req.userInfo;
+    const { userId } = req.userInfo;
     const recipeId = req.params.id;
     await recipesModel.deleteRecipe(userId, recipeId);
-    return res.redirect('/');
+    return res.status(200);
   } catch (err) {
     console.error(err);
     return res.status(500)
