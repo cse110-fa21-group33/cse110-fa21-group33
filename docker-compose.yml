@@ -13,3 +13,5 @@ services:
     build: ./source/frontend
     ports:
       - '80:80'
+    depends_on:
+      - rest_api
