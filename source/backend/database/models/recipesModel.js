@@ -18,9 +18,34 @@ async function getByRecipeId(recipeId) {
  * @param userId
  * @returns 
  */
-async function createRecipe(payload) {
-  const result = await db('recipes')
-    .insert(payload);
+async function createRecipe(payload, ingredientsArray) {
+  await db.transaction(async (transaction) => {
+    try {
+      const recipeId = await db('recipes')
+                .insert(payload)
+                .transacting(transaction)
+                .returning('recipeId');
+      await ingredientsArray.map(async (ingredient => {
+        const ingredientId = await db('ingredients')
+          .insert(ingredient)
+          .transacting(transaction)
+          .returning('ingredientId');
+        const recipeIngredients = {
+          recipeId: recipeId,
+          ingredientId: ingredientId
+        }
+        await db('recipeIngredients')
+          .transacting(transaction)
+          .insert(recipeIngredients)
+      }));
+      await transaction.commit();
+    } catch (err) {
+      console.log(err);
+          await transaction.rollback();
+    }
+  });
+    
+    // if the insert if successful: then lets insert all the ingredients into the ing tbl, then if that's successful do it for the recipe-ing tbl
 }
 
 /**
