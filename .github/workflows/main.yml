@@ -22,14 +22,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
+
       - name: JSDoc Action
         uses: cse110-fa21-group33/jsdoc-action@v1.2.0
         with:
-         source_dir: ./source
+         source_dir: ./source/frontend
          recurse: true
          output_dir: ./JSDoc
-         
+
       - name: Deploy
         uses: cse110-fa21-group33/github-pages-deploy-action@4.0.0
         with:
