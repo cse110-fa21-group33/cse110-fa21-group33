@@ -59,4 +59,31 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+/* DELETE /user/savedRecipes */
+router.delete('/:savedRecipeId', async (req, res) => {
+  try {
+    const { userId } = req.userInfo;
+    const { recipeId } = req.recipeInfo;
+    if (parseInt(req.params.id, 10) !== userId) {
+      return res.status(401).json({ message: 'Forbidden, acceess denied' });
+    }
+
+    const row = await savedRecipesModel.getByUserIdAndRecipeId(userId, recipeId);
+    if (row.length <= 0) {
+      return res.status(404).json({ message: 'User information not found' });
+    }
+
+    await savedRecipesModel.removeById(row[0].savedRecipeId); 
+    return res.status(200).json("Removed successfully");
+    
+  } catch (err) {
+    console.error(err);
+    return res.status(503).json({
+      message: 'Failed to get user information due to'
+        + 'internal server error',
+      err,
+    });
+  }
+});
+
 module.exports = router;
