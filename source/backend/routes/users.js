@@ -39,12 +39,8 @@ router.get('challenge/:challenge', async (req, res) => {
   try {
     const { userId } = req.userInfo;
     const { challenge } = req.params;
-    
-    if (parseInt(req.params.id, 10) !== userId) {
-      return res.status(401).json({ message: 'Forbidden, acceess denied' });
-    }
 
-    const completedChallenges = await completedRecipesModel.getCompletedChallenges(challenge);
+    const completedChallenges = await completedRecipesModel.getCompletedChallenges(userId, challenge);
 
     return res.status(200).json(completedChallenges);
 
