@@ -49,6 +49,11 @@ router.delete('/:recipeId', verifyUserToken, async (req, res) => {
     const { userId } = req.userInfo;
     console.log(userId);
     const recipeId = req.params.id;
+    
+    // if (parseInt(req.params.id, 10) !== userId) {
+    //   return res.status(401).json({ message: 'Forbidden, acceess denied' });
+    // }
+
     await recipesModel.deleteRecipe(userId, recipeId);
     return res.status(200);
   } catch (err) {

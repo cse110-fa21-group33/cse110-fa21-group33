@@ -41,7 +41,7 @@ async function createRecipe(payload, ingredientsArray) {
       await transaction.commit();
     } catch (err) {
       console.log(err);
-          await transaction.rollback();
+      await transaction.rollback();
     }
   });
 
@@ -55,13 +55,34 @@ async function createRecipe(payload, ingredientsArray) {
  * @return {Promise<void>}
  */
  async function deleteRecipe(userId, recipeId) {
-  try {
+  await db.transaction(async (transaction) => {
+    try {
       await db('recipes')
-          .where({userId, recipeId})
-          .del();
-  } catch (err) {
-      console.error(err);
-  }
+            .transacting(transaction)
+            .where({userId, recipeId})
+            .del();
+      await db('savedRecipes')
+            .transacting(transaction)
+            .where({userId, recipeId})
+            .del();
+      await db('completedRecipes')
+            .transacting(transaction)
+            .where({userId, recipeId})
+            .del();
+      await transaction.commit();
+    } catch (err) {
+      console.log(err);
+      await transaction.rollback();
+    }
+  });
+  
+  // try {
+  //     await db('recipes')
+  //         .where({userId, recipeId})
+  //         .del();
+  // } catch (err) {
+  //     console.error(err);
+  // }
 }
 
 
