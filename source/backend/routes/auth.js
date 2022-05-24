@@ -7,6 +7,7 @@ const router = express.Router();
 /**
  * get user information by username
  * @param username
+ * @param userId
  * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
  */
  async function getUserByUsername(username) {
@@ -18,7 +19,7 @@ const router = express.Router();
 
 
 /* GET /auth */
-router.get('/', (req, res) => {
+router.get('/auth', verifyToken, (req, res) => {
   return res.status(200).json({msg: 'passed'});
 });
 
