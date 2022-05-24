@@ -7,7 +7,7 @@ const db = require('../dbConfig');
  */
 async function getByRecipeId(recipeId) {
   const result = await db('recipes')
-    .select( '*' )
+    .select('*')
     .where({ recipeId });
   return result;
 }
@@ -22,21 +22,22 @@ async function createRecipe(payload, ingredientsArray) {
   await db.transaction(async (transaction) => {
     try {
       const recipeId = await db('recipes')
-                .insert(payload)
-                .transacting(transaction)
-                .returning('recipeId');
-      await ingredientsArray.map(async (ingredient) => {
+        .insert(payload)
+        .transacting(transaction)
+        .returning('recipeId');
+      await Promise.all(ingredientsArray.map(async (ingredient) => {
         const ingredientId = await db('ingredients')
           .insert(ingredient)
+          .transacting(transaction)
           .returning('ingredientId');
-        console.log(ingredientId);
         const recipeIngredients = {
-          recipeId: recipeId,
-          ingredientId: ingredientId[0]
-        }
+          recipeId,
+          ingredientId: ingredientId[0],
+        };
         await db('recipeIngredients')
-          .insert(recipeIngredients)
-      });
+          .transacting(transaction)
+          .insert(recipeIngredients);
+      }));
       await transaction.commit();
     } catch (err) {
       console.log(err);
@@ -44,7 +45,7 @@ async function createRecipe(payload, ingredientsArray) {
     }
   });
 
-    // if the insert if successful: then lets insert all the ingredients into the ing tbl, then if that's successful do it for the recipe-ing tbl
+  // if the insert if successful: then lets insert all the ingredients into the ing tbl, then if that's successful do it for the recipe-ing tbl
 }
 
 /**
@@ -53,21 +54,21 @@ async function createRecipe(payload, ingredientsArray) {
  * @param recipeId
  * @return {Promise<void>}
  */
- async function deleteRecipe(userId, recipeId) {
+async function deleteRecipe(userId, recipeId) {
   await db.transaction(async (transaction) => {
     try {
       await db('recipes')
-            .transacting(transaction)
-            .where({userId, recipeId})
-            .del();
+        .transacting(transaction)
+        .where({ userId, recipeId })
+        .del();
       await db('savedRecipes')
-            .transacting(transaction)
-            .where({userId, recipeId})
-            .del();
+        .transacting(transaction)
+        .where({ userId, recipeId })
+        .del();
       await db('completedRecipes')
-            .transacting(transaction)
-            .where({userId, recipeId})
-            .del();
+        .transacting(transaction)
+        .where({ userId, recipeId })
+        .del();
       await transaction.commit();
     } catch (err) {
       console.log(err);
@@ -84,5 +85,30 @@ async function createRecipe(payload, ingredientsArray) {
   // }
 }
 
+/*
+ * get recipes by challenge
+ * @param challenge
+ * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
+ */
+async function getByChallenge(challenge) {
+  const result = await db('recipes')
+    .select('*')
+    .where({ challenge });
+  return result;
+}
 
-module.exports = { getByRecipeId, createRecipe, deleteRecipe };
+/**
+ * get recipes by spiceRating
+ * @param spiceRating
+ * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
+ */
+async function getBySpiceRating(spiceRating) {
+  const result = await db('recipes')
+    .select('*')
+    .where({ spiceRating });
+  return result;
+}
+
+module.exports = {
+  getByRecipeId, createRecipe, deleteRecipe, getByChallenge, getBySpiceRating,
+};
