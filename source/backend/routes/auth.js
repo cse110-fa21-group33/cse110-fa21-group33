@@ -19,7 +19,7 @@ const router = express.Router();
 
 
 /* GET /auth */
-router.get('/auth', (req, res) => {
+router.get('/', (req, res) => {
   return res.status(200).json({msg: 'passed'});
 });
 
