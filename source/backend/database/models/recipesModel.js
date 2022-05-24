@@ -14,7 +14,7 @@ async function getByRecipeId(recipeId) {
 
 /**
  * create a recipe
- * @param payload 
+ * @param payload
  * @param ingredientsArray
  * @returns
  */
@@ -28,14 +28,13 @@ async function createRecipe(payload, ingredientsArray) {
       await ingredientsArray.map(async (ingredient) => {
         const ingredientId = await db('ingredients')
           .insert(ingredient)
-          .transacting(transaction)
           .returning('ingredientId');
+        console.log(ingredientId);
         const recipeIngredients = {
           recipeId: recipeId,
-          ingredientId: ingredientId
+          ingredientId: ingredientId[0]
         }
         await db('recipeIngredients')
-          .transacting(transaction)
           .insert(recipeIngredients)
       });
       await transaction.commit();
@@ -75,7 +74,7 @@ async function createRecipe(payload, ingredientsArray) {
       await transaction.rollback();
     }
   });
-  
+
   // try {
   //     await db('recipes')
   //         .where({userId, recipeId})

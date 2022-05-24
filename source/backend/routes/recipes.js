@@ -30,7 +30,7 @@ router.post('/', verifyUserToken, async (req, res) => {
   try {
       const newRecipe = req.body['recipe']; // might have an array of ingredients req.body.ingredients
       // save the req.body.ingredients into another variable : ingredients
-      console.log(newRecipe);
+      console.log('recipes', newRecipe);
       const { userId } = req.userInfo;
       newRecipe.userId = userId;
       console.log('ingredients: ');
