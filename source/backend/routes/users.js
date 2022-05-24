@@ -98,7 +98,7 @@ router.post('/completedRecipes', async (req, res) => {
     const updateRecipe = req.body; 
     updateRecipe.recipeId = recipeId;
     await completedRecipesModel.addNewRecipe(updateRecipe);
-    return res.status(200).json({updateRecipe, msg: "Successfully updated a recipe"});
+    return res.status(200).json({updateRecipe, msg: "Successfully added a new recipe"});
 
   } catch (err) {
     console.error(err);
