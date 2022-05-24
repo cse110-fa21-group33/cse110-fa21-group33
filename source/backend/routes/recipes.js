@@ -28,12 +28,14 @@ router.get('/:id', async (req, res) => {
 /* POST /recipes */
 router.post('/', verifyUserToken, async (req, res) => {
   try {
-      const newRecipe = req.body; // might have an array of ingredients req.body.ingredients
+      const newRecipe = req.body['recipe']; // might have an array of ingredients req.body.ingredients
       // save the req.body.ingredients into another variable : ingredients
-
+      console.log(newRecipe);
       const { userId } = req.userInfo;
       newRecipe.userId = userId;
-      await recipesModel.createRecipe(newRecipe);
+      console.log('ingredients: ');
+      console.log(typeof(req.body['ingredients']));
+      await recipesModel.createRecipe(newRecipe, req.body['ingredients']);
       return res.status(200).json({newRecipe, msg: "Successfully created a new recipe"});
   } catch (err) {
       console.error(err);
@@ -42,9 +44,10 @@ router.post('/', verifyUserToken, async (req, res) => {
   }
 });
 
-router.delete('/recipes/:recipeId', verifyUserToken, async (req, res) => {
+router.delete('/:recipeId', verifyUserToken, async (req, res) => {
   try {
     const { userId } = req.userInfo;
+    console.log(userId);
     const recipeId = req.params.id;
     await recipesModel.deleteRecipe(userId, recipeId);
     return res.status(200);

@@ -14,8 +14,8 @@ async function getByRecipeId(recipeId) {
 
 /**
  * create a recipe
- * @param payload
- * @param userId
+ * @param payload 
+ * @param ingredientsArray
  * @returns
  */
 async function createRecipe(payload, ingredientsArray) {
@@ -57,8 +57,8 @@ async function createRecipe(payload, ingredientsArray) {
  async function deleteRecipe(userId, recipeId) {
   try {
       await db('recipes')
-          .del()
-          .where({userId, recipeId});
+          .where({userId, recipeId})
+          .del();
   } catch (err) {
       console.error(err);
   }
