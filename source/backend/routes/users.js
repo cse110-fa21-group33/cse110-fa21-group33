@@ -35,6 +35,29 @@ router.get('/savedRecipes', async (req, res) => {
   }
 });
 
+router.get('challenge/:challenge', async (req, res) => {
+  try {
+    const { userId } = req.userInfo;
+    const { challenge } = req.params;
+    
+    if (parseInt(req.params.id, 10) !== userId) {
+      return res.status(401).json({ message: 'Forbidden, acceess denied' });
+    }
+
+    const completedChallenges = await completedRecipesModel.getCompletedChallenges(challenge);
+
+    return res.status(200).json(completedChallenges);
+
+  } catch (err) {
+    console.error(err);
+    return res.status(503).json({
+      message: 'Failed to get user information due to'
+        + 'internal server error',
+      err,
+    });
+  }
+});
+
 /* GET /users */
 router.get('/:id', async (req, res) => {
   try {
