@@ -86,4 +86,27 @@ router.delete('/:savedRecipeId', async (req, res) => {
   }
 });
 
+/* POST /user/completedRecipes */
+router.post('/completedRecipes', async (req, res) => {
+  try {
+    const { userId } = req.userInfo;
+    const { recipeId } = req.recipeInfo;
+    if (parseInt(req.params.id, 10) !== userId) {
+      return res.status(401).json({ message: 'Forbidden, acceess denied' });
+    }
+
+    const updateRecipe = req.body; 
+    updateRecipe.recipeId = recipeId;
+    await completedRecipesModel.addNewRecipe(updateRecipe);
+    return res.status(200).json({updateRecipe, msg: "Successfully updated a recipe"});
+
+  } catch (err) {
+    console.error(err);
+    return res.status(503).json({
+      message: 'Failed to add new recipe to user\'s completed list',
+      err
+    });
+  }
+});
+
 module.exports = router;
