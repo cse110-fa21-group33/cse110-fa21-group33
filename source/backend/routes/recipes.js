@@ -1,5 +1,6 @@
 const express = require('express');
 const recipesModel = require('../database/models/recipesModel');
+const verifyUserToken = require('../middleware/verifyUserToken');
 
 const router = express.Router();
 
@@ -73,5 +74,39 @@ router.get('/spiceRating/:spiceRating', async (req, res) => {
   }
 });
 
-module.exports = router;
+/* POST /recipes */
+router.post('/', verifyUserToken, async (req, res) => {
+  try {
+    const newRecipe = req.body.recipe; // might have an array of ingredients req.body.ingredients
+    // save the req.body.ingredients into another variable : ingredients
+    const { userId } = req.userInfo;
+    newRecipe.userId = userId;
+    await recipesModel.createRecipe(newRecipe, req.body.ingredients);
+    return res.status(200).json({ newRecipe, msg: 'Successfully created a new recipe' });
+  } catch (err) {
+    console.error(err);
+    return res.status(500)
+      .json({ err, data: 'Unable to add recipe' });
+  }
+});
 
+router.delete('/:recipeId', verifyUserToken, async (req, res) => {
+  try {
+    const { userId } = req.userInfo;
+    const { recipeId } = req.params;
+    const recipe = await recipesModel.getByUserIdAndRecipeId(userId, recipeId);
+
+    if (recipe.length === 0) {
+      return res.status(404).json({msg: 'Unauthorized to delete recipe'})
+    }
+
+    await recipesModel.deleteRecipe(userId, recipeId);
+    return res.status(200).json({msg: 'Delete successful'});
+  } catch (err) {
+    console.error(err);
+    return res.status(500)
+      .json({ err, data: 'Unable to delete recipe' });
+  }
+});
+
+module.exports = router;
