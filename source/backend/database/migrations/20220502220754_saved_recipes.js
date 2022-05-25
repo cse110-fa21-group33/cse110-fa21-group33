@@ -7,7 +7,6 @@ exports.up = function(knex) {
     tbl.increments('savedRecipeId').unique().notNullable();
     tbl.integer('userId').notNullable();
     tbl.integer('recipeId').notNullable();
-    tbl.boolean('isCreator').notNullable();
   });
 };
 
