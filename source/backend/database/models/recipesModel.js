@@ -44,8 +44,6 @@ async function createRecipe(payload, ingredientsArray) {
       await transaction.rollback();
     }
   });
-
-  // if the insert if successful: then lets insert all the ingredients into the ing tbl, then if that's successful do it for the recipe-ing tbl
 }
 
 /**
@@ -75,14 +73,19 @@ async function deleteRecipe(userId, recipeId) {
       await transaction.rollback();
     }
   });
+}
 
-  // try {
-  //     await db('recipes')
-  //         .where({userId, recipeId})
-  //         .del();
-  // } catch (err) {
-  //     console.error(err);
-  // }
+/**
+ * 
+ * @param userId
+ * @param recipeId
+ * @returns 
+ */
+async function getByUserIdAndRecipeId(userId, recipeId) {
+  const result = await db('recipes')
+            .select('*')
+            .where({userId, recipeId});
+  return result;
 }
 
 /*
@@ -110,5 +113,5 @@ async function getBySpiceRating(spiceRating) {
 }
 
 module.exports = {
-  getByRecipeId, createRecipe, deleteRecipe, getByChallenge, getBySpiceRating,
+  getByRecipeId, createRecipe, deleteRecipe, getByChallenge, getBySpiceRating, getByUserIdAndRecipeId
 };

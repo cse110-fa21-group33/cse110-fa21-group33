@@ -93,10 +93,15 @@ router.post('/', verifyUserToken, async (req, res) => {
 router.delete('/:recipeId', verifyUserToken, async (req, res) => {
   try {
     const { userId } = req.userInfo;
-    console.log(userId);
     const { recipeId } = req.params;
+    const recipe = await recipesModel.getByUserIdAndRecipeId(userId, recipeId);
+
+    if (recipe.length === 0) {
+      return res.status(404).json({msg: 'Unauthorized to delete recipe'})
+    }
+
     await recipesModel.deleteRecipe(userId, recipeId);
-    return res.status(200);
+    return res.status(200).json({msg: 'Delete successful'});
   } catch (err) {
     console.error(err);
     return res.status(500)
