@@ -55,6 +55,24 @@ async function createRecipe(payload, ingredientsArray) {
 async function deleteRecipe(userId, recipeId) {
   await db.transaction(async (transaction) => {
     try {
+      const ingredientsArray = 
+        await db('recipeIngredients')
+            .select('*')
+            .where({recipeId});
+      console.log(ingredientsArray[0].recipeId);
+      await Promise.all(ingredientsArray.map(async (ingredient) => {
+        await db('recipeIngredients')
+            .transacting(transaction)
+            .where({
+              recipeId, 
+              ingredientId: ingredient.ingredientId
+            })
+            .del();
+        await db('ingredients')
+            .transacting(transaction)
+            .where({ingredientId: ingredient.ingredientId})
+            .del();
+      }));
       await db('recipes')
         .transacting(transaction)
         .where({ userId, recipeId })
