@@ -5,8 +5,6 @@ Our deployed site: https://exploding-kitchen.netlify.app/
 
 Function documentation can be found [here](https://cse110-fa21-group33.github.io/cse110-fa21-group33/). 
 
-[Public Video](https://www.youtube.com/watch?v=Y9B0q-SJrAQ)
-[Private Video](https://youtu.be/_16ljOFkahc)
 
 ## Team Members:
 - Mingkai Li
