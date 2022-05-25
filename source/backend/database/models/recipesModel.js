@@ -47,6 +47,17 @@ async function createRecipe(payload, ingredientsArray) {
 }
 
 /**
+ * update recipe by recipe id
+ * @param {*} payload 
+ * @param {*} recipeId 
+ */
+async function updateRecipe(payload, recipeId) {
+  await db('recipes')
+    .update(payload)
+    .where({recipeId});
+}
+
+/**
  * remove by user id and recipe id
  * @param userId
  * @param recipeId
@@ -113,5 +124,5 @@ async function getBySpiceRating(spiceRating) {
 }
 
 module.exports = {
-  getByRecipeId, createRecipe, deleteRecipe, getByChallenge, getBySpiceRating, getByUserIdAndRecipeId
+  getByRecipeId, createRecipe, deleteRecipe, updateRecipe, getByChallenge, getBySpiceRating, getByUserIdAndRecipeId
 };

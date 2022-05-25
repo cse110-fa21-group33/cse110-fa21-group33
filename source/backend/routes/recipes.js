@@ -30,25 +30,24 @@ router.get('/recipeId/:recipeId', async (req, res) => {
 });
 
 /* PUT /recipes/:recipeId */
-router.put('/:id', async (req, res) => {
+router.put('/:recipeId', verifyUserToken, async (req, res) => {
   try {
-    const { recipeId } = req.params.getByRecipeId;
-    const userId = req.body.userId;
-    const rows = await savedRecipesModel.getByUserIdAndRecipeId(userId, recipeId);
-    const recipe = rows[0];
-    const updatedRecipe = req.body;
+    const { userId } = req.userInfo;
+    const { recipeId } = req.params;
 
-    if (!recipe.isCreator) {
-      return res.status(401).json({ message: 'Unauthorized user' })
+    const recipe = await recipesModel.getByUserIdAndRecipeId(userId, recipeId);
+    if (recipe.length == 0) {
+      return res.status(401).json({msg: 'Unauthorized to edit recipe'});
     }
-    
-    await recipesModel.updateByRecipeId(recipeId, updatedRecipe);
-    return res.status(200).json(updatedRecipe);
+
+    const updatedRecipe = req.body;
+    await recipesModel.updateByRecipeId(updatedRecipe, recipeId);
+
+    return res.status(200).json({updatedRecipe, msg: 'Successfully edited a recipe'});
   } catch (err) {
     console.error(err);
-    return res.status(503).json({
-      message: 'Failed to get recipe information due to'
-        + 'internal server error',
+    return res.status(500).json({
+      message: 'Failed to edit recipe',
       err,
     });
   }
