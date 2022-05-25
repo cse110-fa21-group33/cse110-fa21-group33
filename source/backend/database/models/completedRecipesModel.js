@@ -18,26 +18,9 @@ async function getCompletedRecipes(userId){
  * @param recipeId
  * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
  */
- async function addNewRecipe(recipeId, userId){
-  
-  await db.transaction(async (transaction) => {
-    try {
-      await db('completedRecipes')
-            .transacting(transaction)
-            .where({userId, recipeId})
-            .insert();
-      await transaction.commit();
-    } catch (err) {
-      console.log(err);
-      await transaction.rollback();
-    }
-  });
-  
+async function insert(recipeId, userId){
   const updatedRecipeList = await db('completedRecipes')
-      .where('updatedRecipeList.recipeId', recipeId)
-      .insert({ recipeId })
-      .select('recipes.*');
-    return updatedRecipeList;
+      .insert({userId, recipeId});
 }
 
-module.exports = { getCompletedRecipes, addNewRecipe };
+module.exports = { getCompletedRecipes, insert };
