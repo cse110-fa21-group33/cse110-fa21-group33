@@ -39,8 +39,11 @@ router.put('/:recipeId', verifyUserToken, async (req, res) => {
       return res.status(401).json({msg: 'Unauthorized to edit recipe'});
     }
 
-    const updatedRecipe = req.body;
-    await recipesModel.updateRecipe(updatedRecipe, recipeId);
+    const updatedRecipe = req.body.recipe;
+    console.log(updatedRecipe);
+    
+    const updatedIngredients = req.body.ingredients;
+    await recipesModel.updateRecipe(updatedRecipe, updatedIngredients, recipeId);
 
     return res.status(200).json({updatedRecipe, msg: 'Successfully edited a recipe'});
   } catch (err) {

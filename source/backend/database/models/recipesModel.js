@@ -51,9 +51,49 @@ async function createRecipe(payload, ingredientsArray) {
  * @param {*} payload 
  * @param {*} recipeId 
  */
-async function updateRecipe(payload, recipeId) {
+async function updateRecipe(updatedRecipe, updatedIngredients, recipeId) {
+  await db.transaction(async (transaction) => {
+    try {
+      // Gets current recipes
+      const ingredientsArray = 
+        await db('recipeIngredients')
+            .select('*')
+            .where({recipeId});
+      // Deletes all old ingredients from ingredients and recipeIngredients table
+      await Promise.all(ingredientsArray.map(async (ingredient) => {
+        await db('recipeIngredients')
+            .transacting(transaction)
+            .where({
+              recipeId, 
+              ingredientId: ingredient.ingredientId
+            })
+            .del();
+        await db('ingredients')
+            .transacting(transaction)
+            .where({ingredientId: ingredient.ingredientId})
+            .del();
+      }));
+      // Adds all the new ingredients to ingredients and recipeIngredients table
+      await Promise.all(updatedIngredients.map(async (ingredient) => {
+      const ingredientId = await db('ingredients')
+          .insert(ingredient)
+          .transacting(transaction)
+          .returning('ingredientId');
+        const recipeIngredients = {
+          recipeId,
+          ingredientId: ingredientId[0],
+        };
+        await db('recipeIngredients')
+          .transacting(transaction)
+          .insert(recipeIngredients);
+      }));
+    } catch (err) {
+      console.log(err);
+      await transaction.rollback();
+    }
+  });
   await db('recipes')
-    .update(payload)
+    .update(updatedRecipe)
     .where({recipeId});
 }
 
