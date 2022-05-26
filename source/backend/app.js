@@ -9,6 +9,7 @@ const verifyUserToken = require('./middleware/verifyUserToken');
 const authRouter = require('./routes/auth');
 const recipesRouter = require('./routes/recipes');
 const usersRouter = require('./routes/users');
+const ingredientsRouter = require('./routes/ingredients');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(cookieParser());
 app.use('/auth', authRouter);
 app.use('/recipes', recipesRouter);
 app.use('/users', verifyUserToken, usersRouter);
+app.use('/ingredients', ingredientsRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

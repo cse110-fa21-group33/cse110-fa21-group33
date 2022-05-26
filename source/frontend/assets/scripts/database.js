@@ -91,6 +91,8 @@ const uid = new ShortUniqueId();
 let db = new Dexie('MyDB');
 db.version(1).stores({ recipes: 'recipe_id,recipe_name,spice_level' });
 
+let url = 'http://localhost:3000'
+
 /**
  * Converts a string representation of a blob to a blob.
  * Lifted from https://gist.github.com/davoclavo/4424731
@@ -360,12 +362,14 @@ async function getBySpice(spiceLevel) {
     } else if (spiceLevel < 1 || spiceLevel > 5) {
       reject(new Error('Spice level out of range!'));
     } else {
-      const jsonArray = [];
-      db.recipes.where('spice_level').equals(spiceLevel).each((recipe) => {
-        jsonArray.push(recipe.recipe_data);
-      })
-        .then(() => {
-          resolve(jsonArray);
+      console.log('getting recipes by spice');
+      fetch(`${url}/recipes/spiceRating/${spiceLevel}`)
+        .then(response => response.json())
+        .then(result => {
+          resolve(result);
+        })
+        .catch(error => {
+          reject(new Error('Could not get recipes.'));
         });
     }
   });

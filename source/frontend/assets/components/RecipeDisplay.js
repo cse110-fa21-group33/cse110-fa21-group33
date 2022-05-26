@@ -434,23 +434,34 @@ class RecipeDisplay extends HTMLElement {
     for (let i = 0; i < data.spiceRating; i += 1) {
       this.shadowRoot.querySelector('#recipe-spice-level').innerHTML += '🌶️';
     }
-    const prepTime = calculateTime(data.time[0]);
+    const prepTime = calculateTime(data.prepTime);
     this.shadowRoot.querySelector('#recipe-prep-time > .recipe-info-number').innerHTML = prepTime;
-    const cookTime = calculateTime(data.time[1]);
+    const cookTime = calculateTime(data.cookTime);
     this.shadowRoot.querySelector('#recipe-cook-time > .recipe-info-number').innerHTML = cookTime;
     const { servingSize } = data;
     this.shadowRoot.querySelector('#recipe-serving-size > .recipe-info-number').innerHTML = servingSize;
-    const { ingredientList } = data;
-    ingredientList.forEach((ingredient) => {
-      const ingredientString = getIngredient(ingredient);
-      const ingredientContainer = createCheckbox(ingredientString);
-      this.shadowRoot.querySelector('#recipe-ingredients > .ingredient-list').appendChild(ingredientContainer);
-    });
-    const { directions } = data;
+
+    fetch(`http://localhost:3000/ingredients/${data.recipeId}`)
+      .then(response => response.json())
+      .then(result => {
+        data.ingredients = result;
+        const ingredientList = data.ingredients;
+        ingredientList.forEach((ingredient) => {
+          const ingredientString = getIngredient(ingredient);
+          const ingredientContainer = createCheckbox(ingredientString);
+          this.shadowRoot.querySelector('#recipe-ingredients > .ingredient-list').appendChild(ingredientContainer);
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
+    const directions  = data.directions.split(/\r?\n/);
     directions.forEach((direction) => {
       const directionContainer = createCheckbox(direction);
       this.shadowRoot.querySelector('#recipe-directions > .recipe-list').appendChild(directionContainer);
     });
+
     const btn = this.shadowRoot.getElementById('made-this-button');
     if (data.completed === true) {
       const newBox = document.createElement('completed');
@@ -472,7 +483,7 @@ class RecipeDisplay extends HTMLElement {
     } else {
       this.bindCompleteButton(data);
     }
-    if (data.challenges.length !== 0) {
+    if (data.challenge != 'No Challenge') {
       this.ShowChallenge(data);
     }
   }
@@ -527,11 +538,11 @@ class RecipeDisplay extends HTMLElement {
     const challengeHeader = document.createElement('ol');
     challengeHeader.classList.add('challenge-header');
     challengeHeader.innerHTML = '<br><br>Included in Challenges';
-    data.challenges.forEach((childChallenge) => {
+    //data.challenges.forEach((childChallenge) => {
       const li = document.createElement('li');
-      li.innerHTML = childChallenge;
+      li.innerHTML = data.challenge;
       challengeHeader.append(li);
-    });
+    //});
     dummyChild.parentElement.appendChild(challengeHeader);
   }
 }
@@ -541,7 +552,12 @@ class RecipeDisplay extends HTMLElement {
  * @param {*} time
  * @returns string to display time
  */
-function calculateTime(time) {
+function calculateTime(minutes) {
+  let time = {
+    hours: Math.floor(minutes / 60),
+    minutes: minutes % 60
+  };
+
   let timeString = '';
   if (time.hours > 0) {
     timeString += `${time.hours} hours`;
