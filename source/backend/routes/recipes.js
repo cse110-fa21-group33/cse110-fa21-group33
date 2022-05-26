@@ -2,7 +2,6 @@ const express = require('express');
 const recipesModel = require('../database/models/recipesModel');
 const savedRecipesModel = require('../database/models/savedRecipesModel');
 const verifyUserToken = require('../middleware/verifyUserToken');
-
 const router = express.Router();
 
 /* GET /recipes */
@@ -41,7 +40,7 @@ router.put('/:recipeId', verifyUserToken, async (req, res) => {
     }
 
     const updatedRecipe = req.body;
-    await recipesModel.updateByRecipeId(updatedRecipe, recipeId);
+    await recipesModel.updateRecipe(updatedRecipe, recipeId);
 
     return res.status(200).json({updatedRecipe, msg: 'Successfully edited a recipe'});
   } catch (err) {
