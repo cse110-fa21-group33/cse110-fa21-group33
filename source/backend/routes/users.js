@@ -91,7 +91,7 @@ router.post('/completedRecipes', async (req, res) => {
   try {
     const { userId } = req.userInfo;
     const { recipeId } = req.body.recipeId;
-    await completedRecipesModel.insert(recipeId, userId);
+    await completedRecipesModel.addToCompletedList(recipeId, userId);
     return res.status(200).json("Successfully added recipe to completed list");
   } catch (err) {
     console.error(err);

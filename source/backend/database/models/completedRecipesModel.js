@@ -18,9 +18,15 @@ async function getCompletedRecipes(userId){
  * @param recipeId
  * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
  */
-async function insert(recipeId, userId){
-  const updatedRecipeList = await db('completedRecipes')
+async function addToCompletedList(recipeId, userId){
+  return_status = True;
+  try {
+    return await db('completedRecipes')
       .insert({userId, recipeId});
+  } catch (error) {
+      return_status = False;
+  }
+  return return_status;
 }
 
-module.exports = { getCompletedRecipes, insert };
+module.exports = { getCompletedRecipes, addToCompletedList };
