@@ -5,8 +5,6 @@ const usersModel = require('../database/models/usersModel');
 
 const router = express.Router();
 
-/* GET /auth */
-router.get('/', (req, res) => res.status(200).json({ msg: 'passed' }));
 
 /*
   Find username and password (hashed by bcrypt or some other hash functions)
