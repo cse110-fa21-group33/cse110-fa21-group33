@@ -24,6 +24,11 @@ async function addToCompletedList(recipeId, userId) {
         .insert({userId, recipeId});
 }
 
+/**
+ * @param recipeId 
+ * @param userId 
+ * @returns 
+ */
 async function getByRecipeIdAndUserId(recipeId, userId) {
   return await db('completedRecipes')
         .select('*')
