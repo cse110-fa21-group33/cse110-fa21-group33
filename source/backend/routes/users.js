@@ -67,19 +67,14 @@ router.delete('/savedRecipes/:savedRecipeId', verifyUserToken, async (req, res) 
     const { userId } = req.userInfo;
     const { savedRecipeId } = req.params;
 
-    const row = await savedRecipesModel.getByUserIdAndRecipeId(userId, savedRecipeId);
-    console.log(row);
-    // if (row.length <= 0) {
-    //   return res.status(404).json({ message: 'User information not found' });
-    // }
-
-    //await savedRecipesModel.removeById(row[0].savedRecipeId); 
-    return res.status(200).json("Removed successfully");
+    await savedRecipesModel.removeSavedRecipe(userId, savedRecipeId);
+    
+    return res.status(200).json({msg: 'Removed successfully'});
     
   } catch (err) {
     console.error(err);
     return res.status(503).json({
-      msg: 'Failed to get user information due to'
+      msg: 'Failed to remove saved recipe from user\'s list due to'
         + 'internal server error',
       err,
     });

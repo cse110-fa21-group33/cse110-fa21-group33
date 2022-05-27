@@ -17,11 +17,12 @@ const db = require('../dbConfig');
     
 /**
  * delete savedRecipe record by recipeId
+ * @param userId
  * @param savedRecipeId
  */
- async function removeById(savedRecipeId) {
-    const result = await db('recipes') 
-      .where({ savedRecipeId })
+ async function removeSavedRecipe(userId, savedRecipeId) {
+    await db('savedRecipes') 
+      .where({ userId, savedRecipeId })
       .del();
  }
 
@@ -48,4 +49,4 @@ async function addSavedRecipe(userId, recipeId) {
     .insert({userId, recipeId});
 }
 
-module.exports = { getSavedRecipes, getByUserIdAndRecipeId, removeById, addSavedRecipe };
+module.exports = { getSavedRecipes, getByUserIdAndRecipeId, removeSavedRecipe, addSavedRecipe };
