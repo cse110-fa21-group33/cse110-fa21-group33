@@ -38,7 +38,18 @@ router.get('/savedRecipes', async (req, res) => {
 router.get('challenge/:challenge', async (req, res) => {
   try {
     const { userId } = req.userInfo;
-    const { challenge } = req.params;
+    const { challengeInput } = req.params;
+    
+    const challenges = ["Two Spicy", "Habanero Hero", "Haunted Bowels", "I Got the Sauce", "Spicy Sips"];
+    const challenge = challengeInput.replace(/\+/g, " ");
+
+    if(!challenges.includes(challenge)) {
+      return res.status(400)
+        .json({ 
+          message: 'Invalid challenge',
+          err
+         });
+    }
 
     const completedChallenges = await completedRecipesModel.getCompletedChallenges(userId, challenge);
 
@@ -47,9 +58,8 @@ router.get('challenge/:challenge', async (req, res) => {
   } catch (err) {
     console.error(err);
     return res.status(503).json({
-      message: 'Failed to get user information due to'
-        + 'internal server error',
-      err,
+      message: 'Failed to get completed challenges',
+      err
     });
   }
 });
