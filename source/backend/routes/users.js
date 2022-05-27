@@ -87,10 +87,10 @@ router.delete('/:savedRecipeId', async (req, res) => {
 });
 
 /* POST /user/completedRecipes */
-router.post('/completedRecipes', async (req, res) => {
+router.post('/completedRecipes/:recipeId', async (req, res) => {
   try {
     const { userId } = req.userInfo;
-    const { recipeId } = req.body.recipeId;
+    const { recipeId } = req.params;
     await completedRecipesModel.addToCompletedList(recipeId, userId);
     return res.status(200).json("Successfully added recipe to completed list");
   } catch (err) {
