@@ -30,7 +30,7 @@ const db = require('../dbConfig');
  * @param userId
  * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
  */
- async function getSavedRecipes(userId){
+ async function getSavedRecipes(userId) {
   const savedRecipes = await db('savedRecipes')
     .innerJoin('recipes', 'savedRecipes.recipeId', 'recipes.recipeId')
     .where('savedRecipes.userId', userId)
@@ -38,4 +38,14 @@ const db = require('../dbConfig');
   return savedRecipes;
 }
 
-module.exports = { getSavedRecipes, getByUserIdAndRecipeId, removeById };
+/**
+ * @param userId
+ * @param recipeId
+ * @returns 
+ */
+async function addSavedRecipe(userId, recipeId) {
+  await db('savedRecipes')
+    .insert({userId, recipeId});
+}
+
+module.exports = { getSavedRecipes, getByUserIdAndRecipeId, removeById, addSavedRecipe };
