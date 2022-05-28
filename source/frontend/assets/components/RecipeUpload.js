@@ -904,7 +904,9 @@ class RecipeUpload extends HTMLElement {
         select.appendChild(option);
       }
       const lineBreak = document.createElement('br');
-      select.options[this.optionIndex[data.units]].selected = true;
+      if(data.units in this.optionIndex) {
+        select.options[this.optionIndex[data.units]].selected = true;
+      }
       div.appendChild(inputName);
       div.appendChild(inputQuantity);
       div.appendChild(select);
