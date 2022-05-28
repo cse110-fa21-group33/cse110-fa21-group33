@@ -52,7 +52,7 @@ router.get('/challenge/:challenge', async (req, res) => {
          });
     }
 
-    const completedChallenges = await completedRecipesModel.getCompletedChallenges(userId, challenge);
+    const completedChallenges = await completedRecipesModel.getCompletedChallenges(userId, challengeParsed);
 
     return res.status(200).json(completedChallenges);
 
