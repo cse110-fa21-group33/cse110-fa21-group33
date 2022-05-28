@@ -3,8 +3,6 @@ const usersModel = require('../database/models/usersModel');
 const completedRecipesModel = require('../database/models/completedRecipesModel');
 const savedRecipesModel = require('../database/models/savedRecipesModel');
 
-const bcrypt = require('bcrypt');
-
 const router = express.Router();
 
 /* GET users/completedRecipes */
