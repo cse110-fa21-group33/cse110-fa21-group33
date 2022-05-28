@@ -90,7 +90,7 @@ router.post('/savedRecipes/:recipeId', verifyUserToken, async (req, res) => {
     // Check if the recipe has already been completed
     const checkSaved = await savedRecipesModel.getSavedRecipeByUserIdAndRecipeId(userId, recipeId);
     if (checkSaved.length != 0) {
-      return res.status(409).json({msg: "Recipe has already been saved"});
+      return res.status(401).json({msg: "Recipe has already been saved"});
     }
 
     await savedRecipesModel.addSavedRecipe(userId, recipeId);
