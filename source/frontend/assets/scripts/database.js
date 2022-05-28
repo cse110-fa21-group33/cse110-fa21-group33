@@ -1,7 +1,7 @@
 // database.js
 export const database = {};
 
-const serverEnv = 'production';
+const serverEnv = 'local';
 const serverUrlLocal = 'http://localhost:3000';
 const serverUrlProd = 'https://exploding-kitchen.us-west-1.elasticbeanstalk.com/api';
 const url = (serverEnv === 'production') ? serverUrlProd : serverUrlLocal;
@@ -84,23 +84,18 @@ async function completeRecipe(recipeJSON) {
  *                    rejects if spice level out of range.
  */
 async function getBySpice(spiceLevel) {
-  return new Promise((resolve, reject) => {
+  try {
     if (typeof spiceLevel !== 'number') {
-      reject(new Error('Query was not a number!'));
+      return new Error('Query was not a number!');
     } else if (spiceLevel < 1 || spiceLevel > 5) {
-      reject(new Error('Spice level out of range!'));
-    } else {
-      fetch(`${url}/recipes/spiceRating/${spiceLevel}`)
-        .then((response) => response.json())
-        .then((result) => {
-          console.log(result);
-          resolve(result);
-        })
-        .catch((error) => {
-          reject(new Error('Could not get recipes.'));
-        });
+      return new Error('Spice level out of range!');
     }
-  });
+    const response = await fetch(`${url}/recipes/spiceRating/${spiceLevel}`);
+    const recipe = await response.json();
+    return recipe;
+  } catch (err) {
+    return new Error('Get recipe by spice level failed');
+  }
 }
 
 /**
@@ -111,8 +106,8 @@ async function getBySpice(spiceLevel) {
  */
 async function countRecipes(recipeNames) {
   return new Promise((resolve) => {
-    let numRecipes = 0;
-    let namesProcessed = 0;
+    const numRecipes = 0;
+    const namesProcessed = 0;
     if (recipeNames.length === 0) {
       resolve(0);
       return;
@@ -142,7 +137,7 @@ async function getByName(query) {
     if (typeof query !== 'string') {
       reject(new Error('Query was not a string!'));
     } else {
-      let recipesPushed = 0;
+      const recipesPushed = 0;
       const recipeNames = [];
       let filteredNames;
       const queryLower = query.toLowerCase();
