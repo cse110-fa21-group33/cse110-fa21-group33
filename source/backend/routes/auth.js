@@ -60,7 +60,7 @@ router.post('/login', async (req, res) => {
 });
 
 
-/* POST /auth/signup */
+/* POST /signup */
 /* Creates new user in database with username, password and email -> unique user/email 
 required */
 router.post('/signup', async (req, res) => {
@@ -87,7 +87,7 @@ router.post('/signup', async (req, res) => {
     /* TODO: insert user into database */
     await usersModel.createUser(newUser);
 
-    return res.status(200).json({ newUser, msg: 'Successfully created a new user', pwd: hashedPwd });
+    return res.status(200).json({ newUser, msg: 'Successfully created a new user'});
 
   } catch (err) {
     console.error(err);
