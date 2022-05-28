@@ -112,7 +112,7 @@ class RecipeCard extends HTMLElement {
 
     const time = document.createElement('time');
     
-    time.innerHTML = `${data.totalTime} min`;
+    time.innerHTML = `${Math.floor(data.totalTime / 60)} hrs ${data.totalTime % 60} min`;
 
     const servings = document.createElement('span');
     servings.innerText = `Serving(s): ${data.servingSize}`;
