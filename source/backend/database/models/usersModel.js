@@ -12,31 +12,18 @@ async function getByUserId(userId) {
   return result;
 }
 
-/**
- * get user information by username
- * @param username
- * @param userId
- * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
- */
-async function getByUsername(username) {
-  const result = await db('users')
-    .select('username', 'userId', 'password')
-    .where({ username });
-  return result;
-}
 
 /**
  * get user information by email
  * @param email
  * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
  */
- async function getByEmail(email) {
+ async function getByUsernameOrEmail(username, email) {
   const result = await db('users')
-    .select('userId', 'email', 'username')
-    .where({ email });
+    .select('username', 'email')
+    .where({ username, email });
   return result;
 }
-
 
 
 /**
@@ -59,4 +46,4 @@ async function getByUsername(username) {
   });
 }
 
-module.exports = { getByUserId, getByUsername, getByEmail, createUser };
+module.exports = { getByUserId, getByUsernameOrEmail, createUser };
