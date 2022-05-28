@@ -1,5 +1,5 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt-nodejs');
 const tokenUtil = require('../auth/tokenUtil');
 const usersModel = require('../database/models/usersModel');
 
@@ -66,27 +66,20 @@ required */
 router.post('/signup', async (req, res) => {
   try {
     const { username, password, email } = req.body;
-    const hashedPwd = await bcrypt.hash(password, 10);
+    const hashedPwd = bcrypt.hashSync(password, null, null);
 
-    /* check username and email are unique */
-    const checkUser = await usersModel.getByUsername(username);
-    const checkEmail = await usersModel.getByEmail(email);
+    /* check whether username and email exists in the database */
+    const existingUsers = await usersModel.getByUsernameOrEmail(username, email);
     
-    if (checkUser.length != 0) {
-      // not sure if status number is correct, 409 = conflict
-      return res.status(409).json({msg: "Username already exists"})
-    }
-    if ( checkEmail.length != 0) {
-      // not sure if status number is correct, 409 = conflict
-      return res.status(409).json({msg: "E-mail already in use"})
+    if (existingUsers.length !== 0) {
+      return res.status(401).json({ msg: 'Signup failed, Username or email already exisits' });
     }
     
-    /* TODO: create new user */
+    /* create new user */
     const newUser = {"username": username, "password": hashedPwd, "email": email};
     
-    /* TODO: insert user into database */
+    /* insert user into database */
     await usersModel.createUser(newUser);
-
     return res.status(200).json({ newUser, msg: 'Successfully created a new user'});
 
   } catch (err) {
