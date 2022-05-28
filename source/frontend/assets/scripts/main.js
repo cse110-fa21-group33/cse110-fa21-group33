@@ -26,8 +26,6 @@ window.addEventListener('DOMContentLoaded', init);
 async function init() {
   let recipeList;
   try {
-    await database.loadDB();
-
     recipeList = await database.getBySpice(3);
   } catch (err) {
     console.log(`Error fetching recipes: ${err}`);

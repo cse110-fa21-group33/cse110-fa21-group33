@@ -1,95 +1,10 @@
 // database.js
 import ShortUniqueId from 'https://esm.sh/short-unique-id';
-import Dexie from '../../node-modules/dexie/dist/dexie.mjs';
-import { importDB, exportDB } from '../../node-modules/dexie-export-import/dist/dexie-export-import.mjs';
 
 export const database = {};
 
-// TODO: None of the methods involving recipe JSONs actually validate whether
-// the JSON is the correct format. This could cause some serious headaches if
-// we add an invalid JSON.
-
-// TODO: Instead of adding each recipe to this array, find a way to automate
-// reading files from directory.
-const recipesFromFile = [
-  'assets/jsons/Ghost-Pepper-Wings.json',
-  'assets/jsons/Jalapeno-Garlic-Onion-Cheeseburger.json',
-  'assets/jsons/Sichuan-Style-Bird-Eye-Chili-Sauce.json',
-  'assets/jsons/Southwest-Stuffed-Poblano-Pepper.json',
-  'assets/jsons/Spicy-Shrimp-Pad-Thai.json',
-  'assets/jsons/Bun-Bo-Hue.json',
-  'assets/jsons/Spicy-Thai-Basil-Chicken-Pad-Krapow-Gai.json',
-  'assets/jsons/Spicy-Touchdown-Chili.json',
-  'assets/jsons/Tteokbokki-Spicy-Stir-Fried-Rice-Cakes.json',
-  'assets/jsons/Jjam-Bbong-Korean-Chinese-Spicy-Noodle.json',
-  'assets/jsons/Carne-Asada-Tacos.json',
-  'assets/jsons/Japanese-Curry-From-Scratch.json',
-  'assets/jsons/Spicy-Chicken-Sandwich.json',
-  'assets/jsons/Spicy-Habanero-Salsa.json',
-  'assets/jsons/Zesty-Mango-Habanero-Hot-Sauce.json',
-  'assets/jsons/Black-Pepper-Crab.json',
-  'assets/jsons/Chongqing-Chicken-Wings.json',
-  'assets/jsons/Jalapeno-Bacon-Flatbread.json',
-  'assets/jsons/Rabbit-Tikka-Masala.json',
-  'assets/jsons/Slow-Cooker-Beef-Chili.json',
-  'assets/jsons/Slow-Cooker-Pork-Tacos.json',
-  'assets/jsons/Spicy-Buffalo-Deviled-Eggs.json',
-  'assets/jsons/Spicy-Butter-Linguini.json',
-  'assets/jsons/Thai-Rind-Herb-Salad.json',
-  'assets/jsons/Tomato-Cucumber-Salad.json',
-  'assets/jsons/Mongolian-Beef.json',
-  'assets/jsons/Phaal-Curry-Recipe.json',
-  'assets/jsons/Firecracker-Chicken.json',
-  'assets/jsons/Ghost-Pepper-Queso.json',
-  'assets/jsons/Ghost-Pepper-Bison.json',
-  'assets/jsons/Ghost-Pepper-Jelly.json',
-  'assets/jsons/Cherry-Bomb-Chicken.json',
-  'assets/jsons/Reaper-Smoked-Breast.json',
-  'assets/jsons/Trinidad-Scorpion-Pepper-Barbacoa.json',
-  'assets/jsons/Scorpion-Mac-and-Cheese.json',
-  'assets/jsons/Habanero-Hellfire-Chili.json',
-  'assets/jsons/Spicy-Thai-Basil-Chicken-Pad-Krapow-Gai.json',
-  'assets/jsons/Korean-Spicy-Marinated-Pork-With-Chilies.json',
-  'assets/jsons/Mapo-Tofu.json',
-  'assets/jsons/Peri-Peri-Sauce.json',
-  "assets/jsons/Sam-Wood's-Spicy-Korean-Style-Chicken.json",
-  'assets/jsons/Sichuan-Boiled-Fish.json',
-  'assets/jsons/Speedy-Thai-chilli-jam-chicken.json',
-  'assets/jsons/Spicy-Mayan-Hot-Chocolate.json',
-  'assets/jsons/Spicy-Szechuan-Chicken.json',
-  'assets/jsons/Chili-Crisp-Recipe.json',
-  'assets/jsons/Nashville-Style-Hot-Chicken.json',
-  'assets/jsons/Sichuan-Lamb-Mushroom-Stirfry.json',
-  'assets/jsons/Pretzel-Crusted-Pickle-Chips.json',
-  'assets/jsons/Korean-Chili-Pork-Lettuce-Cups.json',
-  'assets/jsons/Cake-Mix-Chicken-Nuggets.json',
-  'assets/jsons/Balado-Sambal.json',
-  'assets/jsons/Chili-Paneer.json',
-  'assets/jsons/General-Tso.json',
-  'assets/jsons/Grilled-Salmon.json',
-  'assets/jsons/Indonesian-Pickles.json',
-  'assets/jsons/Keralan-Chicken-Curry.json',
-  'assets/jsons/Orange-Chicken-Sauce.json',
-  'assets/jsons/Pepper-Prawns.json',
-  'assets/jsons/Runaway-Bay-Chicken.json',
-  'assets/jsons/Thom-Kha-Gai.json',
-  'assets/jsons/Chicken-Gyro.json',
-  'assets/jsons/Spicy-Margarita.json',
-  'assets/jsons/Spicy-Vodka-Sunrise.json',
-  'assets/jsons/Mezcal-paloma.json',
-  'assets/jsons/Spicy-75.json',
-  'assets/jsons/Carolina-Reaper-Salsa.json',
-  'assets/jsons/Jalapeno-Poppers.json',
-  'assets/jsons/Honey-Fried-Chicken.json',
-  'assets/jsons/Jerk-Chicken.json',
-  'assets/jsons/Sriracha-Ramen.json',
-];
-
-let loaded = false;
+const loaded = false;
 const uid = new ShortUniqueId();
-
-let db = new Dexie('MyDB');
-db.version(1).stores({ recipes: 'recipe_id,recipe_name,spice_level' });
 
 let url = 'http://localhost:3000'
 
@@ -116,104 +31,6 @@ function dataURItoBlob(dataURI) {
   const dataView = new DataView(arrayBuffer);
   const blob = new Blob([dataView], { type: mimeString });
   return blob;
-}
-
-/**
- * Saves the Dexie database into local storage.
- * This function must only be called after calling loadDB().
- * @returns {Promise} Resolves true if database successfully saved, rejects otherwise.
- */
-async function saveDB() {
-  return new Promise((resolve, reject) => {
-    if (!loaded) {
-      reject(new Error('Database not loaded yet! Call loadDB().'));
-    } else {
-      exportDB(db)
-        .then((blob) => {
-          const reader = new FileReader();
-          reader.onload = (event) => {
-            localStorage.setItem('database', event.target.result);
-          };
-          reader.readAsDataURL(blob);
-          resolve(true);
-        })
-        .catch((error) => {
-          reject(error);
-        });
-    }
-  });
-}
-
-/**
- * Loads the Dexie database from local storage if it exists.
- * Otherwise, loads recipes from file into database.
- * @returns {Promise} Resolves true if recipes succesfully loaded, rejects otherwise.
- */
-async function loadDB() {
-  return new Promise((resolve, reject) => {
-    db.recipes.clear().then(() => {
-    // If the local storage contains database, import it
-      if (localStorage.getItem('database')) {
-        importDB(dataURItoBlob(localStorage.getItem('database')))
-          .then((data) => {
-            db = data;
-            loaded = true;
-            resolve(true);
-          })
-          .catch(() => {});
-      } else { // Else, fetch recipes from file and load database
-        let numImported = 0;
-        recipesFromFile.forEach((recipe) => {
-          fetch(recipe)
-            .then((response) => response.json())
-            .then((data) => {
-              numImported += 1;
-              db.recipes.put({
-                recipe_id: data.id,
-                recipe_name: data.title,
-                spice_level: data.spiceRating,
-                recipe_data: data,
-              })
-                .then(() => {
-                  if (numImported === recipesFromFile.length) {
-                  // After importing all of the recipes, import the challenge list
-                    loadChallengesFromFile()
-                      .then((challenges) => {
-                        saveChallenges(challenges);
-                        loaded = true;
-                        saveDB()
-                          .then(() => {
-                            resolve(true);
-                          });
-                      });
-                  }
-                });
-            })
-            .catch((error) => {
-              loaded = false;
-              reject(error);
-            });
-        });
-      }
-    });
-  });
-}
-
-/**
- * Fetches the challenge list from file.
- * @returns {Promise} Resolves with the challenge list json if successful, rejects otherwise.
- */
-async function loadChallengesFromFile() {
-  return new Promise((resolve, reject) => {
-    fetch('assets/jsons/challenges.json')
-      .then((response) => response.json())
-      .then((data) => {
-        resolve(data);
-      })
-      .catch((error) => {
-        reject(error);
-      });
-  });
 }
 
 /**
@@ -475,8 +292,6 @@ function getChallenges() {
   return JSON.parse(localStorage.getItem('challenges'));
 }
 
-database.loadDB = loadDB;
-database.saveDB = saveDB;
 database.addRecipe = addRecipe;
 database.updateRecipe = updateRecipe;
 database.deleteRecipe = deleteRecipe;
