@@ -65,10 +65,11 @@ router.get('/spiceRating/:spiceRating', async (req, res) => {
     }
 
     const recipes = rows;
-    await Promise.all(recipes.map(async recipe => {
-      const ingredientList = await recipeIngredientsModel.getIngredientsByRecipeId(recipe.recipeId);
-      recipe.ingredientList = ingredientList;
+    const recipeIngredients = await recipeIngredientsModel.getAllRecipeIngredients();
+    await Promise.all(await recipes.map(recipe => {
+      recipe.ingredientList = recipeIngredients.filter(recipeIngredient => recipeIngredient.recipeId === recipe.recipeId);
     }));
+
     return res.status(200).json(recipes);
 
   } catch (err) {

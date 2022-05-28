@@ -5,12 +5,13 @@ const db = require('../dbConfig');
  * @param recipeId
  * @returns a promise
  */
-async function getIngredientsByRecipeId(recipeId){
+async function getAllRecipeIngredients(){
     const result = await db('recipeIngredients')
+    .join('recipes', 'recipeIngredients.recipeId', 'recipes.recipeId')
     .join('ingredients', 'recipeIngredients.ingredientId', 'ingredients.ingredientId')
-    .select('*')
-    .where({ recipeId });
-    return result
+    .select('recipeIngredients.recipeId', 'recipeIngredients.ingredientId',
+            'ingredients.name', 'ingredients.quantity', 'ingredients.units');
+    return result;
 }
 
-module.exports = { getIngredientsByRecipeId }
+module.exports = { getAllRecipeIngredients }
