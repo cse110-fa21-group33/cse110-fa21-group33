@@ -366,6 +366,7 @@ async function getBySpice(spiceLevel) {
       fetch(`${url}/recipes/spiceRating/${spiceLevel}`)
         .then(response => response.json())
         .then(result => {
+          console.log(result);
           resolve(result);
         })
         .catch(error => {

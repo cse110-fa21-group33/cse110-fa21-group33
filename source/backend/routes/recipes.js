@@ -1,5 +1,7 @@
 const express = require('express');
 const recipesModel = require('../database/models/recipesModel');
+const recipeIngredientsModel = require('../database/models/recipeIngredientsModel');
+
 const verifyUserToken = require('../middleware/verifyUserToken');
 
 const router = express.Router();
@@ -63,7 +65,12 @@ router.get('/spiceRating/:spiceRating', async (req, res) => {
     }
 
     const recipes = rows;
+    await Promise.all(recipes.map(async recipe => {
+      const ingredientList = await recipeIngredientsModel.getIngredientsByRecipeId(recipe.recipeId);
+      recipe.ingredientList = ingredientList;
+    }));
     return res.status(200).json(recipes);
+
   } catch (err) {
     console.error(err);
     return res.status(503).json({

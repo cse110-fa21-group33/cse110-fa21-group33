@@ -441,20 +441,12 @@ class RecipeDisplay extends HTMLElement {
     const { servingSize } = data;
     this.shadowRoot.querySelector('#recipe-serving-size > .recipe-info-number').innerHTML = servingSize;
 
-    fetch(`http://localhost:3000/ingredients/${data.recipeId}`)
-      .then(response => response.json())
-      .then(result => {
-        data.ingredients = result;
-        const ingredientList = data.ingredients;
-        ingredientList.forEach((ingredient) => {
-          const ingredientString = getIngredient(ingredient);
-          const ingredientContainer = createCheckbox(ingredientString);
-          this.shadowRoot.querySelector('#recipe-ingredients > .ingredient-list').appendChild(ingredientContainer);
-        });
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    const { ingredientList } = data;
+    ingredientList.forEach((ingredient) => {
+      const ingredientString = getIngredient(ingredient);
+      const ingredientContainer = createCheckbox(ingredientString);
+      this.shadowRoot.querySelector('#recipe-ingredients > .ingredient-list').appendChild(ingredientContainer);
+    });
 
     const directions  = data.directions.split(/\r?\n/);
     directions.forEach((direction) => {
