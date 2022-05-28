@@ -15,7 +15,7 @@ const [recommendTitle, searchTitle] = [
   'Search Results',
 ];
 
-const challengePath = 'assets/jsons/challenges.json';
+// const challengePath = 'assets/jsons/challenges.json';
 let challengeData;
 
 window.addEventListener('DOMContentLoaded', init);
