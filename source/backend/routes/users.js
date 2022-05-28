@@ -25,7 +25,7 @@ router.get('/completedRecipes', verifyUserToken, async (req, res) => {
 router.get('/savedRecipes', verifyUserToken, async (req, res) => {
   try {
     const { userId }  = req.userInfo;
-    const savedRecipesList = await savedRecipesModel.getSavedRecipes(userId);
+    const savedRecipesList = await savedRecipesModel.getByUserIdAndRecipeId(userId);
     return res.status(200).json(savedRecipesList);
   } catch (err) {
     console.error(err);
@@ -63,11 +63,10 @@ router.get('/:id', verifyUserToken, async (req, res) => {
 /* DELETE /users/savedRecipes/:savedRecipeId */
 router.delete('/savedRecipes/:savedRecipeId', verifyUserToken, async (req, res) => {
   try {
-    console.log('START!');
     const { userId } = req.userInfo;
     const { savedRecipeId } = req.params;
 
-    await savedRecipesModel.removeSavedRecipe(userId, savedRecipeId);
+    await savedRecipesModel.deleteByUserIdAndSavedRecipeId(userId, savedRecipeId);
     
     return res.status(200).json({msg: 'Removed successfully'});
     
@@ -86,6 +85,13 @@ router.post('/savedRecipes/:recipeId', verifyUserToken, async (req, res) => {
   try {
     const { userId } = req.userInfo;
     const { recipeId } = req.params;
+
+    console.log('I started!')
+    // Check if the recipe has already been completed
+    const checkSaved = await savedRecipesModel.getSavedRecipeByUserIdAndRecipeId(userId, recipeId);
+    if (checkSaved.length != 0) {
+      return res.status(409).json({msg: "Recipe has already been saved"});
+    }
 
     await savedRecipesModel.addSavedRecipe(userId, recipeId);
     return res.status(200).json({msg: 'Added recipe successfully'})

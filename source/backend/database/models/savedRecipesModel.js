@@ -20,7 +20,7 @@ const db = require('../dbConfig');
  * @param userId
  * @param savedRecipeId
  */
- async function removeSavedRecipe(userId, savedRecipeId) {
+ async function deleteByUserIdAndSavedRecipeId(userId, savedRecipeId) {
     await db('savedRecipes') 
       .where({ userId, savedRecipeId })
       .del();
@@ -31,7 +31,7 @@ const db = require('../dbConfig');
  * @param userId
  * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
  */
- async function getSavedRecipes(userId) {
+ async function getByUserIdJoinRecipes(userId) {
   const savedRecipes = await db('savedRecipes')
     .innerJoin('recipes', 'savedRecipes.recipeId', 'recipes.recipeId')
     .where('savedRecipes.userId', userId)
@@ -49,4 +49,10 @@ async function addSavedRecipe(userId, recipeId) {
     .insert({userId, recipeId});
 }
 
-module.exports = { getSavedRecipes, getByUserIdAndRecipeId, removeSavedRecipe, addSavedRecipe };
+async function getSavedRecipeByUserIdAndRecipeId(userId, recipeId) {
+  return await db('savedRecipes')
+    .select('*')
+    .where({userId, recipeId});
+}
+
+module.exports = { getByUserIdJoinRecipes, getByUserIdAndRecipeId, deleteByUserIdAndSavedRecipeId, addSavedRecipe, getSavedRecipeByUserIdAndRecipeId };
