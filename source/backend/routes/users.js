@@ -36,15 +36,15 @@ router.get('/savedRecipes', async (req, res) => {
 });
 
 /* GET /user/challenge/:challenge */
-router.get('challenge/:challenge', async (req, res) => {
+router.get('/challenge/:challenge', async (req, res) => {
   try {
     const { userId } = req.userInfo;
-    const { challengeInput } = req.params;
+    const { challenge } = req.params;
     
     const challenges = ["Two Spicy", "Habanero Hero", "Haunted Bowels", "I Got the Sauce", "Spicy Sips"];
-    const challenge = challengeInput.replace(/\+/g, " ");
+    const challengeParsed = challenge.replace(/\+/g, " ");
 
-    if(!challenges.includes(challenge)) {
+    if(!challenges.includes(challengeParsed)) {
       return res.status(400)
         .json({ 
           message: 'Invalid challenge',
