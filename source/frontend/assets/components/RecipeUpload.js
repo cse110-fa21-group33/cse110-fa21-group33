@@ -423,7 +423,7 @@ class RecipeUpload extends HTMLElement {
     this.shadowRoot.getElementById('header-upload-photo').innerText = 'Upload New Photo';
     this.shadowRoot.getElementById('p-upload-photo').innerText = 'Upload a new picture if you wish to edit the dish image!';
 
-    if (data.challenges.length === 0) {
+    if (data.challenge === "No Challenge") {
       const deleteButton = document.createElement('input');
       deleteButton.setAttribute('id', 'deleteButton');
       deleteButton.classList.add('Delete');
@@ -791,10 +791,13 @@ class RecipeUpload extends HTMLElement {
     }
     this.shadowRoot.getElementById('servingSize').value = this.json.servingSize;
     this.shadowRoot.getElementById('scoville').value = this.json.scoville;
-    this.shadowRoot.getElementById('prepMins').value = this.json.time[0].minutes;
-    this.shadowRoot.getElementById('prepHrs').value = this.json.time[0].hours;
-    this.shadowRoot.getElementById('cookMins').value = this.json.time[1].minutes;
-    this.shadowRoot.getElementById('cookHrs').value = this.json.time[1].hours;
+
+    const prepTime = this.CalculateTime(this.json.prepTime);
+    const cookTime = this.CalculateTime(this.json.cookTime);
+    this.shadowRoot.getElementById('prepMins').value = prepTime.minutes;
+    this.shadowRoot.getElementById('prepHrs').value = prepTime.hours;
+    this.shadowRoot.getElementById('cookMins').value = cookTime.minutes;
+    this.shadowRoot.getElementById('cookHrs').value = cookTime.hours;
 
     for (let i = 1; i < (this.json.ingredientList.length); i += 1) {
       this.MakeExtraIngredientsSlots(this.json.ingredientList[i]);
@@ -807,15 +810,28 @@ class RecipeUpload extends HTMLElement {
     const select = ingredientsDiv.getElementsByTagName('select')[0];
     inputName.value = this.json.ingredientList[0].name;
     inputQuantity.value = this.json.ingredientList[0].quantity;
-    select.options[this.optionIndex[this.json.ingredientList[0].units]].selected = true;
-    const { directions } = this.json;
+    if(this.json.ingredientList[0].units in this.optionIndex){
+      select.options[this.optionIndex[this.json.ingredientList[0].units]].selected = true;
+    }
+    const directions  = this.json.directions.split(/\r?\n/);
     for (let i = 1; i < (directions.length); i += 1) {
       this.MakeExtraInstructionSlots(directions[i]);
     }
     const instructionsDiv = this.shadowRoot.getElementById('instructions');
     const textArea = instructionsDiv.getElementsByTagName('textarea')[0];
     textArea.setAttribute('style', 'width: 90%;');
-    textArea.value = this.json.directions[0];
+    textArea.value = directions[0];
+  }
+
+  /**
+   * Helper function for calculating time object from minutes
+   */
+  CalculateTime(minutes) {
+    let time = {
+      hours: Math.floor(minutes / 60),
+      minutes: minutes % 60
+    }
+    return time;
   }
 
   /**
