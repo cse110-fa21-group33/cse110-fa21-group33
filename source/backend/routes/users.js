@@ -88,43 +88,25 @@ router.delete('/:savedRecipeId', async (req, res) => {
   }
 });
 
-/* POST /auth/signup */
-/* Creates new user in database with username, password and email -> unique user/email 
-required */
-router.post('/auth/signup', async (req, res) => {
-  try{
-    const { username } = req.username;
-    const { password } = req.password;
-    const hashedPwd = await bcrypt.hash(password, 10);
-    const { email } = req.email;
+/* POST /user/completedRecipes */
+router.post('/completedRecipes/:recipeId', async (req, res) => {
+  try {
+    const { userId } = req.userInfo;
+    const { recipeId } = req.params;
 
-    /* check username and email are unique */
-    const checkUser = await usersModel.getByUsername(username);
-    const checkEmail = await usersModel.getByEmail(email);
-
-    if (checkUser.length != 0) {
-      // not sure if status number is correct, 409 = conflict
-      return res.status(409).json({msg: "Username already exists"})
+    // Check if the recipe has already been completed
+    const checkCompleted = await completedRecipesModel.getByRecipeIdAndUserId(recipeId, userId);
+    if (checkCompleted.length != 0) {
+      return res.status(409).json({msg: "Recipe has already been completed"});
     }
-    if ( checkEmail.length != 0) {
-      // not sure if status number is correct, 409 = conflict
-      return res.status(409).json({msg: "E-mail already in use"})
-    }
-
-    /* TODO: create new user */ 
-    const newUser = req.body.user;
-    newUser.password = hashedPwd;
-
-    /* TODO: insert user into database */
-    await usersModel.createUser(newUser);
-
-    return res.status(200).json({ newUser, msg: 'Successfully created a new user' });
-
+    
+    await completedRecipesModel.addToCompletedList(recipeId, userId);
+    return res.status(200).json({msg: "Successfully added recipe to completed list"});
   } catch (err) {
     console.error(err);
     return res.status(503).json({
-      message: 'Failed to register new user',
-      err,
+      message: 'Failed to add new recipe to user\'s completed list',
+      err
     });
   }
 });
