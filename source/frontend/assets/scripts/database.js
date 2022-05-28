@@ -5,6 +5,11 @@ import { importDB, exportDB } from '../../node-modules/dexie-export-import/dist/
 
 export const database = {};
 
+const serverEnv = "local";
+const serverUrlLocal = 'http://localhost:3000';
+const serverUrlProd = 'https://exploding-kitchen.us-west-1.elasticbeanstalk.com/api';
+const url = (serverEnv === "production") ? serverUrlProd: serverUrlLocal;
+
 // TODO: None of the methods involving recipe JSONs actually validate whether
 // the JSON is the correct format. This could cause some serious headaches if
 // we add an invalid JSON.
@@ -90,8 +95,6 @@ const uid = new ShortUniqueId();
 
 let db = new Dexie('MyDB');
 db.version(1).stores({ recipes: 'recipe_id,recipe_name,spice_level' });
-
-let url = 'http://localhost:3000'
 
 /**
  * Converts a string representation of a blob to a blob.
@@ -362,7 +365,6 @@ async function getBySpice(spiceLevel) {
     } else if (spiceLevel < 1 || spiceLevel > 5) {
       reject(new Error('Spice level out of range!'));
     } else {
-      console.log('getting recipes by spice');
       fetch(`${url}/recipes/spiceRating/${spiceLevel}`)
         .then(response => response.json())
         .then(result => {
