@@ -225,7 +225,6 @@ async function getById(id) {
  * @returns {JSON} The challenge list JSON
  */
 function getChallenges() {
-  console.log(localStorage.getItem('challenges'));
   return JSON.parse(localStorage.getItem('challenges'));
 }
 
