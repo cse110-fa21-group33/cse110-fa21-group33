@@ -3,7 +3,7 @@ export const database = {};
 
 const serverEnv = 'production';
 const serverUrlLocal = 'http://localhost:3000';
-const serverUrlProd = 'https://exploding-kitchen.us-west-1.elasticbeanstalk.com/api';
+const serverUrlProd = 'http://exploding-kitchen.us-west-1.elasticbeanstalk.com/api';
 const url = (serverEnv === 'production') ? serverUrlProd : serverUrlLocal;
 
 /**
