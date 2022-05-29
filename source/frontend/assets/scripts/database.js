@@ -7,6 +7,35 @@ const serverUrlProd = 'http://exploding-kitchen.us-west-1.elasticbeanstalk.com/a
 const url = (serverEnv === 'production') ? serverUrlProd : serverUrlLocal;
 
 /**
+ * load challenges
+ * @returns {Promise<void>}
+ */
+async function loadChallenges() {
+  await loadChallengesFromFile()
+    .then((challenges) => {
+      saveChallenges(challenges);
+    });
+}
+
+/**
+ * TODO: change the following to match the challenges.json (will need a new route).
+ * Fetches the challenge list from file.
+ * @returns {Promise} Resolves with the challenge list json if successful, rejects otherwise.
+ */
+async function loadChallengesFromFile() {
+  return new Promise((resolve, reject) => {
+    fetch('assets/jsons/challenges.json')
+      .then((response) => response.json())
+      .then((data) => {
+        resolve(data);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+/**
  * Adds a recipe to the database.
  * If a recipe of the same name already exists, does not add in the recipe.
  * This function must only be called after calling loadDB().
@@ -196,9 +225,11 @@ async function getById(id) {
  * @returns {JSON} The challenge list JSON
  */
 function getChallenges() {
+  console.log(localStorage.getItem('challenges'));
   return JSON.parse(localStorage.getItem('challenges'));
 }
 
+database.loadChallenges = loadChallenges;
 database.addRecipe = addRecipe;
 database.updateRecipe = updateRecipe;
 database.deleteRecipe = deleteRecipe;
