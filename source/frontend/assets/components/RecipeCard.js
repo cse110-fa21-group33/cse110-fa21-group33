@@ -111,7 +111,8 @@ class RecipeCard extends HTMLElement {
     elem.appendChild(rating);
 
     const time = document.createElement('time');
-    time.innerHTML = `${data.time[2].hours} hr ${data.time[2].minutes} min`;
+    
+    time.innerHTML = `${Math.floor(data.totalTime / 60)} hrs ${data.totalTime % 60} min`;
 
     const servings = document.createElement('span');
     servings.innerText = `Serving(s): ${data.servingSize}`;

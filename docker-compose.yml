@@ -3,6 +3,13 @@ services:
   rest-api:
     container_name: exploding-kitchen-rest-api
     restart: always
+    environment:
+      - HOST=${HOST}
+      - DATAPORT=${DATAPORT}
+      - DATAUSER=${DATAUSER}
+      - PASSWORD=${PASSWORD}
+      - DATABASE=${DATABASE}
+      - USERTOKENKEY=${USERTOKENKEY}
     build: ./source/backend
     ports:
       - '3000:3000'
