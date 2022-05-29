@@ -30,6 +30,32 @@ router.get('/recipeId/:recipeId', async (req, res) => {
   }
 });
 
+/* PUT /recipes/:recipeId */
+router.put('/:recipeId', verifyUserToken, async (req, res) => {
+  try {
+    const { userId } = req.userInfo;
+    const { recipeId } = req.params;
+
+    const recipe = await recipesModel.getByUserIdAndRecipeId(userId, recipeId);
+    if (recipe.length == 0) {
+      return res.status(401).json({msg: 'Unauthorized to edit recipe'});
+    }
+
+    const update = req.body;
+    const updatedRecipe = req.body.recipe;
+    const updatedIngredients = req.body.ingredients;
+    await recipesModel.updateRecipe(updatedRecipe, updatedIngredients, recipeId);
+
+    return res.status(200).json({update, msg: 'Successfully edited a recipe'});
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      message: 'Failed to edit recipe',
+      err,
+    });
+  }
+});
+
 /*
   Get Recipes by challenge
 */
