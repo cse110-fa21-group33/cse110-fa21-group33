@@ -108,22 +108,21 @@ async function deleteRecipe(userId, recipeId) {
     try {
       const ingredientsArray = 
         await db('recipeIngredients')
-            .select('*')
-            .where({recipeId});
-      console.log(ingredientsArray[0].recipeId);
-      await Promise.all(ingredientsArray.map(async (ingredient) => {
-        await db('recipeIngredients')
-            .transacting(transaction)
-            .where({
-              recipeId, 
-              ingredientId: ingredient.ingredientId
-            })
-            .del();
-        await db('ingredients')
-            .transacting(transaction)
-            .where({ingredientId: ingredient.ingredientId})
-            .del();
-      }));
+          .select('*')
+          .where({recipeId});
+
+      await db('recipeIngredients')
+        .transacting(transaction)
+        .where({recipeId})
+        .del();
+
+      // you will have an array filled with ingredient ids: eg [1, 2, 3...]
+      const ingredientIds = await Promise.all(ingredientsArray.map(recipeIngredient => recipeIngredient.ingredientId));
+
+      await db('ingredients')
+        .transacting(transaction)
+        .whereIn('ingredientId', ingredientIds)
+        .del();
       await db('recipes')
         .transacting(transaction)
         .where({ userId, recipeId })
