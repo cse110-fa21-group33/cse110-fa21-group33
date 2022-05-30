@@ -124,6 +124,7 @@ router.post('/', verifyUserToken, async (req, res) => {
   }
 });
 
+/** DEL /recipes/:recipeId */
 router.delete('/:recipeId', verifyUserToken, async (req, res) => {
   try {
     const { userId } = req.userInfo;
