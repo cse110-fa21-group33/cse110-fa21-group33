@@ -102,4 +102,27 @@ router.post('/savedRecipes/:recipeId', verifyUserToken, async (req, res) => {
   }
 });
 
+/* POST /user/completedRecipes */
+router.post('/completedRecipes/:recipeId', async (req, res) => {
+  try {
+    const { userId } = req.userInfo;
+    const { recipeId } = req.params;
+
+    // Check if the recipe has already been completed
+    const checkCompleted = await completedRecipesModel.getByRecipeIdAndUserId(recipeId, userId);
+    if (checkCompleted.length != 0) {
+      return res.status(409).json({msg: "Recipe has already been completed"});
+    }
+    
+    await completedRecipesModel.addToCompletedList(recipeId, userId);
+    return res.status(200).json({msg: "Successfully added recipe to completed list"});
+  } catch (err) {
+    console.error(err);
+    return res.status(503).json({
+      message: 'Failed to add new recipe to user\'s completed list',
+      err
+    });
+  }
+});
+
 module.exports = router;
