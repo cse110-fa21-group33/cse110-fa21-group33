@@ -95,7 +95,7 @@ router.post('/savedRecipes/:recipeId', verifyUserToken, async (req, res) => {
     await savedRecipesModel.addSavedRecipe(userId, recipeId);
     return res.status(200).json({msg: 'Added recipe successfully'})
   } catch (err) {
-    console.log(err);
+    console.error(err);
     return res.status(503).json({
       msg: 'Failed to get add saved recipe'
     });
