@@ -20,10 +20,10 @@ async function getCompletedRecipes(userId){
  */
 async function getCompletedChallenges(userId, challenge) {
   const completedChallenges = await db('completedRecipes')
-    .join('users', 'completedRecipes.userId', 'users.userId')
     .join('recipes', 'completedRecipes.recipeId', 'recipes.recipeId')
     .select('recipes.*')
-    .where({userId, challenge});
+    .where('completedRecipes.userId', userId)
+    .where('recipes.challenge', challenge);
   return completedChallenges; 
 }
 

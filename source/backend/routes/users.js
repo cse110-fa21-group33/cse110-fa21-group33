@@ -35,7 +35,7 @@ router.get('/savedRecipes', async (req, res) => {
   }
 });
 
-/* GET /user/challenge/:challenge */
+/* GET /users/challenge/:challenge */
 router.get('/challenge/:challenge', async (req, res) => {
   try {
     const { userId } = req.userInfo;
