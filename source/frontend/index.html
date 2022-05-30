@@ -13,20 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-  <script>
-    fetch('http://exploding-kitchen.us-west-1.elasticbeanstalk.com/api/auth', {
-      method: 'GET', // *GET, POST, PUT, DELETE, etc.
-      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-      headers: {
-        'Content-Type': 'application/json',
-        "Access-Control-Allow-Origin" : "*",
-        "Access-Control-Allow-Credentials" : true
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    })
-            .then(response => response.json())
-          .then(data => console.log(data))
-  </script>
   <!-- Web Components -->
   <script src='assets/components/RecipeCard.js' type="module"></script>
   <script src='assets/components/RecipeDisplay.js' type="module"></script>
