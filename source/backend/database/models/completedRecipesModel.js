@@ -27,6 +27,7 @@ async function getCompletedChallenges(userId, challenge) {
   return completedChallenges; 
 }
 
+/**
  *  Adds a new recipe to the user's completed list by recipeID
  * @param recipeId
  * @param userId
