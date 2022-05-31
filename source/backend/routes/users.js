@@ -36,6 +36,36 @@ router.get('/savedRecipes', verifyUserToken, async (req, res) => {
   }
 });
 
+/* GET /users/challenge/:challenge */
+router.get('/challenge/:challenge', async (req, res) => {
+  try {
+    const { userId } = req.userInfo;
+    const { challenge } = req.params;
+    
+    const challenges = ["Two Spicy", "Habanero Hero", "Haunted Bowels", "I Got the Sauce", "Spicy Sips"];
+    const challengeParsed = challenge.replace(/\+/g, " ");
+
+    if(!challenges.includes(challengeParsed)) {
+      return res.status(400)
+        .json({ 
+          message: 'Invalid challenge',
+          err
+         });
+    }
+
+    const completedChallenges = await completedRecipesModel.getCompletedChallenges(userId, challengeParsed);
+
+    return res.status(200).json(completedChallenges);
+
+  } catch (err) {
+    console.error(err);
+    return res.status(503).json({
+      message: 'Failed to get completed challenges',
+      err
+    });
+  }
+});
+
 /* GET /users */
 router.get('/:id', verifyUserToken, async (req, res) => {
   try {
