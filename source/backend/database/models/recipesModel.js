@@ -40,7 +40,7 @@ async function createRecipe(payload, ingredientsArray) {
       }));
       await transaction.commit();
     } catch (err) {
-      console.log(err);
+      console.error(err);
       await transaction.rollback();
     }
   });
@@ -48,8 +48,9 @@ async function createRecipe(payload, ingredientsArray) {
 
 /**
  * update recipe by recipe id
- * @param {*} payload 
- * @param {*} recipeId 
+ * @param payload 
+ * @param recipeId
+ * @returns 
  */
 async function updateRecipe(updatedRecipe, updatedIngredients, recipeId) {
   await db.transaction(async (transaction) => {
@@ -144,7 +145,7 @@ async function deleteRecipe(userId, recipeId) {
 }
 
 /**
- * 
+ * get all recipes by userid and recipeid
  * @param userId
  * @param recipeId
  * @returns 
@@ -156,10 +157,10 @@ async function getByUserIdAndRecipeId(userId, recipeId) {
   return result;
 }
 
-/*
- * get recipes by challenge
- * @param challenge
- * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
+/**
+ * get recipe by challenge
+ * @param challenge 
+ * @returns 
  */
 async function getByChallenge(challenge) {
   const result = await db('recipes')
@@ -180,6 +181,13 @@ async function getBySpiceRating(spiceRating) {
   return result;
 }
 
+async function getByTitle(title) {
+  const result = await db('recipes')
+    .select('*')
+    .where({ title });
+  return result;
+}
+
 module.exports = {
-  getByRecipeId, createRecipe, deleteRecipe, updateRecipe, getByChallenge, getBySpiceRating, getByUserIdAndRecipeId
+  getByRecipeId, createRecipe, deleteRecipe, updateRecipe, getByChallenge, getBySpiceRating, getByUserIdAndRecipeId, getByTitle
 };

@@ -140,7 +140,20 @@ router.delete('/:recipeId', verifyUserToken, async (req, res) => {
   } catch (err) {
     console.error(err);
     return res.status(500)
-      .json({ err, data: 'Unable to delete recipe' });
+      .json({ err, msg: 'Unable to delete recipe' });
+  }
+});
+
+/** GET /recipes/searchByTitle/:title */
+router.get('/searchByTitle/:title', async (req, res) => {
+  try {
+    const { title } = req.params;
+
+    const recipes = await recipesModel.getByTitle(title);
+    return res.status(200).json(recipes);
+  } catch (err) {
+    console.error(err);
+    return res.status(404).json({err, msg: 'Unable to find recipe with that name'});
   }
 });
 

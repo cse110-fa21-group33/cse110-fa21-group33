@@ -1,7 +1,7 @@
 // database.js
 export const database = {};
 
-const serverEnv = 'production';
+const serverEnv = 'local';
 const serverUrlLocal = 'http://localhost:3000';
 const serverUrlProd = 'http://exploding-kitchen.us-west-1.elasticbeanstalk.com/api';
 const url = (serverEnv === 'production') ? serverUrlProd : serverUrlLocal;
@@ -141,7 +141,15 @@ async function countRecipes(recipeNames) {
       resolve(0);
       return;
     }
-    recipeNames.forEach((recipeName) => {
+    recipeNames.forEach(async (recipeName) => {
+      const response = await fetch(`${url}/recipes/searchByTitle/${recipeName}`);
+      console.log(response);
+      numRecipes += response.length;
+      namesProcessed++;
+      if (namesProcessed === recipeNames.length) {
+        resolve(numRecipes);
+      }
+
       // TODO: replace below with fetch call.
       // db.recipes.where('recipe_name').equals(recipeName).count()
       //   .then((count) => {
