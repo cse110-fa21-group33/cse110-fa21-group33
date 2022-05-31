@@ -106,6 +106,23 @@ async function updateRecipe(updatedRecipe, updatedIngredients, recipeId) {
 async function deleteRecipe(userId, recipeId) {
   await db.transaction(async (transaction) => {
     try {
+      const ingredientsArray = 
+        await db('recipeIngredients')
+          .select('*')
+          .where({recipeId});
+
+      await db('recipeIngredients')
+        .transacting(transaction)
+        .where({recipeId})
+        .del();
+
+      // you will have an array filled with ingredient ids: eg [1, 2, 3...]
+      const ingredientIds = await Promise.all(ingredientsArray.map(recipeIngredient => recipeIngredient.ingredientId));
+
+      await db('ingredients')
+        .transacting(transaction)
+        .whereIn('ingredientId', ingredientIds)
+        .del();
       await db('recipes')
         .transacting(transaction)
         .where({ userId, recipeId })
