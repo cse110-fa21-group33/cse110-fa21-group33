@@ -133,35 +133,25 @@ async function getBySpice(spiceLevel) {
  * @returns {Promise} Resolves with the number of recipes matching the given names,
  *                    rejects if it fails.
  */
-async function countRecipes(recipeNames) {
-  return new Promise((resolve) => {
-    const numRecipes = 0;
-    const namesProcessed = 0;
-    if (recipeNames.length === 0) {
-      resolve(0);
-      return;
-    }
-    recipeNames.forEach(async (recipeName) => {
-      const response = await fetch(`${url}/recipes/searchByTitle/${recipeName}`);
-      console.log(response);
-      numRecipes += response.length;
-      namesProcessed++;
-      if (namesProcessed === recipeNames.length) {
-        resolve(numRecipes);
-      }
-
-      // TODO: replace below with fetch call.
-      // db.recipes.where('recipe_name').equals(recipeName).count()
-      //   .then((count) => {
-      //     numRecipes += count;
-      //     namesProcessed += 1;
-      //     if (namesProcessed === recipeNames.length) {
-      //       resolve(numRecipes);
-      //     }
-      //   });
-    });
-  });
-}
+// async function countRecipes(recipeNames) {
+//   return new Promise((resolve) => {
+//     const numRecipes = 0;
+//     const namesProcessed = 0;
+//     if (recipeNames.length === 0) {
+//       resolve(0);
+//       return;
+//     }
+//     recipeNames.forEach(async (recipeName) => {
+//       const response = await fetch(`${url}/recipes/searchByTitle/${recipeName}`);
+//       console.log(response);
+//       numRecipes += response.length;
+//       namesProcessed++;
+//       if (namesProcessed === recipeNames.length) {
+//         resolve(numRecipes);
+//       }
+//     });
+//   });
+// }
 
 /**
  * TODO: need a route for this as well. GET /recipes/:title
@@ -174,10 +164,22 @@ async function getByName(query) {
     if (typeof query !== 'string') {
       reject(new Error('Query was not a string!'));
     } else {
-      const recipesPushed = 0;
-      const recipeNames = [];
-      let filteredNames;
       const queryLower = query.toLowerCase();
+      try {
+        const recipesArray = await fetch(`${url}/recipes/searchByTitle/${recipeName}`);
+        resolve(recipesArray);
+        return;
+      } catch (err) {
+        reject(err);
+        return;
+      }
+
+      // const recipesPushed = 0;
+      // const recipeNames = [];
+      // let filteredNames;
+      // const queryLower = query.toLowerCase();
+
+      
       // TODO: modify the below stuff
       // db.recipes.orderBy('recipe_name').eachUniqueKey((name) => {
       //   recipeNames.push(name);
