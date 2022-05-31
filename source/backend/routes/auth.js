@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt-nodejs');
 const tokenUtil = require('../auth/tokenUtil');
 const usersModel = require('../database/models/usersModel');
 
+
 const router = express.Router();
 
 
@@ -57,5 +58,38 @@ router.post('/login', async (req, res) => {
     });
   }
 });
+
+
+/* POST /signup */
+/* Creates new user in database with username, password and email -> unique user/email 
+required */
+router.post('/signup', async (req, res) => {
+  try {
+    const { username, password, email } = req.body;
+    const hashedPwd = bcrypt.hashSync(password, null, null);
+
+    /* check whether username and email exists in the database */
+    const existingUsers = await usersModel.getByUsernameOrEmail(username, email);
+    
+    if (existingUsers.length !== 0) {
+      return res.status(401).json({ msg: 'Signup failed, Username or email already exisits' });
+    }
+    
+    /* create new user */
+    const newUser = {"username": username, "password": hashedPwd, "email": email};
+    
+    /* insert user into database */
+    await usersModel.createUser(newUser);
+    return res.status(200).json({ newUser, msg: 'Successfully created a new user'});
+
+  } catch (err) {
+    console.error(err);
+    return res.status(503).json({
+      message: 'Failed to register new user',
+      err,
+    });
+  }
+});
+
 
 module.exports = router;
