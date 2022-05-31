@@ -27,4 +27,26 @@ async function getCompletedChallenges(userId, challenge) {
   return completedChallenges; 
 }
 
-module.exports = { getCompletedRecipes, getCompletedChallenges};
+ *  Adds a new recipe to the user's completed list by recipeID
+ * @param recipeId
+ * @param userId
+ * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
+ */
+async function addToCompletedList(recipeId, userId) {
+  await db('completedRecipes')
+        .insert({userId, recipeId});
+}
+
+/**
+ * @param recipeId 
+ * @param userId 
+ * @returns 
+ */
+async function getByRecipeIdAndUserId(recipeId, userId) {
+  return await db('completedRecipes')
+        .select('*')
+        .where({recipeId, userId});
+}
+
+module.exports = { getCompletedRecipes, addToCompletedList, getByRecipeIdAndUserId, getCompletedChallenges };
+

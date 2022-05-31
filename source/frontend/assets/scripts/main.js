@@ -15,7 +15,7 @@ const [recommendTitle, searchTitle] = [
   'Search Results',
 ];
 
-const challengePath = 'assets/jsons/challenges.json';
+// const challengePath = 'assets/jsons/challenges.json';
 let challengeData;
 
 window.addEventListener('DOMContentLoaded', init);
@@ -26,8 +26,7 @@ window.addEventListener('DOMContentLoaded', init);
 async function init() {
   let recipeList;
   try {
-    await database.loadDB();
-
+    await database.loadChallenges();
     recipeList = await database.getBySpice(3);
   } catch (err) {
     console.log(`Error fetching recipes: ${err}`);
