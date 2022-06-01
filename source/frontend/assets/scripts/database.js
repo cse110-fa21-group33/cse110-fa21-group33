@@ -11,7 +11,7 @@ const url = (serverEnv === 'production') ? serverUrlProd : serverUrlLocal;
  * @returns {Promise<void>}
  */
 async function loadChallenges() {
-  await loadChallengesFromFile()
+  await loadChallengesFromServer()
     .then((challenges) => {
       saveChallenges(challenges);
     });
@@ -22,7 +22,7 @@ async function loadChallenges() {
  * Fetches the challenge list from file.
  * @returns {Promise} Resolves with the challenge list json if successful, rejects otherwise.
  */
-async function loadChallengesFromFile() {
+async function loadChallengesFromServer() {
   try {
     const response = await fetch(`${url}/recipes/challenges`);
     const data = await response.json();
