@@ -1,7 +1,7 @@
 // database.js
 export const database = {};
 
-const serverEnv = 'production';
+const serverEnv = 'local';
 const serverUrlLocal = 'http://localhost:3000';
 const serverUrlProd = 'http://exploding-kitchen.us-west-1.elasticbeanstalk.com/api';
 const url = (serverEnv === 'production') ? serverUrlProd : serverUrlLocal;
@@ -24,10 +24,13 @@ async function loadChallenges() {
  */
 async function loadChallengesFromFile() {
   return new Promise((resolve, reject) => {
-    fetch('assets/jsons/challenges.json')
+    fetch(`${url}/recipes/challenges`)
       .then((response) => response.json())
       .then((data) => {
-        resolve(data);
+        const result = {
+          challenges: data.challengesWithRecipes,
+        };
+        resolve(result);
       })
       .catch((error) => {
         reject(error);

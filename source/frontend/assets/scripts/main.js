@@ -398,10 +398,6 @@ async function bindProgressBar(challengeBar, challenge) {
       cards[0].remove();
     }
 
-    const recipeList = await Promise.all(
-      challenge.recipes.map((recipe) => database.getById(recipe)),
-    );
-
-    createRecipeCards(recipeList);
+    createRecipeCards(challenge.recipeObjects);
   });
 }

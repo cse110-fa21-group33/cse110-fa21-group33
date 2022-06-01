@@ -48,14 +48,14 @@ async function createRecipe(payload, ingredientsArray) {
 
 /**
  * update recipe by recipe id
- * @param {*} payload 
- * @param {*} recipeId 
+ * @param {*} payload
+ * @param {*} recipeId
  */
 async function updateRecipe(updatedRecipe, updatedIngredients, recipeId) {
   await db.transaction(async (transaction) => {
     try {
       // Gets current recipes
-      const ingredientsArray = 
+      const ingredientsArray =
         await db('recipeIngredients')
             .select('*')
             .where({recipeId});
@@ -64,7 +64,7 @@ async function updateRecipe(updatedRecipe, updatedIngredients, recipeId) {
         await db('recipeIngredients')
             .transacting(transaction)
             .where({
-              recipeId, 
+              recipeId,
               ingredientId: ingredient.ingredientId
             })
             .del();
@@ -106,7 +106,7 @@ async function updateRecipe(updatedRecipe, updatedIngredients, recipeId) {
 async function deleteRecipe(userId, recipeId) {
   await db.transaction(async (transaction) => {
     try {
-      const ingredientsArray = 
+      const ingredientsArray =
         await db('recipeIngredients')
           .select('*')
           .where({recipeId});
@@ -144,10 +144,10 @@ async function deleteRecipe(userId, recipeId) {
 }
 
 /**
- * 
+ *
  * @param userId
  * @param recipeId
- * @returns 
+ * @returns
  */
 async function getByUserIdAndRecipeId(userId, recipeId) {
   const result = await db('recipes')
@@ -180,6 +180,17 @@ async function getBySpiceRating(spiceRating) {
   return result;
 }
 
+/**
+ * get all recipes ordered by challenge
+ * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
+ */
+async function getOrderedByChallenge() {
+  const result = await db('recipes')
+    .select('*')
+    .orderBy('challenge');
+  return result;
+}
+
 module.exports = {
-  getByRecipeId, createRecipe, deleteRecipe, updateRecipe, getByChallenge, getBySpiceRating, getByUserIdAndRecipeId
+  getByRecipeId, createRecipe, deleteRecipe, updateRecipe, getByChallenge, getBySpiceRating, getByUserIdAndRecipeId, getOrderedByChallenge
 };
