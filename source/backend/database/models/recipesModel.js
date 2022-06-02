@@ -184,7 +184,7 @@ async function getBySpiceRating(spiceRating) {
 async function getByTitle(title) {
   const result = await db('recipes')
     .select('*')
-    .where({ title });
+    .whereRaw('title LIKE ?', title);
   return result;
 }
 
