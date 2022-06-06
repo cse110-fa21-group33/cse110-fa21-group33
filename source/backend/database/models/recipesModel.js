@@ -181,10 +181,17 @@ async function getBySpiceRating(spiceRating) {
   return result;
 }
 
+/**
+ * Get recipes with title
+ * @param title
+ * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
+ */
 async function getByTitle(title) {
   const result = await db('recipes')
     .select('*')
     .whereRaw('title LIKE ?', title);
+  return result;
+}
 
 /**
  * get all recipes ordered by challenge
