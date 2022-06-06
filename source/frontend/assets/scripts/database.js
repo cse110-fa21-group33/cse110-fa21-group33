@@ -128,78 +128,25 @@ async function getBySpice(spiceLevel) {
 }
 
 /**
- * TODO: make a new route for this function
- * @param {Array} recipeNames A list of recipe name queries.
- * @returns {Promise} Resolves with the number of recipes matching the given names,
- *                    rejects if it fails.
- */
-async function countRecipes(recipeNames) {
-  return new Promise((resolve) => {
-    const numRecipes = 0;
-    const namesProcessed = 0;
-    if (recipeNames.length === 0) {
-      resolve(0);
-      return;
-    }
-    recipeNames.forEach((recipeName) => {
-      // TODO: replace below with fetch call.
-      // db.recipes.where('recipe_name').equals(recipeName).count()
-      //   .then((count) => {
-      //     numRecipes += count;
-      //     namesProcessed += 1;
-      //     if (namesProcessed === recipeNames.length) {
-      //       resolve(numRecipes);
-      //     }
-      //   });
-    });
-  });
-}
-
-/**
  * TODO: need a route for this as well. GET /recipes/:title
  * @param {String} queryName The recipe name query.
  * @returns {Promise} Resolves with an array of recipe JSONs whose name contains the query,
  *                    rejects if it fails.
  */
 async function getByName(query) {
-  return new Promise((resolve, reject) => {
-    if (typeof query !== 'string') {
-      reject(new Error('Query was not a string!'));
-    } else {
-      const recipesPushed = 0;
-      const recipeNames = [];
-      let filteredNames;
+  if (typeof query !== 'string') {
+    reject(new Error('Query was not a string!'));
+  } else {
       const queryLower = query.toLowerCase();
-      // TODO: modify the below stuff
-      // db.recipes.orderBy('recipe_name').eachUniqueKey((name) => {
-      //   recipeNames.push(name);
-      // })
-      //   .then(() => {
-      //     filteredNames = recipeNames.filter((name) => name.toLowerCase().includes(queryLower));
-      //     return countRecipes(filteredNames);
-      //   })
-      //   .then((numRecipes) => {
-      //     const jsonArray = [];
-      //     if (numRecipes === 0) {
-      //       resolve(jsonArray);
-      //       return;
-      //     }
-      //     filteredNames.forEach(async (name) => {
-      //       const collection = db.recipes.where('recipe_name').equals(name);
-      //       collection.each((recipe) => {
-      //         jsonArray.push(recipe.recipe_data);
-      //         recipesPushed += 1;
-      //       })
-      //         .then(() => {
-      //           if (recipesPushed === numRecipes) {
-      //             resolve(jsonArray);
-      //           }
-      //         });
-      //     });
-      //   });
+    try {
+      const recipesArray = await fetch(`${url}/recipes/searchByTitle/${queryLower}`);
+      return recipesArray;
+    } catch (err) {
+      return new Error ('Could not find recipes that include ' + query);
     }
-  });
+  }
 }
+
 
 /**
  * Returns a recipe json associated with the ID
