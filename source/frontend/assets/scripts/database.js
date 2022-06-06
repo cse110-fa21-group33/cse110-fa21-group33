@@ -140,7 +140,8 @@ async function getByName(query) {
       const queryLower = query.toLowerCase();
     try {
       const recipesArray = await fetch(`${url}/recipes/searchByTitle/${queryLower}`);
-      return recipesArray;
+      const result = await recipesArray.json();
+      return result;
     } catch (err) {
       return new Error ('Could not find recipes that include ' + query);
     }
