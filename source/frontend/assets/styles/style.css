@@ -35,8 +35,8 @@ section:not(section.shown) {
 
 /* TODO DELETE .... */
 .recommend {
-    float:left; 
-    margin-left:20px; 
+    float:left;
+    margin-left:20px;
     margin-bottom:20px;
 }
 
@@ -45,7 +45,7 @@ section:not(section.shown) {
     margin-left: 100px;
     margin-bottom: 30px;
 }
-  
+
 /* The slider itself */
 .slider {
   -webkit-appearance: none;  /* Override default CSS styles */
@@ -64,8 +64,8 @@ section:not(section.shown) {
 .slider:hover {
   opacity: 1; /* Fully shown on mouse-over */
 }
-  
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
@@ -74,7 +74,7 @@ section:not(section.shown) {
   background-image: url('../images/slider-3.gif');
   background-color: var(--ec-spicy5);
   background-repeat: no-repeat;
-  background-size: 28px 28px; 
+  background-size: 28px 28px;
   background-position: center;
   cursor: pointer; /* Cursor on hover */
   /* box-shadow: -400px 0 0 400px #ca5507;*/
@@ -83,24 +83,24 @@ section:not(section.shown) {
 }
 
 .slider::-moz-range-progress {
-  background-color: #ca5507; 
+  background-color: #ca5507;
 }
 
-.slider::-moz-range-track {  
+.slider::-moz-range-track {
   background-color: #d3d3d3;
 }
 /* IE*/
 .slider::-ms-fill-lower {
-  background-color: #ca5507; 
+  background-color: #ca5507;
 }
-.slider::-ms-fill-upper {  
+.slider::-ms-fill-upper {
   background-color: #d3d3d3;
 }
 
 
-/* This should work but it doesnt 
+/* This should work but it doesnt
 .slider::-webkit-fill-lower {
-  -webkit-appearance: none; 
+  -webkit-appearance: none;
   appearance: none;
   background: #ee6858;
 }
@@ -133,7 +133,7 @@ section:not(section.shown) {
 /* Website Logo Start */
 
 /*  Not sure if we should delete
-.logo--wrapper > img {     
+.logo--wrapper > img {
   max-width: 100%;
   max-height: 100%;
 }
@@ -163,7 +163,12 @@ section:not(section.shown) {
 .Searchbar input {
   height: 50px;
   width: 80%;
-  box-sizing: border-box;
+}
+
+.Searchbar ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+  background: none;
 }
 /* SearchBar End */
 
@@ -245,7 +250,7 @@ button:active {
   display:grid;
   grid-template-columns: 0fr 1fr 3.75fr .25fr;
   grid-template-rows: 30px auto;
-  grid-template-areas: 
+  grid-template-areas:
     "margin sidebarl main"
     "margin sidebarl main";
   column-gap: 30px;
@@ -348,7 +353,7 @@ a:link {
     .section--main-page > .main--div {
       background: var(--bg-color-red);
       border: 2px solid var(--bg-color);
-    }  
+    }
 
     button {
       background-color: var(--bg-color);

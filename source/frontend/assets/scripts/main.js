@@ -42,6 +42,7 @@ async function init() {
   clickLogoToGoHome();
   sliderSpiceLevel();
   createProgressBars();
+  onLoginFormSubmit();
 }
 
 /**
@@ -399,5 +400,12 @@ async function bindProgressBar(challengeBar, challenge) {
     }
 
     createRecipeCards(challenge.recipeObjects);
+  });
+}
+
+async function onLoginFormSubmit() {
+  const loginForm = document.getElementById('loginForm');
+  loginForm.addEventListener('submit', async () => {
+    console.log('here');
   });
 }

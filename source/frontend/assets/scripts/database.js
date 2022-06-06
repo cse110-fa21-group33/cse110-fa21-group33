@@ -1,7 +1,7 @@
 // database.js
 export const database = {};
 
-const serverEnv = 'production';
+const serverEnv = 'local';
 const serverUrlLocal = 'http://localhost:3000';
 const serverUrlProd = 'http://exploding-kitchen.us-west-1.elasticbeanstalk.com/api';
 const url = (serverEnv === 'production') ? serverUrlProd : serverUrlLocal;
