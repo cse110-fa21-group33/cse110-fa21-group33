@@ -137,10 +137,9 @@ async function getByName(query) {
   if (typeof query !== 'string') {
     reject(new Error('Query was not a string!'));
   } else {
-    const queryLower = query.toLowerCase();
+      const queryLower = query.toLowerCase();
     try {
-      const recipeName = '%'.concat(title, '%');
-      const recipesArray = await fetch(`${url}/recipes/searchByTitle/${recipeName}`);
+      const recipesArray = await fetch(`${url}/recipes/searchByTitle/${queryLower}`);
       return recipesArray;
     } catch (err) {
       return new Error ('Could not find recipes that include ' + query);

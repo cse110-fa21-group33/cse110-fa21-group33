@@ -147,7 +147,9 @@ router.delete('/:recipeId', verifyUserToken, async (req, res) => {
 /** GET /recipes/searchByTitle/:title */
 router.get('/searchByTitle/:title', async (req, res) => {
   try {
-    const { title } = req.params;
+    // santitize here: string concat thingy
+    const inputTitle = req.params.title;
+    const title = '%'.concat(inputTitle, '%');
 
     const recipes = await recipesModel.getByTitle(title);
     return res.status(200).json(recipes);
