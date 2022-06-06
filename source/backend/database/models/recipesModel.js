@@ -56,7 +56,7 @@ async function updateRecipe(updatedRecipe, updatedIngredients, recipeId) {
   await db.transaction(async (transaction) => {
     try {
       // Gets current recipes
-      const ingredientsArray = 
+      const ingredientsArray =
         await db('recipeIngredients')
             .select('*')
             .where({recipeId});
@@ -65,7 +65,7 @@ async function updateRecipe(updatedRecipe, updatedIngredients, recipeId) {
         await db('recipeIngredients')
             .transacting(transaction)
             .where({
-              recipeId, 
+              recipeId,
               ingredientId: ingredient.ingredientId
             })
             .del();
@@ -107,7 +107,7 @@ async function updateRecipe(updatedRecipe, updatedIngredients, recipeId) {
 async function deleteRecipe(userId, recipeId) {
   await db.transaction(async (transaction) => {
     try {
-      const ingredientsArray = 
+      const ingredientsArray =
         await db('recipeIngredients')
           .select('*')
           .where({recipeId});
@@ -148,7 +148,7 @@ async function deleteRecipe(userId, recipeId) {
  * get all recipes by userid and recipeid
  * @param userId
  * @param recipeId
- * @returns 
+ * @returns
  */
 async function getByUserIdAndRecipeId(userId, recipeId) {
   const result = await db('recipes')
@@ -185,9 +185,18 @@ async function getByTitle(title) {
   const result = await db('recipes')
     .select('*')
     .whereRaw('title LIKE ?', title);
+
+/**
+ * get all recipes ordered by challenge
+ * @returns {Promise<awaited Knex.QueryBuilder<TRecord, TResult>>}
+ */
+async function getOrderedByChallenge() {
+  const result = await db('recipes')
+    .select('*')
+    .orderBy('challenge');
   return result;
 }
 
 module.exports = {
-  getByRecipeId, createRecipe, deleteRecipe, updateRecipe, getByChallenge, getBySpiceRating, getByUserIdAndRecipeId, getByTitle
+  getByRecipeId, createRecipe, deleteRecipe, updateRecipe, getByChallenge, getBySpiceRating, getByUserIdAndRecipeId, getOrderedByChallenge, getByTitle
 };
