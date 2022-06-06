@@ -24,7 +24,13 @@ async function loadChallenges() {
  */
 async function loadChallengesFromServer() {
   try {
-    const response = await fetch(`${url}/recipes/challenges`);
+    const response = await fetch(`${url}/recipes/challenges`, {
+      method: 'GET',
+      headers: {
+        Authorization: `bearer ${localStorage.getItem('userToken')}`,
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    });
     const data = await response.json();
     const result = {
       challenges: data.challengesWithRecipes,
@@ -116,7 +122,7 @@ async function getBySpice(spiceLevel) {
   try {
     if (typeof spiceLevel !== 'number') {
       return new Error('Query was not a number!');
-    } else if (spiceLevel < 1 || spiceLevel > 5) {
+    } if (spiceLevel < 1 || spiceLevel > 5) {
       return new Error('Spice level out of range!');
     }
     const response = await fetch(`${url}/recipes/spiceRating/${spiceLevel}`);
@@ -135,18 +141,17 @@ async function getBySpice(spiceLevel) {
  */
 async function getByName(query) {
   if (typeof query !== 'string') {
-    reject(new Error('Query was not a string!'));
-  } else {
-      const queryLower = query.toLowerCase();
-    try {
-      const recipesArray = await fetch(`${url}/recipes/searchByTitle/${queryLower}`);
-      return recipesArray;
-    } catch (err) {
-      return new Error ('Could not find recipes that include ' + query);
-    }
+    return new Error('Query was not a string!');
+  }
+  const queryLower = query.toLowerCase();
+  try {
+    const recipesArray = await fetch(`${url}/recipes/searchByTitle/${queryLower}`);
+    const result = await recipesArray.json();
+    return result;
+  } catch (err) {
+    return new Error(`Could not find recipes that include ${query}`);
   }
 }
-
 
 /**
  * Returns a recipe json associated with the ID
@@ -168,6 +173,38 @@ async function getById(id) {
 }
 
 /**
+ * fetch the token of the given userPayload
+ * @param userPayload
+ * @returns {Promise<Error>}
+ */
+async function login(userPayload) {
+  try {
+    const response = await fetch(`${url}/auth/login/`, {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userPayload), // body data type must match "Content-Type" header
+    });
+    const data = await response.json();
+    if (data.accessToken) {
+      setUserToken(data.accessToken);
+    }
+    return data;
+  } catch (err) {
+    return new Error('Password or username incorrect, please try again');
+  }
+}
+
+/**
+ * set the user access token
+ * @param token
+ */
+function setUserToken(token) {
+  localStorage.setItem('userToken', token);
+}
+
+/**
  * TODO: modify to use challenge route. add a GET /user/completedChallenges
  * @returns {JSON} The challenge list JSON
  */
@@ -184,3 +221,4 @@ database.getBySpice = getBySpice;
 database.getByName = getByName;
 database.getById = getById;
 database.getChallenges = getChallenges;
+database.login = login;

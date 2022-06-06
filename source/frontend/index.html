@@ -62,6 +62,7 @@
     <div class="button--wrapper">
       <button id="create-button">Create Recipe</button>
       <button id="login-button" data-toggle="modal" data-target="#login-modal">Login</button>
+      <img src="assets/images/favico.png" class="rounded" width="75" height="75" id="login-icon" hidden/>
     </div>
   </header>
   <main>
@@ -81,17 +82,17 @@
                   <!-- Email input -->
                   <div class="form-outline mb-4">
                     <label class="form-label" for="login-username">Username</label>
-                    <input type="text" id="login-username" class="form-control"/>
+                    <input type="text" id="login-username" class="form-control" required/>
                   </div>
 
                   <!-- Password input -->
                   <div class="form-outline mb-4">
                     <label class="form-label" for="login-password">Password</label>
-                    <input type="password" id="login-password" class="form-control"/>
+                    <input type="password" id="login-password" class="form-control" required/>
                   </div>
 
                   <!-- Submit button -->
-                  <button type="button" class="btn btn-danger btn-block mb-4">Sign in</button>
+                  <button type="submit" class="btn btn-danger btn-block mb-4">Sign in</button>
 
                   <!-- Register buttons -->
                   <div class="text-center">
@@ -100,7 +101,7 @@
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" id="close-login-modal" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>

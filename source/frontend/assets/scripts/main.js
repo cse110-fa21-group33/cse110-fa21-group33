@@ -43,6 +43,7 @@ async function init() {
   sliderSpiceLevel();
   createProgressBars();
   onLoginFormSubmit();
+  attachLoggedInComponents();
 }
 
 /**
@@ -403,9 +404,34 @@ async function bindProgressBar(challengeBar, challenge) {
   });
 }
 
+/**
+ * when the login form is submitteed
+ * @returns {Promise<void>}
+ */
 async function onLoginFormSubmit() {
   const loginForm = document.getElementById('loginForm');
-  loginForm.addEventListener('submit', async () => {
-    console.log('here');
+  loginForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const user = {
+      username: document.getElementById('login-username').value,
+      password: document.getElementById('login-password').value,
+    };
+    const data = await database.login(user);
+    if (!data.accessToken) {
+      alert(data.message);
+      return;
+    }
+    document.getElementById('close-login-modal').click();
+    attachLoggedInComponents();
   });
+}
+
+/**
+ * attach all logged in components: like the login icon, etc.
+ */
+function attachLoggedInComponents() {
+  if (localStorage.getItem('userToken') !== undefined) {
+    document.getElementById('login-icon').hidden = false;
+    document.getElementById('login-button').hidden = true;
+  }
 }
