@@ -41,13 +41,13 @@ router.get('/challenge/:challenge', async (req, res) => {
   try {
     const { userId } = req.userInfo;
     const { challenge } = req.params;
-    
+
     const challenges = ["Two Spicy", "Habanero Hero", "Haunted Bowels", "I Got the Sauce", "Spicy Sips"];
     const challengeParsed = challenge.replace(/\+/g, " ");
 
     if(!challenges.includes(challengeParsed)) {
       return res.status(400)
-        .json({ 
+        .json({
           message: 'Invalid challenge',
           err
          });
@@ -97,9 +97,9 @@ router.delete('/savedRecipes/:savedRecipeId', verifyUserToken, async (req, res) 
     const { savedRecipeId } = req.params;
 
     await savedRecipesModel.deleteByUserIdAndSavedRecipeId(userId, savedRecipeId);
-    
+
     return res.status(200).json({msg: 'Removed successfully'});
-    
+
   } catch (err) {
     console.error(err);
     return res.status(503).json({
@@ -143,7 +143,7 @@ router.post('/completedRecipes/:recipeId', async (req, res) => {
     if (checkCompleted.length != 0) {
       return res.status(409).json({msg: "Recipe has already been completed"});
     }
-    
+
     await completedRecipesModel.addToCompletedList(recipeId, userId);
     return res.status(200).json({msg: "Successfully added recipe to completed list"});
   } catch (err) {

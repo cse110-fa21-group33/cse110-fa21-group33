@@ -15,7 +15,7 @@ async function verifyUserToken(req, res, next) {
     const bearer = bearerHeader.split(' ');
     // Get token from array
     const bearerToken = bearer[1];
-    console.log(bearerToken);
+
     const userInfo = bearerToken ? await userTokenUtil.validateToken(bearerToken) : null;
     if (userInfo) {
       req.userInfo = userInfo.userInfo;

@@ -11,6 +11,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+  <!--  bootstrap css-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--  bootstrap js-->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   <!-- Web Components -->
@@ -41,7 +48,7 @@
     </div>
     <!--This division is for the search bar-->
     <div class="Searchbar">
-     <input id="searchBar" type="text" placeholder="Search..">
+     <input id="searchBar" class="form-control bg-danger text-light" type="text" placeholder="Search..">
     </div>
     <!--This div is for the spice slider-->
     <div id="spice-slider--wrapper">
@@ -54,11 +61,97 @@
     <!--This div is for the create recipe button-->
     <div class="button--wrapper">
       <button id="create-button">Create Recipe</button>
+      <button id="login-button" data-toggle="modal" data-target="#login-modal">Login</button>
+      <button id="signup-button" data-toggle="modal" data-target="#signup-modal">Signup</button>
+      <img src="assets/images/favico.png" class="rounded" width="75" height="75" id="login-icon" hidden/>
     </div>
   </header>
   <main>
     <div>
       <section class="section--main-page shown">
+        <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="signupModalLabel">Signup</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="signupForm">
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="login-username">Username</label>
+                    <input type="text" id="signup-username" class="form-control" required/>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="login-username">Email</label>
+                    <input type="email" id="signup-email" class="form-control" required/>
+                  </div>
+
+                  <!-- Password input -->
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="login-password">Password</label>
+                    <input type="password" id="signup-password" class="form-control" required/>
+                  </div>
+
+                  <!-- Password input -->
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="login-password">Repeat your password</label>
+                    <input type="password" id="repeat-password" class="form-control" required/>
+                  </div>
+
+                  <!-- Submit button -->
+                  <button type="submit" class="btn btn-danger btn-block mb-4">Create Account</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="close-signup-modal" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="loginForm">
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="login-username">Username</label>
+                    <input type="text" id="login-username" class="form-control" required/>
+                  </div>
+
+                  <!-- Password input -->
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-control" required/>
+                  </div>
+
+                  <!-- Submit button -->
+                  <button type="submit" class="btn btn-danger btn-block mb-4">Sign in</button>
+
+                  <!-- Register buttons -->
+                  <div class="text-center">
+                    <p>Not a member? <a href="#!">Register</a></p>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="close-login-modal" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
       <!--This division is for the challenge part which is on the left side of the page-->
         <div id="challenge-cards--wrapper" class="main--div">
           <h1 class="challenge-title">Challenges</h1>

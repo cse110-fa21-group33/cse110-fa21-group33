@@ -24,7 +24,13 @@ async function loadChallenges() {
  */
 async function loadChallengesFromServer() {
   try {
-    const response = await fetch(`${url}/recipes/challenges`);
+    const response = await fetch(`${url}/recipes/challenges`, {
+      method: 'GET',
+      headers: {
+        Authorization: `bearer ${localStorage.getItem('userToken')}`,
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    });
     const data = await response.json();
     const result = {
       challenges: data.challengesWithRecipes,
@@ -82,28 +88,20 @@ function saveChallenges(challengeJSON) {
  * @returns {Promise<unknown>}
  */
 async function completeRecipe(recipeJSON) {
-  return new Promise((resolve, reject) => {
-    // TODO: get it from the backend
-    const challengeJSON = JSON.parse(localStorage.getItem('challenges'));
-
-    // KEEP
-    for (let i = 0; i < recipeJSON.challenges.length; i += 1) {
-      for (let j = 0; j < challengeJSON.challenges.length; j += 1) {
-        if (challengeJSON.challenges[j].title === recipeJSON.challenges[i]) {
-          challengeJSON.challenges[j].numberCompleted += 1;
-          break;
-        }
-      }
+  try {
+    const response = await fetch(`${url}/users/completedRecipes/${recipeJSON.recipeId}`, {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('userToken')}`,
+      },
+    });
+    if (response.msg === 'Successfully added recipe to completed list') {
+      return true;
     }
-
-    // KEEP below
-    recipeJSON.completed = true;
-    updateRecipe(recipeJSON)
-      .then(() => {
-        saveChallenges(challengeJSON);
-        resolve(true);
-      });
-  });
+    return false;
+  } catch (err){
+    throw new Error(err);
+  }
 }
 
 /**
@@ -116,10 +114,14 @@ async function getBySpice(spiceLevel) {
   try {
     if (typeof spiceLevel !== 'number') {
       return new Error('Query was not a number!');
-    } else if (spiceLevel < 1 || spiceLevel > 5) {
+    } if (spiceLevel < 1 || spiceLevel > 5) {
       return new Error('Spice level out of range!');
     }
-    const response = await fetch(`${url}/recipes/spiceRating/${spiceLevel}`);
+    const response = await fetch(`${url}/recipes/spiceRating/${spiceLevel}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('userToken')}`,
+      },
+    });
     const recipe = await response.json();
     return recipe;
   } catch (err) {
@@ -135,19 +137,17 @@ async function getBySpice(spiceLevel) {
  */
 async function getByName(query) {
   if (typeof query !== 'string') {
-    reject(new Error('Query was not a string!'));
-  } else {
-      const queryLower = query.toLowerCase();
-    try {
-      const recipesArray = await fetch(`${url}/recipes/searchByTitle/${queryLower}`);
-      const result = await recipesArray.json();
-      return result;
-    } catch (err) {
-      return new Error ('Could not find recipes that include ' + query);
-    }
+    return new Error('Query was not a string!');
+  }
+  const queryLower = query.toLowerCase();
+  try {
+    const recipesArray = await fetch(`${url}/recipes/searchByTitle/${queryLower}`);
+    const result = await recipesArray.json();
+    return result;
+  } catch (err) {
+    return new Error(`Could not find recipes that include ${query}`);
   }
 }
-
 
 /**
  * Returns a recipe json associated with the ID
@@ -156,32 +156,88 @@ async function getByName(query) {
  *                    rejects if it fails.
  */
 async function getById(id) {
-  return new Promise((resolve, reject) => {
-    // TODO: replace the below with fetch GET /recipeId/:recipeId
-    // db.recipes.get(id)
-    //   .then((data) => {
-    //     resolve(data.recipe_data);
-    //   })
-    //   .catch((error) => {
-    //     reject(error);
-    //   });
-  });
+  try {
+    if (typeof id !== 'number') {
+      return new Error('Query was not a number!');
+    }
+    const response = await fetch(`${url}/recipeId/${id}`);
+    const recipe = await response.json();
+    return recipe;
+  } catch (err) {
+    return new Error('Get recipe by spice level failed');
+  }
 }
 
 /**
- * TODO: modify to use challenge route. add a GET /user/completedChallenges
+ * fetch the token of the given userPayload
+ * @param userPayload
+ * @returns {Promise<Error>}
+ */
+async function login(userPayload) {
+  try {
+    const response = await fetch(`${url}/auth/login/`, {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userPayload), // body data type must match "Content-Type" header
+    });
+    const data = await response.json();
+    if (data.accessToken) {
+      setUserToken(data.accessToken);
+    }
+    return data;
+  } catch (err) {
+    return new Error('Password or username incorrect, please try again');
+  }
+}
+
+/**
+ * signup user by calling /auth/signup, and after user signed up, call login.
+ * @param userPayload
+ * @returns {Promise<Error>}
+ */
+async function signup(userPayload) {
+  try {
+    const response = await fetch(`${url}/auth/signup/`, {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userPayload), // body data type must match "Content-Type" header
+    });
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    return new Error('Password or username incorrect, please try again');
+  }
+}
+
+/**
+ * set the user access token
+ * @param token
+ */
+function setUserToken(token) {
+  localStorage.setItem('userToken', token);
+}
+
+/**
+ * Simply call load challenges from server instead of doing a local storage fetch
  * @returns {JSON} The challenge list JSON
  */
-function getChallenges() {
-  return JSON.parse(localStorage.getItem('challenges'));
+async function getChallenges() {
+  const challenges = await loadChallengesFromServer();
+  return challenges.challenges;
 }
 
 database.loadChallenges = loadChallenges;
 database.addRecipe = addRecipe;
 database.updateRecipe = updateRecipe;
 database.deleteRecipe = deleteRecipe;
-database.completeRecipe = completeRecipe;
 database.getBySpice = getBySpice;
 database.getByName = getByName;
 database.getById = getById;
+database.completeRecipe = completeRecipe;
 database.getChallenges = getChallenges;
+database.login = login;
+database.signup = signup;

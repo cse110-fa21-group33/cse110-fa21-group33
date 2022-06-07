@@ -44,7 +44,7 @@ class RecipeCard extends HTMLElement {
     .card-title {
       padding: 0.5rem 1rem 0.25rem;
       overflow: hidden;
-      font-size: 26px;
+      font-size: 22px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
@@ -111,7 +111,7 @@ class RecipeCard extends HTMLElement {
     elem.appendChild(rating);
 
     const time = document.createElement('time');
-    
+
     time.innerHTML = `${Math.floor(data.totalTime / 60)} hrs ${data.totalTime % 60} min`;
 
     const servings = document.createElement('span');

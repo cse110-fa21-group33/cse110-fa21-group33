@@ -42,6 +42,9 @@ async function init() {
   clickLogoToGoHome();
   sliderSpiceLevel();
   createProgressBars();
+  onLoginFormSubmit();
+  onSignupFormSubmit();
+  attachLoggedInComponents();
 }
 
 /**
@@ -373,7 +376,7 @@ async function createProgressBars() {
   }
 
   // Update the new challenge information
-  challengeData = database.getChallenges().challenges;
+  challengeData = await database.getChallenges();
   challengeData.forEach((challenge) => {
     const challengeBar = document.createElement('challenge-bar');
     challengeBar.data = challenge;
@@ -400,4 +403,75 @@ async function bindProgressBar(challengeBar, challenge) {
 
     createRecipeCards(challenge.recipeObjects);
   });
+}
+
+/**
+ * when the login form is submitted
+ * @returns {Promise<void>}
+ */
+async function onLoginFormSubmit() {
+  const loginForm = document.getElementById('loginForm');
+  loginForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const user = {
+      username: document.getElementById('login-username').value,
+      password: document.getElementById('login-password').value,
+    };
+    const data = await database.login(user);
+    if (!data.accessToken) {
+      alert(data.message);
+      return;
+    }
+    document.getElementById('close-login-modal').click();
+    init();
+  });
+}
+
+/**
+ * when the signup form is submitted
+ * @returns {Promise<void>}
+ */
+async function onSignupFormSubmit() {
+  const signupForm = document.getElementById('signupForm');
+  signupForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    if (document.getElementById('signup-password').value
+    !== document.getElementById('repeat-password').value) {
+      alert('Password needs to match! 😤');
+      return;
+    }
+
+    const user = {
+      username: document.getElementById('signup-username').value,
+      password: document.getElementById('signup-password').value,
+      email: document.getElementById('signup-email').value,
+    };
+    const data = await database.signup(user);
+    if (!data.newUser) {
+      alert(data.msg);
+      return;
+    }
+    alert('Signup successful! Welcome to exploding kitchen! 💣💥🧑‍🍳');
+    const loginData = await database.login(user);
+    if (!loginData.accessToken) {
+      alert(data.message);
+      return;
+    }
+    document.getElementById('close-signup-modal').click();
+    init();
+  });
+}
+
+/**
+ * attach all logged in components: like the login icon, etc.
+ */
+function attachLoggedInComponents() {
+  if (localStorage.getItem('userToken') !== null) {
+    document.getElementById('login-icon').hidden = false;
+    document.getElementById('login-button').hidden = true;
+  } else {
+    document.getElementById('login-icon').hidden = true;
+    document.getElementById('login-button').hidden = false;
+  }
 }
