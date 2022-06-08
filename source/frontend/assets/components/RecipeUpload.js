@@ -456,32 +456,18 @@ class RecipeUpload extends HTMLElement {
 
       const jsonText = {
         title: recipeName,
-        id: 'ID',
         description,
         image: url,
         servingSize,
         scoville,
-        time: [
-          {
-            name: 'prepTime',
-            hours: prepHrs,
-            minutes: prepMins,
-          },
-          {
-            name: 'cookTime',
-            hours: cookHrs,
-            minutes: cookMins,
-          },
-          {
-            name: 'totalTime',
-            hours: totalTimeArr[0],
-            minutes: totalTimeArr[1],
-          },
-        ],
+        prepTime: prepHrs * 60 + prepMins,
+        cookTime: cookHrs * 60 + cookMins,
+        totalTime: totalTimeArr[0] * 60 + totalTimeArr[1],
         ingredientList: [],
         directions: [],
-        challenges: [],
-        completed: false,
+        // hard code it to no challenges for now as in the future user should be able to select a
+        // challenge this recipe is in.
+        challenge: 'No Challenge',
       };
 
       const divIngredients = this.shadowRoot.getElementById('ingredients');
@@ -529,6 +515,8 @@ class RecipeUpload extends HTMLElement {
       } else {
         jsonText.spiceRating = 5;
       }
+
+      jsonText.directions = jsonText.directions.join('\n');
 
       if (this.isCreate) {
         database.addRecipe(jsonText);
