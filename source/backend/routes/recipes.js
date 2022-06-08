@@ -1,4 +1,5 @@
 const express = require('express');
+const { verify } = require('jsonwebtoken');
 const recipesModel = require('../database/models/recipesModel');
 const recipeIngredientsModel = require('../database/models/recipeIngredientsModel');
 
@@ -61,6 +62,17 @@ router.put('/:recipeId', verifyUserToken, async (req, res) => {
 router.get('/challenges', verifyUserTokenIfExists, async (req, res) => {
   try {
     const allRecipes = await recipesModel.getOrderedByChallenge();
+
+    const recipeIngredients = await recipeIngredientsModel.getAllRecipeIngredients();
+    let completedRecipes = [];
+    if (req.userInfo) {
+      completedRecipes = await completedRecipesModel.getCompletedRecipes(req.userInfo.userId);
+    }
+    await Promise.all(await allRecipes.map((recipe) => {
+      recipe.ingredientList = recipeIngredients.filter((recipeIngredient) => recipeIngredient.recipeId === recipe.recipeId);
+      recipe.completed = completedRecipes.findIndex((completed) => completed.recipeId === recipe.recipeId) !== -1;
+    }));
+
     const challenges = ['Two Spicy', 'Habanero Hero', 'Haunted Bowels', 'I Got the Sauce', 'Spicy Sips'];
     const icon = [
       'assets/images/two-spicy-icon.png',
@@ -99,15 +111,23 @@ router.get('/challenges', verifyUserTokenIfExists, async (req, res) => {
 /*
   Get Recipes by challenge
 */
-router.get('/challenge/:challenge', async (req, res) => {
+router.get('/challenge/:challenge', verifyUserTokenIfExists, async (req, res) => {
   try {
     const { challenge } = req.params;
-    const rows = await recipesModel.getByChallenge(challenge);
+    const rows = await recipesModel.getByChallengeJoinIngredients(challenge);
     if (rows.length === 0) {
       return res.status(404).json({ message: 'Challenge information not found' });
     }
 
     const recipes = rows;
+    let completedRecipes = [];
+    if (req.userInfo) {
+      completedRecipes = await completedRecipesModel.getCompletedRecipes(req.userInfo.userId);
+    }
+    await Promise.all(await recipes.map((recipe) => {
+      recipe.ingredientList = rows.filter((recipeIngredient) => recipeIngredient.recipeId === recipe.recipeId);
+      recipe.completed = completedRecipes.findIndex((completed) => completed.recipeId === recipe.recipeId) !== -1;
+    }));
     return res.status(200).json(recipes);
   } catch (err) {
     console.error(err);
@@ -122,7 +142,7 @@ router.get('/challenge/:challenge', async (req, res) => {
 /*
   Get Recipes by spiceRating
 */
-router.get('/spiceRating/:spiceRating', async (req, res) => {
+router.get('/spiceRating/:spiceRating', verifyUserTokenIfExists, async (req, res) => {
   try {
     const { spiceRating } = req.params;
     const rows = await recipesModel.getBySpiceRating(spiceRating);
@@ -132,10 +152,14 @@ router.get('/spiceRating/:spiceRating', async (req, res) => {
 
     const recipes = rows;
     const recipeIngredients = await recipeIngredientsModel.getAllRecipeIngredients();
+    let completedRecipes = [];
+    if (req.userInfo) {
+      completedRecipes = await completedRecipesModel.getCompletedRecipes(req.userInfo.userId);
+    }
     await Promise.all(await recipes.map((recipe) => {
       recipe.ingredientList = recipeIngredients.filter((recipeIngredient) => recipeIngredient.recipeId === recipe.recipeId);
+      recipe.completed = completedRecipes.findIndex((completed) => completed.recipeId === recipe.recipeId) !== -1;
     }));
-
     return res.status(200).json(recipes);
   } catch (err) {
     console.error(err);
@@ -194,7 +218,7 @@ router.get('/searchByTitle/:title', async (req, res) => {
     return res.status(200).json(recipes);
   } catch (err) {
     console.error(err);
-    return res.status(404).json({err, msg: 'Unable to find recipe with that name'});
+    return res.status(404).json({ err, msg: 'Unable to find recipe with that name' });
   }
 });
 

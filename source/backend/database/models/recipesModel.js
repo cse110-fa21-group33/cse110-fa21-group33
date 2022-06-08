@@ -48,35 +48,34 @@ async function createRecipe(payload, ingredientsArray) {
 
 /**
  * update recipe by recipe id
- * @param payload 
+ * @param payload
  * @param recipeId
- * @returns 
+ * @returns
  */
 async function updateRecipe(updatedRecipe, updatedIngredients, recipeId) {
   await db.transaction(async (transaction) => {
     try {
       // Gets current recipes
-      const ingredientsArray =
-        await db('recipeIngredients')
-            .select('*')
-            .where({recipeId});
+      const ingredientsArray = await db('recipeIngredients')
+        .select('*')
+        .where({ recipeId });
       // Deletes all old ingredients from ingredients and recipeIngredients table
       await Promise.all(ingredientsArray.map(async (ingredient) => {
         await db('recipeIngredients')
-            .transacting(transaction)
-            .where({
-              recipeId,
-              ingredientId: ingredient.ingredientId
-            })
-            .del();
+          .transacting(transaction)
+          .where({
+            recipeId,
+            ingredientId: ingredient.ingredientId,
+          })
+          .del();
         await db('ingredients')
-            .transacting(transaction)
-            .where({ingredientId: ingredient.ingredientId})
-            .del();
+          .transacting(transaction)
+          .where({ ingredientId: ingredient.ingredientId })
+          .del();
       }));
       // Adds all the new ingredients to ingredients and recipeIngredients table
       await Promise.all(updatedIngredients.map(async (ingredient) => {
-      const ingredientId = await db('ingredients')
+        const ingredientId = await db('ingredients')
           .insert(ingredient)
           .transacting(transaction)
           .returning('ingredientId');
@@ -95,7 +94,7 @@ async function updateRecipe(updatedRecipe, updatedIngredients, recipeId) {
   });
   await db('recipes')
     .update(updatedRecipe)
-    .where({recipeId});
+    .where({ recipeId });
 }
 
 /**
@@ -107,18 +106,17 @@ async function updateRecipe(updatedRecipe, updatedIngredients, recipeId) {
 async function deleteRecipe(userId, recipeId) {
   await db.transaction(async (transaction) => {
     try {
-      const ingredientsArray =
-        await db('recipeIngredients')
-          .select('*')
-          .where({recipeId});
+      const ingredientsArray = await db('recipeIngredients')
+        .select('*')
+        .where({ recipeId });
 
       await db('recipeIngredients')
         .transacting(transaction)
-        .where({recipeId})
+        .where({ recipeId })
         .del();
 
       // you will have an array filled with ingredient ids: eg [1, 2, 3...]
-      const ingredientIds = await Promise.all(ingredientsArray.map(recipeIngredient => recipeIngredient.ingredientId));
+      const ingredientIds = await Promise.all(ingredientsArray.map((recipeIngredient) => recipeIngredient.ingredientId));
 
       await db('ingredients')
         .transacting(transaction)
@@ -152,20 +150,22 @@ async function deleteRecipe(userId, recipeId) {
  */
 async function getByUserIdAndRecipeId(userId, recipeId) {
   const result = await db('recipes')
-            .select('*')
-            .where({userId, recipeId});
+    .select('*')
+    .where({ userId, recipeId });
   return result;
 }
 
 /**
  * get recipe by challenge
- * @param challenge 
- * @returns 
+ * @param challenge
+ * @returns
  */
-async function getByChallenge(challenge) {
+async function getByChallengeJoinIngredients(challenge) {
   const result = await db('recipes')
+    .join('recipeIngredients', 'recipeIngredients.recipeId', 'recipes.recipeId')
+    .join('ingredients', 'recipeIngredients.ingredientId', 'ingredients.ingredientId')
     .select('*')
-    .where({ challenge });
+    .where('recipes.challenge', challenge);
   return result;
 }
 
@@ -205,5 +205,5 @@ async function getOrderedByChallenge() {
 }
 
 module.exports = {
-  getByRecipeId, createRecipe, deleteRecipe, updateRecipe, getByChallenge, getBySpiceRating, getByUserIdAndRecipeId, getOrderedByChallenge, getByTitle
+  getByRecipeId, createRecipe, deleteRecipe, updateRecipe, getByChallengeJoinIngredients, getBySpiceRating, getByUserIdAndRecipeId, getOrderedByChallenge, getByTitle,
 };
